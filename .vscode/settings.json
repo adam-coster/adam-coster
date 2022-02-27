@@ -1,3 +1,13 @@
 {
-  "markdown.extension.tableFormatter.enabled": false
+  "markdown.extension.tableFormatter.enabled": false,
+  "json.schemas": [
+    {
+      "fileMatch": ["cdk.json"],
+      // Awaiting an official schema, via:
+      // https://github.com/aws/aws-toolkit-vscode/pull/2078
+      // But it's been open for a long time, so there's a good chance
+      // this will get out of date!
+      "url": "https://raw.githubusercontent.com/tinovyatkin/aws-toolkit-vscode/feature/cdk-json-schema/src/cdk/schema/cdk.json"
+    }
+  ]
 }
