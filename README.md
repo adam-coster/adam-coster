@@ -1,94 +1,51 @@
+# Code & Stuff
 
+|  |  |  |
+|--|--|--|
+| ![Portrait photo of Adam Coster wearing a Butterscotch Shenanigans shirt.](https://i.imgur.com/Uw4eP1sm.jpg) | &nbsp;&nbsp; | Hey there, internet rando! <br/><br/>I'm Adam Coster, CEO and co-founder of video game studio [Butterscotch Shenanigans](https://www.bscotch.net/about#adam-coster) ([@bscotch](https://github.com/bscotch). <br/><br/>I'm a fullstack web developer and DevOps enthusiast, but also spend a lot of my time thinking about data, productivity, and business. I talk about all of that a lot on my weekly podcast, [Coffee with Butterscotch](https://podcast.bscotch.net), co-hosted by my co-founders (and literal brothers). |
 
-# AdamCoster
+## What's *this* repo?
 
-This project was generated using [Nx](https://nx.dev).
+I'm embracing the monorepo lifestyle, and so this repo will accumulate stuff I create for work. Most of the stuff I create *is* for work, so at any given moment there might not be much of anything in here.
 
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
+I've set this up as an [nx](https://nx.dev) monorepo, grouping things into two major root folders:
 
-🔎 **Smart, Fast and Extensible Build System**
+- [apps](/apps) - Deployable things.
+- [libs](/libs) - Stuff used by deployable things.
 
-## Adding capabilities to your workspace
+---
 
-Nx supports many plugins which add capabilities for developing different types of applications and different tools.
+## Other stuff I've made
 
-These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
+### Proprietary (Closed Source) Stuff
 
-Below are our core plugins:
+Most of the stuff I've worked on is closed source. Here's a quick summary of my biggest projects:
 
-- [React](https://reactjs.org)
-  - `npm install --save-dev @nrwl/react`
-- Web (no framework frontends)
-  - `npm install --save-dev @nrwl/web`
-- [Angular](https://angular.io)
-  - `npm install --save-dev @nrwl/angular`
-- [Nest](https://nestjs.com)
-  - `npm install --save-dev @nrwl/nest`
-- [Express](https://expressjs.com)
-  - `npm install --save-dev @nrwl/express`
-- [Node](https://nodejs.org)
-  - `npm install --save-dev @nrwl/node`
+- **[Video Game Webtech](https://www.bscotch.net/games):** I develop and maintain all of the webtech for our games, starting in 2015 with our "BscotchID" service which in 2018 I replaced with a shinier service, "Rumpus". Migrating users between those systems without downtime [was quite the endeavor](https://wellactually.fyi/articles/tech-debt-the-bill-comes-due)! BscotchID/Rumpus features include:
+  - Cross-platform save syncing (e.g. allowing players to switch between a mobile device and a console without losing progress)
+  - [Cross-platform user-generated content sharing](https://aws.amazon.com/blogs/gametech/a-platformer-maker-made-for-every-platform/) (in [Levelhead](https://www.bscotch.net/games/levelhead), players can create and share custom levels and compete on per-level leaderboards)
+  - Centralized account management, allowing players to connect their accounts to any platform account
+  - A [public API](https://beta.bscotch.net/api/docs/community-edition/) allowing players to build their own projects using data from Levelhead
+- **[Studio Website](https://www.bscotch.net):** I develop and maintain the central website for our studio, which is basically the front-end for Rumpus. I built it with [Vue v2](https://github.com/vuejs/vue) and have been slowly migrating it to Vue3 + Typescript. I admit to being a middling front-end developer; the vast majority of my development time goes into the backend and tools to support our games and team. Still, I think the site came out alright. Features include:
+  - A custom newsletter system, allowing our team to build and send a variety of opt-in newsletters to our players and other groups
+  - The "[Feedbag](https://www.bscotch.net/feedbag)" -- a system for collecting and managing player feedback at scale
+  - Automated game changelogs, generated from Git messages and made available via the site (see [Levelhead's Patchnotes](https://www.bscotch.net/games/levelhead/patchnotes) as an example)
+  - Tons of internal features for our staff to manage aspects of game development, testing, and customer support
 
-There are also many [community plugins](https://nx.dev/community) you could add.
+### Open Source Stuff
 
-## Generate an application
+I've open-sourced a handful of of our studio projects, though those will likely be deprecated as we move everything into a monorepo (some stuff has to be private, and we can't mix public and private, so unfortunately all our source has to close back up 😢).
 
-Run `nx g @nrwl/react:app my-app` to generate an application.
+See the studio's GitHub ([@bscotch](https://github.com/bscotch)) for the full list, but here are the highlights:
 
-> You can use any of the plugins above to generate applications as well.
+- **[Stitch](https://github.com/bscotch/stitch#readme):** We use GameMaker Studio 2 (GMS2) for game development, and I've made many tools and pipelines over the years to improve the development process in GMS2. The latest, and the one we open-sourced, is "Stitch". Stitch is a "Pipeline Development Kit" for GMS2; we use it to automate asset management and parts of the build process.
+- **[Spritely](https://github.com/bscotch/spritely#readme):** Due to our use of GameMaker, as well as our tendency to use art-generation tools in ways they weren't intended, we've always needed to have our own art pipeline management tooling. The latest is the one we open-sourced: Spritely. We use Spritely for the upstream part of our art pipeline, where it automatically crops, bleeds, and organizes source images. Stitch makes up the other end of the pipeline.
+- **[Rumpus Community Edition SDK](https://github.com/bscotch/rumpus-ce#readme):** In the few weeks leading up to the launch of [Levelhead](https://www.bscotch.net/games/levelhead), I built a [public API](https://beta.bscotch.net/api/docs/community-edition/) ("Rumpus Community Edition" a.k.a. "Rumpus CE") to allow players to build their own tools and sites using player and level data from Levelhead. To give those devs a head-start on building something, I made this SDK specifically for interacting with Rumpus CE.
 
-When using Nx, you can create multiple applications and libraries in the same workspace.
+### Oh, and a Dissertation!
 
-## Generate a library
+I got a PhD in Cell & Molecular Biology back in 2014, and then immediately joined my brothers in co-founding Butterscotch Shenanigans where I ended up mostly doing webtech and, as of July 2021, now occupy the CEO role. Yes, that's an unexpected path. It's a long story.
 
-Run `nx g @nrwl/react:lib my-lib` to generate a library.
+Anyway, I'd be remiss if I didn't take a moment to force my dissertation upon you, dear reader:
 
-> You can also use any of the plugins above to generate libraries as well.
-
-Libraries are shareable across libraries and applications. They can be imported from `@adam-coster/mylib`.
-
-## Development server
-
-Run `nx serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `nx g @nrwl/react:component my-component --project=my-app` to generate a new component.
-
-## Build
-
-Run `nx build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `nx test my-app` to execute the unit tests via [Jest](https://jestjs.io).
-
-Run `nx affected:test` to execute the unit tests affected by a change.
-
-## Running end-to-end tests
-
-Run `nx e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
-
-Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
-
-## Understand your workspace
-
-Run `nx graph` to see a diagram of the dependencies of your projects.
-
-## Further help
-
-Visit the [Nx Documentation](https://nx.dev) to learn more.
-
-
-
-## ☁ Nx Cloud
-
-### Distributed Computation Caching & Distributed Task Execution
-
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
-
-Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
-
-Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
-
-Visit [Nx Cloud](https://nx.app/) to learn more.
+["Quantitative single-cell imaging reveals insulation of morphogenic signal transduction"](https://github.com/adam-coster/dissertation#readme)
