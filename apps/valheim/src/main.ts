@@ -1,5 +1,14 @@
-import * as cdk from '@aws-cdk/core';
-import { AppStack } from './stacks/app-stack';
+import { createValheimServersApp } from '@adam-coster/valheim-cdk';
 
-const app = new cdk.App();
-new AppStack(app, 'valheim');
+const servers = [
+  {
+    name: 'Orliekat',
+    admins: ['76561197970630140', '76561197976434679'],
+  },
+  {
+    name: 'Meadle Earth',
+    admins: ['76561197970630140'],
+  },
+];
+
+const app = createValheimServersApp(servers);
