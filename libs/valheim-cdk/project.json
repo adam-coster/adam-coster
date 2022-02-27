@@ -1,0 +1,25 @@
+{
+  "root": "libs/valheim-cdk",
+  "sourceRoot": "libs/valheim-cdk/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/valheim-cdk",
+        "main": "libs/valheim-cdk/src/index.ts",
+        "tsConfig": "libs/valheim-cdk/tsconfig.lib.json",
+        "assets": ["libs/valheim-cdk/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/valheim-cdk/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

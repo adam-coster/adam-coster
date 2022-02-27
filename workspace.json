@@ -1,6 +1,8 @@
 {
   "version": 2,
   "projects": {
-    "valheim": "apps/valheim"
+    "shared-utility": "libs/shared/utility",
+    "valheim": "apps/valheim",
+    "valheim-cdk": "libs/valheim-cdk"
   }
 }
