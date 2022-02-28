@@ -1,8 +1,10 @@
 # Code & Stuff
 
-|  |  |  |
-|--|--|--|
-| ![Portrait photo of Adam Coster wearing a Butterscotch Shenanigans shirt.](https://i.imgur.com/Uw4eP1sm.jpg) | &nbsp;&nbsp; | Hey there, internet rando! <br/><br/>I'm Adam Coster, CEO and co-founder of video game studio [Butterscotch Shenanigans](https://www.bscotch.net/about#adam-coster) ([@bscotch](https://github.com/bscotch). <br/><br/>I'm a fullstack web developer and DevOps enthusiast, but also spend a lot of my time thinking about data, productivity, and business. I talk about all of that a lot on my weekly podcast, [Coffee with Butterscotch](https://podcast.bscotch.net), co-hosted by my co-founders (and literal brothers). |
+Hey there, internet rando!
+
+I'm Adam Coster, CEO and co-founder of video game studio [Butterscotch Shenanigans](https://www.bscotch.net/about#adam-coster) ([@bscotch](https://github.com/bscotch)).
+
+I'm a fullstack web developer and DevOps enthusiast, but also spend a lot of my time thinking about data, productivity, and business. I talk about all of that a lot on my weekly podcast, [Coffee with Butterscotch](https://podcast.bscotch.net), co-hosted by my co-founders (and literal brothers).
 
 ## What's *this* repo?
 
