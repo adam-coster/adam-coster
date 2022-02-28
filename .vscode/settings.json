@@ -9,5 +9,12 @@
       // this will get out of date!
       "url": "https://raw.githubusercontent.com/tinovyatkin/aws-toolkit-vscode/feature/cdk-json-schema/src/cdk/schema/cdk.json"
     }
-  ]
+  ],
+  "markdown.extension.toc.downcaseLink": true,
+  "markdown.extension.toc.orderedList": false,
+  "markdown.extension.toc.levels": "2..6",
+  "markdown.extension.toc.updateOnSave": true,
+  "markdown.extension.toc.slugifyMode": "github",
+  "markdown.extension.list.indentationSize": "adaptive",
+  "markdown.extension.syntax.decorations": true
 }

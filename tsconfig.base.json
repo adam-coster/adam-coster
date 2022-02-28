@@ -15,8 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@adam-coster/utility": ["libs/shared/utility/src/index.ts"],
-      "@adam-coster/valheim-cdk": ["libs/valheim-cdk/src/index.ts"]
+      "@adam-coster/cloudheim": ["libs/cloudheim/src/index.ts"],
+      "@adam-coster/utility": ["libs/shared/utility/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
