@@ -1,4 +1,5 @@
-import { createValheimServersApp } from '@adam-coster/valheim-cdk';
+import { generateValheimCdkApp } from '@adam-coster/cloudheim';
+import { Environment } from 'aws-cdk-lib';
 
 const servers = [
   {
@@ -11,4 +12,9 @@ const servers = [
   },
 ];
 
-const app = createValheimServersApp(servers);
+const env: Environment = {
+  account: '041094602614',
+  region: 'us-east-2',
+};
+
+const app = generateValheimCdkApp(servers, { env });

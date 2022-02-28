@@ -1,7 +1,8 @@
 {
-  "root": "apps/valheim",
   "projectType": "application",
+  "root": "apps/valheim",
   "sourceRoot": "apps/valheim/src",
+  "tags": [],
   "targets": {
     "deploy": {
       "executor": "@codebrew/nx-aws-cdk:deploy",
@@ -13,11 +14,10 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["apps/valheim/**/*.ts"]
-      }
+      },
+      "outputs": ["{options.outputFile}"]
     }
-  },
-  "tags": []
+  }
 }
