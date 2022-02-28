@@ -23,8 +23,11 @@
     "@aws-cdk/assert": "^1.127.0",
     "@aws-cdk/core": "^1.127.0",
     "ajv": "^8.10.0",
-    "constructs": "^10.0.74",
     "aws-cdk": "^2.14.0",
-    "aws-cdk-lib": "^2.14.0"
+    "aws-cdk-lib": "^2.14.0",
+    "change-case": "^4.1.2",
+    "constructs": "^10.0.74",
+    "discord-webhook-ts": "^5.0.0",
+    "node-fetch": "^3.2.0"
   }
 }

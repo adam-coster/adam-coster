@@ -13,6 +13,8 @@
     "lib": ["esnext"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
+    "checkJs": true,
+    "allowJs": true,
     "baseUrl": ".",
     "paths": {
       "@adam-coster/cloudheim": ["libs/cloudheim/src/index.ts"],

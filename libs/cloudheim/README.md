@@ -4,7 +4,9 @@
 
 ## Why use a dedicated server?
 
-[Valheim](https://www.valheimgame.com/) is a blast to play with friends, but coordinating schedules around the host is a pain. Dedicated servers solve this problem, since the game keeps running as long as the server software does. People can pop in and out whenever they please!
+[Valheim](https://www.valheimgame.com/) is a blast to play with friends, but coordinating schedules around the host's availability is a pain.
+
+Dedicated servers solve this problem, since the game keeps running as long as the server software does. People can pop in and out whenever they please!
 
 ## What does Cloudheim do?
 
