@@ -1,6 +1,6 @@
 # Cloudheim: Valheim Dedicated Servers on AWS
 
-**💀⚠ This is a work in progress and is not ready to be used by others. Even when it *is* ready, you probably shouldn't use it anyway. Use at your own risk. ⚠💀**
+**💀⚠ This is a work in progress and is not ready to be used by others. Even when it _is_ ready, you probably shouldn't use it anyway. Use at your own risk. ⚠💀**
 
 ## Why use a dedicated server?
 
@@ -8,7 +8,7 @@
 
 ## What does Cloudheim do?
 
-This project ("Cloudheim") aims to make it easy to create and run any number of remote dedicated Valheim servers on Amazon Web Services (AWS), in a cost-effective and low-maintenance way. Does it *succeed* at doing that? Only time will tell.
+This project ("Cloudheim") aims to make it easy to create and run any number of remote dedicated Valheim servers on Amazon Web Services (AWS), in a cost-effective and low-maintenance way. Does it _succeed_ at doing that? Only time will tell.
 
 Cloudheim makes use of the community-maintained [Valheim Server in a Docker Container](https://github.com/lloesche/valheim-server-docker) project and the AWS [Cloud Development Kit](https://docs.aws.amazon.com/cdk/v2/guide/getting_started.html) (CDK) to generate and deploy a "Cloud Formation Template" to AWS. That's all AWS-speak for "describing a bunch of servers and stuff and thereby causing them to exist."
 
@@ -16,13 +16,13 @@ Cloudheim makes use of the community-maintained [Valheim Server in a Docker Cont
 
 **⚠️ Literally NO ONE ⚠️**
 
-It's not even a good idea for *me* to be using this! (It's mostly for fun.)
+It's not even a good idea for _me_ to be using this! (It's mostly for fun.)
 
 You'll very likely save a lot of time (and therefore money), headache, and heartache, by paying for a service that will run your Valheim server for you (a [Valheim-as-a-Service](#valheim-as-a-service-vaas) provider).
 
-Okay, so you *could* consider using this project if:
+Okay, so you _could_ consider using this project if:
 
-- 🎓 You are familiar with AWS already, and comfortable reasoning about and managing AWS resources. (Or, alternatively, if you want to use this project *to* learn about AWS.)
+- 🎓 You are familiar with AWS already, and comfortable reasoning about and managing AWS resources. (Or, alternatively, if you want to use this project _to_ learn about AWS.)
 - 🤑 You are prepared to spend an uncertain amount of money on AWS resources. (This project keeps things pretty cheap, but AWS costs can blow up in a few scenarios.)
 - ⌛ You are prepared to spend an uncertain amount of time debugging the process. (I'm making this as painless as I can for myself, but there's a lot of little nuances involved.)
 - 😭 You are prepared to be the person responsible for a Valheim world file to disappear forever, tossing into the void everyone's hard work exploring and changing that world. (This project is meant to prevent that via offsite and frequent backups, but there are no guarantees that it's working properly!)
@@ -31,36 +31,34 @@ The later sections about the [Valheim Server Software](##background-and-options-
 
 ## Table of Contents
 
-* [Why use a dedicated server?](#why-use-a-dedicated-server)
-* [What does Cloudheim do?](#what-does-cloudheim-do)
-* [Who should use Cloudheim?](#who-should-use-cloudheim)
-* [Table of Contents](#table-of-contents)
-* [Setup](#setup)
-  * [Prereqs](#prereqs)
-  * [Install Node.js](#install-nodejs)
-  * [Install Cloudheim](#install-cloudheim)
-  * [Get some AWS credentials](#get-some-aws-credentials)
-  * [Install the AWS CLI](#install-the-aws-cli)
-  * [Install and bootstrap the AWS CDK](#install-and-bootstrap-the-aws-cdk)
-  * [](#)
-* [Background and options for Valehim dedicated servers](#background-and-options-for-valehim-dedicated-servers)
-  * [Vanilla server limitations](#vanilla-server-limitations)
-  * [FancyServer: A crowd-sourced alternative](#fancyserver-a-crowd-sourced-alternative)
-* [Dedicated server hosting options](#dedicated-server-hosting-options)
-  * [Locally](#locally)
-  * [Valheim-as-a-Service (VaaS)](#valheim-as-a-service-vaas)
-  * [Using a generic cloud provider](#using-a-generic-cloud-provider)
+- [Why use a dedicated server?](#why-use-a-dedicated-server)
+- [What does Cloudheim do?](#what-does-cloudheim-do)
+- [Who should use Cloudheim?](#who-should-use-cloudheim)
+- [Table of Contents](#table-of-contents)
+- [Setup](#setup)
+  - [Prereqs](#prereqs)
+  - [Install Node.js](#install-nodejs)
+  - [Install Cloudheim](#install-cloudheim)
+  - [Get some AWS credentials](#get-some-aws-credentials)
+  - [Install the AWS CLI](#install-the-aws-cli)
+  - [Install and bootstrap the AWS CDK](#install-and-bootstrap-the-aws-cdk)
+  - [](#)
+- [Background and options for Valehim dedicated servers](#background-and-options-for-valehim-dedicated-servers)
+  - [Vanilla server limitations](#vanilla-server-limitations)
+  - [FancyServer: A crowd-sourced alternative](#fancyserver-a-crowd-sourced-alternative)
+- [Dedicated server hosting options](#dedicated-server-hosting-options)
+  - [Locally](#locally)
+  - [Valheim-as-a-Service (VaaS)](#valheim-as-a-service-vaas)
+  - [Using a generic cloud provider](#using-a-generic-cloud-provider)
 
 ## Setup
 
 Getting Cloudheim up is a technical process. I'll try to include all the stuff you need in the rest of this section, but it'll undoubtedly be incomplete and you'll need to prepare yourself for some serious debugging!
 
-
 ### Prereqs
 
 - An [Amazon Web Services account](https://aws.amazon.com/). Accounts are free, but the resources you use might not be!
 - Basic knowledge about using terminals and terminal commands. (If you know what `cd` (Linux) or `dir` (Windows) do, you're probably in a good spot.)
-
 
 ### Install Node.js
 
@@ -68,11 +66,11 @@ Cloudheim runs using [Node.js](https://nodejs.org/en/). You'll need to have an a
 
 Make sure that Node is working correctly by opening a terminal and running `node -v`. If you get an error or an older version of Node, you've got some debugging to do.
 
-> 💡 I highly recommend using [Volta.sh](https://volta.sh/) or [nvm](https://github.com/nvm-sh/nvm/blob/master/README.md). Both of these allow you to run *multiple versions* of Node, choosing whichever one is most appropriate for any given project. Volta is easier to set up and works a bit more transparently, so that's probably the best option.
+> 💡 I highly recommend using [Volta.sh](https://volta.sh/) or [nvm](https://github.com/nvm-sh/nvm/blob/master/README.md). Both of these allow you to run _multiple versions_ of Node, choosing whichever one is most appropriate for any given project. Volta is easier to set up and works a bit more transparently, so that's probably the best option.
 
 ### Install Cloudheim
 
-- [ ] *TODO: Package up Cloudheim as an npm package for easy distribution*
+- [ ] _TODO: Package up Cloudheim as an npm package for easy distribution_
 
 ### Get some AWS credentials
 
@@ -80,7 +78,7 @@ The AWS Identity and Access Management (IAM) system is pretty complicated, since
 
 The [AWS CLI setup instructions](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-prereqs.html) include step-by-step info for creating an admin user with tons of access to your account. That isn't the most secure approach, but it'll definitely give you the permissions you need!
 
-- [ ] *TODO: Track down specific permissions needed to deploy Cloudheim.*
+- [ ] _TODO: Track down specific permissions needed to deploy Cloudheim._
 
 ### Install the AWS CLI
 
@@ -88,10 +86,9 @@ The AWS Command Line Interface lets you puppet your AWS account and resources fr
 
 Once installed, you'll need to [run `aws configure`](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html) and follow the prompts to add the credentials you created previously.
 
-
 ### Install and bootstrap the AWS CDK
 
-The AWS "Cloud Development Kit" (CDK) lets you create and deploy AWS resources by *describing* them. Unfortunately you have to know a lot of things about AWS to do all of that describing, which is where Cloudheim comes in: its whole purpose is to do all of the work describing your Valheim deployments, via the CDK.
+The AWS "Cloud Development Kit" (CDK) lets you create and deploy AWS resources by _describing_ them. Unfortunately you have to know a lot of things about AWS to do all of that describing, which is where Cloudheim comes in: its whole purpose is to do all of the work describing your Valheim deployments, via the CDK.
 
 To install it, run `npm install --global aws-cdk-lib` in your terminal.
 
@@ -99,16 +96,13 @@ The CDK requires [a "bootstrapping" process](https://docs.aws.amazon.com/cdk/v2/
 
 Run `cdk bootstrap aws://ACCOUNT-NUMBER/REGION` to bootstrap it, plugging in your own Account ID (copyable from the top-right account dropdown menu in the AWS web UI) and the region in which you'll be deploying resources (e.g. `us-east-1`).
 
-> 💰 Note that the cost of AWS resources varies dramatically by region. And so does your *latency* (since a server far away from you has to send data a lot farther)). If you're in Central or Eastern US, `us-east-2` is a great choice -- it's as low-cost as `us-east-1` but less popular, so you can [Spot Instances](https://aws.amazon.com/ec2/spot/) even more cheaply.
+> 💰 Note that the cost of AWS resources varies dramatically by region. And so does your _latency_ (since a server far away from you has to send data a lot farther)). If you're in Central or Eastern US, `us-east-2` is a great choice -- it's as low-cost as `us-east-1` but less popular, so you can [Spot Instances](https://aws.amazon.com/ec2/spot/) even more cheaply.
 
-*See the [official AWS CDK docs](https://docs.aws.amazon.com/cdk/v2/guide/getting_started.html) for more information.*
+_See the [official AWS CDK docs](https://docs.aws.amazon.com/cdk/v2/guide/getting_started.html) for more information._
 
-- [ ] *TODO: When deploying Cloudheim as a package, include the CDK as a peer dependency. Or, even better, supply a built-in CLI command that uses it.*
+- [ ] _TODO: When deploying Cloudheim as a package, include the CDK as a peer dependency. Or, even better, supply a built-in CLI command that uses it._
 
-### 
-
-
-
+###
 
 ## Background and options for Valehim dedicated servers
 
@@ -128,14 +122,14 @@ The standalone Valheim server provided through Steam is super bare-bones, and th
 
 **Bonus Missing Features**
 
-- Event handlers. The game streams event data to STDOUT, but doesn't provide a way for you to *use* that data. For example, you can't trigger a Discord message when someone joins the server.
+- Event handlers. The game streams event data to STDOUT, but doesn't provide a way for you to _use_ that data. For example, you can't trigger a Discord message when someone joins the server.
 - Mod management. You'll have to figure out how to install and manage mods yourself.
 
 Basically, if you run the vanilla Valheim server software you'll either have a lot of work to do to make it reliably run, or you'll be doing a lot of manual reboots and updating.
 
 ### FancyServer: A crowd-sourced alternative
 
-Members of the Valheim community have developed a [Valheim Server in a Docker Container](https://github.com/lloesche/valheim-server-docker). It doesn't have a name, so I'll just be calling it "FancyServer". It comes with *all* the bells and whistles listed above, plus a lot of other things.
+Members of the Valheim community have developed a [Valheim Server in a Docker Container](https://github.com/lloesche/valheim-server-docker). It doesn't have a name, so I'll just be calling it "FancyServer". It comes with _all_ the bells and whistles listed above, plus a lot of other things.
 
 The FancyServer is basically another piece of software that runs the vanilla Valheim server for you and then adds extra features on top.
 
@@ -175,7 +169,7 @@ Running a Valheim server on your own computer, or a spare one you've got laying 
 
 One of those modern webtech buzzwords is "[thing]-as-a-Service", basically where someone has solved a whole bunch of stuff about [thing] for you so that you can skip ahead to the part you care about.
 
-Valheim is no different. There are *tons* of services that will host Valheim for you, typically in the range of $10-$20 USD/month depending on the service and how beefy of a machine you rent.
+Valheim is no different. There are _tons_ of services that will host Valheim for you, typically in the range of $10-$20 USD/month depending on the service and how beefy of a machine you rent.
 
 Choosing the service that gets you what you want will be the biggest challenge. The best services give you a super slick experience, so for the Pros/Cons section I'll assume you're going with one of those.
 
@@ -203,7 +197,7 @@ Choosing the service that gets you what you want will be the biggest challenge. 
 
 While that list of cons seems long, those are minor gripes that most people will be just fine with.
 
-> 💡 Spending your time to manage a Valheim server is *never* free: it costs *your time*! Don't forget to take that into account when deciding whether paying for a service is worth it. A service will save you *hours*, potentially *many* hours. In the long run it's probably cheaper to use an existing VaaS.
+> 💡 Spending your time to manage a Valheim server is _never_ free: it costs _your time_! Don't forget to take that into account when deciding whether paying for a service is worth it. A service will save you _hours_, potentially _many_ hours. In the long run it's probably cheaper to use an existing VaaS.
 
 ### Using a generic cloud provider
 
@@ -213,16 +207,16 @@ Using "the cloud" (i.e. "someone else's computer") to run your Valheim server he
 
 **Pros**
 
-- You have *tons* of choices available, so you can go with whatever best matches your knowledge and budget
+- You have _tons_ of choices available, so you can go with whatever best matches your knowledge and budget
 - You'll very likely be paying for it, though there are ways to get the cost pretty low if you're familiar with cloud services
 - Likely cheaper in direct hosting costs than using VaaS
 - You're using someone else's resources
 - You aren't opening up your local network
 - It might be easier to set up a FancyServer than doing so on your own machine, depending on the cloud service
- 
+
 **Cons**
 
-- You'll be spending a lot more of your *time* getting things set up and keeping it running
+- You'll be spending a lot more of your _time_ getting things set up and keeping it running
 - Unless you use FancyServer and know how to set it up on a remote machine, you'll be stuck with all of the same stability problems as running locally (getting it to auto-update, reboot itself, etc)
 - Debugging stuff that goes wrong can be incredibly difficult, even if you're knowledgeable about cloud services
 - You'll still have to solve all of the problems around making sure the server stays up and alive

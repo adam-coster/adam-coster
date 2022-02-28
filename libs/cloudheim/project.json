@@ -1,0 +1,25 @@
+{
+  "root": "libs/cloudheim",
+  "sourceRoot": "libs/cloudheim/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/cloudheim",
+        "main": "libs/cloudheim/src/index.ts",
+        "tsConfig": "libs/cloudheim/tsconfig.lib.json",
+        "assets": ["libs/cloudheim/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/cloudheim/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}
