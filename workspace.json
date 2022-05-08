@@ -1,8 +1,0 @@
-{
-  "version": 2,
-  "projects": {
-    "cloudheim": "libs/cloudheim",
-    "shared-utility": "libs/shared/utility",
-    "valheim": "apps/valheim"
-  }
-}

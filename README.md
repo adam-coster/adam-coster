@@ -10,12 +10,6 @@ I'm a fullstack web developer and DevOps enthusiast, but also spend a lot of my 
 
 I'm embracing the monorepo lifestyle, and so this repo will accumulate stuff I create for work. Most of the stuff I create *is* for work, so at any given moment there might not be much of anything in here.
 
-I've set this up as an [nx](https://nx.dev) monorepo, grouping things into two major root folders:
-
-- [apps](/apps) - Deployable things.
-- [libs](/libs) - Stuff used by deployable things.
-
----
 
 ## Other stuff I've made
 

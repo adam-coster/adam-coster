@@ -2,13 +2,6 @@
   "name": "adam-coster",
   "private": true,
   "devDependencies": {
-    "@codebrew/nx-aws-cdk": "^1.0.3",
-    "@nrwl/cli": "13.8.3",
-    "@nrwl/eslint-plugin-nx": "13.8.3",
-    "@nrwl/js": "13.8.3",
-    "@nrwl/linter": "13.8.3",
-    "@nrwl/tao": "13.8.3",
-    "@nrwl/workspace": "13.8.3",
     "@types/node": "16.11.7",
     "@typescript-eslint/eslint-plugin": "~5.10.0",
     "@typescript-eslint/parser": "~5.10.0",
@@ -16,7 +9,6 @@
     "eslint-config-prettier": "8.1.0",
     "eslint-plugin-cdk": "^1.3.0",
     "prettier": "^2.5.1",
-    "tsconfig-paths": "^3.12.0",
     "typescript": "~4.5.2"
   },
   "dependencies": {
@@ -27,7 +19,6 @@
     "aws-cdk-lib": "^2.14.0",
     "change-case": "^4.1.2",
     "constructs": "^10.0.74",
-    "discord-webhook-ts": "^5.0.0",
     "node-fetch": "^3.2.0"
   }
 }
