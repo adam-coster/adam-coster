@@ -1,0 +1,12 @@
+# FROM SVELTEKIT
+
+.DS_Store
+node_modules
+.svelte-kit
+build
+functions
+static/previews
+static/articles-metadata.json
+static/articles-search.json
+static/feeds
+static/sitemap.xml
