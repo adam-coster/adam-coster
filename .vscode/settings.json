@@ -1,5 +1,12 @@
 {
   "markdown.extension.tableFormatter.enabled": false,
+  "markdown.extension.toc.downcaseLink": true,
+  "markdown.extension.toc.orderedList": false,
+  "markdown.extension.toc.levels": "2..6",
+  "markdown.extension.toc.updateOnSave": true,
+  "markdown.extension.toc.slugifyMode": "github",
+  "markdown.extension.list.indentationSize": "adaptive",
+  "markdown.extension.syntax.decorations": true,
   "json.schemas": [
     {
       "fileMatch": ["cdk.json"],
@@ -10,11 +17,47 @@
       "url": "https://raw.githubusercontent.com/tinovyatkin/aws-toolkit-vscode/feature/cdk-json-schema/src/cdk/schema/cdk.json"
     }
   ],
-  "markdown.extension.toc.downcaseLink": true,
-  "markdown.extension.toc.orderedList": false,
-  "markdown.extension.toc.levels": "2..6",
-  "markdown.extension.toc.updateOnSave": true,
-  "markdown.extension.toc.slugifyMode": "github",
-  "markdown.extension.list.indentationSize": "adaptive",
-  "markdown.extension.syntax.decorations": true
+  "files.exclude": {
+    "tmp/": true,
+    "**/node_modules": true,
+    "**/.turbo": true,
+    "**/*.tsbuildinfo": true,
+    "**/dist": true,
+    "**/build": true
+  },
+  "search.exclude": {
+    "**/package-lock.json": true,
+    "**/node_modules": true,
+    "**/dist": true
+  },
+  "explorer.fileNesting.patterns": {
+    "*.js": "$(capture).*",
+    "*.ts": "$(capture).*",
+    "*.mjs": "$(capture).*",
+    "*.cjs": "$(capture).*",
+    "*rc": "$(capture)ignore",
+    "package.json": "workspace.json, lerna.*, readme.md, executors.json, generators.json, nx.json, package-lock.json,.gitignore, .*, tsconfig.*, turbo.json",
+    "tsconfig.json": "tsconfig.*.json",
+    "readme.md": "todo*, changelog*, license*, contributing*"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": false,
+    "source.organizeImports": false,
+    "source.fixAll": false,
+    "source.addMissingImports": false
+  },
+  "javascript.preferences.importModuleSpecifierEnding": "js",
+  "typescript.preferences.importModuleSpecifierEnding": "js",
+  "javascript.preferences.importModuleSpecifier": "project-relative",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "debug.javascript.terminalOptions": {
+    "skipFiles": ["<node_internals>/**"],
+    "sourceMaps": true,
+    "remoteRoot": null
+  }
 }

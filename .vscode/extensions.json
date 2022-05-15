@@ -1,3 +1,27 @@
 {
-  "recommendations": ["esbenp.prettier-vscode", "dbaeumer.vscode-eslint"]
+  "recommendations": [
+    "aaron-bond.better-comments",
+    "albert.tabout",
+    "augustocdias.tasks-shell-input",
+    "bierner.comment-tagged-templates",
+    "bierner.jsdoc-markdown-highlighting",
+    "britesnow.vscode-toggle-quotes",
+    "dbaeumer.vscode-eslint",
+    "ecmel.vscode-html-css",
+    "eg2.vscode-npm-script",
+    "esbenp.prettier-vscode",
+    "github.copilot",
+    "mikestead.dotenv",
+    "mrmlnc.vscode-json5",
+    "redhat.vscode-commons",
+    "redhat.vscode-yaml",
+    "shd101wyy.markdown-preview-enhanced",
+    "streetsidesoftware.code-spell-checker",
+    "visualstudioexptteam.vscodeintellicode",
+    "vlkoti.vscode-sourcemaps-navigator",
+    "vncz.vscode-apielements",
+    "vue.volar",
+    "wmaurer.change-case",
+    "yzhang.markdown-all-in-one"
+  ]
 }
