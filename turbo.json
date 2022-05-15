@@ -1,0 +1,25 @@
+{
+  "$schema": "https://turborepo.org/schema.json",
+  "baseBranch": "origin/develop",
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", "out/**", "build/**", "app/**"]
+    },
+    "watch": {
+      "dependsOn": ["^watch"],
+      "outputs": [],
+      "cache": false
+    },
+    "test": {
+      "dependsOn": ["build"],
+      "outputs": []
+    }
+  },
+  "globalDependencies": [
+    ".env",
+    "tsconfig.json",
+    "$GITHUB_TOKEN",
+    "package.json"
+  ]
+}
