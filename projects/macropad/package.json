@@ -5,5 +5,12 @@
   "type": "module",
   "scripts": {
     "load": "node --loader ts-node/esm load.ts"
+  },
+  "dependencies": {
+    "tslib": "^2.4.0"
+  },
+  "devDependencies": {
+    "drivelist": "^9.2.4",
+    "fs-extra": "^10.1.0"
   }
 }
