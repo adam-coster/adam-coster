@@ -15,6 +15,7 @@
     faLightbulb,
     faLink,
     faPodcast,
+    faGraduationCap,
   } from '@fortawesome/free-solid-svg-icons';
 
   /**
@@ -132,6 +133,12 @@
       url: 'https://www.gamasutra.com/blogs/author/AdamCoster/1019512/',
       name: 'Gamasutra',
       icon: faLink,
+      type: 'social',
+    },
+    {
+      url: 'https://scholar.google.com/citations?hl=en&user=cU1y6RoAAAAJ',
+      name: 'Google Scholar',
+      icon: faGraduationCap,
       type: 'social',
     },
   ];

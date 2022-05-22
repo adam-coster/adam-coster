@@ -12,18 +12,33 @@
 <script lang="ts">
   import Nav from '$lib/Nav.svelte';
   import { fade } from 'svelte/transition';
-
   export let key: string;
 </script>
 
-<Nav placement="header" />
+<!-- Header -->
+<header>
+  <a href="#main" id="skip-nav">skip to main content</a>
+  <a
+    href="/"
+    class="logo"
+    role="img"
+    aria-label="Text 'Adam Coster' as a site logo."
+  >
+    <span class="firstname">adam</span><span class="lastname">coster</span><span
+      class="domain">.com</span
+    >
+  </a>
+  <Nav placement="header" />
+</header>
 
+<!-- Main Slot (changes by URL) -->
 {#key key}
-  <main in:fade={{ duration: 250 }}>
+  <main id="main" in:fade={{ duration: 250 }}>
     <slot />
   </main>
 {/key}
 
+<!-- Footer -->
 <footer>
   <Nav placement="footer" />
   <p class="copyright center" aria-label="Copyright notice">
@@ -37,6 +52,42 @@
 <style lang="scss">
   :global {
     @import '../style/global';
+  }
+  #skip-nav {
+    padding: 8px;
+    position: absolute;
+    transform: translateY(-300%);
+    transition: transform 0.2s;
+  }
+  #skip-nav:focus {
+    transform: translateY(-100%);
+  }
+  a.logo {
+    --local-size: calc(2.5 * var(--size));
+    display: block;
+    margin: auto;
+    text-align: center;
+    font-size: var(--local-size);
+
+    @media screen and (max-width: 500px) {
+      display: flex;
+      flex-direction: column;
+      span {
+        margin-top: calc(var(--size) * -0.5);
+        margin-bottom: calc(var(--size) * -1);
+      }
+    }
+    .firstname {
+      color: var(--color-link);
+      font-weight: bold;
+    }
+    .lastname {
+      color: var(--color-link-hover);
+      font-weight: bold;
+    }
+    .domain {
+      color: var(--color-subtle);
+    }
   }
   main {
     flex-grow: 1;

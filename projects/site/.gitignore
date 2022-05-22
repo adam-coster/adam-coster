@@ -10,3 +10,4 @@ static/articles-metadata.json
 static/articles-search.json
 static/feeds
 static/sitemap.xml
+static/articles.*

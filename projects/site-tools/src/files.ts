@@ -13,8 +13,9 @@ export async function writeJson(
 
 export function listArticleUrls(folder: string) {
   const files = listFilesByExtensionSync(folder, 'md');
-  return files.map((f) => {
+  const urls = files.map((f) => {
     const asUrl = `/articles/${path.basename(f, '.md')}` as const;
     return asUrl;
   });
+  return urls;
 }

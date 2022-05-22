@@ -1,6 +1,102 @@
 # TODO
 
-## Valheim Servers
+## Website
 
-- Add the `docker-compose` as an S3 asset (I think?) so that it can be deployed to environments
-- Code up the environments along with appropriate environment variables and other config options
+- Milestone: Square 1
+  - ~~Add search to articles~~
+  - ~~Style the articles-listing page~~
+  - ~~Style article pages~~
+  - ~~Change the fuchsia tag color to something less BLINDING~~
+  - ~~Stop loading small images in the main portrait, since if it loads when small then the expanded image is blurry AF~~
+  - ~~Fix tag links, now that I've BROKEN THAT~~
+  - ~~Add tag links to post pages~~
+  - ~~Add article page microdata~~
+  - ~~Add text labels to nav icons~~
+  - ~~Improve spacing on nav icons~~
+  - ~~Look into article microdata -- any other useful info I can add? Update microdata.~~
+  - ~~Add cross-post & canonical URLs to article pages~~
+    - ~~Re-build index and ensure canonical URLs work~~
+  - ~~Test ability to follow an internal link to another post~~
+  - ~~Nuke the dev.to raw data + script (to prevent accidental overwrite)~~
+  - ~~Add descriptions to all articles migrated from dev.to~~
+    - ~~silently-skipped-async-tests-mochajs,~~
+    - ~~change-a-url-without-breaking-existing-links,~~
+    - ~~create-a-live-reload-server-for-front-end-development,~~
+    - ~~devchat-2-piracy-corporations-and-pretty-javascript-strings,~~
+    - ~~documentation-as-code,~~
+    - ~~how-email-previews-work,~~
+    - ~~how-to-run-linux-on-windows-10-using-wsl2,~~
+    - ~~how-to-set-up-a-node-project-with-typescript,~~
+    - ~~how-to-stringify-class-instances-in-javascript-and-express-js,~~
+    - ~~joyful-coding-vscode-extensions-settings,~~
+    - ~~laziness-isn-t-real,~~
+    - ~~how-binary-encoding-works,~~
+    - ~~multi-display-workstations-boost-productivity-without-breaking-your-neck,~~
+    - ~~prettify-your-javascript-strings,~~
+    - ~~resolving-e404-on-global-install-of-a-private-npm-package-linux,~~
+    - ~~save-time-and-make-fewer-mistakes-with-snippets,~~
+    - ~~setting-up-windows-10-for-web-development-including-docker-linux-and-node-js,~~
+    - ~~sign-in-with-apple-implementation-hurdles,~~
+    - ~~super-charge-email-google-workspace,~~
+    - ~~tech-debt-the-bill-comes-due,~~
+    - ~~the-typescript-as-const-trick,~~
+    - ~~typescript-starter-kit-get-up-and-running-quickly,~~
+  - ~~Migrate stuff from my old blog~~
+  - ~~Style footnotes~~
+  - ~~Style figures & captions~~
+  - ~~Style block quotes~~
+  - ~~Style tables~~
+  - ~~Implement legacy link redirects~~
+  - ~~Add a `/whoami` page~~
+  - ~~Update README and main page~~
+  - ~~Swap out MDSVX for custom preprocessing~~
+    - ~~Get syntax highlighting working~~
+    - ~~Get Footnotes working (probably a custom job)~~
+  - ~~Create and include a Favicon~~
+  - ~~Complete build pipeline~~
+    - ~~Finish updating indexer, and run it in the svelte config~~
+    - ~~Resolve build issues~~
+      - ~~Article content is not being pre-rendered~~
+      - ~~Ensure all pages get built (feed article urls to builder)~~
+      - ~~Title is not being updated in headers~~
+    - ~~Generate feeds~~
+    - ~~Add feeds to <link>s in the header~~
+    - ~~Create sitemap & preview images~~
+- Milestone: Deployable
+  - Get built and deploying in GitHub pages, via the default GitHub URL
+    - Test legacy URL redirects
+    - Have NO ROBOTS always be true when not on the canonical location
+    - Test all pages
+- Milestone: Deployed
+  - Get Google Search ownership working
+  - Update all Dev.to posts to set new canonical URL
+  - Update Medium posts to set new canonical URL
+- Miscellaneous future features
+  - Have the Podcast link go to a page explaining the podcast
+  - Add a `/uses` page
+  - Add a [skip link](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#skip_links)
+  - Create an identity graph linking all of my digital identities together
+  - Make headings clickable (to get direct links).
+  - Reorganize to get rid of the multi-package setup
+  - Find other articles and migrate
+    - Sources:
+      - The Bscotch blog (pull down with script)
+      - Gamasutra (only a few, may also already be on the Bscotch blog)
+    - Process
+      - Find those worth migrating
+      - Find all cross-posted URLs for each
+      - Update internal URLs
+      - Choose appropriate canonical URL
+      - Choose appropriate title & slug
+      - Create a description
+  - Add share buttons to article pages
+  - Add links back to source on GitHub
+  - Add print styling
+  - Add "light" color scheme (and maybe others)
+  - Add distinct page linking to _all_ web service identifiers
+  - Add distinct page for code projects with info
+  - Add "advanced" search info to articles (list allowed fields, link to [lunr docs](https://lunrjs.com/guides/searching.html))
+  - Create a tag hierarchy system and ensure all articles match it
+  - Update header to either remove my portrait or make it part of the navbar
+  - Add TOOLS section with useful web-based tools
+    - Zapier code editor (the built-in one has no Intellisense). Is this hard to do?

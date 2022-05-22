@@ -4,15 +4,16 @@
 :root {
   /* Colors */
   --color-background: rgb(24, 24, 24);
-  --color-text: rgb(255, 184, 53);
-  --color-subtle: rgb(165, 129, 112);
+  --color-text: rgb(225, 232, 208);
+  --color-subtle: rgb(155, 155, 155);
+  --color-header: rgb(140, 149, 241);
 
   --color-list-marker: var(--color-subtle);
 
-  --color-inline-code: rgb(255, 151, 53);
+  --color-inline-code: rgb(246, 119, 252);
   --color-background-inline-code: black;
 
-  --color-link: rgb(173, 199, 57);
+  --color-link: rgb(57, 156, 199);
   --color-link-hover: rgb(83, 207, 207);
   --color-link-underline: var(--color-link);
 
@@ -35,10 +36,10 @@
 
   /* HEADERS */
   --font-size-h6: calc(var(--size) * 1);
-  --font-size-h5: calc(var(--size) * 1.1);
-  --font-size-h4: calc(var(--size) * 1.25);
-  --font-size-h3: calc(var(--size) * 1.5);
-  --font-size-h2: calc(var(--size) * 1.75);
+  --font-size-h5: calc(var(--size) * 1);
+  --font-size-h4: calc(var(--size) * 1.1);
+  --font-size-h3: calc(var(--size) * 1.3);
+  --font-size-h2: calc(var(--size) * 1.5);
   --font-size-h1: calc(var(--size) * 2);
 
   /* INPUTS */
@@ -58,6 +59,7 @@ body {
   background-color: var(--color-background);
   color: var(--color-text);
   font-family: var(--font-family);
+  overflow-wrap: break-word;
 }
 
 /* Main content container */
@@ -76,16 +78,18 @@ h5,
 h6 {
   font-family: var(--font-family);
   font-weight: var(--font-weight-boldest);
-  margin-top: calc(var(--size) * 0.5);
-  margin-bottom: 0;
+  margin-top: calc(var(--size));
+  margin-bottom: calc(var(--size) * 0.5);
+  text-align: center;
+  color: var(--color-header);
 }
 
 h1 {
-  color: var(--color-background);
-  background-color: var(--color-text);
-  border-radius: var(--border-radius);
-  padding: calc(var(--font-size-h1) * 0.1) calc(var(--font-size-h1) * 0.5);
-  text-align: center;
+  // color: var(--color-background);
+  // background-color: var(--color-text);
+  // border-radius: var(--border-radius);
+  // padding: calc(var(--font-size-h1) * 0.1) calc(var(--font-size-h1) * 0.5);
+  // text-align: center;
 }
 
 h3,
@@ -203,6 +207,7 @@ svg.svelte-fa {
     & a {
       display: flex;
       flex-direction: column;
+      align-items: center;
     }
   }
   .nav-link a,
@@ -211,6 +216,8 @@ svg.svelte-fa {
     &:hover {
       color: var(--color-link);
     }
+  }
+  .nav-link.home-link {
   }
 }
 

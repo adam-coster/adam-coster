@@ -1,5 +1,5 @@
-<script lang="ts">
-  interface ImageSource {
+<script lang="ts" context="module">
+  export interface ImageSource {
     /** URI for the image */
     url: string;
     /**
@@ -12,8 +12,11 @@
      */
     pixelDensity: number;
   }
+</script>
+
+<script lang="ts">
   export let width: number;
-  export let height: number;
+  export let height: number | 'auto' = 'auto';
   /**
    * The baseline src image, which should have
    * aspect ratio specified by `width` & `height`,
