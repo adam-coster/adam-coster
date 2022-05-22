@@ -34,7 +34,8 @@
 </script>
 
 <script lang="ts">
-  import Head, { metadata, Metadata } from '$lib/Head.svelte';
+  import type { Metadata } from '$lib/Head.svelte';
+  import Head, { metadata } from '$lib/Head.svelte';
   import {
     dateIsLater,
     getUrlHostName,

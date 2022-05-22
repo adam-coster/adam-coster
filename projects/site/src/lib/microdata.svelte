@@ -1,10 +1,10 @@
 <script lang="ts" context="module">
-  import {
+  import type {
     ArticleSchema,
-    normalizeUrl,
     PersonSchema,
     WebSiteSchema,
   } from '$lib/Head.svelte';
+  import { normalizeUrl } from '$lib/Head.svelte';
   import { dateToIso } from './utility';
   import { digitalIdentities } from '$lib/Identities.svelte';
 

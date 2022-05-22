@@ -1,4 +1,5 @@
 <script lang="ts" context="module">
+  import type { IconDefinition } from '@fortawesome/free-brands-svg-icons';
   import {
     faDev,
     faFacebook,
@@ -8,7 +9,6 @@
     faMedium,
     faStackOverflow,
     faTwitter,
-    IconDefinition,
   } from '@fortawesome/free-brands-svg-icons';
   import {
     faGlobe,

@@ -1,4 +1,4 @@
-import type { ArticleFrontMatter } from '$lib/types/Article';
+import type { ArticleFrontMatter } from '@adam-coster/site-tools';
 import type { LoadInput } from '@sveltejs/kit';
 import * as lunr from 'lunr';
 import { asDateIfExists } from './utility';

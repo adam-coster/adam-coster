@@ -3,7 +3,7 @@
   import { assert } from './assertions';
   import { mode } from '$app/env';
   import type { Person, WithContext, WebSite, Article } from 'schema-dts';
-  import type { OneOrMore, RequiredBy } from './types/Utility';
+  import type { OneOrMore, RequiredBy } from '@adam-coster/site-tools';
   import { ensureArray } from './utility';
   import { productionHost } from './constants';
 

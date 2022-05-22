@@ -1,11 +1,7 @@
 <script lang="ts">
   import Head, { metadata } from '$lib/Head.svelte';
-
-  import {
-    digitalIdentities,
-    identityTypes,
-    IdentityType,
-  } from '$lib/Identities.svelte';
+  import type { IdentityType } from '$lib/Identities.svelte';
+  import { digitalIdentities, identityTypes } from '$lib/Identities.svelte';
   import { me } from '$lib/microdata.svelte';
   import Icon from 'svelte-fa';
 

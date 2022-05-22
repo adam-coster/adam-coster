@@ -1,4 +1,4 @@
-import type { OneOrMore } from '$lib/types/Utility';
+import type { OneOrMore } from '@adam-coster/site-tools';
 
 export function ensureArray<T>(value: OneOrMore<T>): T[] {
   if (typeof value === 'undefined') {
