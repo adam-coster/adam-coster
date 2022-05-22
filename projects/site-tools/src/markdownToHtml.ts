@@ -1,5 +1,6 @@
 import { unified } from 'unified';
 import { parse as parseHtml } from 'node-html-parser';
+// @ts-expect-error
 import hljsJson from 'highlight.js/lib/languages/json';
 import rehypeHighlight from 'rehype-highlight';
 import rehypeStringify from 'rehype-stringify';

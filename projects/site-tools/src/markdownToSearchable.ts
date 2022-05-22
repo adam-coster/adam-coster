@@ -8,12 +8,12 @@
 
 import grayMatter from 'gray-matter';
 import removeMarkdown from 'remove-markdown';
-import type { ArticleFrontMatter } from '$lib/types/Article.js';
+import type { ArticleFrontMatter } from './types/Article.js';
 
 const singlelineCommentPattern = /(?<!["'])(\/\/|#)(?<comment>.*)/;
 const multilineCommentPattern = /(?<!["'])\/\*(?<comment>.*?)\*\//;
 
-export function markdownToSearchable(
+export function searchableTextFromMarkdown(
   rawMarkdown: string,
 ): ArticleFrontMatter & { body: string } {
   const { data, content } = grayMatter(rawMarkdown) as {

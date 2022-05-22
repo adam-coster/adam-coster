@@ -6,34 +6,35 @@ env:
   node: true
 parserOptions:
   ecmaVersion: latest
-  parser: "@typescript-eslint/parser"
+  parser: '@typescript-eslint/parser'
   sourceType: module
+  createDefaultProgram: true
   project:
-    - "./tsconfig.json"
-    - "./projects/**/tsconfig.json"
-    - "**/tsconfig.json"
+    - './tsconfig.json'
+    - './projects/**/tsconfig.json'
+    - '**/tsconfig.json'
 plugins:
-  - "@typescript-eslint"
+  - '@typescript-eslint'
   - prettier
 extends:
   - eslint:recommended
   - plugin:@typescript-eslint/recommended
 ignorePatterns:
-  - "**/*.js"
-  - "**/*.ts"
-  - "**/*.mjs"
-  - "**/*.cjs"
-  - "!projects/*/*.js"
-  - "!projects/**/src/**/*.js"
-  - "!projects/**/src/**/*.ts"
+  - '**/*.js'
+  - '**/*.ts'
+  - '**/*.mjs'
+  - '**/*.cjs'
+  - '!projects/*/*.js'
+  - '!projects/**/src/**/*.js'
+  - '!projects/**/src/**/*.ts'
 
 rules:
-  "@typescript-eslint/no-floating-promises": error
-  "@typescript-eslint/no-extra-semi": off
-  "@typescript-eslint/no-namespace": off
-  "@typescript-eslint/ban-ts-comment": warn
-  "@typescript-eslint/no-empty-interface": off
-  "@typescript-eslint/ban-types":
+  '@typescript-eslint/no-floating-promises': error
+  '@typescript-eslint/no-extra-semi': off
+  '@typescript-eslint/no-namespace': off
+  '@typescript-eslint/ban-ts-comment': warn
+  '@typescript-eslint/no-empty-interface': off
+  '@typescript-eslint/ban-types':
     - warn
     - types:
         Boolean:
@@ -43,7 +44,7 @@ rules:
           fixWith: number
           message: Use number instead
         Object:
-          fixWith: "{}"
+          fixWith: '{}'
           message: "'Object' means 'any nullish value'."
         String:
           fixWith: string
@@ -51,13 +52,13 @@ rules:
         Symbol:
           fixWith: symbol
           message: Use symbol instead
-  "@typescript-eslint/no-empty-function": warn
-  "@typescript-eslint/no-explicit-any": off
-  "@typescript-eslint/no-misused-new": off
-  "@typescript-eslint/no-non-null-assertion": off
-  "@typescript-eslint/no-this-alias": off
-  "@typescript-eslint/no-unused-vars": warn
-  "@typescript-eslint/no-var-requires": off
+  '@typescript-eslint/no-empty-function': warn
+  '@typescript-eslint/no-explicit-any': off
+  '@typescript-eslint/no-misused-new': off
+  '@typescript-eslint/no-non-null-assertion': off
+  '@typescript-eslint/no-this-alias': off
+  '@typescript-eslint/no-unused-vars': warn
+  '@typescript-eslint/no-var-requires': off
   camelcase: off
   comma-dangle:
     - error

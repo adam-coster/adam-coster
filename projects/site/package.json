@@ -5,16 +5,15 @@
   "type": "module",
   "scripts": {
     "build": "svelte-kit build",
+    "watch": "svelte-kit dev",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
-    "dev": "svelte-kit dev",
-    "preview": "npm run build && svelte-kit preview"
+    "preview": "svelte-kit preview"
   },
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^6.1.1",
     "@fortawesome/free-regular-svg-icons": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
-    "fa-svelte": "^3.1.0",
     "just-debounce": "^1.1.0",
     "svelte-fa": "^2.4.0"
   },

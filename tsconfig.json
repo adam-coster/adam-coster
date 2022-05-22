@@ -2,6 +2,7 @@
   "include": [],
   "compileOnSave": false,
   "compilerOptions": {
+    "target": "ESNext",
     "composite": true,
     "declaration": true,
     "declarationMap": true,
@@ -21,7 +22,6 @@
     "sourceMap": true,
     // "inlineSourceMap": true,
     "strict": true,
-    "target": "ESNext",
     "types": ["node"],
     "typeRoots": ["./node_modules/@types"],
     "useUnknownInCatchVariables": true

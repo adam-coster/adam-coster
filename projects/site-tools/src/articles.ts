@@ -8,18 +8,13 @@
 
 import fs from 'fs/promises';
 import lunr from 'lunr';
-import type {
-  ArticleFrontMatter,
-  ArticleIndexEntry,
-} from '$lib/types/Article.js';
-import { articlesDir, feedsDir, staticDir } from './project.js';
-import { markdownToSearchable } from './markdownToSearchable.js';
-import pick from 'just-pick';
-import omit from 'just-omit';
+import type { ArticleFrontMatter, ArticleIndexEntry } from './types/Article.js';
+import { searchableTextFromMarkdown } from './markdownToSearchable.js';
+import { default as pick } from 'just-pick';
+import { default as omit } from 'just-omit';
 import path from 'path';
 import { writeJson } from './files.js';
 import { Feed } from 'feed';
-import { productionBaseUrl } from '../lib/constants.js';
 
 /**
  * For all articles, parse out the metadata to create, write, and return:
@@ -29,46 +24,51 @@ import { productionBaseUrl } from '../lib/constants.js';
  * - A JSON file containing the metadata for each article
  * - A Lunr search index for all articles
  */
-export async function generateArticleSummaries() {
-  await fs.mkdir(staticDir, { recursive: true });
-  await fs.mkdir(feedsDir, { recursive: true });
+export async function generateArticleSummaries(options: {
+  productionBaseUrl: string;
+  staticDir: string;
+  feedsDir: string;
+  articlesDir: string;
+}) {
+  await fs.mkdir(options.staticDir, { recursive: true });
+  await fs.mkdir(options.feedsDir, { recursive: true });
 
-  const baseArticlesUrl = `${productionBaseUrl}/articles`;
+  const baseArticlesUrl = `${options.productionBaseUrl}/articles`;
 
   const articlesMetadata: ArticleFrontMatter[] = [];
   const articleSearchDocs: ArticleIndexEntry[] = [];
 
   const author = {
     name: 'Adam Coster',
-    link: productionBaseUrl,
+    link: options.productionBaseUrl,
   };
   const feed = new Feed({
     title: "Adam Coster's collected writings",
     description: 'Blog posts, articles, and other writings by Adam Coster.',
-    id: productionBaseUrl,
+    id: options.productionBaseUrl,
     language: 'en',
     copyright: `Copyright © ${new Date().getFullYear()} Adam Coster. All rights reserved.`,
-    link: productionBaseUrl,
-    image: `${productionBaseUrl}/images/adam-coster-square_160.jpg`,
-    favicon: `${productionBaseUrl}/icons/favicon.png`,
+    link: options.productionBaseUrl,
+    image: `${options.productionBaseUrl}/images/adam-coster-square_160.jpg`,
+    favicon: `${options.productionBaseUrl}/icons/favicon.png`,
     generator: 'A CVS receipt printer',
     author,
     feedLinks: {
-      json: `${productionBaseUrl}/articles.json`,
-      atom: `${productionBaseUrl}/articles.atom`,
-      rss: `${productionBaseUrl}/articles.rss`,
+      json: `${options.productionBaseUrl}/articles.json`,
+      atom: `${options.productionBaseUrl}/articles.atom`,
+      rss: `${options.productionBaseUrl}/articles.rss`,
     },
   });
 
-  const filenames = (await fs.readdir(articlesDir)).filter((fileName) =>
+  const filenames = (await fs.readdir(options.articlesDir)).filter((fileName) =>
     fileName.endsWith('.md'),
   );
 
   const waits: Promise<unknown>[] = [];
   for (const filename of filenames) {
-    const filePath = path.join(articlesDir, filename);
+    const filePath = path.join(options.articlesDir, filename);
     const loader = fs.readFile(filePath, 'utf8').then((content) => {
-      const parsed = markdownToSearchable(content);
+      const parsed = searchableTextFromMarkdown(content);
       if (!parsed.publishedAt) {
         return;
       }
@@ -85,7 +85,7 @@ export async function generateArticleSummaries() {
         description: parsed.description,
         content: parsed.description,
         date: publishedAt,
-        image: `${productionBaseUrl}/previews/articles/${parsed.slug}/preview.jpg`,
+        image: `${options.productionBaseUrl}/previews/articles/${parsed.slug}/preview.jpg`,
         copyright: `Copyright © ${publishedAt.getFullYear()} Adam Coster. All rights reserved.`,
         author: [author],
         // TODO: Add categories
@@ -105,17 +105,21 @@ export async function generateArticleSummaries() {
   });
 
   await Promise.all([
-    writeJson(path.join(staticDir, `articles-search.json`), searchIndex, {
-      noSpaces: true,
-    }),
     writeJson(
-      path.join(staticDir, `articles-metadata.json`),
+      path.join(options.staticDir, `articles-search.json`),
+      searchIndex,
+      {
+        noSpaces: true,
+      },
+    ),
+    writeJson(
+      path.join(options.staticDir, `articles-metadata.json`),
       articlesMetadata,
       { noSpaces: true },
     ),
-    fs.writeFile(path.join(feedsDir, 'articles.json'), feed.json1()),
-    fs.writeFile(path.join(feedsDir, 'articles.atom'), feed.atom1()),
-    fs.writeFile(path.join(feedsDir, 'articles.rss'), feed.rss2()),
+    fs.writeFile(path.join(options.feedsDir, 'articles.json'), feed.json1()),
+    fs.writeFile(path.join(options.feedsDir, 'articles.atom'), feed.atom1()),
+    fs.writeFile(path.join(options.feedsDir, 'articles.rss'), feed.rss2()),
   ]);
 
   return {
