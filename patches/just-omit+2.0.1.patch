@@ -1,0 +1,12 @@
+diff --git a/node_modules/just-omit/package.json b/node_modules/just-omit/package.json
+index 4860819..c611e23 100644
+--- a/node_modules/just-omit/package.json
++++ b/node_modules/just-omit/package.json
+@@ -6,6 +6,7 @@
+   "module": "index.mjs",
+   "exports": {
+     ".": {
++      "types": "./index.d.ts",
+       "require": "./index.js",
+       "default": "./index.mjs"
+     }

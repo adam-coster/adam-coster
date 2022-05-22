@@ -1,0 +1,12 @@
+diff --git a/node_modules/just-pick/package.json b/node_modules/just-pick/package.json
+index 50223ce..56ae39d 100644
+--- a/node_modules/just-pick/package.json
++++ b/node_modules/just-pick/package.json
+@@ -6,6 +6,7 @@
+   "module": "index.mjs",
+   "exports": {
+     ".": {
++      "types": "./index.d.ts",
+       "require": "./index.js",
+       "default": "./index.mjs"
+     }
