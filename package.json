@@ -2,6 +2,7 @@
   "name": "adam-coster",
   "private": true,
   "type": "module",
+  "packageManager": "npm@8.10.0",
   "workspaces": [
     "projects/*"
   ],
