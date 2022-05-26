@@ -22,13 +22,13 @@
     "**/node_modules": true,
     "**/.turbo": true,
     "**/*.tsbuildinfo": true,
-    "**/dist": true,
-    "**/build": true
+    "**/dist": true
   },
   "search.exclude": {
     "**/package-lock.json": true,
     "**/node_modules": true,
-    "**/dist": true
+    "**/dist": true,
+    "**/build": true
   },
   "explorer.fileNesting.patterns": {
     "*.js": "$(capture).*",

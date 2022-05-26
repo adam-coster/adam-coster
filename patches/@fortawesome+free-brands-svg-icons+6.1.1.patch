@@ -1,0 +1,12 @@
+diff --git a/node_modules/@fortawesome/free-brands-svg-icons/package.json b/node_modules/@fortawesome/free-brands-svg-icons/package.json
+index 241f7d4..13bc350 100644
+--- a/node_modules/@fortawesome/free-brands-svg-icons/package.json
++++ b/node_modules/@fortawesome/free-brands-svg-icons/package.json
+@@ -31,6 +31,7 @@
+   "license": "(CC-BY-4.0 AND MIT)",
+   "types": "./index.d.ts",
+   "sideEffects": false,
++  "type": "module",
+   "exports": {
+     ".": {
+       "import": "./index.es.js",

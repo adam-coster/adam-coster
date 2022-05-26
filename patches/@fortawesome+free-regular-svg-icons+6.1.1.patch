@@ -1,0 +1,12 @@
+diff --git a/node_modules/@fortawesome/free-regular-svg-icons/package.json b/node_modules/@fortawesome/free-regular-svg-icons/package.json
+index 28897e8..688f51d 100644
+--- a/node_modules/@fortawesome/free-regular-svg-icons/package.json
++++ b/node_modules/@fortawesome/free-regular-svg-icons/package.json
+@@ -31,6 +31,7 @@
+   "license": "(CC-BY-4.0 AND MIT)",
+   "types": "./index.d.ts",
+   "sideEffects": false,
++  "type": "module",
+   "exports": {
+     ".": {
+       "import": "./index.es.js",
