@@ -1,4 +1,4 @@
-import adapterVercel from '@sveltejs/adapter-vercel';
+import adapter from '@sveltejs/adapter-netlify';
 import type { Config } from '@sveltejs/kit';
 import { default as preprocess } from 'svelte-preprocess';
 import { listArticleUrls } from './files.js';
@@ -21,7 +21,7 @@ export function createConfig(options: {
       markdownToSvelte,
     ],
     kit: {
-      adapter: adapterVercel(),
+      adapter: adapter(),
       prerender: {
         crawl: true,
         enabled: true,
