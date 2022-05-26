@@ -10,7 +10,7 @@
     "build": "turbo run build",
     "watch": "turbo run watch --parallel",
     "add": "npm i --no-fund --legacy-peer-deps --workspaces=false",
-    "clean": "rimraf projects/*/dist projects/*/build **/.turbo **/*.tsbuildinfo projects/**/package-lock.json projects/**/node_modules",
+    "clean": "rm -rf projects/*/dist projects/*/build projects/*/.turbo projects/*/*.tsbuildinfo projects/*/package-lock.json projects/*/node_modules",
     "fix": "treb fix --allProjects --packageJson",
     "postinstall": "patch-package",
     "prepare": "husky install",
