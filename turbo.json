@@ -4,7 +4,14 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**", "out/**", "build/**", "app/**"]
+      "outputs": [
+        "dist/**",
+        "out/**",
+        "build/**",
+        "app/**",
+        ".netlify/**",
+        ".svelte-kit/**"
+      ]
     },
     "watch": {
       "dependsOn": ["^watch"],
