@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-netlify';
+import adapter from '@sveltejs/adapter-auto';
 import type { Config } from '@sveltejs/kit';
 import { default as preprocess } from 'svelte-preprocess';
 import { listArticleUrls } from './files.js';

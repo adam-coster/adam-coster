@@ -27,6 +27,7 @@
     ".env",
     "tsconfig.json",
     "$GITHUB_TOKEN",
-    "package.json"
+    "package.json",
+    "package-lock.json"
   ]
 }
