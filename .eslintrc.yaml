@@ -15,6 +15,7 @@ parserOptions:
     - '**/tsconfig.json'
 plugins:
   - '@typescript-eslint'
+  - html
   - prettier
 extends:
   - eslint:recommended

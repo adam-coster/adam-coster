@@ -41,6 +41,7 @@
     "drivelist": "^9.2.4",
     "eslint": "^8.16.0",
     "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-html": "^6.2.0",
     "eslint-plugin-prettier": "^4.0.0",
     "feed": "^4.2.2",
     "fs-extra": "^10.1.0",
