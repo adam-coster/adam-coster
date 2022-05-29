@@ -22,6 +22,7 @@
     "vncz.vscode-apielements",
     "vue.volar",
     "wmaurer.change-case",
-    "yzhang.markdown-all-in-one"
+    "yzhang.markdown-all-in-one",
+    "svelte.svelte-vscode"
   ]
 }

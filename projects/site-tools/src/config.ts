@@ -26,6 +26,7 @@ export function createConfig(options: {
         crawl: true,
         enabled: true,
         entries: ['/', ...listArticleUrls(options.articlesDir)],
+        default: true,
       },
       trailingSlash: 'never',
       vite: {
