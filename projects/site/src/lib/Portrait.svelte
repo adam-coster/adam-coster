@@ -26,7 +26,7 @@
 </script>
 
 <Image
-  src="/images/adam-coster_portrait_343.png"
+  src="/images/adam-coster_portrait_343.jpg"
   {width}
   alt="Portrait of Adam Coster"
   {srcset}
