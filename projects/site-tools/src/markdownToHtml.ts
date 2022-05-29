@@ -11,13 +11,13 @@ import { rehypeAccessibleEmojis } from 'rehype-accessible-emojis';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import grayMatter from 'gray-matter';
-import type { Element as HastElement } from 'hast';
+import type { Element } from 'hast';
 
 /**
  * SVG for a "link" icon, for revealing
  * when users hover over anchored headings.
  */
-const anchorImage: HastElement = {
+const anchorImage: Element = {
   type: 'element',
   tagName: 'svg',
   properties: {

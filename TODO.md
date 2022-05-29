@@ -63,6 +63,8 @@
     - ~~Add feeds to <link>s in the header~~
     - ~~Create sitemap & preview images~~
 - Milestone: Deployable
+  - Get builds to work properly
+    - Currently fail on first build due to the creation of static files during the build process. Apparently those files are not discoverable by the rest of the build process. They need to be treated as dynamic routes instead, presumably.
   - Get built and deploying in GitHub pages, via the default GitHub URL
     - Test legacy URL redirects
     - Have NO ROBOTS always be true when not on the canonical location
