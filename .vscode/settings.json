@@ -59,5 +59,6 @@
     "skipFiles": ["<node_internals>/**"],
     "sourceMaps": true,
     "remoteRoot": null
-  }
+  },
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

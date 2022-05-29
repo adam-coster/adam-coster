@@ -22,8 +22,7 @@
     },
     domain: {
       title: 'My Domains',
-      description:
-        "Web domains I own and use. Emails sent from these domains, and websites hosted on any subdomains, are from me unless they've been compromised.",
+      description: 'Web domains I own and might send emails from.',
     },
     reference: {
       title: 'References',

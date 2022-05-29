@@ -1,6 +1,6 @@
 <script context="module" lang="ts">
-  import type { LoadInput, LoadOutput } from '@sveltejs/kit';
-  export function load(info: LoadInput): LoadOutput {
+  import type { LoadEvent, LoadOutput } from '@sveltejs/kit';
+  export function load(info: LoadEvent): LoadOutput {
     return {
       props: {
         key: info.url.pathname,

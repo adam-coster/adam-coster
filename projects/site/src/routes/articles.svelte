@@ -1,8 +1,8 @@
 <script lang="ts" context="module">
   import { ArticleMetadata, ArticleSearcher } from '$lib/articleSearcher';
-  import type { LoadInput, LoadOutput } from '@sveltejs/kit';
+  import type { LoadEvent, LoadOutput } from '@sveltejs/kit';
 
-  export async function load(input: LoadInput): Promise<LoadOutput> {
+  export async function load(input: LoadEvent): Promise<LoadOutput> {
     const articleSearcher = new ArticleSearcher(input.fetch);
     const searchResults = await articleSearcher.search(undefined);
     return {
