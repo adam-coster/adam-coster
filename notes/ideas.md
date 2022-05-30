@@ -1,0 +1,25 @@
+# Post ideas
+
+- [Typebox](https://www.npmjs.com/package/@sinclair/typebox) for creating static and dynamic type checking.
+- JSON Schema and related tooling
+- Consumer Price Index playground (e.g. interactive plot for your own buying power over time)
+- Data interpretation
+- Why all measurements are biased
+- "Definition Policing"
+- Critique at scale: when to pile on
+- Sidestepping the Paradox of Tolerance (the focus on "tolerance" is what allows for the paradox, why not use a different concept altogether?)
+- Heuristics and the dangers thereof
+- Metaphors as bad models
+- You're never saying what you think you're saying (communication channels are very messy, and outward communication is information generated via an internal context that you are largely unaware of and cannot share)
+- Filling holes in a model inevitably leads to questioning the most fragile parts of the model (this is easily perceived as an attack if the model-creator's goal is _defense_)
+- Whataboutism and Score-keeping as default responses to revelations of having done harm
+- Wanting people to want things is absurd
+- "Not wanting" vs. "Wanting to not"
+- Boundaries, ultimatums, accommodations, and coercion
+- Consent as a spectrum (and why you can never know for sure that you have it)
+- Needing a "reason" to be different
+- Variation exists, and need not be adaptive, maladaptive, or explainable
+- "Test this spoon" (someone on Twitter told the story of getting that prompt in a QA/Tech job interview -- how would I reply?)
+- Mental models, theory of mind, and secret rules
+- Holding others accountable for your sacrifices they did not ask for
+-
