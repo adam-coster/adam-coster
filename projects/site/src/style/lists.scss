@@ -1,0 +1,18 @@
+ol,
+ul {
+  margin-left: calc(var(--size) * 1.5);
+}
+
+ol {
+  list-style: outside decimal-leading-zero;
+}
+
+ul {
+  list-style: outside '◈';
+}
+
+ul > li,
+ol > li {
+  padding-left: calc(var(--size) * 0.5);
+  margin-bottom: calc(var(--size) * 0.25);
+}

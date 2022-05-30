@@ -22,16 +22,16 @@
     },
     domain: {
       title: 'My Domains',
-      description: 'Web domains I own and might send emails from.',
+      description:
+        'Web domains I manage. Sites hosted on these domains, and emails sent from them, are likely from me.',
     },
     reference: {
       title: 'References',
-      description: `References to me that I've verified or created.`,
+      description: `Profiles and other references I've verified.`,
     },
     social: {
       title: 'Platforms',
-      description:
-        'Social media, services, networks, and other platforms where I control an account.',
+      description: 'Social media and other accounts I have control over.',
     },
   };
 </script>
@@ -71,7 +71,7 @@
   </div>
 </article>
 
-<article class="body">
+<article>
   <header>
     <h2 id="ids">My digital identifiers</h2>
   </header>
