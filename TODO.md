@@ -2,70 +2,12 @@
 
 ## Website
 
-- Milestone: Square 1
-  - ~~Add search to articles~~
-  - ~~Style the articles-listing page~~
-  - ~~Style article pages~~
-  - ~~Change the fuchsia tag color to something less BLINDING~~
-  - ~~Stop loading small images in the main portrait, since if it loads when small then the expanded image is blurry AF~~
-  - ~~Fix tag links, now that I've BROKEN THAT~~
-  - ~~Add tag links to post pages~~
-  - ~~Add article page microdata~~
-  - ~~Add text labels to nav icons~~
-  - ~~Improve spacing on nav icons~~
-  - ~~Look into article microdata -- any other useful info I can add? Update microdata.~~
-  - ~~Add cross-post & canonical URLs to article pages~~
-    - ~~Re-build index and ensure canonical URLs work~~
-  - ~~Test ability to follow an internal link to another post~~
-  - ~~Nuke the dev.to raw data + script (to prevent accidental overwrite)~~
-  - ~~Add descriptions to all articles migrated from dev.to~~
-    - ~~silently-skipped-async-tests-mochajs,~~
-    - ~~change-a-url-without-breaking-existing-links,~~
-    - ~~create-a-live-reload-server-for-front-end-development,~~
-    - ~~devchat-2-piracy-corporations-and-pretty-javascript-strings,~~
-    - ~~documentation-as-code,~~
-    - ~~how-email-previews-work,~~
-    - ~~how-to-run-linux-on-windows-10-using-wsl2,~~
-    - ~~how-to-set-up-a-node-project-with-typescript,~~
-    - ~~how-to-stringify-class-instances-in-javascript-and-express-js,~~
-    - ~~joyful-coding-vscode-extensions-settings,~~
-    - ~~laziness-isn-t-real,~~
-    - ~~how-binary-encoding-works,~~
-    - ~~multi-display-workstations-boost-productivity-without-breaking-your-neck,~~
-    - ~~prettify-your-javascript-strings,~~
-    - ~~resolving-e404-on-global-install-of-a-private-npm-package-linux,~~
-    - ~~save-time-and-make-fewer-mistakes-with-snippets,~~
-    - ~~setting-up-windows-10-for-web-development-including-docker-linux-and-node-js,~~
-    - ~~sign-in-with-apple-implementation-hurdles,~~
-    - ~~super-charge-email-google-workspace,~~
-    - ~~tech-debt-the-bill-comes-due,~~
-    - ~~the-typescript-as-const-trick,~~
-    - ~~typescript-starter-kit-get-up-and-running-quickly,~~
-  - ~~Migrate stuff from my old blog~~
-  - ~~Style footnotes~~
-  - ~~Style figures & captions~~
-  - ~~Style block quotes~~
-  - ~~Style tables~~
-  - ~~Implement legacy link redirects~~
-  - ~~Add a `/whoami` page~~
-  - ~~Update README and main page~~
-  - ~~Swap out MDSVX for custom preprocessing~~
-    - ~~Get syntax highlighting working~~
-    - ~~Get Footnotes working (probably a custom job)~~
-  - ~~Create and include a Favicon~~
-  - ~~Complete build pipeline~~
-    - ~~Finish updating indexer, and run it in the svelte config~~
-    - ~~Resolve build issues~~
-      - ~~Article content is not being pre-rendered~~
-      - ~~Ensure all pages get built (feed article urls to builder)~~
-      - ~~Title is not being updated in headers~~
-    - ~~Generate feeds~~
-    - ~~Add feeds to <link>s in the header~~
-    - ~~Create sitemap & preview images~~
+- Milestone: Content-Complete
+  - Fix ul>li bullets on landing page
+  - Create a decent preview page
 - Milestone: Deployable
-  - Get builds to work properly
-    - Currently fail on first build due to the creation of static files during the build process. Apparently those files are not discoverable by the rest of the build process. They need to be treated as dynamic routes instead, presumably.
-  - Get built and deploying in GitHub pages, via the default GitHub URL
+  - ~~Get builds to work properly~~
+  - Get builds running on Cloudflare Pages
     - Test legacy URL redirects
     - Have NO ROBOTS always be true when not on the canonical location
     - Test all pages
@@ -76,7 +18,6 @@
 - Miscellaneous future features
   - Have the Podcast link go to a page explaining the podcast
   - Add a `/uses` page
-  - Add a [skip link](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#skip_links)
   - Create an identity graph linking all of my digital identities together
   - Make headings clickable (to get direct links).
   - Reorganize to get rid of the multi-package setup
