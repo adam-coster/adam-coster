@@ -53,6 +53,7 @@
   :global {
     @import '../style/global';
   }
+  // [skip link](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#skip_links)
   #skip-nav {
     padding: 8px;
     position: absolute;
