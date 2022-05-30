@@ -3,8 +3,10 @@
 ## Website
 
 - Milestone: Content-Complete
-  - Fix ul>li bullets on landing page
-  - Create a decent preview page
+  - [x] Fix ul>li bullets on landing page
+  - [ ] Create a decent social-media preview image
+  - [ ] Center iframes in articles (e.g. http://localhost:3000/articles/how-to-set-up-a-node-project-with-typescript)
+  - [ ]
 - Milestone: Deployable
   - ~~Get builds to work properly~~
   - Get builds running on Cloudflare Pages
