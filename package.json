@@ -8,9 +8,12 @@
   ],
   "scripts": {
     "build": "turbo run build",
+    "build:force": "turbo run build --force",
     "watch": "turbo run watch --parallel",
     "add": "npm i --no-fund --legacy-peer-deps --workspaces=false",
-    "clean": "rm -rf projects/*/dist projects/*/build projects/*/.turbo projects/*/*.tsbuildinfo projects/*/package-lock.json projects/*/node_modules",
+    "clean": "npm run clean:artifacts && npm run clean:caches",
+    "clean:artifacts": "rm -rf projects/*/dist projects/*/build projects/*/*.tsbuildinfo projects/*/package-lock.json",
+    "clean:caches": "rm -rf projects/*/.turbo",
     "fix": "treb fix --allProjects --packageJson",
     "postinstall": "patch-package",
     "prepare": "husky install",

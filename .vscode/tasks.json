@@ -1,0 +1,38 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "watch",
+      "group": "build",
+      "problemMatcher": [],
+      "label": "🚀 Dev Up!",
+      "detail": "turbo run watch --parallel"
+    },
+    {
+      "type": "npm",
+      "script": "build",
+      "group": "build",
+      "problemMatcher": [],
+      "label": "🏗️ Build",
+      "detail": "Build all projects with turbo"
+    },
+    {
+      "type": "npm",
+      "script": "clean",
+      "group": "build",
+      "problemMatcher": [],
+      "label": "🧹 Clean",
+      "detail": "Clean up caches and artifacts"
+    },
+    {
+      "type": "npm",
+      "script": "build:force",
+      "group": "build",
+      "problemMatcher": [],
+      "dependsOn": ["🧹 Clean"],
+      "label": "🆕🏗️ Build (skip cache)",
+      "detail": "Clear caches & artifacts and run a fresh build"
+    }
+  ]
+}
