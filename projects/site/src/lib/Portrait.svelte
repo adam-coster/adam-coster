@@ -8,7 +8,7 @@
   export let size: 'small' | 'large';
 
   let srcset: ImageSource[] = [];
-  let width = 320;
+  let width = '320px';
   $: {
     srcset =
       size === 'small'
@@ -21,7 +21,7 @@
             { url: urlFromSize(686), pixelDensity: 1 },
             { url: urlFromSize(1372), pixelDensity: 2 },
           ];
-    width = size === 'small' ? 320 : 640;
+    width = size === 'small' ? `320px` : '640px';
   }
 </script>
 

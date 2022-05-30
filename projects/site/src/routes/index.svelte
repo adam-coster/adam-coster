@@ -128,7 +128,7 @@
     .text {
       padding: calc(var(--size));
     }
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 720px) {
       flex-direction: column;
       align-items: center;
     }

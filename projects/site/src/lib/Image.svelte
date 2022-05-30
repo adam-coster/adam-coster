@@ -15,8 +15,8 @@
 </script>
 
 <script lang="ts">
-  export let width: number;
-  export let height: number | 'auto' = 'auto';
+  export let width: string;
+  export let height: string | 'auto' = 'auto';
   /**
    * The baseline src image, which should have
    * aspect ratio specified by `width` & `height`,
@@ -53,5 +53,6 @@
     max-height: 100%;
     transition-property: height, width, left, top;
     transition-duration: 300ms;
+    object-fit: cover;
   }
 </style>
