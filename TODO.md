@@ -2,27 +2,21 @@
 
 ## Website
 
-- Milestone: Content-Complete
-  - [x] Fix ul>li bullets on landing page
-  - [x] Create a decent social-media preview image
-  - [x] Rename /articles to /blog
-- Milestone: Deployable
-  - [ ] Center iframes in articles (e.g. http://localhost:3000/blog/how-to-set-up-a-node-project-with-typescript)
-  - ~~Get builds to work properly~~
-  - Get builds running on Cloudflare Pages
-    - Test legacy URL redirects
-    - Have NO ROBOTS always be true when not on the canonical location
-    - Test all pages
 - Milestone: Deployed
   - Get Google Search ownership working
   - Update all Dev.to posts to set new canonical URL
   - Update Medium posts to set new canonical URL
 - Miscellaneous future features
+  - Hook up a "draft" toggle on posts that prevents the build in production on associated pages.
+    - Will also need to exclude from search, RSS, etc
+  - Get FrontMatter extension working for article management
+  - Center iframes in articles (e.g. http://localhost:3000/blog/how-to-set-up-a-node-project-with-typescript)
   - Have the Podcast link go to a page explaining the podcast
   - Add a `/uses` page
   - Create an identity graph linking all of my digital identities together
   - Make headings clickable (to get direct links).
   - Reorganize to get rid of the multi-package setup
+  - Automate cross-posting
   - Find other articles and migrate
     - Sources:
       - The Bscotch blog (pull down with script)

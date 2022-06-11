@@ -1,0 +1,49 @@
+{
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.preview.host": "http://localhost:3000/blog",
+  "frontMatter.taxonomy.tags": [],
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "default",
+      "pageBundle": false,
+      "fields": [
+        {
+          "title": "title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "editedAt",
+          "name": "editedAt",
+          "type": "datetime"
+        },
+        {
+          "title": "publishedAt",
+          "name": "publishedAt",
+          "type": "datetime"
+        },
+        {
+          "title": "canonical",
+          "name": "canonical",
+          "type": "string"
+        },
+        {
+          "title": "tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "crossPosts",
+          "name": "crossPosts",
+          "type": "string",
+          "multiple": true
+        }
+      ]
+    }
+  ]
+}

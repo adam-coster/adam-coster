@@ -1,9 +1,9 @@
 import type { ArticleFrontMatter } from '@adam-coster/site-tools';
-import type { LoadInput } from '@sveltejs/kit';
+import type { LoadEvent } from '@sveltejs/kit';
 import * as lunr from 'lunr';
 import { asDateIfExists } from './utility';
 
-type Fetch = LoadInput['fetch'];
+type Fetch = LoadEvent['fetch'];
 
 export class ArticleMetadata {
   constructor(readonly frontMatter: ArticleFrontMatter) {}
