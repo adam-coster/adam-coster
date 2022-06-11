@@ -1,15 +1,16 @@
 import puppeteer, { Page, ScreenshotClip } from 'puppeteer';
 import { Pathy } from '@bscotch/pathy';
-import { pathToFileURL } from 'url';
+import { fileURLToPath, pathToFileURL } from 'url';
 import { ok } from 'assert';
+import path from 'path';
 
 export class PreviewGenerator {
-  protected browser = puppeteer.launch();
+  protected browser = puppeteer.launch({});
   protected viewPort = { width: 1024, height: 512 };
   readonly srcRoot: Pathy;
   readonly outRoot: Pathy;
 
-  constructor(options: { srcRoot: string; outRoot: string }) {
+  constructor(options: { srcRoot: string | Pathy; outRoot: string | Pathy }) {
     this.srcRoot = new Pathy(options.srcRoot);
     this.outRoot = new Pathy(options.outRoot);
   }
@@ -21,6 +22,7 @@ export class PreviewGenerator {
     maxParallelPages?: number;
     cropBySelector?: string;
   }) {
+    const maxParallelPages = options?.maxParallelPages || 10;
     await this.outRoot.ensureDirectory();
     const srcPaths = await this.listSourcePaths();
 
@@ -30,9 +32,15 @@ export class PreviewGenerator {
     // Basically each "page" is a worker.
     const waits: Promise<any>[] = [];
     let lastClaimedIdx = -1;
+    let pagesClosed = 0;
     const renderNextPage = async (page: Page): Promise<void> => {
       lastClaimedIdx += 1;
       if (lastClaimedIdx >= srcPaths.length) {
+        await page.close();
+        pagesClosed += 1;
+        if (pagesClosed === maxParallelPages) {
+          await (await this.browser).close();
+        }
         return;
       }
       await this.renderPage(page, srcPaths[lastClaimedIdx], {
@@ -40,11 +48,7 @@ export class PreviewGenerator {
       });
       return await renderNextPage(page);
     };
-    for (
-      let i = 0;
-      i < (options?.maxParallelPages || 10) && i < srcPaths.length;
-      i++
-    ) {
+    for (let i = 0; i < maxParallelPages && i < srcPaths.length; i++) {
       waits.push(this.createPage().then((page) => renderNextPage(page)));
     }
     await Promise.all(waits);
@@ -60,15 +64,57 @@ export class PreviewGenerator {
     });
     const relativeUrl = url.relativeFrom(this.srcRoot);
     const destPath = this.outRoot.join(relativeUrl);
+    await destPath.up().ensureDirectory();
+    console.log(`⛏️ Rendering preview for:\n  ${relativeUrl}`);
     await page.screenshot({
       path: destPath.changeExtension('.html', '.jpg').absolute,
       type: 'jpeg',
-      captureBeyondViewport: false,
+      captureBeyondViewport: true,
       clip: await this.computeBoundingBox(page, {
         selector: options?.cropBySelector,
         assert: true,
       }),
     });
+  }
+
+  async createPage(): Promise<Page> {
+    const page = await (await this.browser).newPage();
+    // Set the viewport to a reasonable size for
+    // previews (2:1 aspect ratio is supposedly fine).
+    await page.setViewport({ width: 1200, height: 600 });
+
+    // Redirect root requests to the filesystem
+    await page.setRequestInterception(true);
+    page.on('request', async (request) => {
+      const url = request.url();
+      const isFilePath = url.match(/^file:/);
+      // If the target path doesn't exist, it's
+      // probably due to the path being absolute
+      // in the HTML.
+      const targetPath = new Pathy(url);
+      if (isFilePath && !(await targetPath.exists())) {
+        // Does the relative path exist?
+        const oldPath = new Pathy(fileURLToPath(url));
+        const newPath = this.srcRoot.join(oldPath);
+        if (!(await newPath.exists())) {
+          console.log('Non-existent local path:', oldPath.absolute);
+          return await request.abort();
+        }
+        const redirect = pathToFileURL(
+          path.resolve(newPath.absolute),
+        ).toString();
+        // console.log('REDIRECT', url, '➡️', redirect);
+        return await request.continue({
+          url: redirect,
+        });
+      }
+      await request.continue();
+    });
+    page.on('requestfailed', (request) => {
+      // console.log('Request failed:', request.url());
+    });
+
+    return page;
   }
 
   async computeBoundingBox(
@@ -101,12 +147,6 @@ export class PreviewGenerator {
     return await this.srcRoot.listChildrenRecursively({
       includePatterns: [/\.html$/],
     });
-  }
-
-  async createPage(): Promise<Page> {
-    const page = await (await this.browser).newPage();
-    await page.setViewport({ width: 1200, height: 600 });
-    return page;
   }
 
   normalizePagePath(pagePath: string) {

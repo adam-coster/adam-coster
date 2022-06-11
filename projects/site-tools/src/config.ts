@@ -1,4 +1,5 @@
-import adapter from '@sveltejs/adapter-auto';
+// import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-cloudflare';
 import type { Config } from '@sveltejs/kit';
 import { default as preprocess } from 'svelte-preprocess';
 import { listArticleUrls } from './files.js';

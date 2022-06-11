@@ -70,19 +70,21 @@
 
 <Head />
 
-<h1>
-  <Icon icon={faPenSquare} />
-  Writing Central
-</h1>
+<div class="social-preview">
+  <h1>
+    <Icon icon={faPenSquare} />
+    Writing Central
+  </h1>
 
-<p>
-  I've centralized my various writings here, with links back to where they were
-  originally posted when applicable. The topics are all over the place:
-  programming, mental health, business, productivity, and more. Filter by tags
-  of interest or search for something specific.
-</p>
+  <p>
+    I've centralized my various writings here, with links back to where they
+    were originally posted when applicable. The topics are all over the place:
+    programming, mental health, business, productivity, and more. Filter by tags
+    of interest or search for something specific.
+  </p>
+</div>
 
-<nav aria-label="List of articles written by Adam Coster">
+<nav aria-label="Search results for articles written by Adam Coster">
   <p class="search-container">
     <label for="searchbar" class="sr-only">Search articles</label>
     <span class:focused={searchHasFocus} class="search-icon" aria-hidden="true"

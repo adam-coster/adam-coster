@@ -38,7 +38,7 @@
 
 <Head />
 
-<article class="body">
+<article class="body social-preview">
   <header>
     <h1>Who am I?</h1>
   </header>

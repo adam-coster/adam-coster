@@ -65,7 +65,7 @@
 
 {#await frontmatter then metadata}
   <article class="article">
-    <header>
+    <header class="social-preview">
       <h1 class="title">{metadata.title}</h1>
 
       <ul class="tags" aria-label="Topic tags found on this article.">

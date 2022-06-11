@@ -77,14 +77,14 @@
     return canonical.toString();
   }
 
-  export function previewPathFromUrl(_url: string) {
-    return normalizeUrl(`/images/adam-coster-round_640.jpg`);
-    // const urlAsObj = new URL(url);
-    // return normalizeUrl(`/previews${urlAsObj.pathname}.jpg`);
+  export function previewPathFromUrl(url: string) {
+    const urlAsObj = new URL(url);
+    const pathname = urlAsObj.pathname === '/' ? '/index' : urlAsObj.pathname;
+    return normalizeUrl(`/previews${pathname}.jpg`);
   }
 
   export function previewAltFromMetadata(meta: MetadataNormalized) {
-    return `Preview image for webpage at ${meta.canonical} showing a portrait of Adam Coster and the webpage's title: "${meta.title}"`;
+    return `Preview image capturing a portion of the page at ${meta.canonical} showing the page's title: "${meta.title}"`;
   }
 
   function ldJsonify<T extends MicrodataSchema>(schemas: T[]) {
