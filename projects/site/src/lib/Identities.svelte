@@ -12,7 +12,7 @@
   } from '@fortawesome/free-brands-svg-icons';
   import {
     faGlobe,
-    faLightbulb,
+    faSquarePen,
     faLink,
     faPodcast,
     faGraduationCap,
@@ -38,10 +38,10 @@
 
   export const digitalIdentities: DigitalIdentity[] = [
     {
-      url: '/articles',
-      name: 'Articles',
-      title: 'Writings by Adam Coster',
-      icon: faLightbulb,
+      url: '/blog',
+      name: 'Blog',
+      title: 'Blog posts, articles, and other writings by Adam Coster',
+      icon: faSquarePen,
       type: 'content',
     },
     {

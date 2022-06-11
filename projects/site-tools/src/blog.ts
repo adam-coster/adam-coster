@@ -1,5 +1,5 @@
 /**
- * Processing of articles for various purposes, including:
+ * Processing of posts for various purposes, including:
  *
  * - Creation of metadata file for use in search results
  * - Creation of search index
@@ -22,7 +22,7 @@ import { Feed } from 'feed';
  * - An RSS Feed
  * - A sitemap (for reference by a main sitemap)
  * - A JSON file containing the metadata for each article
- * - A Lunr search index for all articles
+ * - A Lunr search index for all posts
  */
 export async function generateArticleSummaries(options: {
   productionBaseUrl: string;
@@ -33,7 +33,7 @@ export async function generateArticleSummaries(options: {
   await fs.mkdir(options.staticDir, { recursive: true });
   await fs.mkdir(options.feedsDir, { recursive: true });
 
-  const baseArticlesUrl = `${options.productionBaseUrl}/articles`;
+  const baseArticlesUrl = `${options.productionBaseUrl}/blog`;
 
   const articlesMetadata: ArticleFrontMatter[] = [];
   const articleSearchDocs: ArticleIndexEntry[] = [];
@@ -54,9 +54,9 @@ export async function generateArticleSummaries(options: {
     generator: 'A CVS receipt printer',
     author,
     feedLinks: {
-      json: `${options.productionBaseUrl}/articles.json`,
-      atom: `${options.productionBaseUrl}/articles.atom`,
-      rss: `${options.productionBaseUrl}/articles.rss`,
+      json: `${options.productionBaseUrl}/blog.json`,
+      atom: `${options.productionBaseUrl}/blog.atom`,
+      rss: `${options.productionBaseUrl}/blog.rss`,
     },
   });
 
@@ -85,7 +85,7 @@ export async function generateArticleSummaries(options: {
         description: parsed.description,
         content: parsed.description,
         date: publishedAt,
-        image: `${options.productionBaseUrl}/previews/articles/${parsed.slug}/preview.jpg`,
+        image: `${options.productionBaseUrl}/previews/blog/${parsed.slug}/preview.jpg`,
         copyright: `Copyright © ${publishedAt.getFullYear()} Adam Coster. All rights reserved.`,
         author: [author],
         // TODO: Add categories
@@ -105,21 +105,17 @@ export async function generateArticleSummaries(options: {
   });
 
   await Promise.all([
+    writeJson(path.join(options.staticDir, `blog-search.json`), searchIndex, {
+      noSpaces: true,
+    }),
     writeJson(
-      path.join(options.staticDir, `articles-search.json`),
-      searchIndex,
-      {
-        noSpaces: true,
-      },
-    ),
-    writeJson(
-      path.join(options.staticDir, `articles-metadata.json`),
+      path.join(options.staticDir, `blog-metadata.json`),
       articlesMetadata,
       { noSpaces: true },
     ),
-    fs.writeFile(path.join(options.feedsDir, 'articles.json'), feed.json1()),
-    fs.writeFile(path.join(options.feedsDir, 'articles.atom'), feed.atom1()),
-    fs.writeFile(path.join(options.feedsDir, 'articles.rss'), feed.rss2()),
+    fs.writeFile(path.join(options.feedsDir, 'blog.json'), feed.json1()),
+    fs.writeFile(path.join(options.feedsDir, 'blog.atom'), feed.atom1()),
+    fs.writeFile(path.join(options.feedsDir, 'blog.rss'), feed.rss2()),
   ]);
 
   return {

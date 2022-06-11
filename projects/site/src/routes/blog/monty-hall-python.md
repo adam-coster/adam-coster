@@ -15,7 +15,7 @@ tags:
   - python
 ---
 
-You've all heard this [classic statistics problem](http://en.wikipedia.org/wiki/Monty_Hall_problem), based on an old game show:
+You've all heard this [classic statistics problem](https://en.wikipedia.org/wiki/Monty_Hall_problem), based on an old game show:
 
 A contestant is shown 3 doors. Only one of those three doors hides something of value to the contestant (perhaps a new car), while the other two contain nothing. The contestant chooses one door, but that door remains closed. The host then opens up a 2nd door, and this door is _always_ a losing door. At this point, the contestant may choose to now open the originally-chosen door, or switch to and open the last remaining door.
 
@@ -33,7 +33,7 @@ So, when the contestant always switches, they will win every time the initial ch
 
 <figure>
 
-![Three doors. The first is labeled "You Choose", the second is labeled "Host reveals", and the third is unlabeled. The first door is marked as the winning choice.](http://farm6.static.flickr.com/5171/5461662939_df69a199bc_o.png 'correct_choice')
+![Three doors. The first is labeled "You Choose", the second is labeled "Host reveals", and the third is unlabeled. The first door is marked as the winning choice.](https://farm6.static.flickr.com/5171/5461662939_df69a199bc_o.png 'correct_choice')
 
 <figcaption>
 
@@ -45,7 +45,7 @@ Fig.1: By chance, your first choice will be correct 1/3 of the time. If you alwa
 
 <figure>
 
-![Three doors. The first is labeled "You Choose", the second is labeled "Host reveals", and the third is unlabeled. The last door is marked as the winning choice.](http://farm6.static.flickr.com/5053/5462265972_1e58686950_o.png 'incorrect_choice')
+![Three doors. The first is labeled "You Choose", the second is labeled "Host reveals", and the third is unlabeled. The last door is marked as the winning choice.](https://farm6.static.flickr.com/5053/5462265972_1e58686950_o.png 'incorrect_choice')
 
 <figcaption>
 

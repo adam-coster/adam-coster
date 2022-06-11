@@ -63,7 +63,7 @@
           platform.
         </li>
         <li>
-          <a href="/articles">Articles I've written</a> with links to their original
+          <a href="/blog">Articles I've written</a> with links to their original
           and cross-posted locations.
         </li>
       </ul>

@@ -30,7 +30,7 @@ If you'll be running Docker (see below), then a lot of your webdev needs can be 
 - [Visual Studio Code](https://code.visualstudio.com/)
   - Turn on "Settings Sync" and log in to make your dev setup more portable.
   - If you set up WSL2, you can launch VSCode in a Linux directory by running the `code .` command in Linux. The first time you do this, VSCode will offer recommended extensions that will make things run as smoothly as possible. Install those. The next time you do this, some other stuff will get installed. After that everything will work like magic.
-  - Get [all the good extensions](/articles/joyful-coding-vscode-extensions-settings) to make coding a blast.
+  - Get [all the good extensions](/blog/joyful-coding-vscode-extensions-settings) to make coding a blast.
 - [Node.js](https://nodejs.org/en/download/) (I suggest the latest LTS)
 - [Discord](https://discord.com/download), assuming you're in some servers
 - Browsers

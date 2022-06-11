@@ -29,7 +29,7 @@
     title: 'Writing Central',
     description: `The writings of Adam Coster, collected from across the Internet and centralized. Topics include web development, game development, business, mental health, science, and more.`,
     type: 'website',
-    canonical: '/articles',
+    canonical: '/blog',
   };
 
   export let articleSearcher: ArticleSearcher;
@@ -78,15 +78,14 @@
 
   <p>
     I've centralized my various writings here, with links back to where they
-    were originally posted when applicable. The topics are all over the place:
-    programming, mental health, business, productivity, and more. Filter by tags
-    of interest or search for something specific.
+    were originally posted if applicable. The topics are all over the place:
+    programming, mental health, business, productivity, and more.
   </p>
 </div>
 
-<nav aria-label="Search results for articles written by Adam Coster">
+<nav aria-label="Search results for blog posts written by Adam Coster">
   <p class="search-container">
-    <label for="searchbar" class="sr-only">Search articles</label>
+    <label for="searchbar" class="sr-only">Search posts</label>
     <span class:focused={searchHasFocus} class="search-icon" aria-hidden="true"
       >🔍&#xFE0E;</span
     >
@@ -94,7 +93,7 @@
       bind:this={searchbar}
       id="searchbar"
       type="text"
-      placeholder="Search articles"
+      placeholder="Search posts"
       class:focused={searchHasFocus}
       bind:value={searchText}
       on:focus={() => (searchHasFocus = true)}
@@ -130,7 +129,7 @@
             <article class="article-snippet">
               <header>
                 <h2>
-                  <a href={`/articles/${article.slug}`} sveltekit:prefetch>
+                  <a href={`/blog/${article.slug}`} sveltekit:prefetch>
                     {article.title}
                   </a>
                 </h2>
@@ -149,8 +148,8 @@
                     {#each article.tags as tag, j (j)}
                       <li class="tag">
                         <a
-                          href={`/articles?search=tags:${tag}`}
-                          title={`List all "${tag}" articles`}
+                          href={`/blog?search=tags:${tag}`}
+                          title={`List all "${tag}" posts`}
                           rel="tag"
                           sveltekit:noscroll
                           on:click|preventDefault={() =>
@@ -173,7 +172,7 @@
         {/each}
       </ol>
     {:else}
-      <p in:fade>No articles found with search "{lastSearchText}"</p>
+      <p in:fade>No posts found with search "{lastSearchText}"</p>
     {/if}
   {:catch}
     <p in:fade>Something has gone wrong!</p>

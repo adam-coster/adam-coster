@@ -11,7 +11,7 @@ export class ArticleMetadata {
     return this.frontMatter.slug;
   }
   get url() {
-    return `/articles/${this.slug}`;
+    return `/blog/${this.slug}`;
   }
   get canonical() {
     return this.frontMatter.canonical || this.url;
@@ -118,7 +118,7 @@ export class ArticleSearcher {
 
   async loadArticleList(): Promise<ArticleMetadata[]> {
     try {
-      const indexRes = await this.fetch('/articles-metadata.json');
+      const indexRes = await this.fetch('/blog-metadata.json');
 
       // TODO: Wrap these in a class instance that can e.g. generate URLs
 
@@ -135,7 +135,7 @@ export class ArticleSearcher {
   }
 
   async loadArticleSearchIndex() {
-    const searchIndex = await this.fetch('/articles-search.json');
+    const searchIndex = await this.fetch('/blog-search.json');
     const index = lunr.Index.load(await searchIndex.json());
     return index;
   }

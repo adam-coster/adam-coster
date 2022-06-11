@@ -1,5 +1,5 @@
 /**
- * @file I'm using lunr.js to create a search index for articles.
+ * @file I'm using lunr.js to create a search index for posts.
  *
  * Lunr already takes care of stemming and skipping stop words,
  * so I need to take care of anything else that would make searchability

@@ -6,8 +6,8 @@ node_modules
 build
 functions
 static/previews
-static/articles-metadata.json
-static/articles-search.json
+static/blog-metadata.json
+static/blog-search.json
 static/feeds
 static/sitemap.xml
-static/articles.*
+static/blog.*

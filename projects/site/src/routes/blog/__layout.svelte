@@ -4,7 +4,7 @@
 
   export async function load(input: LoadEvent): Promise<LoadOutput> {
     const articleSearcher = new ArticleSearcher(input.fetch);
-    const slug = input.url.pathname.replace('/articles/', '');
+    const slug = input.url.pathname.replace('/blog/', '');
     const frontmatter = await articleSearcher.get(slug);
     if (!frontmatter) {
       return {
@@ -72,8 +72,8 @@
         {#each metadata.tags as tag, j (j)}
           <li class="tag">
             <a
-              href={`/articles?search=tags:${tag}`}
-              title={`List all "${tag}" articles`}
+              href={`/blog?search=tags:${tag}`}
+              title={`List all "${tag}" posts`}
               rel="tag"
             >
               #{tag}

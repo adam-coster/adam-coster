@@ -9,7 +9,7 @@ const root = new Pathy(fileURLToPath(import.meta.url)).up();
 
 const options = {
   staticDir: root.join('./static').absolute,
-  articlesDir: root.join('./src/routes/articles').absolute,
+  articlesDir: root.join('./src/routes/blog').absolute,
   feedsDir: root.join('./static/feeds').absolute,
   productionBaseUrl: 'https://adamcoster.com',
 };

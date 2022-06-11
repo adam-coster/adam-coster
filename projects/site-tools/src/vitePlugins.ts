@@ -1,4 +1,4 @@
-import { generateArticleSummaries } from './articles.js';
+import { generateArticleSummaries } from './blog.js';
 import { Plugin as VitePlugin } from 'vite';
 
 export function updateArticleSearch(options: {
@@ -8,7 +8,7 @@ export function updateArticleSearch(options: {
   articlesDir: string;
 }): VitePlugin {
   return {
-    name: 'vite-plugin-update-articles-search',
+    name: 'vite-plugin-update-blog-search',
     handleHotUpdate(ctx) {
       console.log('HOT UPDATE', ctx.file);
       const isArticle = !!ctx.file.match(/\barticles\/.*\.md/);

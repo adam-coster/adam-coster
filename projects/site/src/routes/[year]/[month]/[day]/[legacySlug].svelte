@@ -4,7 +4,7 @@
 
   /**
    * Match Wordpress URLs from the old blog, re-routing to any
-   * articles that were migrated.
+   * posts that were migrated.
    *
    * Early exit if this doesn't look like a legacy URL
    * (Exiting without returning a value should allow the

@@ -25,7 +25,7 @@ Sure, I could've looked it up, but where's the fun in that?
 
 To put this thing together, I figure we need three things:
 
-1.  The ability to generate random numbers (provided by Python's [random](http://docs.python.org/py3k/library/random.html) module);
+1.  The ability to generate random numbers (provided by Python's [random](https://docs.python.org/py3k/library/random.html) module);
 2.  An object representing each person;
 3.  A "Party" object full of those people.
 
@@ -101,7 +101,7 @@ Frequency of finding individuals with the same birthday in groups of various siz
 
 </figure>
 
-At 25 people there is already a better-than-even chance of finding two people with the same birthday, and by 50 it's almost guaranteed! That does seem a little unbelievable, so I'll refer you to the [Wikipedia page](http://en.wikipedia.org/wiki/Birthday_problem) on the topic for the math.
+At 25 people there is already a better-than-even chance of finding two people with the same birthday, and by 50 it's almost guaranteed! That does seem a little unbelievable, so I'll refer you to the [Wikipedia page](https://en.wikipedia.org/wiki/Birthday_problem) on the topic for the math.
 
 Just to see if this little simulation would recreate what Wikipedia shows, we can modify the _**main()**_ function and change it to the following:
 

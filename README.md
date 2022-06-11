@@ -6,10 +6,9 @@ I'm Adam Coster, CEO and co-founder of video game studio [Butterscotch Shenaniga
 
 I'm a fullstack web developer and DevOps enthusiast, but also spend a lot of my time thinking about data, productivity, and business. I talk about all of that a lot on my weekly podcast, [Coffee with Butterscotch](https://podcast.bscotch.net), co-hosted by my co-founders (and literal brothers).
 
-## What's *this* repo?
+## What's _this_ repo?
 
-I'm embracing the monorepo lifestyle, and so this repo will accumulate stuff I create for work. Most of the stuff I create *is* for work, so at any given moment there might not be much of anything in here.
-
+I'm embracing the monorepo lifestyle, and so this repo will accumulate stuff I create for work. Most of the stuff I create _is_ for work, so at any given moment there might not be much of anything in here.
 
 ## Other stuff I've made
 
@@ -17,7 +16,7 @@ I'm embracing the monorepo lifestyle, and so this repo will accumulate stuff I c
 
 Most of the stuff I've worked on is closed source. Here's a quick summary of my biggest projects:
 
-- **[Video Game Webtech](https://www.bscotch.net/games):** I develop and maintain all of the webtech for our games, starting in 2015 with our "BscotchID" service which in 2018 I replaced with a shinier service, "Rumpus". Migrating users between those systems without downtime [was quite the endeavor](https://wellactually.fyi/articles/tech-debt-the-bill-comes-due)! BscotchID/Rumpus features include:
+- **[Video Game Webtech](https://www.bscotch.net/games):** I develop and maintain all of the webtech for our games, starting in 2015 with our "BscotchID" service which in 2018 I replaced with a shinier service, "Rumpus". Migrating users between those systems without downtime [was quite the endeavor](https://adamcoster.com/blog/tech-debt-the-bill-comes-due)! BscotchID/Rumpus features include:
   - Cross-platform save syncing (e.g. allowing players to switch between a mobile device and a console without losing progress)
   - [Cross-platform user-generated content sharing](https://aws.amazon.com/blogs/gametech/a-platformer-maker-made-for-every-platform/) (in [Levelhead](https://www.bscotch.net/games/levelhead), players can create and share custom levels and compete on per-level leaderboards)
   - Centralized account management, allowing players to connect their accounts to any platform account
