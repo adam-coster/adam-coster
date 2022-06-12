@@ -66,6 +66,7 @@
       dateModified: info.dateModified
         ? dateToIso(new Date(info.dateModified))
         : datePublished,
+      image: info.images?.map(normalizeUrl),
     };
   }
 

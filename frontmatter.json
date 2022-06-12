@@ -70,6 +70,12 @@
     "http",
     "jsdoc"
   ],
+  "frontMatter.content.pageFolders": [
+    {
+      "path": "[[workspace]]/projects/site/src/routes/blog",
+      "title": "Blog Posts"
+    }
+  ],
   "frontMatter.taxonomy.slugPrefix": null,
   "frontMatter.taxonomy.contentTypes": [
     {
@@ -119,8 +125,15 @@
           "name": "crossPosts",
           "type": "string",
           "multiple": true
+        },
+        {
+          "title": "images",
+          "name": "images",
+          "type": "string",
+          "multiple": true
         }
       ]
     }
-  ]
+  ],
+  "frontMatter.content.publicFolder": "projects/site/static"
 }
