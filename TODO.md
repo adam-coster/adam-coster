@@ -6,6 +6,7 @@
   - Get Google Search ownership working
   - Update all Dev.to posts to set new canonical URL
   - Update Medium posts to set new canonical URL
+  - Redirect `www`->apex
 - Miscellaneous future features
   - Hook up a "draft" toggle on posts that prevents the build in production on associated pages.
     - Will also need to exclude from search, RSS, etc

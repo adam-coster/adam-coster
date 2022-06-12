@@ -37,6 +37,7 @@ export async function generateArticleSummaries(options: {
 
   const articlesMetadata: ArticleFrontMatter[] = [];
   const articleSearchDocs: ArticleIndexEntry[] = [];
+  const articleTags = new Set<string>();
 
   const author = {
     name: 'Adam Coster',
@@ -71,6 +72,9 @@ export async function generateArticleSummaries(options: {
       const parsed = searchableTextFromMarkdown(content);
       if (!parsed.publishedAt) {
         return;
+      }
+      if (Array.isArray(parsed.tags)) {
+        parsed.tags.forEach((tag) => articleTags.add(tag));
       }
       const url = `${baseArticlesUrl}/${parsed.slug}`;
       const publishedAt = new Date(parsed.publishedAt);
@@ -113,6 +117,7 @@ export async function generateArticleSummaries(options: {
       articlesMetadata,
       { noSpaces: true },
     ),
+    writeJson(path.join(options.feedsDir, 'tags.json'), [...articleTags]),
     fs.writeFile(path.join(options.feedsDir, 'blog.json'), feed.json1()),
     fs.writeFile(path.join(options.feedsDir, 'blog.atom'), feed.atom1()),
     fs.writeFile(path.join(options.feedsDir, 'blog.rss'), feed.rss2()),

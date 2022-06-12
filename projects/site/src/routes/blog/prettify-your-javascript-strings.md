@@ -8,7 +8,7 @@ publishedAt: 2021-02-01T15:00:13.713Z
 canonical: https://www.bscotch.net/post/oneline-undent
 tags:
   - javascript
-  - nodejs
+  - node
   - tools
   - webdev
   - programming

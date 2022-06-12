@@ -9,7 +9,7 @@ publishedAt: 2021-05-14T20:01:24.120Z
 canonical: null
 tags:
   - javascript
-  - nodejs
+  - node
   - typescript
   - tutorial
   - programming

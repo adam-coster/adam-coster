@@ -13,7 +13,7 @@ tags:
   - webdev
   - javascript
   - typescript
-  - nodejs
+  - node
 crossPosts:
   - https://dev.to/adamcoster/make-coding-a-joy-with-these-core-vscode-extensions-and-settings-5b5b
   - https://www.bscotch.net/post/vscode-extensions-and-settings
