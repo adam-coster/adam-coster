@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "@adam-coster/site-tools": "file:projects/site-tools",
+    "@adam-coster/utility": "^0.1.0",
     "@bscotch/pathy": "^1.0.0",
     "@bscotch/trebuchet": "^1.2.0",
     "@bscotch/utility": "^6.0.0",
@@ -42,7 +43,6 @@
     "@types/node": "17.0.42",
     "@types/puppeteer": "^5.4.6",
     "@types/remove-markdown": "^0.3.1",
-    "@types/sharp": "^0.30.4",
     "@typescript-eslint/eslint-plugin": "^5.27.1",
     "@typescript-eslint/parser": "^5.27.1",
     "change-case": "^4.1.2",
@@ -57,8 +57,6 @@
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.5.1",
     "husky": "^8.0.1",
-    "just-omit": "^2.0.1",
-    "just-pick": "^4.0.1",
     "lint-staged": "^13.0.1",
     "lunr": "^2.3.9",
     "node-html-parser": "^5.3.3",
@@ -91,7 +89,9 @@
     "vscodeWorkspaceConfigPath": false
   },
   "devDependencies": {
-    "@types/lunr": "^2.3.4",
-    "sharp": "^0.30.6"
+    "@types/lunr": "^2.3.4"
+  },
+  "volta": {
+    "node": "16.15.1"
   }
 }

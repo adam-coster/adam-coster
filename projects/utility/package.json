@@ -1,5 +1,5 @@
 {
-  "name": "@adam-coster/site-tools",
+  "name": "@adam-coster/utility",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -15,8 +15,5 @@
     "build": "tsc --build",
     "test": "treb test",
     "watch": "tsc --build --watch"
-  },
-  "devDependencies": {
-    "@adam-coster/utility": "^0.1.0"
   }
 }
