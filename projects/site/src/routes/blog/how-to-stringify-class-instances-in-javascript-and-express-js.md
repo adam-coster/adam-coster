@@ -6,7 +6,6 @@ description: >
   methods and replacers.
 editedAt: 2021-01-23T23:51:07.836Z
 publishedAt: 2020-09-02T02:08:14.153Z
-canonical: https://www.bscotch.net/post/custom-stringification-javascript
 tags:
   - typescript
   - javascript
@@ -16,6 +15,7 @@ tags:
   - json
 crossPosts:
   - https://dev.to/adamcoster/how-to-stringify-class-instances-in-javascript-and-express-js-co4
+  - https://www.bscotch.net/post/custom-stringification-javascript
 ---
 
 When trying to take an object-oriented approach in Javscript, you'll run into the following problem: The native `JSON.stringify()` method, which works wonders for plain objects, is basically useless for class instances.

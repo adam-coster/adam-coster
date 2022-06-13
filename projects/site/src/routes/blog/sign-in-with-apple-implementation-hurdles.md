@@ -5,7 +5,6 @@ description: >
   Apple released its own OAuth implementation, and really wants you to use it.
   Their non-standard implementation presents a development challenge.
 publishedAt: 2019-10-10T18:39:44.577Z
-canonical: https://www.bscotch.net/post/sign-in-with-apple-implementation-hurdles
 tags:
   - webdev
   - authentication
@@ -16,6 +15,7 @@ tags:
   - http
 crossPosts:
   - https://dev.to/adamcoster/sign-in-with-apple-implementation-hurdles-761
+  - https://www.bscotch.net/post/sign-in-with-apple-implementation-hurdles
 ---
 
 _Note: This post is fairly technical and written for web developers. It assumes a basic understanding of web and authentication terminology. The conclusion is a bit more high-level, so you can skip right down to that if you don't need details!_

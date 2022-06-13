@@ -5,7 +5,6 @@ description: >
   Use JavaScript's template literals to make it a breeze
   to stick strings together and insert data into them.
 publishedAt: 2021-02-01T15:00:13.713Z
-canonical: https://www.bscotch.net/post/oneline-undent
 tags:
   - javascript
   - node
@@ -15,6 +14,7 @@ tags:
   - typescript
 crossPosts:
   - https://dev.to/adamcoster/prettify-your-javascript-strings-4gf8
+  - https://beta.bscotch.net/post/oneline-undent
 ---
 
 A new-ish feature of JavaScript is the [Template Literal](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals). It's basically a fancy string that lets you interpolate stuff and use newlines. But template literals have another feature that isn't as well-known, probably because they're a little weird and hard to find use cases for.

@@ -6,7 +6,6 @@ description: >
   Windows do all the hard work. Here's how.
 editedAt: 2021-01-25T01:43:32.707Z
 publishedAt: 2020-12-24T20:48:56.055Z
-canonical: https://www.bscotch.net/post/linux-on-windows
 tags:
   - linux
   - windows
