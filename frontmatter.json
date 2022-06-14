@@ -1,6 +1,6 @@
 {
   "$schema": "https://frontmatter.codes/frontmatter.schema.json",
-  "frontMatter.preview.host": "http://localhost:3000/blog",
+  "frontMatter.preview.host": "http://localhost:3000",
   "frontMatter.taxonomy.tags": [
     "math",
     "learn",
@@ -76,12 +76,13 @@
       "title": "Blog Posts"
     }
   ],
-  "frontMatter.taxonomy.slugPrefix": null,
+  "frontMatter.taxonomy.slugPrefix": "",
   "frontMatter.taxonomy.contentTypes": [
     {
       "name": "default",
       "pageBundle": false,
       "fileType": "md",
+      "previewPath": "blog",
       "fields": [
         {
           "title": "slug",
