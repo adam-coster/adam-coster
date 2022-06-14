@@ -3,20 +3,14 @@
 ## Website
 
 - Milestone: Deployed
-  - Get Google Search ownership working
-  - Update all Dev.to posts to set new canonical URL
-  - Update Medium posts to set new canonical URL
-  - Redirect `www`->apex
+  - Add a sitemap
+  - Inform Google Search of the sitemap & trigger indexing
 - Miscellaneous future features
   - Hook up a "draft" toggle on posts that prevents the build in production on associated pages.
     - Will also need to exclude from search, RSS, etc
-  - Get FrontMatter extension working for article management
   - Center iframes in articles (e.g. http://localhost:3000/blog/how-to-set-up-a-node-project-with-typescript)
   - Have the Podcast link go to a page explaining the podcast
   - Add a `/uses` page
-  - Create an identity graph linking all of my digital identities together
-  - Make headings clickable (to get direct links).
-  - Reorganize to get rid of the multi-package setup
   - Automate cross-posting
   - Find other articles and migrate
     - Sources:
