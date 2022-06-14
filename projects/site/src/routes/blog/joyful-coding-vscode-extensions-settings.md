@@ -17,6 +17,7 @@ tags:
 crossPosts:
   - https://dev.to/adamcoster/make-coding-a-joy-with-these-core-vscode-extensions-and-settings-5b5b
   - https://www.bscotch.net/post/vscode-extensions-and-settings
+  - https://adamcoster.medium.com/make-coding-a-joy-with-these-core-vscode-extensions-and-settings-d6dcda3fc346
 ---
 
 Visual Studio Code (VSCode) has rapidly become the favored editor/IDE for a huge swath of web developers. This is in no small part due to its robust extensions marketplace and the fact that you can change how pretty much every little aspect works.

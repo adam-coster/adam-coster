@@ -13,6 +13,7 @@ tags:
   - webdev
 crossPosts:
   - https://dev.to/adamcoster/how-to-run-linux-on-windows-10-using-wsl2-kph
+  - https://adamcoster.medium.com/how-to-run-linux-on-windows-10-using-wsl2-afb84fc02239
 ---
 
 Matching your development and production environments can save a lot of headache. In webdev our production environments are usually some flavor of Linux. While I love using Linux (I spent a couple years mostly usuing Ubuntu), the reality is that I often need Windows-only software. Switching back and forth between Windows and Linux machines/partitions is painful -- fortunately you can run both at once.

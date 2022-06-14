@@ -16,6 +16,7 @@ tags:
 crossPosts:
   - https://dev.to/adamcoster/setting-up-windows-10-for-web-development-including-docker-linux-and-node-js-3fjk
   - https://www.bscotch.net/post/windows-10-for-web-docker-linux
+  - https://adamcoster.medium.com/setting-up-windows-10-for-web-development-including-docker-linux-and-node-js-9f7872fea82
 ---
 
 I recently had a catastrophic crash of my desktop, so it was time for a fresh Windows 10 install. Which also meant getting my development environment set back up. Modern webdev environments have a lot going on, especially when you throw Docker into the mix, and there are always a bunch of little useful Windows tweaks that are easy to forget. So I documented all the details for future reference, and to share.

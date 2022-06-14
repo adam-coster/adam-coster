@@ -19,6 +19,7 @@ tags:
   - data
 crossPosts:
   - https://dev.to/adamcoster/learn-how-binary-encoding-works-it-s-more-fun-and-useful-than-you-think-lbd
+  - https://adamcoster.medium.com/learn-how-binary-encoding-works-its-more-fun-and-useful-than-you-think-c387f9e2d033
 ---
 
 Data requires context to create meaning.

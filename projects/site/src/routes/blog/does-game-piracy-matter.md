@@ -10,6 +10,7 @@ tags:
   - business
 crossPosts:
   - https://www.bscotch.net/post/does-piracy-matter
+  - https://adamcoster.medium.com/piracy-does-it-matter-31ca29643d21
 ---
 
 You spent two years and an enormous amount of human time and resources building your game. Your source code was locked down, people couldn't wait to get a hold of what you'd made, and the thing was done, tested, and ready to go. You launched it, and watched the numbers climb.
