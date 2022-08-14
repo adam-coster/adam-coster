@@ -83,7 +83,7 @@
       '@type': 'SearchAction',
       target: {
         '@type': 'EntryPoint',
-        urlTemplate: normalizeUrl('/blog?search={search_term_string}'),
+        urlTemplate: `${normalizeUrl('/blog')}?search={search_term_string}`,
       },
       // @ts-ignore (see https://developers.google.com/search/docs/advanced/structured-data/sitelinks-searchbox)
       'query-input': 'required name=search_term_string',
