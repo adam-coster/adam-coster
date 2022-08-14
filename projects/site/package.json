@@ -8,7 +8,8 @@
     "watch": "svelte-kit dev",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
-    "preview": "svelte-kit preview"
+    "preview": "svelte-kit preview",
+    "test": "npm run preview && wait-on http://localhost:3000 && cypress run"
   },
   "dependencies": {
     "@adam-coster/site-tools": "^0.1.0",
@@ -17,5 +18,9 @@
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "just-debounce": "^1.1.0",
     "svelte-fa": "^2.4.0"
+  },
+  "devDependencies": {
+    "cypress": "^10.4.0",
+    "wait-on": "^6.0.1"
   }
 }
