@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "svelte-kit build && node scripts/createSocialPreviews.js",
+    "build": "svelte-kit build && node scripts/postBuild.js",
     "watch": "svelte-kit dev",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
