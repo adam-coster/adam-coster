@@ -34,8 +34,8 @@
   export interface Metadata {
     title: string;
     description: string;
-    canonical?: string;
-    microdata?: OneOrMore<MicrodataSchema>;
+    canonical: string;
+    microdata: OneOrMore<MicrodataSchema>;
     noRobots?: boolean;
     type?: 'website' | 'article';
   }
@@ -83,7 +83,10 @@
     return normalizeUrl(`/previews${pathname}.jpg`);
   }
 
-  export function previewAltFromMetadata(meta: MetadataNormalized) {
+  export function previewAltFromMetadata(meta: {
+    canonical: string;
+    title: string;
+  }) {
     return `Preview image capturing a portion of the page at ${meta.canonical} showing the page's title: "${meta.title}"`;
   }
 
@@ -108,8 +111,8 @@
       canonical: normalizeUrl(''),
       type: 'website',
       noRobots: false,
-      microdata: '',
-    } as MetadataNormalized);
+      microdata: '' as any, // On set, should force to a string, but the types don't work as expected otherwise,
+    } as Metadata);
 
     return {
       subscribe,
@@ -123,7 +126,9 @@
           noRobots: metadata.noRobots,
           microdata: ldJsonify(ensureArray(metadata.microdata)),
         };
-        set(cleanMeta);
+        set(
+          cleanMeta as any, // Only way to make this work properly when using the setter
+        );
       },
     };
   }
