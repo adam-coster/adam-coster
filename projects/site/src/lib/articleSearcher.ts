@@ -35,7 +35,7 @@ export class ArticleMetadata {
     return this.frontMatter.description;
   }
   get tags() {
-    return [...this.frontMatter.tags];
+    return [...(this.frontMatter.tags || [])];
   }
   get images() {
     return [...(this.frontMatter.images || [])];
