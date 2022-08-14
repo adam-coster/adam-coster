@@ -1,16 +1,29 @@
 # TODO
 
+- Switch to pnpm
+
 ## Website
 
 - Milestone: Deployed
   - Add a sitemap
   - Inform Google Search of the sitemap & trigger indexing
+- Add testing to run after build
+  - social previews
+  - sitemaps
+  - feeds
+  - 404 page
+  - redirect(s)
+- Add themes
+  - In developer mode, expose a bunch of global CSS variables for easy editing
+  - Add a theme selector (once some themes exist)
 - Miscellaneous future features
-  - Hook up a "draft" toggle on posts that prevents the build in production on associated pages.
-    - Will also need to exclude from search, RSS, etc
-  - Center iframes in articles (e.g. http://localhost:3000/blog/how-to-set-up-a-node-project-with-typescript)
   - Have the Podcast link go to a page explaining the podcast
   - Add a `/uses` page
+  - Add an `/appearances` page (or something) linking to interviews etc
+  - Add a `/portfolio` page
+    - Bscotch (the company)
+    - Each Bscotch game
+    - Major public projects
   - Automate cross-posting
   - Find other articles and migrate
     - Sources:
@@ -31,6 +44,4 @@
   - Add distinct page for code projects with info
   - Add "advanced" search info to articles (list allowed fields, link to [lunr docs](https://lunrjs.com/guides/searching.html))
   - Create a tag hierarchy system and ensure all articles match it
-  - Update header to either remove my portrait or make it part of the navbar
   - Add TOOLS section with useful web-based tools
-    - Zapier code editor (the built-in one has no Intellisense). Is this hard to do?

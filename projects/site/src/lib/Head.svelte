@@ -35,7 +35,7 @@
     title: string;
     description: string;
     canonical: string;
-    microdata: OneOrMore<MicrodataSchema>;
+    microdata?: OneOrMore<MicrodataSchema>;
     noRobots?: boolean;
     type?: 'website' | 'article';
   }

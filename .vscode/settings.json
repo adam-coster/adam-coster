@@ -36,9 +36,7 @@
     "*.mjs": "$(capture).*",
     "*.cjs": "$(capture).*",
     "*rc": "$(capture)ignore",
-    "package.json": "workspace.json, lerna.*, readme.md, executors.json, generators.json, nx.json, package-lock.json,.gitignore, .*, tsconfig.*, turbo.json",
-    "tsconfig.json": "tsconfig.*.json",
-    "readme.md": "todo*, changelog*, license*, contributing*"
+    "package.json": "workspace.json, lerna.*, readme.md, executors.json, generators.json, nx.json, package-lock.json,.gitignore, .*, tsconfig.*, turbo.json, *.config.ts, *.config.js"
   },
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": false,
