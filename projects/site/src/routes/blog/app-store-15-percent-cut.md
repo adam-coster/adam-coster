@@ -1,13 +1,17 @@
 ---
-slug: 'app-store-15-percent-cut'
+slug: app-store-15-percent-cut
 title: "Apple's 15% cut for non-millionaires: PR move or sound investment?"
 description: >
-  The announcement created a lot of buzz, and a lot of questions. Is it "just a PR stunt" to help Apple's side of its various anti-monopoly suits?
+  The announcement created a lot of buzz, and a lot of questions. Is it "just a
+  PR stunt" to help Apple's side of its various anti-monopoly suits?
 publishedAt: 2020-11-18T06:00:00.000Z
-canonical: 'https://www.gamasutra.com/blogs/AdamCoster/20201119/373966/Apples_15_cut_for_nonmillionaires_PR_move_or_sound_investment.php'
+canonical: https://www.gamasutra.com/blogs/AdamCoster/20201119/373966/Apples_15_cut_for_nonmillionaires_PR_move_or_sound_investment.php
 tags:
+  - apple
+  - business
+  - gamedev
 crossPosts:
-  - 'https://adamcoster.medium.com/apples-15-cut-for-non-millionaires-pr-move-or-sound-investment-d5b7655da1a5'
+  - https://adamcoster.medium.com/apples-15-cut-for-non-millionaires-pr-move-or-sound-investment-d5b7655da1a5
 ---
 
 Apple [just announced](https://www.apple.com/newsroom/2020/11/apple-announces-app-store-small-business-program/) their "App Store Small Business Program", wherein companies making less than $1 million/year can keep 85% instead of 70% of revenue (the system is a bit less straightforward than that, but that's the gist).
