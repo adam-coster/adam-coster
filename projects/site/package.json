@@ -5,11 +5,12 @@
   "type": "module",
   "scripts": {
     "build": "svelte-kit build && node scripts/postBuild.js",
-    "watch": "svelte-kit dev",
+    "watch": "svelte-kit dev --port 3000",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
-    "preview": "svelte-kit preview",
-    "test": "npm run preview && wait-on http://localhost:3000 && cypress run"
+    "preview": "svelte-kit preview --port 3037",
+    "test:when-ready": "wait-on --timeout 30000 http://localhost:3037 && cypress run --e2e --config baseUrl=http://localhost:3037",
+    "test": "concurrently --names serve,test --success command-test --kill-others \"npm:preview\" \"npm:test:when-ready\""
   },
   "dependencies": {
     "@adam-coster/site-tools": "^0.1.0",
@@ -20,6 +21,7 @@
     "svelte-fa": "^2.4.0"
   },
   "devDependencies": {
+    "concurrently": "^7.3.0",
     "cypress": "^10.4.0",
     "wait-on": "^6.0.1"
   }

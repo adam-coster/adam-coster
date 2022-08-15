@@ -11,3 +11,4 @@ static/blog-search.json
 static/feeds
 static/sitemap.xml
 static/blog.*
+cypress/videos
