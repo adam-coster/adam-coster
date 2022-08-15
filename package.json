@@ -88,7 +88,8 @@
     "vscodeWorkspaceConfigPath": false
   },
   "devDependencies": {
-    "@types/lunr": "^2.3.4"
+    "@types/lunr": "^2.3.4",
+    "vite": "^3.0.7"
   },
   "volta": {
     "node": "16.15.1"
