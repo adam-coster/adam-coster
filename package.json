@@ -7,14 +7,14 @@
     "projects/*"
   ],
   "scripts": {
-    "build": "turbo run build",
+    "build:site": "turbo run --filter=site build test",
+    "build:dev": "turbo run build",
     "build:force": "turbo run build --force",
     "watch": "turbo run watch --parallel",
-    "add": "npm i --no-fund --legacy-peer-deps --workspaces=false",
-    "clean": "npm run clean:artifacts && npm run clean:caches",
-    "clean:artifacts": "rm -rf projects/*/dist projects/*/build projects/*/*.tsbuildinfo projects/*/package-lock.json",
+    "clean": "npm run clean:artifacts && npm run clean:caches && npm run clean:modules",
+    "clean:modules": "rm -rf node_modules projects/*/node_modules",
+    "clean:artifacts": "rm -rf projects/*/dist projects/*/build projects/*/*.tsbuildinfo projects/*/package-lock.json rm -rf projects/*/.svelte-kit",
     "clean:caches": "rm -rf projects/*/.turbo",
-    "fix": "treb fix --allProjects --packageJson",
     "postinstall": "patch-package",
     "prepare": "husky install",
     "test": "turbo run test"
@@ -33,7 +33,6 @@
     "@bscotch/pathy": "^1.0.0",
     "@bscotch/trebuchet": "^1.2.0",
     "@bscotch/utility": "^6.0.0",
-    "@sveltejs/adapter-auto": "^1.0.0-next.50",
     "@sveltejs/adapter-cloudflare": "^1.0.0-next.23",
     "@sveltejs/kit": "^1.0.0-next.350",
     "@types/fs-extra": "^9.0.13",

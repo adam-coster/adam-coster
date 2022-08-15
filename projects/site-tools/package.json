@@ -16,7 +16,13 @@
     "test": "treb test",
     "watch": "tsc --build --watch"
   },
+  "dependencies": {
+    "@adam-coster/utility": "^0.1.0",
+    "feed": "^4.2.2",
+    "lunr": "^2.3.9"
+  },
   "devDependencies": {
-    "@adam-coster/utility": "^0.1.0"
+    "@types/lunr": "^2.3.4",
+    "vite": "^3.0.7"
   }
 }

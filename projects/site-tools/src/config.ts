@@ -31,6 +31,7 @@ export function createConfig(options: {
       },
       trailingSlash: 'never',
       vite: {
+        // @ts-expect-error This type misbehaving weirdly with latest Vite
         plugins: [updateArticleSearch(options)],
       },
     },
