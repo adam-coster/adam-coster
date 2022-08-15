@@ -45,9 +45,6 @@
     microdata?: string;
   }
 
-  const protocol = mode == 'development' ? 'http:' : 'https:';
-  const host = mode == 'development' ? 'localhost:3000' : productionHost;
-
   function normalizeTitle(title: string) {
     return title ? `${title} | Adam Coster` : 'Adam Coster';
   }
@@ -62,14 +59,12 @@
     if (url.match(/^https?:\/\//)) {
       canonical = new URL(url);
     } else {
-      canonical = new URL(`${protocol}//${host}${url}`);
+      canonical = new URL(`https://adamcoster.com${url}`);
     }
     // If external, leave it alone. Otherwise clean it up!
-    if (!canonical.host.endsWith(host)) {
+    if (!canonical.host.endsWith('adamcoster.com')) {
       return url;
     }
-    // Ensure HTTPS
-    canonical.protocol = protocol;
     // Remove trailing slash
     canonical.pathname = canonical.pathname.replace(/\/$/, '');
     // Remove query params
