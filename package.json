@@ -2,16 +2,17 @@
   "name": "adam-coster",
   "private": true,
   "type": "module",
-  "packageManager": "npm@8.10.0",
-  "workspaces": [
-    "projects/*"
-  ],
+  "engines": {
+    "node": ">=16",
+    "pnpm": ">=7"
+  },
   "scripts": {
     "build:site": "turbo run --filter=site build test",
     "build:dev": "turbo run build",
     "build:force": "turbo run build --force",
     "watch": "turbo run watch --parallel",
-    "clean": "npm run clean:artifacts && npm run clean:caches && npm run clean:modules",
+    "fix:dep-versions": "syncpack fix-mismatches",
+    "clean": "clean:artifacts &&clean:caches && clean:modules",
     "clean:modules": "rm -rf node_modules projects/*/node_modules",
     "clean:artifacts": "rm -rf projects/*/dist projects/*/build projects/*/*.tsbuildinfo projects/*/package-lock.json rm -rf projects/*/.svelte-kit",
     "clean:caches": "rm -rf projects/*/.turbo",
@@ -19,79 +20,45 @@
     "prepare": "husky install",
     "test": "turbo run test"
   },
-  "lint-staged": {
-    "*": [
-      "npx prettier --config .prettierrc -w -u"
+  "nano-staged": {
+    "*.{js,ts,json,yaml,yml,md,svelte}": [
+      "pnpm prettier --config .prettierrc -w -u"
     ],
-    "*.ts": [
-      "npx eslint --fix --cache --quiet --ext ts"
+    "*.{ts,svelte}": [
+      "pnpm eslint --fix --cache --quiet --ext ts"
     ]
   },
   "dependencies": {
-    "@adam-coster/site-tools": "file:projects/site-tools",
-    "@adam-coster/utility": "^0.1.0",
-    "@bscotch/pathy": "^1.0.0",
     "@bscotch/trebuchet": "^1.2.0",
-    "@bscotch/utility": "^6.0.0",
-    "@sveltejs/adapter-cloudflare": "^1.0.0-next.23",
-    "@sveltejs/kit": "^1.0.0-next.350",
-    "@types/fs-extra": "^9.0.13",
-    "@types/hast": "^2.3.4",
-    "@types/lunr": "^2.3.4",
     "@types/mocha": "^9.1.1",
     "@types/node": "17.0.42",
-    "@types/puppeteer": "^5.4.6",
-    "@types/remove-markdown": "^0.3.1",
     "@typescript-eslint/eslint-plugin": "^5.27.1",
     "@typescript-eslint/parser": "^5.27.1",
-    "change-case": "^4.1.2",
-    "drivelist": "^9.2.4",
+    "depcheck": "^1.4.3",
     "eslint": "^8.17.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-html": "^6.2.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-svelte3": "^4.0.0",
-    "feed": "^4.2.2",
-    "fs-extra": "^10.1.0",
-    "gray-matter": "^4.0.3",
-    "highlight.js": "^11.5.1",
     "husky": "^8.0.1",
-    "lint-staged": "^13.0.1",
-    "lunr": "^2.3.9",
-    "node-html-parser": "^5.3.3",
+    "nano-staged": "^0.8.0",
     "patch-package": "^6.4.7",
     "prettier": "^2.6.2",
     "prettier-plugin-svelte": "^2.7.0",
-    "puppeteer": "^14.3.0",
-    "rehype-accessible-emojis": "^0.3.2",
-    "rehype-autolink-headings": "^6.1.1",
-    "rehype-highlight": "^5.0.2",
-    "rehype-slug": "^5.0.1",
-    "rehype-stringify": "^9.0.3",
-    "remark-gfm": "^3.0.1",
-    "remark-parse": "^10.0.1",
-    "remark-rehype": "^10.1.0",
-    "remove-markdown": "^0.5.0",
-    "sass": "^1.52.3",
-    "schema-dts": "^1.1.0",
-    "sitemap": "^7.1.1",
-    "svelte": "^3.48.0",
-    "svelte-check": "^2.7.2",
-    "svelte-preprocess": "^4.10.7",
-    "ts-node": "^10.8.1",
-    "tslib": "^2.4.0",
+    "svelte": "^3.49.0",
+    "syncpack": "^8.2.4",
     "turbo": "^1.2.16",
-    "typescript": "^4.8.0-dev.20220529",
-    "unified": "^10.1.2"
+    "typescript": "4.8.1-rc"
   },
   "trebuchet": {
     "vscodeWorkspaceConfigPath": false
   },
-  "devDependencies": {
-    "@types/lunr": "^2.3.4",
-    "vite": "^3.0.7"
+  "pnpm": {
+    "overrides": {
+      "typescript": "4.8.1-rc"
+    }
   },
-  "volta": {
-    "node": "16.15.1"
+  "syncpack": {
+    "workspace": false
   }
 }

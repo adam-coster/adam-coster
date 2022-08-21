@@ -17,12 +17,36 @@
     "watch": "tsc --build --watch"
   },
   "dependencies": {
-    "@adam-coster/utility": "^0.1.0",
+    "@adam-coster/utility": "workspace:*",
+    "@bscotch/pathy": "^1.0.0",
+    "@bscotch/utility": "^6.0.0",
+    "@sveltejs/adapter-cloudflare": "^1.0.0-next.23",
+    "@types/hast": "^2.3.4",
     "feed": "^4.2.2",
-    "lunr": "^2.3.9"
+    "gray-matter": "^4.0.3",
+    "highlight.js": "^11.5.1",
+    "lunr": "^2.3.9",
+    "node-html-parser": "^5.3.3",
+    "puppeteer": "^14.3.0",
+    "rehype-accessible-emojis": "^0.3.2",
+    "rehype-autolink-headings": "^6.1.1",
+    "rehype-highlight": "^5.0.2",
+    "rehype-slug": "^5.0.1",
+    "rehype-stringify": "^9.0.3",
+    "remark-gfm": "^3.0.1",
+    "remark-parse": "^10.0.1",
+    "remark-rehype": "^10.1.0",
+    "remove-markdown": "^0.5.0",
+    "svelte": "^3.49.0",
+    "svelte-preprocess": "^4.10.7",
+    "typescript": "4.8.1-rc",
+    "unified": "^10.1.2"
   },
   "devDependencies": {
+    "@sveltejs/kit": "^1.0.0-next.350",
     "@types/lunr": "^2.3.4",
+    "@types/puppeteer": "^5.4.6",
+    "@types/remove-markdown": "^0.3.1",
     "vite": "^3.0.7"
   }
 }

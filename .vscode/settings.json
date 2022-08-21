@@ -28,7 +28,8 @@
     "**/package-lock.json": true,
     "**/node_modules": true,
     "**/dist": true,
-    "**/build": true
+    "**/build": true,
+    "pnpm-lock.yaml": true
   },
   "explorer.fileNesting.patterns": {
     "*.js": "$(capture).*",
@@ -36,7 +37,7 @@
     "*.mjs": "$(capture).*",
     "*.cjs": "$(capture).*",
     "*rc": "$(capture)ignore",
-    "package.json": "workspace.json, lerna.*, readme.md, executors.json, generators.json, nx.json, package-lock.json,.gitignore, .*, tsconfig.*, turbo.json, *.config.ts, *.config.js"
+    "package.json": "workspace.json, lerna.*, readme.md, executors.json, generators.json, nx.json, package-lock.json,.gitignore, .*, tsconfig.*, turbo.json, *.config.ts, *.config.js,LICENSE, pnpm-workspace.yaml, pnpm-lock.yaml"
   },
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": false,
@@ -58,5 +59,7 @@
     "sourceMaps": true,
     "remoteRoot": null
   },
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "npm.packageManager": "pnpm",
+  "eslint.packageManager": "pnpm"
 }

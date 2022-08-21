@@ -1,5 +1,7 @@
 # Post ideas
 
+## Topics
+
 - Switching from npm to pnpm in monorepos
 - User-driven accessiblity in games via the "[second screen](https://www.gamesindustry.biz/articles/2022-07-01-in-praise-of-the-second-screen-opinion)"
 - Obtuseness-driven social success in games (Elden Ring, Minecraft)
