@@ -160,7 +160,6 @@ export function createMetadata() {
 			} else {
 				assert(typeof metadata.canonical === 'string', 'Canonical is required');
 				assert(metadata.type, 'Type is required');
-				assert(metadata.microdata, 'Microdata is required');
 				set({
 					title: normalizeTitle(metadata.title),
 					description: metadata.description,
