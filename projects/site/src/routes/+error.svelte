@@ -1,12 +1,11 @@
 <script type="ts">
+	import { dev } from '$app/environment';
 	import { page } from '$app/stores';
 	import Head, { metadata } from '$lib/Head.svelte';
-
 	interface ErrorInfo {
 		status: string;
 		title: string;
 		message: string;
-		details?: any;
 	}
 	const generalErrors: Record<string, ErrorInfo> = {
 		'404': {
@@ -21,23 +20,19 @@
 		},
 	};
 
-	function getError(): ErrorInfo {
-		const message = Object.assign(
-			{
-				status: `😕 ${$page.status}`,
-				title: `That didn't work right`,
-				message: `There's something I didn't account for here at all. Whoops!`,
-				details: $page.error,
-			},
-			generalErrors[`${$page.status}`] || {},
-		);
-		console.error($page.error.message);
-		return message;
-	}
+	const info = Object.assign(
+		{
+			status: `😕 ${$page.status}`,
+			title: `That didn't work right`,
+			message: `There's something I didn't account for here at all. Whoops!`,
+		},
+		generalErrors[`${$page.status}`] || {},
+	);
+	console.error($page.error.message);
 
 	$metadata = {
-		title: getError().title,
-		description: getError().message,
+		title: info.title,
+		description: info.message,
 		noRobots: true,
 	};
 </script>
@@ -45,10 +40,21 @@
 <Head />
 
 <h1>
-	<span class="error-status">{getError().status}</span>
-	<span class="error-title">{getError().title}</span>
+	<span class="error-status">{info.status}</span>
+	<span class="error-title">{info.title}</span>
 </h1>
-<p class="error-message">{getError().message}</p>
-{#if getError().details}
-	<pre class="error-details">{JSON.stringify(getError().details, null, 2)}</pre>
+<p class="error-message">{info.message}</p>
+{#if dev && $page.error}
+	<h2>🪲 {$page.error.message}</h2>
+	<pre class="error-details">{$page.error.stack}</pre>
 {/if}
+
+<style lang="scss">
+	.error-status {
+		color: var(--color-bad);
+		font-weight: var(--font-weight-regular);
+	}
+	.error-details {
+		overflow-x: scroll;
+	}
+</style>

@@ -149,7 +149,6 @@ export function createMetadata() {
 	return {
 		subscribe,
 		set(metadata: Metadata) {
-			console.log('SETTING METADATA', metadata);
 			assert(metadata.title, 'Title is required');
 			assert(metadata.description, 'Description is required');
 			if (metadata.noRobots) {
@@ -158,9 +157,8 @@ export function createMetadata() {
 					description: metadata.description,
 					noRobots: true,
 				});
-				return;
 			} else {
-				assert(typeof metadata.canonical !== 'string', 'Canonical is required');
+				assert(typeof metadata.canonical === 'string', 'Canonical is required');
 				assert(metadata.type, 'Type is required');
 				assert(metadata.microdata, 'Microdata is required');
 				set({
