@@ -1,25 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link rel="icon" href="/icons/favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="theme-color" content="#ffb835" />
-    <link rel="alternate" type="application/rss+xml" href="/feeds/blog.rss" />
-    <link rel="alternate" type="application/atom+xml" href="/feeds/blog.atom" />
-    <link
-      rel="alternate"
-      type="application/feed+json"
-      href="/feeds/blog.json"
-    />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    %sveltekit.head%
-  </head>
-  <body>
-    <div id="svelte">%sveltekit.body%</div>
-  </body>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.ico" sizes="any" />
+		<link
+			rel="icon"
+			href="%sveltekit.assets%/icons/favicon.svg"
+			type="image/svg+xml"
+		/>
+		<link
+			rel="apple-touch-icon"
+			href="%sveltekit.assets%/icons/apple-touch-icon.png"
+		/>
+		<link rel="manifest" href="%sveltekit.assets%/site.webmanifest" />
+		<meta name="msapplication-TileColor" content="#da532c" />
+		<meta name="theme-color" content="#ffb835" />
+		<link rel="alternate" type="application/rss+xml" href="/feeds/blog.rss" />
+		<link
+			rel="alternate"
+			type="application/atom+xml"
+			href="%sveltekit.assets%/feeds/blog.atom"
+		/>
+		<link
+			rel="alternate"
+			type="application/feed+json"
+			href="%sveltekit.assets%/feeds/blog.json"
+		/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		%sveltekit.head%
+	</head>
+	<body>
+		<div id="svelte">%sveltekit.body%</div>
+	</body>
 </html>

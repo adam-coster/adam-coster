@@ -1,33 +1,37 @@
-import type { OneOrMore } from '@adam-coster/site-tools';
+export type EnsuredDefinedArray<T> = T extends any[]
+	? T
+	: T extends undefined
+	? []
+	: [Exclude<T, undefined>];
 
-export function ensureArray<T>(value: OneOrMore<T>): T[] {
-  if (typeof value === 'undefined') {
-    return [];
-  }
-  return Array.isArray(value) ? value : [value];
+export function ensureArray<T>(value: T): EnsuredDefinedArray<T> {
+	if (typeof value === 'undefined') {
+		return [] as any;
+	}
+	return Array.isArray(value) ? value : ([value] as any);
 }
 
 export function robotDate(date: string | Date) {
-  return new Date(date).toISOString();
+	return new Date(date).toISOString();
 }
 
 export function humanDate(date: string | Date) {
-  return new Date(date).toLocaleDateString();
+	return new Date(date).toLocaleDateString();
 }
 
 function dateToEpoch(date: string | Date) {
-  return new Date(date).getTime();
+	return new Date(date).getTime();
 }
 
 export function dateToIso(date: string | Date) {
-  return new Date(date).toISOString();
+	return new Date(date).toISOString();
 }
 
 export function dateIsLater(date: Date | string, comparedTo: Date | string) {
-  if (!date || !comparedTo) {
-    return false;
-  }
-  return dateToEpoch(date) > dateToEpoch(comparedTo);
+	if (!date || !comparedTo) {
+		return false;
+	}
+	return dateToEpoch(date) > dateToEpoch(comparedTo);
 }
 
 /**
@@ -36,27 +40,27 @@ export function dateIsLater(date: Date | string, comparedTo: Date | string) {
  * link content).
  */
 export function stripUrlProtocol(url: string) {
-  return url.replace(/^https?:\/\//, '');
+	return url.replace(/^https?:\/\//, '');
 }
 
 export function getUrlHostName(url: string) {
-  return new URL(url).hostname;
+	return new URL(url).hostname;
 }
 
 export function getPatchedUrl(url: URL, queryPatch: Record<string, string>) {
-  Object.keys(queryPatch).forEach((key) => {
-    if ([null, undefined, ''].includes(queryPatch[key])) {
-      url.searchParams.delete(key);
-    } else {
-      url.searchParams.set(key, queryPatch[key]);
-    }
-  });
-  return url;
+	Object.keys(queryPatch).forEach((key) => {
+		if ([null, undefined, ''].includes(queryPatch[key])) {
+			url.searchParams.delete(key);
+		} else {
+			url.searchParams.set(key, queryPatch[key]);
+		}
+	});
+	return url;
 }
 
 export function asDateIfExists(value: any) {
-  const asDate = value && new Date(value);
-  if (asDate && asDate.getTime()) {
-    return asDate;
-  }
+	const asDate = value && new Date(value);
+	if (asDate && asDate.getTime()) {
+		return asDate;
+	}
 }
