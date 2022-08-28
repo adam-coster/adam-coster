@@ -1,38 +1,29 @@
 {
-  "version": "2.0.0",
-  "tasks": [
-    {
-      "type": "npm",
-      "script": "watch",
-      "group": "build",
-      "problemMatcher": [],
-      "label": "🚀 Dev Up!",
-      "detail": "turbo run watch --parallel"
-    },
-    {
-      "type": "npm",
-      "script": "build",
-      "group": "build",
-      "problemMatcher": [],
-      "label": "🏗️ Build",
-      "detail": "Build all projects with turbo"
-    },
-    {
-      "type": "npm",
-      "script": "clean",
-      "group": "build",
-      "problemMatcher": [],
-      "label": "🧹 Clean",
-      "detail": "Clean up caches and artifacts"
-    },
-    {
-      "type": "npm",
-      "script": "build:force",
-      "group": "build",
-      "problemMatcher": [],
-      "dependsOn": ["🧹 Clean"],
-      "label": "🆕🏗️ Build (skip cache)",
-      "detail": "Clear caches & artifacts and run a fresh build"
-    }
-  ]
+	"version": "2.0.0",
+	"inputs": [
+		{
+			"id": "coreProject",
+			"description": "A project to work on that likely has local deps within the monorepo.",
+			"type": "pickString",
+			"options": ["site", "site-tools", "utility"]
+		}
+	],
+	"tasks": [
+		{
+			"type": "shell",
+			"command": "pnpm turbo run watch --force --filter=@adam-coster/${input:coreProject}...",
+			"group": "build",
+			"label": "🚀 Dev",
+			"detail": "Run builds with turbo in Watch mode, for a project and its deps.",
+			"isBackground": true,
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"group": "dev",
+				"clear": true
+			}
+		}
+	]
 }

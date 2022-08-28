@@ -1,65 +1,67 @@
 {
-  "markdown.extension.tableFormatter.enabled": false,
-  "markdown.extension.toc.downcaseLink": true,
-  "markdown.extension.toc.orderedList": false,
-  "markdown.extension.toc.levels": "2..6",
-  "markdown.extension.toc.updateOnSave": true,
-  "markdown.extension.toc.slugifyMode": "github",
-  "markdown.extension.list.indentationSize": "adaptive",
-  "markdown.extension.syntax.decorations": true,
-  "json.schemas": [
-    {
-      "fileMatch": ["cdk.json"],
-      // Awaiting an official schema, via:
-      // https://github.com/aws/aws-toolkit-vscode/pull/2078
-      // But it's been open for a long time, so there's a good chance
-      // this will get out of date!
-      "url": "https://raw.githubusercontent.com/tinovyatkin/aws-toolkit-vscode/feature/cdk-json-schema/src/cdk/schema/cdk.json"
-    }
-  ],
-  "files.exclude": {
-    "tmp/": true,
-    "**/node_modules": true,
-    "**/.turbo": true,
-    "**/*.tsbuildinfo": true,
-    "**/dist": true
-  },
-  "search.exclude": {
-    "**/package-lock.json": true,
-    "**/node_modules": true,
-    "**/dist": true,
-    "**/build": true,
-    "pnpm-lock.yaml": true
-  },
-  "explorer.fileNesting.patterns": {
-    "*.js": "$(capture).*",
-    "*.ts": "$(capture).*",
-    "*.mjs": "$(capture).*",
-    "*.cjs": "$(capture).*",
-    "*rc": "$(capture)ignore",
-    "package.json": "workspace.json, lerna.*, readme.md, executors.json, generators.json, nx.json, package-lock.json,.gitignore, .*, tsconfig.*, turbo.json, *.config.ts, *.config.js,LICENSE, pnpm-workspace.yaml, pnpm-lock.yaml"
-  },
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": false,
-    "source.organizeImports": false,
-    "source.fixAll": false,
-    "source.addMissingImports": false
-  },
-  "javascript.preferences.importModuleSpecifierEnding": "js",
-  "typescript.preferences.importModuleSpecifierEnding": "js",
-  "javascript.preferences.importModuleSpecifier": "project-relative",
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "debug.javascript.terminalOptions": {
-    "skipFiles": ["<node_internals>/**"],
-    "sourceMaps": true,
-    "remoteRoot": null
-  },
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "npm.packageManager": "pnpm",
-  "eslint.packageManager": "pnpm"
+	"markdown.extension.tableFormatter.enabled": false,
+	"markdown.extension.toc.downcaseLink": true,
+	"markdown.extension.toc.orderedList": false,
+	"markdown.extension.toc.levels": "2..6",
+	"markdown.extension.toc.updateOnSave": true,
+	"markdown.extension.toc.slugifyMode": "github",
+	"markdown.extension.list.indentationSize": "adaptive",
+	"markdown.extension.syntax.decorations": true,
+	"json.schemas": [
+		{
+			"fileMatch": ["cdk.json"],
+			// Awaiting an official schema, via:
+			// https://github.com/aws/aws-toolkit-vscode/pull/2078
+			// But it's been open for a long time, so there's a good chance
+			// this will get out of date!
+			"url": "https://raw.githubusercontent.com/tinovyatkin/aws-toolkit-vscode/feature/cdk-json-schema/src/cdk/schema/cdk.json"
+		}
+	],
+	"files.exclude": {
+		"tmp/": true,
+		"**/node_modules": true,
+		"**/.turbo": true,
+		"**/*.tsbuildinfo": true,
+		"**/dist": true
+	},
+	"search.exclude": {
+		"**/package-lock.json": true,
+		"**/node_modules": true,
+		"**/dist": true,
+		"**/build": true,
+		"pnpm-lock.yaml": true
+	},
+	"explorer.fileNesting.patterns": {
+		"*.svelte": "$(capture).*",
+		"*.ts": "$(capture).*",
+		"*.js": "$(capture).*",
+		"*.mjs": "$(capture).*",
+		"*.cjs": "$(capture).*",
+		"*rc": "$(capture)ignore",
+		"package.json": "workspace.json, lerna.*, readme.md, executors.json, generators.json, nx.json, package-lock.json,.gitignore, .*, tsconfig.*, turbo.json, *.config.ts, *.config.js,LICENSE, pnpm-workspace.yaml, pnpm-lock.yaml"
+	},
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true,
+		"source.organizeImports": true,
+		"source.fixAll": true,
+		"source.addMissingImports": true
+	},
+	"javascript.preferences.importModuleSpecifierEnding": "js",
+	"typescript.preferences.importModuleSpecifierEnding": "js",
+	"javascript.preferences.importModuleSpecifier": "project-relative",
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"debug.javascript.terminalOptions": {
+		"skipFiles": ["<node_internals>/**"],
+		"sourceMaps": true,
+		"remoteRoot": null
+	},
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"npm.packageManager": "pnpm",
+	"eslint.packageManager": "pnpm",
+	"cSpell.words": ["sveltekit"]
 }

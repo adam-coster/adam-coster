@@ -1,41 +1,41 @@
 {
-  "name": "@adam-coster/site",
-  "version": "0.0.1",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "build": "svelte-kit build && node scripts/postBuild.js",
-    "watch": "svelte-kit dev --port 3000",
-    "check": "svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
-    "preview": "svelte-kit preview --port 3037",
-    "test:when-ready": "wait-on --timeout 30000 http://localhost:3037 && cypress run --e2e --config baseUrl=http://localhost:3037",
-    "test": "concurrently --names serve,test --success command-test --kill-others \"pnpm:preview\" \"pnpm:test:when-ready\""
-  },
-  "dependencies": {
-    "@adam-coster/site-tools": "workspace:*",
-    "@bscotch/pathy": "^1.0.0",
-    "@fortawesome/free-brands-svg-icons": "^6.1.1",
-    "@fortawesome/free-regular-svg-icons": "^6.1.1",
-    "@fortawesome/free-solid-svg-icons": "^6.1.1",
-    "@sveltejs/kit": "^1.0.0-next.350",
-    "just-debounce": "^1.1.0",
-    "lunr": "^2.3.9",
-    "svelte": "^3.49.0",
-    "svelte-fa": "^2.4.0",
-    "typescript": "4.8.1-rc",
-    "vite": "^3.0.7"
-  },
-  "devDependencies": {
-    "@types/lunr": "^2.3.4",
-    "@types/puppeteer": "^5.4.6",
-    "concurrently": "^7.3.0",
-    "cypress": "^10.4.0",
-    "puppeteer": "^14.3.0",
-    "sass": "^1.52.3",
-    "schema-dts": "^1.1.0",
-    "svelte-check": "^2.7.2",
-    "svelte-preprocess": "^4.10.7",
-    "wait-on": "^6.0.1"
-  }
+	"name": "@adam-coster/site",
+	"version": "0.0.1",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "vite build && node scripts/postBuild.js",
+		"watch": "vite dev --port 3000",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"preview": "vite preview --port 3037",
+		"test:when-ready": "wait-on --timeout 30000 http://localhost:3037 && cypress run --e2e --config baseUrl=http://localhost:3037",
+		"test": "concurrently --names serve,test --success command-test --kill-others \"pnpm:preview\" \"pnpm:test:when-ready\""
+	},
+	"dependencies": {
+		"@adam-coster/site-tools": "workspace:*",
+		"@bscotch/pathy": "^1.0.0",
+		"@fortawesome/free-brands-svg-icons": "^6.1.2",
+		"@fortawesome/free-regular-svg-icons": "^6.1.2",
+		"@fortawesome/free-solid-svg-icons": "^6.1.2",
+		"@sveltejs/kit": "next",
+		"just-debounce": "^1.1.0",
+		"lunr": "^2.3.9",
+		"svelte": "^3.49.0",
+		"svelte-fa": "^2.4.0"
+	},
+	"devDependencies": {
+		"@types/lunr": "^2.3.4",
+		"@types/puppeteer": "^5.4.6",
+		"concurrently": "^7.3.0",
+		"cypress": "^10.6.0",
+		"puppeteer": "^14.4.1",
+		"sass": "^1.54.5",
+		"schema-dts": "^1.1.0",
+		"svelte-check": "^2.8.1",
+		"svelte-preprocess": "^4.10.7",
+		"typescript": "4.8.2",
+		"vite": "^3.0.9",
+		"wait-on": "^6.0.1"
+	}
 }

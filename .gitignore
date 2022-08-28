@@ -8,6 +8,15 @@ out-tsc
 .turbo
 .netlify
 
+# SvelteKit
+.DS_Store
+build
+.svelte-kit
+package
+.env
+.env.*
+!.env.example
+
 # dependencies
 node_modules
 package-lock.json
@@ -45,5 +54,3 @@ Thumbs.db
 
 # AWS
 cdk.context.json
-.env
-*.env
