@@ -48,38 +48,38 @@ Here's that dang custom error code as a Typescript snippet:
 ```json5
 /** @file MyCustom.code-snippets */
 {
-  'Custom Error': {
-    scope: 'typescript',
-    // The prefix is the what gets used for
-    // auto-complete, so when I type "error"
-    // in VSCode (in a Typescript file) one
-    // of the auto-complete options is this very
-    // snippet.
-    prefix: 'error-custom',
-    body: [
-      // Each entry in the array is treated as a separate
-      // line, and VSCode will use the correct newline
-      // characters based on your system and VSCode settings.
-      'export class ${1:name} extends Error {',
-      // The use of the tab character tells VSCode how things
-      // should be *relatively* indented, so that it can
-      // correctly auto-indent based on the code location
-      // you put the snippet into.
-      '\tconstructor(message:string) {',
-      '\t\tsuper(message);',
-      // Here I'm referencing the first placeholder from
-      // above, so that when I'm filling it out above it
-      // shows up down here as well!
-      "\t\tthis.name = '$1';",
-      '\t\tError.captureStackTrace(this, this.constructor);',
-      '\t}',
-      '}',
-      '',
-      "export function assert(claim:any, message = 'Assertion failed'): asserts claim {",
-      '\tif(!claim){throw new $1(message);}',
-      '}',
-    ],
-  },
+	'Custom Error': {
+		scope: 'typescript',
+		// The prefix is the what gets used for
+		// auto-complete, so when I type "error"
+		// in VSCode (in a Typescript file) one
+		// of the auto-complete options is this very
+		// snippet.
+		prefix: 'error-custom',
+		body: [
+			// Each entry in the array is treated as a separate
+			// line, and VSCode will use the correct newline
+			// characters based on your system and VSCode settings.
+			'export class ${1:name} extends Error {',
+			// The use of the tab character tells VSCode how things
+			// should be *relatively* indented, so that it can
+			// correctly auto-indent based on the code location
+			// you put the snippet into.
+			'\tconstructor(message:string) {',
+			'\t\tsuper(message);',
+			// Here I'm referencing the first placeholder from
+			// above, so that when I'm filling it out above it
+			// shows up down here as well!
+			"\t\tthis.name = '$1';",
+			'\t\tError.captureStackTrace(this, this.constructor);',
+			'\t}',
+			'}',
+			'',
+			"export function assert(claim:any, message = 'Assertion failed'): asserts claim {",
+			'\tif(!claim){throw new $1(message);}',
+			'}',
+		],
+	},
 }
 ```
 
@@ -87,20 +87,20 @@ That delightful little snippet drops in a custom error class, plus an assertion 
 
 ```ts
 export class MyCustomError extends Error {
-  constructor(message: string) {
-    super(message);
-    this.name = 'MyCustomError';
-    Error.captureStackTrace(this, this.constructor);
-  }
+	constructor(message: string) {
+		super(message);
+		this.name = 'MyCustomError';
+		Error.captureStackTrace(this, this.constructor);
+	}
 }
 
 export function assert(
-  claim: any,
-  message = 'Assertion failed',
+	claim: any,
+	message = 'Assertion failed',
 ): asserts claim {
-  if (!claim) {
-    throw new MyCustomError(message);
-  }
+	if (!claim) {
+		throw new MyCustomError(message);
+	}
 }
 ```
 
@@ -108,13 +108,13 @@ And here's a Markdown snippet that converts some selected text into a link to it
 
 ```json5
 {
-  'Add class to term reference': {
-    scope: 'markdown',
-    prefix: 'term',
-    body: [
-      '[${TM_SELECTED_TEXT}](#term:${TM_SELECTED_TEXT/(.*)/${1:/downcase}/})',
-    ],
-  },
+	'Add class to term reference': {
+		scope: 'markdown',
+		prefix: 'term',
+		body: [
+			'[${TM_SELECTED_TEXT}](#term:${TM_SELECTED_TEXT/(.*)/${1:/downcase}/})',
+		],
+	},
 }
 ```
 

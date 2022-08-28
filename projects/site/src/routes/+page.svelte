@@ -1,15 +1,16 @@
 <script lang="ts">
 	import Head, { metadata } from '$lib/Head.svelte';
-	import type { IdentityType } from '$lib/Identities.svelte';
-	import { digitalIdentities, identityTypes } from '$lib/Identities.svelte';
-	import { me, site } from '$lib/microdata.svelte';
+	import type { IdentityType } from '$lib/identities';
+	import { digitalIdentities, identityTypes } from '$lib/identities';
+	import { me, site } from '$lib/metadata';
 	import Icon from 'svelte-fa';
 	import Portrait from '../lib/Portrait.svelte';
 
 	$metadata = {
-		title: '',
+		title: 'About',
 		description: `Adam Coster's portfolio, writings, and web identifiers. Adam is the CEO of video game studio Butterscotch Shenanigans and co-hosts the podcast "Coffee with Butterscotch".`,
 		type: 'website',
+		canonical: '',
 		microdata: [site, me],
 	};
 

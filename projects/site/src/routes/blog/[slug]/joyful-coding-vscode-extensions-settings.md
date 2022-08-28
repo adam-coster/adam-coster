@@ -45,13 +45,13 @@ Code environment settings can be very personal, or can be dictated from above fo
 
 ```json
 {
-  "editor.fontFamily": "'Fira Code', Consolas, 'Courier New', monospace",
-  "editor.fontLigatures": true,
-  "js/ts.implicitProjectConfig.checkJs": true,
-  "eslint.validate": ["javascript", "html", "vue", "typescript"],
-  "git.autofetch": false,
-  "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
-  "terminal.integrated.shellArgs.windows": ["-l"]
+	"editor.fontFamily": "'Fira Code', Consolas, 'Courier New', monospace",
+	"editor.fontLigatures": true,
+	"js/ts.implicitProjectConfig.checkJs": true,
+	"eslint.validate": ["javascript", "html", "vue", "typescript"],
+	"git.autofetch": false,
+	"terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+	"terminal.integrated.shellArgs.windows": ["-l"]
 }
 ```
 

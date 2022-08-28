@@ -22,12 +22,15 @@
 	};
 
 	function getError(): ErrorInfo {
-		const message = generalErrors[`${$page.status}`] || {
-			status: `😕 ${$page.status}`,
-			title: `That didn't work right`,
-			message: `There's something I didn't account for here at all. Whoops!`,
-			details: $page.error,
-		};
+		const message = Object.assign(
+			{
+				status: `😕 ${$page.status}`,
+				title: `That didn't work right`,
+				message: `There's something I didn't account for here at all. Whoops!`,
+				details: $page.error,
+			},
+			generalErrors[`${$page.status}`] || {},
+		);
 		console.error($page.error.message);
 		return message;
 	}

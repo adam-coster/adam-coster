@@ -97,7 +97,7 @@ export class ArticleSearcher {
 	 * Use the search engine to find articles, using a search
 	 * string. The search engine is Lunr.
 	 */
-	async search(searchString: string) {
+	async search(searchString: string | undefined | null) {
 		if (!searchString) {
 			return this.all.then((articles) => [...articles]);
 		}

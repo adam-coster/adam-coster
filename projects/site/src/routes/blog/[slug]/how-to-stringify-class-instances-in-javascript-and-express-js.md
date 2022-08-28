@@ -24,26 +24,26 @@ For example:
 
 ```js
 const plainObject = {
-  hello: 'world',
-  something: 'else',
-  nested: { item: { number: 10 } },
+	hello: 'world',
+	something: 'else',
+	nested: { item: { number: 10 } },
 };
 JSON.stringify(plainObject);
 // Yields the perfect JSON string:
 // '{"hello":"world","something":"else","nested":{"item":{"number":10}}}'
 
 class MyFancyClass {
-  #something;
-  constructor() {
-    this.hello = 'world';
-    this.#something = 'else';
-  }
-  get item() {
-    return { number: 10 };
-  }
-  get nested() {
-    return { item: this.item };
-  }
+	#something;
+	constructor() {
+		this.hello = 'world';
+		this.#something = 'else';
+	}
+	get item() {
+		return { number: 10 };
+	}
+	get nested() {
+		return { item: this.item };
+	}
 }
 const instanceOfMyFancyClass = new MyFancyClass();
 JSON.stringify(instanceOfMyFancyClass);
@@ -61,24 +61,24 @@ This is super handy, since it allows you to add a `toJSON()` method to your clas
 
 ```js
 class MyStringifiableClass {
-  #something;
-  constructor() {
-    this.hello = 'world';
-    this.#something = 'else';
-  }
-  get item() {
-    return { number: 10 };
-  }
-  get nested() {
-    return { item: this.item };
-  }
-  toJSON() {
-    return {
-      hello: this.hello,
-      something: this.#something,
-      nested: this.nested,
-    };
-  }
+	#something;
+	constructor() {
+		this.hello = 'world';
+		this.#something = 'else';
+	}
+	get item() {
+		return { number: 10 };
+	}
+	get nested() {
+		return { item: this.item };
+	}
+	toJSON() {
+		return {
+			hello: this.hello,
+			something: this.#something,
+			nested: this.nested,
+		};
+	}
 }
 
 const stringifiableInstance = new MyStringifiableClass();
@@ -96,24 +96,24 @@ That is, unless you take advantage of the ["replacer" argument](https://develope
 
 ```js
 class MyStringifiableClass {
-  #something;
-  constructor() {
-    this.hello = 'world';
-    this.#something = 'else';
-  }
-  get item() {
-    return { number: 10 };
-  }
-  get nested() {
-    return { item: this.item };
-  }
-  toObject() {
-    return {
-      hello: this.hello,
-      something: this.#something,
-      nested: this.nested,
-    };
-  }
+	#something;
+	constructor() {
+		this.hello = 'world';
+		this.#something = 'else';
+	}
+	get item() {
+		return { number: 10 };
+	}
+	get nested() {
+		return { item: this.item };
+	}
+	toObject() {
+		return {
+			hello: this.hello,
+			something: this.#something,
+			nested: this.nested,
+		};
+	}
 }
 
 /**
@@ -121,10 +121,10 @@ class MyStringifiableClass {
  * @param {any} value
  */
 function jsonStringifyToObjectReplacer(key, value) {
-  if (value && value.toObject) {
-    return value.toObject();
-  }
-  return value;
+	if (value && value.toObject) {
+		return value.toObject();
+	}
+	return value;
 }
 
 const stringifiableInstance = new MyStringifiableClass();
@@ -137,7 +137,7 @@ For convenience, wrap your own function around the native stringifier and use th
 
 ```js
 function stringify(something) {
-  return JSON.stringify(something, jsonStringifyToObjectReplacer);
+	return JSON.stringify(something, jsonStringifyToObjectReplacer);
 }
 ```
 
@@ -155,9 +155,9 @@ const app = express();
 app.listen(8080);
 
 app.get('/', (req, res) => {
-  res.send({ hello: 'world' });
-  // Client recieves '{"hello":"world"}' body
-  // with content-type header set to "application/json"
+	res.send({ hello: 'world' });
+	// Client recieves '{"hello":"world"}' body
+	// with content-type header set to "application/json"
 });
 ```
 

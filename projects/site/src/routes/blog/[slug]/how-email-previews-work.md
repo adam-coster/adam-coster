@@ -31,9 +31,9 @@ All that happens is that the preview text is added to the email body as the _fir
 
 ```html
 <span
-  style="display:none;font-size:1px;color:#333333;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;"
+	style="display:none;font-size:1px;color:#333333;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;"
 >
-  Sneaky, magical preview text!
+	Sneaky, magical preview text!
 </span>
 ```
 
@@ -47,11 +47,11 @@ I saw a clever solution to this that Substack uses for its newsletter service. T
 
 ```html
 <span
-  style="display:none;font-size:1px;color:#333333;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;"
+	style="display:none;font-size:1px;color:#333333;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;"
 >
-  Sneaky, magical preview text!
-  &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
-  <!-- many MANY times -->
+	Sneaky, magical preview text!
+	&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+	<!-- many MANY times -->
 </span>
 ```
 

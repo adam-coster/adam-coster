@@ -74,7 +74,7 @@ I started with a dead-simple script that starts a websocket connection, listens 
  */
 const socket = new WebSocket('ws://localhost:8090');
 socket.addEventListener('close', () => {
-  location.reload();
+	location.reload();
 });
 ```
 
@@ -90,38 +90,38 @@ To resolve the first problem we can wrap the code in an IFFE (["Immediately Invo
  * @file site/client-websocket.js
  */
 (() => {
-  const socketUrl = 'ws://localhost:8090';
-  let socket = new WebSocket(socketUrl);
-  socket.addEventListener('close', () => {
-    // Then the server has been turned off,
-    // either due to file-change-triggered reboot,
-    // or to truly being turned off.
+	const socketUrl = 'ws://localhost:8090';
+	let socket = new WebSocket(socketUrl);
+	socket.addEventListener('close', () => {
+		// Then the server has been turned off,
+		// either due to file-change-triggered reboot,
+		// or to truly being turned off.
 
-    // Attempt to re-establish a connection until it works,
-    // failing after a few seconds (at that point things are likely
-    // turned off/permanantly broken instead of rebooting)
-    const interAttemptTimeoutMilliseconds = 100;
-    const maxDisconnectedTimeMilliseconds = 3000;
-    const maxAttempts = Math.round(
-      maxDisconnectedTimeMilliseconds / interAttemptTimeoutMilliseconds,
-    );
-    let attempts = 0;
-    const reloadIfCanConnect = () => {
-      attempts++;
-      if (attempts > maxAttempts) {
-        console.error('Could not reconnect to dev server.');
-        return;
-      }
-      socket = new WebSocket(socketUrl);
-      socket.addEventListener('error', () => {
-        setTimeout(reloadIfCanConnect, interAttemptTimeoutMilliseconds);
-      });
-      socket.addEventListener('open', () => {
-        location.reload();
-      });
-    };
-    reloadIfCanConnect();
-  });
+		// Attempt to re-establish a connection until it works,
+		// failing after a few seconds (at that point things are likely
+		// turned off/permanantly broken instead of rebooting)
+		const interAttemptTimeoutMilliseconds = 100;
+		const maxDisconnectedTimeMilliseconds = 3000;
+		const maxAttempts = Math.round(
+			maxDisconnectedTimeMilliseconds / interAttemptTimeoutMilliseconds,
+		);
+		let attempts = 0;
+		const reloadIfCanConnect = () => {
+			attempts++;
+			if (attempts > maxAttempts) {
+				console.error('Could not reconnect to dev server.');
+				return;
+			}
+			socket = new WebSocket(socketUrl);
+			socket.addEventListener('error', () => {
+				setTimeout(reloadIfCanConnect, interAttemptTimeoutMilliseconds);
+			});
+			socket.addEventListener('open', () => {
+				location.reload();
+			});
+		};
+		reloadIfCanConnect();
+	});
 })();
 ```
 
@@ -139,14 +139,14 @@ const WebSocket = require('ws');
 const HTTP_PORT = 8089;
 const WEBSOCKET_PORT = 8090;
 const CLIENT_WEBSOCKET_CODE = fs.readFileSync(
-  path.join(__dirname, 'client-websocket.js'),
-  'utf8',
+	path.join(__dirname, 'client-websocket.js'),
+	'utf8',
 );
 
 // Websocket server (for allowing browser and dev server to have 2-way communication)
 // We don't even need to do anything except create the instance!
 const wss = new WebSocket.Server({
-  port: WEBSOCKET_PORT,
+	port: WEBSOCKET_PORT,
 });
 
 /**
@@ -160,29 +160,29 @@ const wss = new WebSocket.Server({
  * @returns {boolean} Whether or not the page exists and was served
  */
 function serveStaticPageIfExists(route, res) {
-  // We don't care about performance for a dev server, so sync functions are fine.
-  // If the route exists it's either the exact file we want or the path to a directory
-  // in which case we'd serve up the 'index.html' file.
-  if (fs.existsSync(route)) {
-    if (fs.statSync(route).isDirectory()) {
-      return serveStaticPageIfExists(path.join(route, 'index.html'), res);
-    } else if (fs.statSync(route).isFile()) {
-      res.writeHead(200);
-      /** @type {string|Buffer} */
-      let file = fs.readFileSync(route);
-      if (route.endsWith('.html')) {
-        // Inject the client-side websocket code.
-        // This sounds fancier than it is; simply
-        // append the script to the end since
-        // browsers allow for tons of deviation
-        // from *technically correct* HTML.
-        file = `${file.toString()}\n\n<script>${CLIENT_WEBSOCKET_CODE}</script>`;
-      }
-      res.end(file);
-      return true;
-    }
-  }
-  return false;
+	// We don't care about performance for a dev server, so sync functions are fine.
+	// If the route exists it's either the exact file we want or the path to a directory
+	// in which case we'd serve up the 'index.html' file.
+	if (fs.existsSync(route)) {
+		if (fs.statSync(route).isDirectory()) {
+			return serveStaticPageIfExists(path.join(route, 'index.html'), res);
+		} else if (fs.statSync(route).isFile()) {
+			res.writeHead(200);
+			/** @type {string|Buffer} */
+			let file = fs.readFileSync(route);
+			if (route.endsWith('.html')) {
+				// Inject the client-side websocket code.
+				// This sounds fancier than it is; simply
+				// append the script to the end since
+				// browsers allow for tons of deviation
+				// from *technically correct* HTML.
+				file = `${file.toString()}\n\n<script>${CLIENT_WEBSOCKET_CODE}</script>`;
+			}
+			res.end(file);
+			return true;
+		}
+	}
+	return false;
 }
 
 /** General request handler and router
@@ -190,17 +190,17 @@ function serveStaticPageIfExists(route, res) {
  * @param {res} res
  */
 const requestHandler = function (req, res) {
-  const method = req.method.toLowerCase();
-  if (method == 'get') {
-    // No need to ensure the route can't access other local files,
-    // since this is for development only.
-    const route = path.normalize(path.join(__dirname, 'src', req.url));
-    if (serveStaticPageIfExists(route, res)) {
-      return;
-    }
-  }
-  res.writeHead(404);
-  res.end();
+	const method = req.method.toLowerCase();
+	if (method == 'get') {
+		// No need to ensure the route can't access other local files,
+		// since this is for development only.
+		const route = path.normalize(path.join(__dirname, 'src', req.url));
+		if (serveStaticPageIfExists(route, res)) {
+			return;
+		}
+	}
+	res.writeHead(404);
+	res.end();
 };
 
 const server = http.createServer(requestHandler);

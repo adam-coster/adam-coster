@@ -47,12 +47,15 @@ export function getUrlHostName(url: string) {
 	return new URL(url).hostname;
 }
 
-export function getPatchedUrl(url: URL, queryPatch: Record<string, string>) {
+export function patchQueryParams(
+	url: URL,
+	queryPatch: Record<string, string | undefined | null>,
+) {
 	Object.keys(queryPatch).forEach((key) => {
 		if ([null, undefined, ''].includes(queryPatch[key])) {
 			url.searchParams.delete(key);
 		} else {
-			url.searchParams.set(key, queryPatch[key]);
+			url.searchParams.set(key, `${queryPatch[key]}`);
 		}
 	});
 	return url;
@@ -62,5 +65,11 @@ export function asDateIfExists(value: any) {
 	const asDate = value && new Date(value);
 	if (asDate && asDate.getTime()) {
 		return asDate;
+	}
+}
+
+export function assert(claim: any, message?: string): asserts claim {
+	if (!claim) {
+		throw new Error(message || 'Assertion failed');
 	}
 }

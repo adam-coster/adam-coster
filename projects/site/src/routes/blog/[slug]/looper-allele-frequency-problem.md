@@ -47,15 +47,15 @@ let new_people = 0;
 const years = 30;
 
 for (let year = 0; year < years; year++) {
-  let dead = population * deathrate;
-  let born = population * birthrate;
-  new_people += born;
-  population += born - dead;
+	let dead = population * deathrate;
+	let born = population * birthrate;
+	new_people += born;
+	population += born - dead;
 }
 
 console.log(
-  'Fraction of population born between now and then:',
-  new_people / population,
+	'Fraction of population born between now and then:',
+	new_people / population,
 );
 ```
 

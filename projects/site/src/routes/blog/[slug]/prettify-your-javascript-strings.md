@@ -31,12 +31,12 @@ The classic solution looks like this:
 
 ```js
 const myString =
-  'Oh how I wish ' +
-  'that this string was shorter ' +
-  "so that I didn't have to break " +
-  'it up like this. I mean seriously ' +
-  'look how hard it is to read! ' +
-  'and edit!';
+	'Oh how I wish ' +
+	'that this string was shorter ' +
+	"so that I didn't have to break " +
+	'it up like this. I mean seriously ' +
+	'look how hard it is to read! ' +
+	'and edit!';
 ```
 
 Hideous.
@@ -64,7 +64,7 @@ There is another common problem with strings in code: indentation in multiline s
 
 ```js
 const myString =
-  'Title\n' + '  Indented line 1\n' + '  Indented line 2\n  Indented Line 3\n';
+	'Title\n' + '  Indented line 1\n' + '  Indented line 2\n  Indented Line 3\n';
 
 const myString = `Title
   Indented Line 1
@@ -77,16 +77,16 @@ Hey, that template literal doesn't look bad at all, does it! But how about now:
 
 ```js
 function myFunction() {
-  let myString;
-  if (someCondition) {
-    if (someOtherCondition) {
-      myString = `Title
+	let myString;
+	if (someCondition) {
+		if (someOtherCondition) {
+			myString = `Title
   Indented Line 1
   Indented Line 2
   Indented Line 3
 `;
-    }
-  }
+		}
+	}
 }
 ```
 
@@ -95,17 +95,17 @@ Gross. Since the template literal uses the whitespace exactly as typed, your mul
 ```js
 // Same *result* as before, but allowing indentation to match the code.
 function myFunction() {
-  let myString;
-  if (someCondition) {
-    if (someOtherCondition) {
-      myString = undent`
+	let myString;
+	if (someCondition) {
+		if (someOtherCondition) {
+			myString = undent`
         Title
           Indented Line 1
           Indented Line 2
           Indented Line 3
         `;
-    }
-  }
+		}
+	}
 }
 ```
 
@@ -123,11 +123,11 @@ Here's the code (in Typescript):
  * to get a single string.
  */
 function populateTemplate(strings: TemplateStringsArray, ...interps: string[]) {
-  let string = '';
-  for (let i = 0; i < strings.length; i++) {
-    string += `${strings[i] || ''}${interps[i] || ''}`;
-  }
-  return string;
+	let string = '';
+	for (let i = 0; i < strings.length; i++) {
+		string += `${strings[i] || ''}${interps[i] || ''}`;
+	}
+	return string;
 }
 
 /**
@@ -135,31 +135,31 @@ function populateTemplate(strings: TemplateStringsArray, ...interps: string[]) {
  * and remove initial newline and all trailing spaces.
  */
 export function undent(strings: TemplateStringsArray, ...interps: string[]) {
-  let string = populateTemplate(strings, ...interps);
-  // Remove initial and final newlines
-  string = string.replace(/^[\r\n]+/, '').replace(/\s+$/, '');
-  const dents = string.match(/^([ \t])*/gm);
-  if (!dents || dents.length == 0) {
-    return string;
-  }
-  dents.sort((dent1, dent2) => dent1.length - dent2.length);
-  const minDent = dents[0];
-  if (!minDent) {
-    // Then min indentation is 0, no change needed
-    return string;
-  }
-  const dedented = string.replace(new RegExp(`^${minDent}`, 'gm'), '');
-  return dedented;
+	let string = populateTemplate(strings, ...interps);
+	// Remove initial and final newlines
+	string = string.replace(/^[\r\n]+/, '').replace(/\s+$/, '');
+	const dents = string.match(/^([ \t])*/gm);
+	if (!dents || dents.length == 0) {
+		return string;
+	}
+	dents.sort((dent1, dent2) => dent1.length - dent2.length);
+	const minDent = dents[0];
+	if (!minDent) {
+		// Then min indentation is 0, no change needed
+		return string;
+	}
+	const dedented = string.replace(new RegExp(`^${minDent}`, 'gm'), '');
+	return dedented;
 }
 
 /**
  * Remove linebreaks and extra spacing in a template string.
  */
 export function oneline(strings: TemplateStringsArray, ...interps: string[]) {
-  return populateTemplate(strings, ...interps)
-    .replace(/^\s+/, '')
-    .replace(/\s+$/, '')
-    .replace(/\s+/g, ' ');
+	return populateTemplate(strings, ...interps)
+		.replace(/^\s+/, '')
+		.replace(/\s+$/, '')
+		.replace(/\s+/g, ' ');
 }
 ```
 

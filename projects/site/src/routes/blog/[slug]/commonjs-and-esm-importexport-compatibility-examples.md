@@ -76,11 +76,11 @@ import defaultCjsExport, { namedCjsExport } from './exporter.cjs';
 import defaultMjsExport, { namedMjsExport } from './exporter.mjs';
 
 console.log({
-  title: 'Importing into an ESM module.',
-  defaultCjsExport,
-  namedCjsExport,
-  defaultMjsExport,
-  namedMjsExport,
+	title: 'Importing into an ESM module.',
+	defaultCjsExport,
+	namedCjsExport,
+	defaultMjsExport,
+	namedMjsExport,
 });
 ```
 
@@ -122,12 +122,12 @@ Let's take a look:
  * an error, return the error code.
  */
 function requireModule(modulePath, exportName) {
-  try {
-    const imported = require(modulePath);
-    return exportName ? imported[exportName] : imported;
-  } catch (err) {
-    return err.code;
-  }
+	try {
+		const imported = require(modulePath);
+		return exportName ? imported[exportName] : imported;
+	} catch (err) {
+		return err.code;
+	}
 }
 
 /**
@@ -135,23 +135,23 @@ function requireModule(modulePath, exportName) {
  * everything in an `async` IIFE to make our lives a little easier.
  */
 (async function () {
-  console.log({
-    title: 'Importing into a CommonJS module',
+	console.log({
+		title: 'Importing into a CommonJS module',
 
-    // CJS<-CJS and MJS<-CJS are equivalent
-    defaultCjsExport: requireModule('./exporter.cjs'),
-    namedCjsExport: requireModule('./exporter.cjs', 'namedCjsExport'),
+		// CJS<-CJS and MJS<-CJS are equivalent
+		defaultCjsExport: requireModule('./exporter.cjs'),
+		namedCjsExport: requireModule('./exporter.cjs', 'namedCjsExport'),
 
-    // Cannot `require` an ESM module
-    defaultMjsExportUsingRequire: requireModule('./exporter.mjs'),
-    namedMjsExportUsingRequire: requireModule(
-      './exporter.mjs',
-      'namedMjsExport',
-    ),
+		// Cannot `require` an ESM module
+		defaultMjsExportUsingRequire: requireModule('./exporter.mjs'),
+		namedMjsExportUsingRequire: requireModule(
+			'./exporter.mjs',
+			'namedMjsExport',
+		),
 
-    defaultMjsExport: (await import('./exporter.mjs')).default,
-    namedMjsExport: (await import('./exporter.mjs')).namedMjsExport,
-  });
+		defaultMjsExport: (await import('./exporter.mjs')).default,
+		namedMjsExport: (await import('./exporter.mjs')).namedMjsExport,
+	});
 })();
 ```
 

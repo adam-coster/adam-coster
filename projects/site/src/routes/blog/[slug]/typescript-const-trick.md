@@ -47,20 +47,20 @@ One thing I've found it to be extremely useful for, however, is iterating over a
 
 ```ts
 const myObject = {
-  hello: 'world',
-  number: 10,
-  anArray: [1, 2, 3],
-  nested: { something: 'else' },
+	hello: 'world',
+	number: 10,
+	anArray: [1, 2, 3],
+	nested: { something: 'else' },
 };
 
 // Without using `as const`:
 for (const field of ['hello', 'world']) {
-  // The type of `field` is just 'string'
+	// The type of `field` is just 'string'
 }
 
 // With `as const`:
 for (const field of ['hello', 'world'] as const) {
-  // The type of `field` is 'hello'|'world'
+	// The type of `field` is 'hello'|'world'
 }
 ```
 
@@ -78,7 +78,7 @@ Unfortunately, JSDocs don't have support for this, so using this trick in vanill
  * @return {T}
  */
 function toConst(v) {
-  return v;
+	return v;
 }
 
 const five = toConst(5);
@@ -91,7 +91,7 @@ const five = toConst(5);
  * @return {T}
  */
 function toConstTuple(...v) {
-  return v;
+	return v;
 }
 
 const tuple = toConstTuple('Hello', 'World', 10);

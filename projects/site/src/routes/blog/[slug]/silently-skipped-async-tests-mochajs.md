@@ -35,16 +35,16 @@ It turns out that errors thrown in async contexts can cause Mocha to exit early 
 
 ```js
 describe('My test suite', async function () {
-  // throw new Error("Bwahahaha! Tricked you!");
+	// throw new Error("Bwahahaha! Tricked you!");
 
-  it('can pass this test', async function () {
-    // This will "pass", even without any code,
-    // since Mocha tests pass unless an error is thrown.
-  });
+	it('can pass this test', async function () {
+		// This will "pass", even without any code,
+		// since Mocha tests pass unless an error is thrown.
+	});
 
-  it('cannot pass this test', async function () {
-    throw new Error('OH NOOOOOO!');
-  });
+	it('cannot pass this test', async function () {
+		throw new Error('OH NOOOOOO!');
+	});
 });
 ```
 
@@ -92,8 +92,8 @@ If you're doing this in the context of a large project, you probably don't want 
 
 ```js
 describe('My test', function () {
-  it.only('will run this test', function () {});
-  it('will not run this test', function () {});
+	it.only('will run this test', function () {});
+	it('will not run this test', function () {});
 });
 ```
 
