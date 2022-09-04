@@ -5,14 +5,12 @@
 
 import { PreviewGenerator } from '@adam-coster/site-tools';
 
-const cloudFlarePaths = {
-  srcRoot: '.svelte-kit/cloudflare',
-  outRoot: '.svelte-kit/cloudflare/previews',
-};
-
-const generator = new PreviewGenerator(cloudFlarePaths);
+const generator = new PreviewGenerator({
+	srcRoot: '.svelte-kit/cloudflare',
+	outRoot: '.svelte-kit/cloudflare/previews',
+});
 
 await generator.generatePreviews({
-  maxParallelPages: 20,
-  cropBySelector: '.social-preview',
+	maxParallelPages: 20,
+	cropBySelector: '.social-preview',
 });

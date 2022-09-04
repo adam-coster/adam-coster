@@ -9,12 +9,7 @@
 <!-- Header -->
 <header>
 	<a href="#main" id="skip-nav">skip to main content</a>
-	<a
-		href="/"
-		class="logo"
-		role="img"
-		aria-label="Text 'Adam Coster' as a site logo."
-	>
+	<a href="/" class="logo" aria-label="Text 'Adam Coster' as a site logo.">
 		<span class="firstname">adam</span><span class="lastname">coster</span><span
 			class="domain">.com</span
 		>

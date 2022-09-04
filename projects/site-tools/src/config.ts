@@ -2,7 +2,6 @@
 import adapter from '@sveltejs/adapter-cloudflare';
 import type { Config } from '@sveltejs/kit';
 import { default as preprocess } from 'svelte-preprocess';
-import { listArticleUrls } from './files.js';
 import { markdownToSvelte } from './markdownToHtml.js';
 
 export function createConfig(options: {
@@ -25,8 +24,7 @@ export function createConfig(options: {
 			prerender: {
 				crawl: true,
 				enabled: true,
-				entries: ['/', ...listArticleUrls(options.articlesDir)],
-				default: true,
+				// entries: ['/', ...listArticleUrls(options.articlesDir)],
 			},
 			trailingSlash: 'never',
 			// // @ts-expect-error This type misbehaving weirdly with latest Vite

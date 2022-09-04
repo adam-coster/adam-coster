@@ -14,28 +14,28 @@
 	},
 	"dependencies": {
 		"@adam-coster/site-tools": "workspace:*",
-		"@bscotch/pathy": "^1.0.0",
-		"@fortawesome/free-brands-svg-icons": "^6.1.2",
-		"@fortawesome/free-regular-svg-icons": "^6.1.2",
-		"@fortawesome/free-solid-svg-icons": "^6.1.2",
-		"@sveltejs/kit": "next",
+		"@bscotch/pathy": "^2.1.1",
+		"@fortawesome/free-brands-svg-icons": "^6.2.0",
+		"@fortawesome/free-regular-svg-icons": "^6.2.0",
+		"@fortawesome/free-solid-svg-icons": "^6.2.0",
+		"@sveltejs/kit": "1.0.0-next.469",
 		"just-debounce": "^1.1.0",
 		"lunr": "^2.3.9",
-		"svelte": "^3.49.0",
-		"svelte-fa": "^2.4.0"
+		"svelte": "^3.50.0",
+		"svelte-fa": "^3.0.3"
 	},
 	"devDependencies": {
 		"@types/lunr": "^2.3.4",
 		"@types/puppeteer": "^5.4.6",
 		"concurrently": "^7.3.0",
-		"cypress": "^10.6.0",
-		"puppeteer": "^14.4.1",
-		"sass": "^1.54.5",
+		"cypress": "^10.7.0",
+		"puppeteer": "^17.1.0",
+		"sass": "^1.54.8",
 		"schema-dts": "^1.1.0",
-		"svelte-check": "^2.8.1",
+		"svelte-check": "^2.9.0",
 		"svelte-preprocess": "^4.10.7",
 		"typescript": "4.8.2",
-		"vite": "^3.0.9",
+		"vite": "3.1.0-beta.2",
 		"wait-on": "^6.0.1"
 	}
 }

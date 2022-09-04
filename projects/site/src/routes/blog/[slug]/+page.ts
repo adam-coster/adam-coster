@@ -3,6 +3,8 @@ import { createArticleMicrodata, type MetadataFull } from '$lib/metadata';
 import { error } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
 
+export const csr = true;
+
 export const load: PageLoad = async (input) => {
 	const { slug } = input.params;
 	const articleSearcher = new ArticleSearcher(input.fetch);
