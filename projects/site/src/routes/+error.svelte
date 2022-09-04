@@ -55,6 +55,6 @@
 		font-weight: var(--font-weight-regular);
 	}
 	.error-details {
-		overflow-x: scroll;
+		overflow-x: auto;
 	}
 </style>

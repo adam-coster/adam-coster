@@ -28,7 +28,7 @@
 	let PostComponent: ComponentType;
 
 	onMount(async () => {
-		PostComponent = (await import(`./${data.slug}.md`)).default;
+		PostComponent = (await import(`../../../articles/${data.slug}.md`)).default;
 	});
 </script>
 

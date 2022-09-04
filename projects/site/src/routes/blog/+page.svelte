@@ -11,7 +11,8 @@
 	import type { PageData } from './$types';
 
 	export let data: PageData;
-	let { articleSearcher, searchResults } = data;
+
+	console.log(data);
 
 	$metadata = {
 		title: 'Writing Central',
@@ -47,7 +48,7 @@
 			);
 		}
 		searchbar.scrollIntoView({ behavior: 'smooth' });
-		searchResults = await articleSearcher.search(lastSearchText);
+		data.searchResults = await data.articleSearcher.search(lastSearchText);
 	}
 
 	const updateSearch = debounce(updateSearchNow, 500);
@@ -104,7 +105,7 @@
 		{/if}
 	</p>
 
-	{#await searchResults}
+	{#await data.searchResults}
 		<p in:fade>
 			Searching {lastSearchText ? `for "${lastSearchText}"` : ''}...
 		</p>
@@ -168,7 +169,7 @@
 	{:catch}
 		<p in:fade>Something has gone wrong!</p>
 
-		{JSON.stringify(searchResults)}
+		{JSON.stringify(data.searchResults)}
 	{/await}
 </nav>
 
