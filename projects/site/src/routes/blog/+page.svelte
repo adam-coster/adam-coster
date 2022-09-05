@@ -12,8 +12,6 @@
 
 	export let data: PageData;
 
-	console.log(data);
-
 	$metadata = {
 		title: 'Writing Central',
 		description: `The writings of Adam Coster, collected from across the Internet and centralized. Topics include web development, game development, business, mental health, science, and more.`,

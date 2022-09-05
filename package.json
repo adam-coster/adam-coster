@@ -1,5 +1,5 @@
 {
-	"name": "adam-coster",
+	"name": "root",
 	"private": true,
 	"type": "module",
 	"engines": {
@@ -7,12 +7,16 @@
 		"pnpm": ">=7"
 	},
 	"scripts": {
-		"build:site": "turbo run --filter=site build test",
+		"setup:pnpm": "corepack enable && corepack prepare pnpm@7.9.3 --activate",
+		"ci:site": "pnpm install:site && pnpm test:site",
+		"install:site": "pnpm --filter site... --filter root install",
+		"build:site": "turbo run --filter=site build",
+		"test:site": "turbo run --filter=site build test",
 		"build:all": "turbo run build",
 		"build:force": "turbo run build --force",
 		"watch": "turbo run watch --parallel",
 		"fix:deps": "syncpack fix-mismatches",
-		"clean": "clean:artifacts &&clean:caches && clean:modules",
+		"clean": "pnpm clean:artifacts && pnpm clean:caches && pnpm clean:modules",
 		"clean:modules": "rm -rf node_modules projects/*/node_modules",
 		"clean:artifacts": "rm -rf projects/*/dist projects/*/build projects/*/*.tsbuildinfo projects/*/package-lock.json rm -rf projects/*/.svelte-kit",
 		"clean:caches": "rm -rf projects/*/.turbo",

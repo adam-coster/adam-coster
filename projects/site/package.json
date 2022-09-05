@@ -4,8 +4,8 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"build": "vite build && node scripts/postBuild.js",
-		"watch": "vite dev --port 3000",
+		"build": "svelte-kit sync && vite build && node scripts/postBuild.js",
+		"watch": "svelte-kit sync && vite dev --port 3000",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"preview": "vite preview --port 3037",
