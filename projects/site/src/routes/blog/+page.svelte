@@ -108,6 +108,13 @@
 			Searching {lastSearchText ? `for "${lastSearchText}"` : ''}...
 		</p>
 	{:then articles}
+		{#if !lastSearchText}
+			<p>Showing all posts...</p>
+		{:else}
+			<p>
+				Showing {articles.length} results for "{lastSearchText}"
+			</p>
+		{/if}
 		{#if articles.length}
 			<ol
 				class="article-snippets"
@@ -174,9 +181,9 @@
 <style lang="scss">
 	.article-snippets {
 		.article-snippet {
-			border-bottom: 1px solid gray;
+			// border-bottom: 1px solid gray;
 			// border-radius: var(--border-radius);
-			padding: calc(var(--size) * 1) 0;
+			margin: calc(var(--size) * 2) 0;
 			height: 100%;
 			h2 {
 				--font-size: calc(var(--size) * 1.2);
@@ -207,12 +214,12 @@
 			}
 			.description {
 				margin: 0;
-				margin-left: calc(var(--size) * 1);
+				// margin-left: calc(var(--size) * 1);
 				margin-top: calc(var(--size) * 0.5);
 				color: var(--color-subtle);
 			}
 			.summary {
-				margin-left: calc(var(--size) * 1);
+				// margin-left: calc(var(--size) * 1);
 			}
 		}
 	}

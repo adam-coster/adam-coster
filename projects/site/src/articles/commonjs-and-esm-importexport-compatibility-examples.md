@@ -1,9 +1,7 @@
 ---
 slug: commonjs-and-esm-importexport-compatibility-examples
-title: CommonJS and ESM import/export compatibility examples
-description: >
-  Node.js is partway through transitioning from CommonJS to Modules, so we often
-  need to use both together. Here's how!
+title: 'CommonJS (cjs) and Modules (esm): Import compatibility'
+description: You can import CommonJS (cjs) into ESM modules, and vice versa (esm into cjs). But one way is easier than the other.
 publishedAt: 2022-03-09T06:00:00.000Z
 tags:
   - javascript
@@ -11,15 +9,19 @@ tags:
   - node
   - webdev
   - programming
+  - typescript
 crossPosts:
   - https://dev.to/adamcoster/commonjs-and-esm-importexport-compatibility-by-simple-example-50pl
+editedAt: 2022-09-05T23:05:52.367Z
 ---
 
-Node's [CommonJS](https://nodejs.org/docs/latest-v16.x/api/modules.html) vs. [ECMAScript ("ESM")](https://nodejs.org/docs/latest-v16.x/api/esm.html) divide is probably the source of _most_ of my quality of life frustrations as a fullstack Typescript/Node/Javascript programmer.
+Node's [CommonJS](https://nodejs.org/docs/latest-v16.x/api/modules.html) (<abbr title="CommonJS">cjs</abbr>) vs. [ECMAScript](https://nodejs.org/docs/latest-v16.x/api/esm.html) (<abbr title="ECMAScript Module">ESM</abbr>) divide is probably the source of _most_ of my quality of life frustrations as a fullstack Typescript/Node/Javascript programmer.
 
 I can often go for weeks at a time before running into new incompatibility problems, so then each time I have to remind myself how interoperability works between them. Well, this time I made a tiny, simple demo so that _next_ time I can just refer to it. And now you can, too!
 
-Short summary of the CommonJS/ESM distinction and problem:
+## CommonJS (cjs) vs. Modules (ESM)
+
+A brief summary of the differences between these two ways of managing JavaScript code:
 
 - CommonJS uses the `require('./file.js')` syntax for importing other modules and the `module.exports =` syntax for exporting stuff from modules
 - ESM uses the `import {stuff} from './file.js'` syntax for importing and the `export stuff` syntax for exports
@@ -61,9 +63,9 @@ module.exports = function defaultCjsExport() {};
 module.exports.namedCjsExport = function namedCjsExport() {};
 ```
 
-## Importing _from_ ESM and CommonJS _to_ ESM
+## How to import CommonJS (cjs) into ESM
 
-What does it look like to import _both_ of those modules into another ESM module? Simple! If you are importing _into_ an ESM module, it looks the same either way:
+If you are importing _into_ an ESM module, it looks the same either whether you're importing a CommonJS or ESM module: you'll use the `import defaultStuff, {namedStuff} from './file.js'` syntax, and the import will be asynchronous.
 
 ```js
 /**
@@ -86,7 +88,7 @@ console.log({
 
 And after we run that script via `node importer.mjs` (Node v16):
 
-```
+```js
 {
   title: 'Importing into an ESM module.',
   defaultCjsExport: [Function: defaultCjsExport] {
@@ -98,15 +100,11 @@ And after we run that script via `node importer.mjs` (Node v16):
 }
 ```
 
-Perfect! If we're using ESM we can basically treat _all_ code as if it's also ESM. (There are some nuances, but we can usually get away with ignoring them.)
+Perfect! If we're using ESM we can basically treat _all_ code as if it's also ESM. (There are some nuances, but we can often get away with ignoring them.)
 
-## Importing _from_ ESM and CommonJS _to_ CommonJS
+## Importing ESM into CommonJS (cjs)
 
-So importing into ESM is no biggie, are we so lucky with importing into CommonJS?
-
-NOPE!
-
-Since `require()` is synchronous, you can't use it to import ESM modules _at all_! In CommonJS you have to use `require` syntax for other CommonJS modules and an `import()` _function_ (distinct from the `import` keyword used in ESM!), a function that returns a _promise_, to import ESM.
+Since `require()` is synchronous, you can't use it to import ESM modules. Instead, to import ESM into CommonJS you'll use the asynchronous `import()` _function_. The returned promise resolves to an object with a `default` field (which points to the default exported value), plus a field per any named export.
 
 Let's take a look:
 

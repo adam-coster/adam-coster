@@ -1,140 +1,140 @@
 {
-  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
-  "frontMatter.preview.host": "http://localhost:3000",
-  "frontMatter.taxonomy.tags": [
-    "math",
-    "learn",
-    "statistics",
-    "simulation",
-    "programming",
-    "python",
-    "science",
-    "biology",
-    "experiments",
-    "tools",
-    "productivity",
-    "node",
-    "webdev",
-    "javascript",
-    "documentation",
-    "writing",
-    "devops",
-    "discuss",
-    "computer-science",
-    "encoding",
-    "serialization",
-    "communication",
-    "binary",
-    "beginners",
-    "data",
-    "linux",
-    "windows",
-    "docker",
-    "html",
-    "css",
-    "email",
-    "marketing",
-    "typescript",
-    "tutorial",
-    "video",
-    "expressjs",
-    "json",
-    "phd",
-    "vscode",
-    "motivation",
-    "mental-health",
-    "adhd",
-    "life",
-    "philosophy",
-    "privilege",
-    "definition",
-    "evolution",
-    "media",
-    "critique",
-    "notion",
-    "ergonomics",
-    "health",
-    "permissions",
-    "security",
-    "authentication",
-    "npm",
-    "testing",
-    "tdd",
-    "mochajs",
-    "gamedev",
-    "google",
-    "business",
-    "apple",
-    "cors",
-    "cookies",
-    "http",
-    "jsdoc"
-  ],
-  "frontMatter.content.pageFolders": [
-    {
-      "path": "[[workspace]]/projects/site/src/routes/blog",
-      "title": "Blog Posts"
-    }
-  ],
-  "frontMatter.taxonomy.slugPrefix": "",
-  "frontMatter.taxonomy.contentTypes": [
-    {
-      "name": "default",
-      "pageBundle": false,
-      "fileType": "md",
-      "previewPath": "blog",
-      "fields": [
-        {
-          "title": "slug",
-          "name": "slug",
-          "type": "string"
-        },
-        {
-          "title": "title",
-          "name": "title",
-          "type": "string"
-        },
-        {
-          "title": "description",
-          "name": "description",
-          "type": "string"
-        },
-        {
-          "title": "editedAt",
-          "name": "editedAt",
-          "type": "datetime",
-          "isModifiedDate": true
-        },
-        {
-          "title": "publishedAt",
-          "name": "publishedAt",
-          "type": "datetime",
-          "isPublishDate": true
-        },
-        {
-          "title": "canonical",
-          "name": "canonical",
-          "type": "string"
-        },
-        {
-          "title": "tags",
-          "name": "tags",
-          "type": "tags"
-        },
-        {
-          "title": "crossPosts",
-          "name": "crossPosts",
-          "type": "string",
-          "multiple": true
-        },
-        {
-          "title": "images",
-          "name": "images",
-          "type": "string",
-          "multiple": true
-        }
-      ]
-    }
-  ],
-  "frontMatter.content.publicFolder": "projects/site/static"
+	"$schema": "https://frontmatter.codes/frontmatter.schema.json",
+	"frontMatter.preview.host": "http://localhost:3000",
+	"frontMatter.taxonomy.tags": [
+		"math",
+		"learn",
+		"statistics",
+		"simulation",
+		"programming",
+		"python",
+		"science",
+		"biology",
+		"experiments",
+		"tools",
+		"productivity",
+		"node",
+		"webdev",
+		"javascript",
+		"documentation",
+		"writing",
+		"devops",
+		"discuss",
+		"computer-science",
+		"encoding",
+		"serialization",
+		"communication",
+		"binary",
+		"beginners",
+		"data",
+		"linux",
+		"windows",
+		"docker",
+		"html",
+		"css",
+		"email",
+		"marketing",
+		"typescript",
+		"tutorial",
+		"video",
+		"expressjs",
+		"json",
+		"phd",
+		"vscode",
+		"motivation",
+		"mental-health",
+		"adhd",
+		"life",
+		"philosophy",
+		"privilege",
+		"definition",
+		"evolution",
+		"media",
+		"critique",
+		"notion",
+		"ergonomics",
+		"health",
+		"permissions",
+		"security",
+		"authentication",
+		"npm",
+		"testing",
+		"tdd",
+		"mochajs",
+		"gamedev",
+		"google",
+		"business",
+		"apple",
+		"cors",
+		"cookies",
+		"http",
+		"jsdoc"
+	],
+	"frontMatter.content.pageFolders": [
+		{
+			"path": "[[workspace]]/projects/site/src/articles",
+			"title": "Blog Posts"
+		}
+	],
+	"frontMatter.taxonomy.slugPrefix": "",
+	"frontMatter.taxonomy.contentTypes": [
+		{
+			"name": "default",
+			"pageBundle": false,
+			"fileType": "md",
+			"previewPath": "blog",
+			"fields": [
+				{
+					"title": "slug",
+					"name": "slug",
+					"type": "string"
+				},
+				{
+					"title": "title",
+					"name": "title",
+					"type": "string"
+				},
+				{
+					"title": "description",
+					"name": "description",
+					"type": "string"
+				},
+				{
+					"title": "editedAt",
+					"name": "editedAt",
+					"type": "datetime",
+					"isModifiedDate": true
+				},
+				{
+					"title": "publishedAt",
+					"name": "publishedAt",
+					"type": "datetime",
+					"isPublishDate": true
+				},
+				{
+					"title": "canonical",
+					"name": "canonical",
+					"type": "string"
+				},
+				{
+					"title": "tags",
+					"name": "tags",
+					"type": "tags"
+				},
+				{
+					"title": "crossPosts",
+					"name": "crossPosts",
+					"type": "string",
+					"multiple": true
+				},
+				{
+					"title": "images",
+					"name": "images",
+					"type": "string",
+					"multiple": true
+				}
+			]
+		}
+	],
+	"frontMatter.content.publicFolder": "projects/site/static"
 }
