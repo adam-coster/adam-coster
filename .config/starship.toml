@@ -1,0 +1,200 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+format = """
+$username\
+$hostname\
+$localip\
+$shlvl\
+$singularity\
+$kubernetes\
+$custom\
+$directory\
+$vcsh\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$docker_context\
+$package\
+$c\
+$cmake\
+$cobol\
+$daml\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$haskell\
+$helm\
+$java\
+$julia\
+$kotlin\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$raku\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$swift\
+$terraform\
+$vlang\
+$vagrant\
+$zig\
+$buf\
+$nix_shell\
+$conda\
+$spack\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$azure\
+$env_var\
+$crystal\
+$sudo\
+$cmd_duration\
+$line_break\
+$jobs\
+$battery\
+$time\
+$status\
+$container\
+$shell\
+$character"""
+
+
+[directory]
+disabled = true
+read_only = " "
+use_os_path_sep	= false
+repo_root_style = "red"
+truncation_length = 5
+# format = "[$path]($style)[$read_only]($read_only_style) "
+
+[directory.substitutions]
+"~" = ""
+# "src" = ""
+
+[custom.node_package]
+symbol = " "
+command = """
+let pkgPath = ($env.PWD | path split |  each -n { |it| ( $env.PWD | path split | range 0..($it.index) | path join package.json)} | reverse | where ($it | path exists) | get 0);
+let pkgName = (open $pkgPath | get name | str replace \"@[^/]+/\" \"\");
+$'($pkgName)'"""
+format = "[$symbol$output ]($style)"
+shell = ["nu", "-c"]
+style = "36"
+# If this throws an error it'll be disabled. Attempting
+# to indexing 0 from an empty list will do that!
+when = "if ($env.PWD | path split |  each -n { |it| ( $env.PWD | path split | range 0..($it.index) | path join package.json)} | where ($it | path exists) | is-empty) { exit 1 }"
+
+[custom.path]
+command = """
+def find-in-parents [filename] {($env.PWD | path split |  each -n { |it| ( $env.PWD | path split | range 0..($it.index) | path join $filename)} | reverse | where ($it | path exists))}
+let pkgJsons = find-in-parents 'package.json'
+let roots = (if ($pkgJsons | is-empty) { find-in-parents '.git'  | path dirname } else { $pkgJsons })
+let thePath = ((if ($roots | is-empty) {$env.PWD} else {$env.PWD | path relative-to ($roots | get 0 | path dirname)}) | str replace $nu.home-path '~' --string |  str replace --all --string '\\' /);
+let icon = (if ($roots | is-empty) {''} else if ($pkgJsons | is-empty) {''} else {''})
+if ( $thePath | is-empty ) { '' } else { $'($icon)($thePath)'}"""
+shell = ["nu", "-c"]
+when = true
+format = "[$output]($style)"
+style = "13"
+
+[git_branch]
+symbol = ""
+format = " [$symbol$branch(:$remote_branch)]($style)"
+style = "245"
+
+[nodejs]
+disabled = true
+symbol = ""
+version_format = "${major}.${minor}"
+format = "[$symbol($version )]($style)"
+style = "246"
+
+[package]
+symbol = " "
+disabled = true
+
+[git_status]
+disabled = true
+
+# Just changing default symbols below this line
+
+[aws]
+symbol = "  "
+
+[buf]
+symbol = " "
+
+[c]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+
+[python]
+symbol = " "
+
+[spack]
+symbol = "🅢 "
+
+[rust]
+symbol = " "
+
