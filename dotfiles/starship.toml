@@ -8,65 +8,20 @@ add_newline = true
 
 format = """
 $custom\
-$git_branch\
 $line_break\
-$character\
-$shell"""
+$character"""
 
 [custom.path]
 command = """
-def find-in-parents [filename] {
-  ($env.PWD | path split |  each -n { |it| ( $env.PWD | path split | range 0..($it.index) | path join $filename)} | reverse | where ($it | path exists))
-}
+{{{file:scripts/starship.nu}}}
 
-def add-header [text,color] {
-  insert ($in | length) {color: $color, text: $text}
-}
-
-let $bg = "#000000";
-
-# If we're in a package, show the package name
-# otherwise, if we're in a repo, show the repo name
-# In either case, show the relative directory (if not '.')
-# Finally, if NEITHER just write the path relative to home
-
-let pkgJsons = find-in-parents 'package.json'
-let gits = find-in-parents '.git'
-let isPkg = ($pkgJsons | is-empty | not $in)
-let isGit = ($gits | is-empty | not $in)
-let root = ((if ($isPkg) { $pkgJsons | first } else if ($isGit) { $gits | first }) | path dirname)
-
-
-let displayPath = ((if ([$isPkg, $isGit] | any $it) {
-  $env.PWD | path relative-to ($root | path dirname)
-} else {$env.PWD}) | str replace $nu.home-path '~' --string | str replace --all --string \\ /);
-
-let pathHeader = (add-header ($displayPath) '#cccccc');
-let typeHeader = (if ($isPkg) {
-  let pkgName = (open ($pkgJsons | first) | get name | str replace "@[^/]+/" "");
-  add-header $' ($pkgName)' '#00dd60'
-} else if ($isGit ) {
-  add-header $' ($root | path basename)' '#0067dd'
-})
-let branch = (if ($isGit) {
-  let branch = (git branch --show-current | str trim);
-  add-header $' ($branch)' '#555555'
-})
-let headers = ([$pathHeader, $typeHeader, $branch] | flatten) ;
-
-$headers | reduce -n -f (ansi reset) { |it, acc| (
-  # First part has the text with inverted colors
-  let isEnd = ($it.index == ($headers | length) - 1);
-  let arrowAnsi = (if ($isEnd) { {fg: $it.item.color} } else { {fg: $it.item.color, bg: ($headers | get ($it.index + 1) | get color) }});
-  let arrow = $"(ansi -e $arrowAnsi)";
-  $acc | $"($acc.item)(ansi -e {bg: $it.item.color, fg: $bg}) ($it.item.text)(ansi reset)($arrow)"
-)}"""
+prompt "#000000" ({
+  path:'{{{color:white}}}',
+  package: '{{{color:brightPurple}}}',
+  repo: '{{{color:brightPurple}}}',
+  branch: '{{{color:brightBlack}}}'
+})"""
 shell = ["nu", "-c"]
 when = true
 format = "[$output]($style)"
 style = "13"
-
-[git_branch]
-disabled = true
-symbol = ""
-format = "[ $symbol$branch(:$remote_branch)](bg:245 fg:0)[](245)"

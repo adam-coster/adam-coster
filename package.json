@@ -22,7 +22,7 @@
 		"clean:caches": "rm -rf projects/*/.turbo",
 		"prepare": "husky install",
 		"test": "turbo run test",
-		"local:sync": "nodemon --ext toml,json,yaml,yml,mjs,js,cjs --watch dotfiles --watch scripts scripts/sync-configs.mjs"
+		"local:sync": "nodemon --ext toml,json,yaml,yml,mjs,js,cjs,nu --watch dotfiles --watch scripts scripts/sync-configs.mjs"
 	},
 	"nano-staged": {
 		"*.{js,ts,json,yaml,yml,md,svelte}": [
