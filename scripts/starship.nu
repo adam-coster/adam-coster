@@ -34,7 +34,7 @@ def get-headers [] {
   } else {[]});
   let branch = (if ($isGit) {
     let branch = (git branch --show-current | str trim);
-    add-header $' ($branch)' 'branch'
+    add-header $'($branch)' 'branch'
   } else {[]});
   ([$pathHeader, $typeHeader, $branch] | flatten) ;
 }
@@ -57,7 +57,7 @@ export def prompt [bg,colorMap] {
         }
       }
     );
-    let arrow = $"(ansi -e $arrowAnsi)";
+    let arrow = $"(ansi -e $arrowAnsi)";
     $acc | $"($acc.item)(ansi -e {bg: $color, fg: $bg}) ($text)(ansi reset)($arrow)"
   )}
 }

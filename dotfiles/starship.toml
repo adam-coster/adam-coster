@@ -19,7 +19,7 @@ prompt "#000000" ({
   path:'{{{color:white}}}',
   package: '{{{color:brightPurple}}}',
   repo: '{{{color:brightPurple}}}',
-  branch: '{{{color:brightBlack}}}'
+  branch: '#6f7383'
 })"""
 shell = ["nu", "-c"]
 when = true

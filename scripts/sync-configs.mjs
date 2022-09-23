@@ -1,5 +1,3 @@
-#!/usr/bin/env zx
-
 import { ok } from 'assert';
 import fs from 'fs/promises';
 import os from 'os';
