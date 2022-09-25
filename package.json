@@ -51,14 +51,14 @@
 		"svelte": "^3.50.0",
 		"syncpack": "^8.2.4",
 		"turbo": "^1.4.5",
-		"typescript": "4.8.2"
+		"typescript": "4.9.1-beta"
 	},
 	"trebuchet": {
 		"vscodeWorkspaceConfigPath": false
 	},
 	"pnpm": {
 		"overrides": {
-			"typescript": "4.8.2"
+			"typescript": "4.9.1-beta"
 		}
 	},
 	"syncpack": {
