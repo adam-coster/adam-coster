@@ -8,7 +8,7 @@
 		"pnpm": ">=7"
 	},
 	"scripts": {
-		"setup:pnpm": "corepack enable && corepack prepare pnpm@7.9.3 --activate",
+		"setup:pnpm": "corepack enable && corepack prepare pnpm@7.12.2 --activate",
 		"ci:site": "pnpm install:site && pnpm test:site",
 		"install:site": "pnpm --filter site... --filter root install",
 		"build:site": "turbo run --filter=site build",
@@ -18,9 +18,9 @@
 		"watch": "turbo run watch --parallel",
 		"fix:deps": "syncpack fix-mismatches",
 		"clean": "pnpm clean:artifacts && pnpm clean:caches && pnpm clean:modules",
-		"clean:modules": "rm -rf node_modules projects/*/node_modules",
-		"clean:artifacts": "rm -rf projects/*/dist projects/*/build projects/*/*.tsbuildinfo projects/*/package-lock.json rm -rf projects/*/.svelte-kit",
-		"clean:caches": "rm -rf projects/*/.turbo",
+		"clean:modules": "rimraf node_modules projects/*/node_modules",
+		"clean:artifacts": "rimraf projects/*/dist projects/*/build projects/*/*.tsbuildinfo projects/*/package-lock.json rimraf projects/*/.svelte-kit",
+		"clean:caches": "rimraf projects/*/.turbo",
 		"prepare": "husky install",
 		"test": "turbo run test",
 		"local:sync": "nodemon --ext toml,json,yaml,yml,mjs,js,cjs,nu --watch dotfiles --watch scripts scripts/sync-configs.mjs"
@@ -49,6 +49,7 @@
 		"nano-staged": "0.8.0",
 		"prettier": "2.7.1",
 		"prettier-plugin-svelte": "2.7.1",
+		"rimraf": "3.0.2",
 		"svelte": "3.50.1",
 		"syncpack": "8.2.4",
 		"turbo": "1.5.5",
