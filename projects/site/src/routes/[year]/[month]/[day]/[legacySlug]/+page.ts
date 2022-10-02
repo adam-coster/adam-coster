@@ -2,6 +2,8 @@ import { ArticleSearcher } from '$lib/articleSearcher';
 import { error, redirect } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
 
+export const prerender = false;
+
 /**
  * Match Wordpress URLs from the old blog, re-routing to any
  * posts that were migrated.
