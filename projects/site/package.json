@@ -14,28 +14,28 @@
 	},
 	"dependencies": {
 		"@adam-coster/site-tools": "workspace:*",
-		"@bscotch/pathy": "^2.1.1",
-		"@fortawesome/free-brands-svg-icons": "^6.2.0",
-		"@fortawesome/free-regular-svg-icons": "^6.2.0",
-		"@fortawesome/free-solid-svg-icons": "^6.2.0",
-		"@sveltejs/kit": "1.0.0-next.469",
-		"just-debounce": "^1.1.0",
-		"lunr": "^2.3.9",
-		"svelte": "^3.50.0",
-		"svelte-fa": "^3.0.3"
+		"@bscotch/pathy": "2.4.0",
+		"@fortawesome/free-brands-svg-icons": "6.2.0",
+		"@fortawesome/free-regular-svg-icons": "6.2.0",
+		"@fortawesome/free-solid-svg-icons": "6.2.0",
+		"@sveltejs/kit": "1.0.0-next.507",
+		"just-debounce": "1.1.0",
+		"lunr": "2.3.9",
+		"svelte": "3.50.1",
+		"svelte-fa": "3.0.3"
 	},
 	"devDependencies": {
-		"@types/lunr": "^2.3.4",
-		"@types/puppeteer": "^5.4.6",
-		"concurrently": "^7.3.0",
-		"cypress": "^10.7.0",
-		"puppeteer": "^17.1.0",
-		"sass": "^1.54.8",
-		"schema-dts": "^1.1.0",
-		"svelte-check": "^2.9.0",
-		"svelte-preprocess": "^4.10.7",
+		"@types/lunr": "2.3.4",
+		"@types/puppeteer": "5.4.6",
+		"concurrently": "7.4.0",
+		"cypress": "10.9.0",
+		"puppeteer": "18.0.5",
+		"sass": "1.55.0",
+		"schema-dts": "1.1.0",
+		"svelte-check": "2.9.1",
+		"svelte-preprocess": "4.10.7",
 		"typescript": "4.9.1-beta",
-		"vite": "3.1.0-beta.2",
-		"wait-on": "^6.0.1"
+		"vite": "3.1.4",
+		"wait-on": "6.0.1"
 	}
 }
