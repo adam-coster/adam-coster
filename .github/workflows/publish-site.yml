@@ -1,0 +1,16 @@
+on:
+  push:
+    branches:
+      - develop
+    tags:
+      - "@adam-coster/site@*"
+jobs:
+  publish:
+    name: Publish to Cloudflare
+    runs-on: ubuntu-latest
+    steps:
+      - shell: bash
+        env:
+          HOOK_URL: ${{secrets.CLOUDFLARE_PUBLISH_WEBHOOK}}
+        run: |
+          curl -X POST $HOOK_URL
