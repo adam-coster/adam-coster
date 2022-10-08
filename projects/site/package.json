@@ -14,7 +14,7 @@
 	},
 	"dependencies": {
 		"@adam-coster/site-tools": "workspace:*",
-		"@bscotch/pathy": "2.4.0",
+		"@bscotch/pathy": "2.4.1",
 		"@fortawesome/free-solid-svg-icons": "6.2.0",
 		"just-debounce": "1.1.0",
 		"svelte": "3.50.1",
@@ -22,7 +22,7 @@
 	},
 	"devDependencies": {
 		"@fortawesome/free-brands-svg-icons": "6.2.0",
-		"@sveltejs/kit": "1.0.0-next.507",
+		"@sveltejs/kit": "1.0.0-next.511",
 		"@types/lunr": "2.3.4",
 		"concurrently": "7.4.0",
 		"cypress": "10.9.0",
@@ -30,7 +30,7 @@
 		"schema-dts": "1.1.0",
 		"svelte-check": "2.9.1",
 		"typescript": "4.9.1-beta",
-		"vite": "3.1.4",
+		"vite": "3.1.6",
 		"wait-on": "6.0.1"
 	}
 }
