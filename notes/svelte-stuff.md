@@ -1,3 +1,5 @@
+## Adding custom functionality to hot-reloading and post-build
+
 (The following is from something I posted in Discord.)
 
 Answering my own question from earlier, in case it's of interest to someone else:
