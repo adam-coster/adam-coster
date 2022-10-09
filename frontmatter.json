@@ -73,7 +73,15 @@
 	"frontMatter.content.pageFolders": [
 		{
 			"path": "[[workspace]]/projects/site/src/articles",
-			"title": "Blog Posts"
+			"title": "Posts"
+		},
+		{
+			"path": "[[workspace]]/projects/site/src/drafts",
+			"title": "Drafts"
+		},
+		{
+			"path": "[[workspace]]/notes",
+			"title": "Notes"
 		}
 	],
 	"frontMatter.taxonomy.slugPrefix": "",

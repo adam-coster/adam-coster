@@ -1,15 +1,3 @@
-# Switching from npm to pnpm in a monorepo
-
-## Installing
-
-- Use [corepack](https://nodejs.org/api/corepack.html)!
-  - Comes with Node >=14.19 or >=16.9
-  - Open a terminal
-    - (On Windows I needed an admin terminal)
-    - Run `corepack enable`
-    - To set the _default_ version (unless overridden by the `package.json/packageManager` field), run `corepack prepare pnpm@the.specific.version --activate`
-    - To ensure a specific version is used in a project, update that project's `package.json/packageManager` field to `pnpm@the.specific.version` (must be an exact version!). Corepack will ensure that exactly and only this version gets used.
-
 ## Configuration
 
 Things to add or change from defaults
