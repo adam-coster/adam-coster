@@ -7,7 +7,10 @@
 	import debounce from 'just-debounce';
 	import { onMount } from 'svelte';
 	import Icon from 'svelte-fa';
-	import { fade } from 'svelte/transition';
+	import { fade, slide } from 'svelte/transition';
+	import { flip } from 'svelte/animate';
+	import { expoInOut } from 'svelte/easing';
+
 	import type { PageData } from './$types';
 
 	export let data: PageData;
@@ -63,13 +66,13 @@
 <div class="social-preview">
 	<h1>
 		<Icon icon={faPenSquare} />
-		Writing Central
+		Stuff I've Written
 	</h1>
 
 	<p>
-		I've centralized my various writings here, with links back to where they
-		were originally posted if applicable. The topics are all over the place:
-		programming, mental health, business, productivity, and more.
+		I've collected various articles and blog posts here, with links back to
+		where they were originally posted if applicable. The topics are all over the
+		place: programming, mental health, business, productivity, and more.
 	</p>
 </div>
 
@@ -108,21 +111,24 @@
 			Searching {lastSearchText ? `for "${lastSearchText}"` : ''}...
 		</p>
 	{:then articles}
-		{#if !lastSearchText}
-			<p>Showing all posts...</p>
-		{:else}
-			<p>
+		<p class="search-summary">
+			{#if !lastSearchText}
+				Showing all posts...
+			{:else}
 				Showing {articles.length} results for "{lastSearchText}"
-			</p>
-		{/if}
+			{/if}
+		</p>
 		{#if articles.length}
 			<ol
 				class="article-snippets"
-				in:fade
 				aria-label="Article search results as preview snippets"
 			>
-				{#each articles as article, i (i)}
-					<li>
+				{#each articles as article (article.slug)}
+					<li
+						in:fade={{ easing: expoInOut, duration: 500 }}
+						out:slide={{ easing: expoInOut, duration: 500 }}
+						animate:flip={{ easing: expoInOut, duration: 500 }}
+					>
 						<article class="article-snippet">
 							<header>
 								<h2>
@@ -179,6 +185,13 @@
 </nav>
 
 <style lang="scss">
+	h1 {
+		text-align: center;
+	}
+	.search-summary {
+		color: var(--color-subtle);
+		font-style: italic;
+	}
 	.article-snippets {
 		.article-snippet {
 			// border-bottom: 1px solid gray;
