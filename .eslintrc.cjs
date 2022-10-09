@@ -14,21 +14,7 @@ module.exports = {
 		'@typescript-eslint/no-namespace': 'off',
 		'@typescript-eslint/ban-ts-comment': 'warn',
 		'@typescript-eslint/no-empty-interface': 'off',
-		'@typescript-eslint/ban-types': [
-			'warn',
-			{
-				types: {
-					Boolean: { fixWith: 'boolean', message: 'Use boolean instead' },
-					Number: { fixWith: 'number', message: 'Use number instead' },
-					Object: {
-						fixWith: '{}',
-						message: "'Object' means 'any nullish value'.",
-					},
-					String: { fixWith: 'string', message: 'Use string instead' },
-					Symbol: { fixWith: 'symbol', message: 'Use symbol instead' },
-				},
-			},
-		],
+		'@typescript-eslint/ban-types': 'off',
 		'@typescript-eslint/no-empty-function': 'warn',
 		'@typescript-eslint/no-explicit-any': 'off',
 		'@typescript-eslint/no-misused-new': 'off',
@@ -58,6 +44,18 @@ module.exports = {
 			files: ['*.svelte'],
 			plugins: ['svelte3', '@typescript-eslint', 'prettier'],
 			processor: 'svelte3/svelte3',
+		},
+		{
+			files: ['**/cypress/**/*.js'],
+			plugins: ['@typescript-eslint', 'cypress', 'prettier'],
+			extends: [
+				'eslint:recommended',
+				'plugin:@typescript-eslint/recommended',
+				'plugin:cypress/recommended',
+			],
+			env: {
+				'cypress/globals': true,
+			},
 		},
 		{
 			files: ['projects/*/**/*.ts'],
