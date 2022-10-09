@@ -76,10 +76,6 @@
 			"title": "Posts"
 		},
 		{
-			"path": "[[workspace]]/projects/site/src/drafts",
-			"title": "Drafts"
-		},
-		{
 			"path": "[[workspace]]/notes",
 			"title": "Notes"
 		}

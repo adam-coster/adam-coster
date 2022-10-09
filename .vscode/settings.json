@@ -42,7 +42,7 @@
 	},
 	"editor.codeActionsOnSave": {
 		"source.fixAll.eslint": true,
-		"source.organizeImports": true,
+		"source.organizeImports": false,
 		"source.fixAll": true,
 		"source.addMissingImports": true
 	},
