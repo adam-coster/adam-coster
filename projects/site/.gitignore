@@ -13,3 +13,4 @@ static/sitemap.xml
 static/blog.*
 cypress/videos
 cypress/screenshots
+static/microdata
