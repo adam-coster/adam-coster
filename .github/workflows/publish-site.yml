@@ -1,7 +1,5 @@
 on:
   push:
-    branches:
-      - develop
     tags:
       - "@adam-coster/site@*"
 jobs:
