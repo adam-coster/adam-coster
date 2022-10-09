@@ -111,6 +111,7 @@ importers:
       '@sveltejs/kit': 1.0.0-next.511
       '@types/hast': ^2.3.4
       '@types/lunr': 2.3.4
+      '@types/marked': 4.0.7
       '@types/puppeteer': ^5.4.6
       '@types/remove-markdown': 0.3.1
       feed: 4.2.2
@@ -118,6 +119,7 @@ importers:
       hast: 1.0.0
       highlight.js: 11.6.0
       lunr: 2.3.9
+      marked: 4.1.1
       node-html-parser: 6.1.1
       puppeteer: ^18.2.1
       rehype-accessible-emojis: 0.3.2
@@ -143,6 +145,7 @@ importers:
       gray-matter: 4.0.3
       highlight.js: 11.6.0
       lunr: 2.3.9
+      marked: 4.1.1
       node-html-parser: 6.1.1
       puppeteer: 18.2.1
       rehype-accessible-emojis: 0.3.2
@@ -162,6 +165,7 @@ importers:
       '@sveltejs/kit': 1.0.0-next.511_vite@3.1.6
       '@types/hast': 2.3.4
       '@types/lunr': 2.3.4
+      '@types/marked': 4.0.7
       '@types/puppeteer': 5.4.6
       '@types/remove-markdown': 0.3.1
       hast: 1.0.0
@@ -753,6 +757,10 @@ packages:
 
   /@types/lunr/2.3.4:
     resolution: {integrity: sha512-j4x4XJwZvorEUbA519VdQ5b9AOU9TSvfi8tvxMAfP8XzNLtFex7A8vFQwqOx3WACbV0KMXbACV3cZl4/gynQ7g==}
+    dev: true
+
+  /@types/marked/4.0.7:
+    resolution: {integrity: sha512-eEAhnz21CwvKVW+YvRvcTuFKNU9CV1qH+opcgVK3pIMI6YZzDm6gc8o2vHjldFk6MGKt5pueSB7IOpvpx5Qekw==}
     dev: true
 
   /@types/mdast/3.0.10:
@@ -3484,6 +3492,12 @@ packages:
 
   /markdown-table/3.0.2:
     resolution: {integrity: sha512-y8j3a5/DkJCmS5x4dMCQL+OR0+2EAq3DOtio1COSHsmW2BGXnNCK3v12hJt1LrUz5iZH5g0LmuYOjDdI+czghA==}
+    dev: false
+
+  /marked/4.1.1:
+    resolution: {integrity: sha512-0cNMnTcUJPxbA6uWmCmjWz4NJRe/0Xfk2NhXCUHjew9qJzFN20krFnsUe7QynwqOwa5m1fZ4UDg0ycKFVC0ccw==}
+    engines: {node: '>= 12'}
+    hasBin: true
     dev: false
 
   /mdast-util-definitions/5.1.1:

@@ -51,7 +51,7 @@ markdownNormalizer.use(rehypeAutolinkHeadings, {
 });
 markdownNormalizer.use(rehypeStringify, { allowDangerousHtml: true });
 
-async function markdownToHtml(markdown: string) {
+export async function markdownToHtml(markdown: string) {
 	const html = String(await markdownNormalizer.process(markdown));
 	// Fix the stuff inside of code blocks to not have Svelte special characters
 	const root = parseHtml(html);
