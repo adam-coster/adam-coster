@@ -1,6 +1,6 @@
 {
 	"name": "@adam-coster/site-tools",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"private": true,
 	"type": "module",
 	"exports": {
@@ -13,7 +13,6 @@
 	"types": "dist/index.d.ts",
 	"scripts": {
 		"build": "tsc --build",
-		"test": "treb test",
 		"watch": "tsc --build --watch"
 	},
 	"dependencies": {
@@ -21,7 +20,6 @@
 		"@bscotch/pathy": "2.4.1",
 		"@bscotch/utility": "6.5.0",
 		"@sveltejs/adapter-cloudflare": "1.0.0-next.38",
-		"@types/hast": "^2.3.4",
 		"feed": "4.2.2",
 		"gray-matter": "4.0.3",
 		"highlight.js": "11.6.0",
@@ -37,22 +35,23 @@
 		"remark-parse": "10.0.1",
 		"remark-rehype": "10.1.0",
 		"remove-markdown": "0.5.0",
-		"svelte": "3.50.1",
 		"svelte-preprocess": "4.10.7",
-		"typescript": "4.9.1-beta",
-		"unified": "10.1.2"
+		"tslib": "2.4.0",
+		"unified": "10.1.2",
+		"vite": "3.1.6"
 	},
 	"devDependencies": {
 		"@sveltejs/kit": "1.0.0-next.511",
+		"@types/hast": "^2.3.4",
 		"@types/lunr": "2.3.4",
 		"@types/puppeteer": "^5.4.6",
 		"@types/remove-markdown": "0.3.1",
 		"hast": "1.0.0",
-		"vite": "3.1.6"
+		"typescript": "4.9.1-beta"
 	},
+	"packageManager": "pnpm@7.12.2",
 	"engines": {
 		"node": ">=16",
 		"pnpm": ">=7"
-	},
-	"packageManager": "pnpm@7.12.2"
+	}
 }

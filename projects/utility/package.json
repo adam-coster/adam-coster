@@ -1,6 +1,6 @@
 {
 	"name": "@adam-coster/utility",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"private": true,
 	"type": "module",
 	"exports": {
@@ -13,12 +13,17 @@
 	"types": "dist/index.d.ts",
 	"scripts": {
 		"build": "tsc --build",
-		"test": "treb test",
 		"watch": "tsc --build --watch"
 	},
+	"dependencies": {
+		"tslib": "2.4.0"
+	},
+	"devDependencies": {
+		"typescript": "4.9.1-beta"
+	},
+	"packageManager": "pnpm@7.12.2",
 	"engines": {
 		"node": ">=16",
 		"pnpm": ">=7"
-	},
-	"packageManager": "pnpm@7.12.2"
+	}
 }
