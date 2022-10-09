@@ -35,16 +35,8 @@ h6 {
 	font-weight: var(--font-weight-boldest);
 	margin-top: calc(var(--size));
 	margin-bottom: calc(var(--size) * 0.5);
-	text-align: center;
-	color: var(--color-header);
-}
-
-h1 {
-	// color: var(--color-background);
-	// background-color: var(--color-text);
-	// border-radius: var(--border-radius);
-	// padding: calc(var(--font-size-h1) * 0.1) calc(var(--font-size-h1) * 0.5);
 	// text-align: center;
+	color: var(--color-header);
 }
 
 h3,
@@ -58,6 +50,7 @@ h6 {
 	h#{$i} {
 		--font-size: var(--font-size-h#{$i});
 		font-size: var(--font-size);
+		line-height: 1.2em;
 	}
 
 	article.article > .body {
@@ -89,7 +82,7 @@ h6 {
 
 p,
 figure {
-	margin: calc(var(--size) * 0.5) 0 calc(var(--size) * 0.75) 0;
+	margin: calc(var(--size) * 0.75) 0 calc(var(--size) * 1) 0;
 }
 
 a {
@@ -231,16 +224,6 @@ article.body {
 	--blockquote-margin: calc(var(--size) * 3.5);
 
 	counter-reset: figure;
-
-	// display: flex;
-	// flex-direction: column;
-	// justify-content: center;
-
-	// & > * {
-	//   margin-bottom: calc(var(--size) * 0.5);
-	// }
-
-	// Figures
 
 	img,
 	iframe {

@@ -114,6 +114,12 @@
 </article>
 
 <style lang="scss">
+	article header :is(h1, h2) {
+		text-align: center;
+	}
+	article + article {
+		margin-top: 2em;
+	}
 	.identity-groups {
 		@media screen and (min-width: 800px) {
 			display: grid;
