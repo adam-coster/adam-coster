@@ -16,7 +16,7 @@
 		"watch": "tsc --build --watch"
 	},
 	"dependencies": {
-		"tslib": "2.4.0"
+		"tslib": "2.4.1"
 	},
 	"devDependencies": {
 		"typescript": "4.9.1-beta"
