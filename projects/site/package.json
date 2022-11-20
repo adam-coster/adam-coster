@@ -15,22 +15,22 @@
 	"dependencies": {
 		"@adam-coster/site-tools": "workspace:*",
 		"@bscotch/pathy": "2.5.1",
-		"@fortawesome/free-solid-svg-icons": "6.2.0",
+		"@fortawesome/free-solid-svg-icons": "6.2.1",
 		"just-debounce": "1.1.0",
 		"svelte": "3.53.1",
 		"svelte-fa": "3.0.3"
 	},
 	"devDependencies": {
-		"@fortawesome/free-brands-svg-icons": "6.2.0",
-		"@sveltejs/kit": "1.0.0-next.544",
+		"@fortawesome/free-brands-svg-icons": "6.2.1",
+		"@sveltejs/kit": "1.0.0-next.553",
 		"@types/lunr": "2.3.4",
 		"concurrently": "7.5.0",
-		"cypress": "11.0.1",
+		"cypress": "11.1.0",
 		"lunr": "2.3.9",
 		"schema-dts": "1.1.0",
 		"svelte-check": "2.9.2",
-		"typescript": "4.9.1-beta",
-		"vite": "3.2.3",
+		"typescript": "4.9.3",
+		"vite": "3.2.4",
 		"wait-on": "6.0.1"
 	},
 	"packageManager": "pnpm@7.12.2",
