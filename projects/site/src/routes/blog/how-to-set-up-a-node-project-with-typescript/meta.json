@@ -1,0 +1,20 @@
+{
+	"$schema": "../post.schema.json",
+	"slug": "how-to-set-up-a-node-project-with-typescript",
+	"title": "Live Dev: How to set up a Node project with Typescript",
+	"description": "Modern web development requires a lot of setup. I'll walk you through it, diving deep into the details along the way.\n",
+	"editedAt": "2021-05-14T20:02:42.962Z",
+	"publishedAt": "2021-05-14T20:01:24.120Z",
+	"canonical": null,
+	"tags": [
+		"javascript",
+		"node",
+		"typescript",
+		"tutorial",
+		"programming",
+		"video"
+	],
+	"crossPosts": [
+		"https://dev.to/adamcoster/how-to-set-up-a-node-project-with-typescript-d5c"
+	]
+}

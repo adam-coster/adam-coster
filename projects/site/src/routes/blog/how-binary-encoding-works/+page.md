@@ -1,27 +1,3 @@
----
-slug: how-binary-encoding-works
-title: Learn how binary encoding works
-description: >
-  "Binary encoding" sounds complicated. It's more approachable
-  than you think, and understanding it unlocks a wealth of knowledge and tools.
-editedAt: 2021-01-23T23:59:16.323Z
-publishedAt: 2020-12-28T15:54:00.402Z
-canonical: https://www.bscotch.net/post/learn-how-binary-encoding-works
-tags:
-  - computer-science
-  - encoding
-  - serialization
-  - communication
-  - binary
-  - beginners
-  - programming
-  - learn
-  - data
-crossPosts:
-  - https://dev.to/adamcoster/learn-how-binary-encoding-works-it-s-more-fun-and-useful-than-you-think-lbd
-  - https://adamcoster.medium.com/learn-how-binary-encoding-works-its-more-fun-and-useful-than-you-think-c387f9e2d033
----
-
 Data requires context to create meaning.
 
 Let's say I sent you a text message containing just `<3`. Perhaps you had first asked me how many of something I had. In that case you'd interpret `<3` as something like, "I don't know exactly, but less than three". Or perhaps your prior message was also `<3`, in which case mine probably means, "I love you, too." The data (`<3`) remained the same, but its meaning changed with context.

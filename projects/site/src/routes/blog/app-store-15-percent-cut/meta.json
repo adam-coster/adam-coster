@@ -1,0 +1,12 @@
+{
+	"$schema": "../post.schema.json",
+	"slug": "app-store-15-percent-cut",
+	"title": "Apple's 15% cut for non-millionaires: PR move or sound investment?",
+	"description": "The announcement created a lot of buzz, and a lot of questions. Is it \"just a PR stunt\" to help Apple's side of its various anti-monopoly suits?\n",
+	"publishedAt": "2020-11-18T06:00:00.000Z",
+	"canonical": "https://www.gamasutra.com/blogs/AdamCoster/20201119/373966/Apples_15_cut_for_nonmillionaires_PR_move_or_sound_investment.php",
+	"tags": ["apple", "business", "gamedev"],
+	"crossPosts": [
+		"https://adamcoster.medium.com/apples-15-cut-for-non-millionaires-pr-move-or-sound-investment-d5b7655da1a5"
+	]
+}

@@ -1,0 +1,12 @@
+{
+	"$schema": "../post.schema.json",
+	"slug": "silently-skipped-async-tests-mochajs",
+	"title": "Beware silently skipped tests in Mocha",
+	"description": "Any Mocha.js tests defined within an async describe function will be silently skipped! (Don't use async functions in your describe() callbacks.)\n",
+	"editedAt": "2021-03-26T22:53:16.483Z",
+	"publishedAt": "2021-03-03T17:01:28.039Z",
+	"tags": ["webdev", "javascript", "node", "testing", "tdd", "mochajs"],
+	"crossPosts": [
+		"https://dev.to/adamcoster/beware-silently-skipped-tests-in-mocha-449h"
+	]
+}

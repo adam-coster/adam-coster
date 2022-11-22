@@ -1,0 +1,13 @@
+{
+	"$schema": "../post.schema.json",
+	"slug": "how-to-run-linux-on-windows-10-using-wsl2",
+	"title": "How to run Linux on Windows 10 using WSL2",
+	"description": "Use Linux and Windows 10 at the same time, while making Windows do all the hard work. Here's how.\n",
+	"editedAt": "2021-01-25T01:43:32.707Z",
+	"publishedAt": "2020-12-24T20:48:56.055Z",
+	"tags": ["linux", "windows", "docker", "webdev"],
+	"crossPosts": [
+		"https://dev.to/adamcoster/how-to-run-linux-on-windows-10-using-wsl2-kph",
+		"https://adamcoster.medium.com/how-to-run-linux-on-windows-10-using-wsl2-afb84fc02239"
+	]
+}

@@ -1,25 +1,3 @@
----
-slug: joyful-coding-vscode-extensions-settings
-title: Make coding a joy with these core VSCode extensions and settings
-description: >
-  You can only be as good as your tools. Here are the core VSCode extensions and settings that I use to make web development a blast.
-editedAt: 2021-01-25T01:47:38.531Z
-publishedAt: 2020-12-24T21:58:02.971Z
-canonical:
-tags:
-  - vscode
-  - programming
-  - tools
-  - webdev
-  - javascript
-  - typescript
-  - node
-crossPosts:
-  - https://dev.to/adamcoster/make-coding-a-joy-with-these-core-vscode-extensions-and-settings-5b5b
-  - https://www.bscotch.net/post/vscode-extensions-and-settings
-  - https://adamcoster.medium.com/make-coding-a-joy-with-these-core-vscode-extensions-and-settings-d6dcda3fc346
----
-
 Visual Studio Code (VSCode) has rapidly become the favored editor/IDE for a huge swath of web developers. This is in no small part due to its robust extensions marketplace and the fact that you can change how pretty much every little aspect works.
 
 I've been using it for the past few years of webdev work with a myriad of technologies (Node.js, Typescript, vanilla JavaScript, Vue.js, Svelte.js, HTML/CSS, Docker, and on and on), and it's only let me down when I strayed too far from web technologies.

@@ -1,22 +1,3 @@
----
-slug: super-charge-email-google-workspace
-title: 🚀 Super-charge your email with your own domain, routing, aliases, and
-  catch-alls via Google Workspace
-description: >
-  Using an email address with your own custom domain signals
-  professionalism. But that's not the only benefit!
-editedAt: 2021-05-17T18:18:23.632Z
-publishedAt: 2021-05-16T23:32:58.825Z
-tags:
-  - productivity
-  - email
-  - tutorial
-  - google
-  - business
-crossPosts:
-  - https://dev.to/adamcoster/super-charge-your-email-with-your-own-domain-routing-aliases-and-catch-alls-via-google-workspace-44i
----
-
 There's a good chance you're still using an email address you set up in college, or even in high school. Or a personal email address that you wish was more professional.
 
 Changing your email address, like changing your phone number, is a _pain_. You've probably done it as rarely as possible. Maybe you just accumulated new ones, and find yourself constantly juggling accounts.

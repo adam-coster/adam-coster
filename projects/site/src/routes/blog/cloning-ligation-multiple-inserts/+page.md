@@ -1,21 +1,3 @@
----
-slug: cloning-ligation-multiple-inserts
-title: 'Cloning trick: ligation of multiple inserts'
-description: >
-  Stitching multiple DNA inserts together through standard cloning
-  yields terrible results. But you can amplify the rare successes!
-editedAt: 2013-02-26
-publishedAt: 2011-07-11
-legacySlug: cloning-trick-ligation-of-multiple-inserts
-tags:
-  - science
-  - biology
-  - experiments
-  - tools
-  - productivity
-  - learn
----
-
 _Update: A number of people are finding this post through Google searches. I don't have an updated post on the topic, but if you're trying to assemble multiple DNA fragments then I suggest looking into [Gibson Assembly](https://en.wikipedia.org/wiki/Gibson_assembly). NEB sells a dead-simple [mastermix](https://www.neb.com/products/e2611-gibson-assembly-master-mix), which is a bit pricey per reaction (I just make my reactions half the size) but comes out to cheap when you take into account the cost of labor (so long as your P.I. values your time...)._
 
 I've spent the last couple of months building a plasmid library, and in the process I thought of a trick. Ligations, perhaps the worst part of cloning, are notoriously finicky reactions. The goal is to take several pieces of linear DNA, where the ends of the pieces can only connect in a certain way, and then use an enzyme (T4 [Ligase](https://en.wikipedia.org/wiki/DNA_ligase)) to sew them all together into one piece (in my case, a circular plasmid).

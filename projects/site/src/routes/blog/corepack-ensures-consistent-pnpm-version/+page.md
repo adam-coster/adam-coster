@@ -1,22 +1,3 @@
----
-slug: corepack-ensures-consistent-pnpm-version
-title: Use corepack to ensure consistent pnpm/yarn versions
-description: >
-  Avoid works-on-my-machine errors across environments by using corepack to
-  ensure the same version of pnpm or yarn is used everywhere (even in monorepos).
-publishedAt: 2022-10-09T19:06:19.598Z
-tags:
-  - pnpm
-  - npm
-  - monorepo
-  - node
-  - webdev
-  - devops
-  - javascript
-  - learn
-  - programming
----
-
 Modern web development projects have _tons_ of dependencies. Making sure those dependencies stay consistent over time and across development environments can be a true nightmare. Handling that is the job of package managers like npm, [pnpm](https://pnpm.io/), or [yarn](https://yarnpkg.com/).
 
 But what manages the package manager? How do you ensure that your collaborators, development environments, continuous integration environments, and even individual projects within a monorepo don't throw surprises at you after using an old version of your package manager? Or even the _wrong package manager entirely_?

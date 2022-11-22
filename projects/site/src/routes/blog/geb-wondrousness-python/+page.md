@@ -1,20 +1,3 @@
----
-slug: geb-wondrousness-python
-title: '"Gödel, Escher, Bach": Wondrousness in Python'
-description: >
-  In GEB the Tortoise and Achilles describe a number
-  property they call "Wondrousness". It creates a
-  fascinating graph.
-publishedAt: 2011-01-15
-legacySlug: python-geb-and-wondrousness
-tags:
-  - math
-  - learn
-  - simulation
-  - programming
-  - python
----
-
 ![A graph showing how many steps are required for numbers 1 to 100000 to get to 1 when following the 'Wondrousness' algorithm.](https://farm6.static.flickr.com/5203/5357216469_1af7e8ae03.jpg)
 
 While perusing a bookstore a couple years ago, I stumbled upon a fascinating book by Douglas Hofstadter called [Godel, Escher, Bach](https://www.amazon.com/gp/product/0465026567/). If you like math, biology, music, art, computer science, and philosophy, this is really an amazing read (though, admittedly, I've only gotten halfway through since I bought the thing).

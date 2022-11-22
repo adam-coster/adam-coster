@@ -1,22 +1,3 @@
----
-slug: how-email-previews-work
-title: How email previews work
-description: >
-  Email clients show the first line of an email before
-  you open it. Here's how that works, and how you can hack it.
-editedAt: 2021-03-23T15:47:23.601Z
-publishedAt: 2021-03-23T15:47:02.873Z
-tags:
-  - webdev
-  - html
-  - css
-  - email
-  - marketing
-  - encoding
-crossPosts:
-  - https://dev.to/adamcoster/how-email-previews-work-1ije
----
-
 Depending on your email client, when looking at your inbox you probably see three main things for each message:
 
 1. The sender's name.

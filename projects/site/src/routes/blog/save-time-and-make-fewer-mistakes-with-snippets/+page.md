@@ -1,22 +1,3 @@
----
-slug: save-time-and-make-fewer-mistakes-with-snippets
-title: ✂ Save time and make fewer mistakes with Snippets
-description: >
-  If you aren't using snippets in VSCode, you're going to be bummed
-  when you find out how much time you could have been saving...
-publishedAt: 2021-06-01T12:32:00.429Z
-tags:
-  - productivity
-  - tools
-  - programming
-  - webdev
-  - javascript
-  - typescript
-  - vscode
-crossPosts:
-  - https://dev.to/adamcoster/save-time-and-make-fewer-mistakes-with-snippets-2dl2
----
-
 Last week I was sitting down to write a custom JavaScript error and became immediately annoyed. I've had to do that just often enough that it felt like I was being a robot, but not so often that I could do it without looking back at references.
 
 I thought, "I guess this is what ['snippets'](https://code.visualstudio.com/docs/editor/userdefinedsnippets) are for, right? I should figure out how those work."

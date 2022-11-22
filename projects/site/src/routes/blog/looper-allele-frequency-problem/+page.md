@@ -1,19 +1,3 @@
----
-slug: looper-allele-frequency-problem
-title: Allele frequency problem in "Looper"
-description: >
-  Time travel is always a nonsense generator,
-  but "Looper" kicks it up a notch with impossibly rapid evolution.
-publishedAt: 2013-01-12T07:55:00.402Z
-legacySlug: allele-frequency-problem-in-looper
-tags:
-  - science
-  - biology
-  - evolution
-  - media
-  - critique
----
-
 Time travel movies are always full of bad physics and and contradictory logic, though certainly some do it better than others. I usually just try not to think about them too hard so that I can take in the entertainment value. ["Looper"](https://www.imdb.com/title/tt1276104/) is no exception, but the most glaring error in the movie's science was not in the physics; it was in the biology.
 
 The beginning of the movie tells of a new mutation, the "TK mutation", that has crept into the population to give people weak telekinetic powers. The idea of a gene, and more importantly a mutation in an existing gene, somehow allowing telekinesis is of course absurd, but I'm already used to that premise.

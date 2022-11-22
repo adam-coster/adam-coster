@@ -1,0 +1,17 @@
+{
+	"$schema": "../post.schema.json",
+	"slug": "documentation-as-code",
+	"title": "💻 Documentation as code",
+	"description": "Documenting code in a scalable and maintainable way seems to be impossible. Let's re-think it.\n",
+	"editedAt": "2021-04-08T12:36:58.240Z",
+	"publishedAt": "2021-04-08T00:28:24.323Z",
+	"tags": [
+		"programming",
+		"documentation",
+		"writing",
+		"productivity",
+		"devops",
+		"discuss"
+	],
+	"crossPosts": ["https://dev.to/adamcoster/documentation-as-code-40a7"]
+}

@@ -1,0 +1,19 @@
+{
+	"$schema": "../post.schema.json",
+	"slug": "save-time-and-make-fewer-mistakes-with-snippets",
+	"title": "✂ Save time and make fewer mistakes with Snippets",
+	"description": "If you aren't using snippets in VSCode, you're going to be bummed when you find out how much time you could have been saving...\n",
+	"publishedAt": "2021-06-01T12:32:00.429Z",
+	"tags": [
+		"productivity",
+		"tools",
+		"programming",
+		"webdev",
+		"javascript",
+		"typescript",
+		"vscode"
+	],
+	"crossPosts": [
+		"https://dev.to/adamcoster/save-time-and-make-fewer-mistakes-with-snippets-2dl2"
+	]
+}

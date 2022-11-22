@@ -1,20 +1,3 @@
----
-slug: commonjs-and-esm-importexport-compatibility-examples
-title: 'CommonJS (cjs) and Modules (esm): Import compatibility'
-description: You can import CommonJS (cjs) into ESM modules, and vice versa (esm into cjs). But one way is easier than the other.
-publishedAt: 2022-03-09T06:00:00.000Z
-tags:
-  - javascript
-  - learn
-  - node
-  - webdev
-  - programming
-  - typescript
-crossPosts:
-  - https://dev.to/adamcoster/commonjs-and-esm-importexport-compatibility-by-simple-example-50pl
-editedAt: 2022-09-05T23:05:52.367Z
----
-
 Node's [CommonJS](https://nodejs.org/docs/latest-v16.x/api/modules.html) (<abbr title="CommonJS">cjs</abbr>) vs. [ECMAScript](https://nodejs.org/docs/latest-v16.x/api/esm.html) (<abbr title="ECMAScript Module">ESM</abbr>) divide is probably the source of _most_ of my quality of life frustrations as a fullstack Typescript/Node/Javascript programmer.
 
 I can often go for weeks at a time before running into new incompatibility problems, so then each time I have to remind myself how interoperability works between them. Well, this time I made a tiny, simple demo so that _next_ time I can just refer to it. And now you can, too!

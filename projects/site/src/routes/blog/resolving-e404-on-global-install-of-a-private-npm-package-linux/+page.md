@@ -1,23 +1,3 @@
----
-slug: resolving-e404-on-global-install-of-a-private-npm-package-linux
-title: Resolving E404 on global install of a private npm package (Linux)
-description: >
-  If you're getting E404 "Not Found" when trying to install a private npm
-  package, make sure you're logged into the right scope (root or user).
-publishedAt: 2021-03-28T17:46:28.645Z
-tags:
-  - javascript
-  - permissions
-  - security
-  - authentication
-  - npm
-  - node
-  - webdev
-  - linux
-crossPosts:
-  - https://dev.to/adamcoster/resolving-e404-on-global-install-of-a-private-npm-package-linux-55ac
----
-
 I was logged into npm (via `npm login`) and went to do a global install of one of my private packages (`npm i -g`), only to be confronted with an `E404` NOT FOUND error.
 
 After some initial confusion, I realized it was because my setup requires using `sudo` for global npm installs: `sudo` makes you take on the role of the root user, and so it doesn't have access to your regular user's npm credentials!

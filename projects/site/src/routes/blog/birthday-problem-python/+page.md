@@ -1,20 +1,3 @@
----
-slug: birthday-problem-python
-title: 'The "Birthday Problem" simulated with Python'
-description: >
-  There's better than a 50% chance that 2 of any 25 random people will
-  share the same birthday. That's hard to believe. Let's simulate it!
-publishedAt: 2011-07-13
-legacySlug: python-shared-birthdays
-tags:
-  - math
-  - learn
-  - statistics
-  - simulation
-  - programming
-  - python
----
-
 A few days ago I found myself having a vague recollection of an interesting statistics problem. All I could remember was that it had to do with having a room full of people and the probability that any two people in that room would have the same birthday. I remembered the point, which was that it is much more likely than you might think, but I was fuzzy on the details.
 
 After trying to define the problem and find an answer mathematically, I remembered that I suck at statistical reasoning about as much as the average person. So I decided to model the problem with a short Python script and find the answer that way.

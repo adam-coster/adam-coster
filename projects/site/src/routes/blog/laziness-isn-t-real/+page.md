@@ -1,24 +1,3 @@
----
-slug: laziness-isn-t-real
-title: 😴 Laziness isn't real
-description: >
-  If you beat yourself up for being "lazy", you're probably wrong.
-  If you think others are lazy, you're wring there, too.
-publishedAt: 2021-04-26T13:02:58.034Z
-tags:
-  - productivity
-  - discuss
-  - motivation
-  - mental-health
-  - adhd
-  - life
-  - philosophy
-  - privilege
-  - definition
-crossPosts:
-  - https://dev.to/adamcoster/laziness-isn-t-real-1oel
----
-
 For most of my life, I was held up as a model of Puritanical work ethic through all jillion years of my schooling (K-PhD). I was the shining example of not being "lazy".
 
 Right?

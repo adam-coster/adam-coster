@@ -1,23 +1,3 @@
----
-slug: how-to-set-up-a-node-project-with-typescript
-title: 'Live Dev: How to set up a Node project with Typescript'
-description: >
-  Modern web development requires a lot of setup. I'll walk you
-  through it, diving deep into the details along the way.
-editedAt: 2021-05-14T20:02:42.962Z
-publishedAt: 2021-05-14T20:01:24.120Z
-canonical: null
-tags:
-  - javascript
-  - node
-  - typescript
-  - tutorial
-  - programming
-  - video
-crossPosts:
-  - https://dev.to/adamcoster/how-to-set-up-a-node-project-with-typescript-d5c
----
-
 Learning how to code is a long process. Structured coursework and tutorials are a great way for most people to learn, especially at the beginning, but at some point you start to wonder... what does the _actual work_ of development look like? How do you go from identifying a problem to a deployable project that _solves_ that problem?
 
 I had a (relatively) small side project I wanted to tackle for fun, and decided to do it live on video so that people could see the whole process from start to finish.

@@ -1,22 +1,3 @@
----
-slug: typescript-const-trick
-title: The Typescript "as const" trick
-description: |
-  Cast your Typescript values using "as const" to add extra tricks and safety. As of Typescript 4.5, you can do this in JSDoc comments as well.
-editedAt: 2021-01-23T23:49:11.229Z
-publishedAt: 2020-08-24T01:17:55.729Z
-tags:
-  - typescript
-  - javascript
-  - tools
-  - jsdoc
-  - productivity
-  - webdev
-crossPosts:
-  - 'https://dev.to/adamcoster/the-typescript-as-const-trick-2f4o'
-  - 'https://www.bscotch.net/post/typescript-as-const'
----
-
 Some time ago when I was first learning Typescript, I came across a snippet in a tutorial somewhere that looked something like this:
 
 ```ts

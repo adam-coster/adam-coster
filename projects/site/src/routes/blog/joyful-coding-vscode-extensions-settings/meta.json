@@ -1,0 +1,23 @@
+{
+	"$schema": "../post.schema.json",
+	"slug": "joyful-coding-vscode-extensions-settings",
+	"title": "Make coding a joy with these core VSCode extensions and settings",
+	"description": "You can only be as good as your tools. Here are the core VSCode extensions and settings that I use to make web development a blast.\n",
+	"editedAt": "2021-01-25T01:47:38.531Z",
+	"publishedAt": "2020-12-24T21:58:02.971Z",
+	"canonical": null,
+	"tags": [
+		"vscode",
+		"programming",
+		"tools",
+		"webdev",
+		"javascript",
+		"typescript",
+		"node"
+	],
+	"crossPosts": [
+		"https://dev.to/adamcoster/make-coding-a-joy-with-these-core-vscode-extensions-and-settings-5b5b",
+		"https://www.bscotch.net/post/vscode-extensions-and-settings",
+		"https://adamcoster.medium.com/make-coding-a-joy-with-these-core-vscode-extensions-and-settings-d6dcda3fc346"
+	]
+}

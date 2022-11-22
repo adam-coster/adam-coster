@@ -1,20 +1,3 @@
----
-slug: notion-changeable-links
-title: How Notion's URLs change without breaking your links
-description: |
-  When you change a Notion page's title, its URL changes. But all of your old URLs still get you to that page! Here's how Notion does it.
-editedAt: 2021-05-06T04:20:03.230Z
-publishedAt: 2021-05-05T13:39:42.417Z
-canonical: null
-tags:
-  - webdev
-  - notion
-  - programming
-  - html
-crossPosts:
-  - 'https://dev.to/adamcoster/change-a-url-without-breaking-existing-links-4m0d'
----
-
 I noticed something a while ago while updating the title of a page on one of my favorite webapps ([Notion](https://www.notion.so/)): _the URL changed to reflect the new title_.
 
 My first thought was, "Well that's dumb, now my links to this page will be broken!" But then my links _weren't_ broken, so I did some experiments with Notion URLs to figure out what kind of sorcery they were doing. Turns out it was simple!

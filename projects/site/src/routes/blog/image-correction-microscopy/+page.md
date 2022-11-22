@@ -1,18 +1,3 @@
----
-slug: image-correction-microscopy
-title: Image Correction Microscopy
-description: >
-  Fluorescence microscopy images are plagued with background noise.
-  The standard approach to correcting for this is insufficient.
-editedAt: 2021-11-28
-publishedAt: 2014-05-31
-legacySlug: image-correction-in-fluorescence-microscopy
-tags:
-  - science
-  - biology
-  - phd
----
-
 My paper on image correction comes out in Nature Methods in June[^1]. Sorry for the paywall; this is an unfortunate consequence of working at a major research university. I'm not allowed to post pre-print versions of the paper until 6 months after publication, but I will definitely do so as soon as I can! _[Update: The paper is now [freely available](https://www.nature.com/articles/nmeth.2971).]_
 
 About a year ago, one of our microscopes suddenly had a filter that got out of whack (a technical term) and added a huge intensity gradient to our images. We had been using the rolling ball algorithm (as implemented by ImageJ) to correct milder forms of such gradients, but I noticed that this method was not sufficient to correct the steep gradient. But it seemed to me that it shouldn't matter how step the gradient was, since it has a predictable behavior it should be completely correct-able.

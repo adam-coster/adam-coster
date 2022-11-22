@@ -1,23 +1,3 @@
----
-slug: sign-in-with-apple-implementation-hurdles
-title: '"Sign in with Apple" implementation hurdles'
-description: >
-  Apple released its own OAuth implementation, and really wants you to use it.
-  Their non-standard implementation presents a development challenge.
-publishedAt: 2019-10-10T18:39:44.577Z
-tags:
-  - webdev
-  - authentication
-  - security
-  - apple
-  - cors
-  - cookies
-  - http
-crossPosts:
-  - https://dev.to/adamcoster/sign-in-with-apple-implementation-hurdles-761
-  - https://www.bscotch.net/post/sign-in-with-apple-implementation-hurdles
----
-
 _Note: This post is fairly technical and written for web developers. It assumes a basic understanding of web and authentication terminology. The conclusion is a bit more high-level, so you can skip right down to that if you don't need details!_
 
 One of our core goals as a video game studio is to make our games as cross-platform as possible, so that players can pick up right where they left off no matter what device they're using. It's all about _data portability_. To make our players' data portable and accessible we have to implement a _lot_ of login methods (email, Steam, Nintendo, Xbox Live, etc etc), both in-game and on our website, in order to centralize everything around individual player accounts. The more login methods we provide, the easier life is for our users and the more portable their data becomes.

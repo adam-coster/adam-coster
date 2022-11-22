@@ -1,0 +1,20 @@
+{
+	"$schema": "../post.schema.json",
+	"slug": "sign-in-with-apple-implementation-hurdles",
+	"title": "\"Sign in with Apple\" implementation hurdles",
+	"description": "Apple released its own OAuth implementation, and really wants you to use it. Their non-standard implementation presents a development challenge.\n",
+	"publishedAt": "2019-10-10T18:39:44.577Z",
+	"tags": [
+		"webdev",
+		"authentication",
+		"security",
+		"apple",
+		"cors",
+		"cookies",
+		"http"
+	],
+	"crossPosts": [
+		"https://dev.to/adamcoster/sign-in-with-apple-implementation-hurdles-761",
+		"https://www.bscotch.net/post/sign-in-with-apple-implementation-hurdles"
+	]
+}

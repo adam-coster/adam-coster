@@ -1,23 +1,3 @@
----
-slug: silently-skipped-async-tests-mochajs
-title: Beware silently skipped tests in Mocha
-description: >
-  Any Mocha.js tests defined within an async describe
-  function will be silently skipped! (Don't use async
-  functions in your describe() callbacks.)
-editedAt: 2021-03-26T22:53:16.483Z
-publishedAt: 2021-03-03T17:01:28.039Z
-tags:
-  - webdev
-  - javascript
-  - node
-  - testing
-  - tdd
-  - mochajs
-crossPosts:
-  - https://dev.to/adamcoster/beware-silently-skipped-tests-in-mocha-449h
----
-
 I'm a big believer in test-driven development, though I admit I'm a recent convert. My framework of choice is [Mocha](https://mochajs.org/).
 
 There are a couple of gotchas when using Mocha that can cause you to accidentally _skip tests_. The scary version of this results in Mocha telling you that all your tests have passed, when in fact some of your tests _weren't run at all_!

@@ -26,6 +26,7 @@
 		"@types/lunr": "2.3.4",
 		"concurrently": "7.5.0",
 		"cypress": "11.1.0",
+		"gray-matter": "4.0.3",
 		"lunr": "2.3.9",
 		"schema-dts": "1.1.0",
 		"svelte-check": "2.9.2",

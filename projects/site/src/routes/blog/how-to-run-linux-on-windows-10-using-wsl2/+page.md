@@ -1,21 +1,3 @@
----
-slug: how-to-run-linux-on-windows-10-using-wsl2
-title: How to run Linux on Windows 10 using WSL2
-description: >
-  Use Linux and Windows 10 at the same time, while making
-  Windows do all the hard work. Here's how.
-editedAt: 2021-01-25T01:43:32.707Z
-publishedAt: 2020-12-24T20:48:56.055Z
-tags:
-  - linux
-  - windows
-  - docker
-  - webdev
-crossPosts:
-  - https://dev.to/adamcoster/how-to-run-linux-on-windows-10-using-wsl2-kph
-  - https://adamcoster.medium.com/how-to-run-linux-on-windows-10-using-wsl2-afb84fc02239
----
-
 Matching your development and production environments can save a lot of headache. In webdev our production environments are usually some flavor of Linux. While I love using Linux (I spent a couple years mostly usuing Ubuntu), the reality is that I often need Windows-only software. Switching back and forth between Windows and Linux machines/partitions is painful -- fortunately you can run both at once.
 
 There have been ways to do this via virtualization for some time, but Windows 10 recently added a _native_ feature for running Linux on top of Windows. It's called, descriptively, "Windows Subsystem for Linux" (WSL). The latest version is WSL2.

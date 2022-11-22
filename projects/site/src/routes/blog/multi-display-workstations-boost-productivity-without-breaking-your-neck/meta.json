@@ -1,0 +1,20 @@
+{
+	"$schema": "../post.schema.json",
+	"slug": "multi-display-workstations-boost-productivity-without-breaking-your-neck",
+	"title": "Multi-display workstations: boost productivity without breaking your neck",
+	"description": "Use multiple displays without creating an ergonomic nightmare.\n",
+	"editedAt": "2021-04-19T14:52:59.560Z",
+	"publishedAt": "2021-04-19T12:55:42.500Z",
+	"canonical": null,
+	"tags": [
+		"productivity",
+		"ergonomics",
+		"health",
+		"windows",
+		"discuss",
+		"programming"
+	],
+	"crossPosts": [
+		"https://dev.to/adamcoster/multi-display-workstations-boost-productivity-without-breaking-your-neck-1g6a"
+	]
+}

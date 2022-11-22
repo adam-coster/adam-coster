@@ -1,0 +1,19 @@
+{
+	"$schema": "../post.schema.json",
+	"slug": "commonjs-and-esm-importexport-compatibility-examples",
+	"title": "CommonJS (cjs) and Modules (esm): Import compatibility",
+	"description": "You can import CommonJS (cjs) into ESM modules, and vice versa (esm into cjs). But one way is easier than the other.",
+	"publishedAt": "2022-03-09T06:00:00.000Z",
+	"tags": [
+		"javascript",
+		"learn",
+		"node",
+		"webdev",
+		"programming",
+		"typescript"
+	],
+	"crossPosts": [
+		"https://dev.to/adamcoster/commonjs-and-esm-importexport-compatibility-by-simple-example-50pl"
+	],
+	"editedAt": "2022-09-05T23:05:52.367Z"
+}

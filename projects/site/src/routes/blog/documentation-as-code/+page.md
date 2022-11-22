@@ -1,22 +1,3 @@
----
-slug: documentation-as-code
-title: 💻 Documentation as code
-description: >
-  Documenting code in a scalable and maintainable way
-  seems to be impossible. Let's re-think it.
-editedAt: 2021-04-08T12:36:58.240Z
-publishedAt: 2021-04-08T00:28:24.323Z
-tags:
-  - programming
-  - documentation
-  - writing
-  - productivity
-  - devops
-  - discuss
-crossPosts:
-  - https://dev.to/adamcoster/documentation-as-code-40a7
----
-
 Programmers _hate_ writing documentation. Most programmers, anyway. That's just stuff that gets in the way of the Real Work™, right?
 
 The truth is that the Real Work™ of programming mostly consists of things that aren't directly writing code. Determining specs, designing an API, exploring technical limitations, learning best practices, training others, and so on and so on.

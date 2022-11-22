@@ -1,22 +1,3 @@
----
-slug: create-a-live-reload-server-for-front-end-development
-title: Create a live-reload server for front-end development
-description: >
-  Manually reloading a webpage when you make changes
-  is a pain. You can solve this with a live-reload server.
-  Here's how to make one.
-editedAt: 2021-01-23T23:48:41.643Z
-publishedAt: 2020-08-23T23:31:47.284Z
-tags:
-  - node
-  - webdev
-  - javascript
-  - tools
-crossPosts:
-  - https://dev.to/adamcoster/create-a-live-reload-server-for-front-end-development-3gnp
-  - https://www.bscotch.net/post/create-a-live-reload-server
----
-
 I spent my first few years of web development alt-tabbing over to my browser to manually refresh the page every time I made a change to the code. I didn't realize just how annoying this was until I started using modern frameworks (Vue and React), which come out of the box with "hot reloading". I didn't even know that was a thing, but now I can never go back.
 
 If you're currently making webpages without automatic reloading, **drop everything** and get that hooked up _now_!

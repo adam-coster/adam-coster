@@ -1,18 +1,3 @@
----
-slug: does-game-piracy-matter
-title: Does game piracy matter?
-description: >
-  People will pirate your game in enormous numbers. The most effective way to fight it is to make it not matter. Treat piracy as a design constraint.
-publishedAt: 2021-01-28T06:00:00.000Z
-canonical: https://www.gamesindustry.biz/articles/2021-01-27-piracy-does-it-matter
-tags:
-  - gamedev
-  - business
-crossPosts:
-  - https://www.bscotch.net/post/does-piracy-matter
-  - https://adamcoster.medium.com/piracy-does-it-matter-31ca29643d21
----
-
 You spent two years and an enormous amount of human time and resources building your game. Your source code was locked down, people couldn't wait to get a hold of what you'd made, and the thing was done, tested, and ready to go. You launched it, and watched the numbers climb.
 
 But then you compared those numbers to your revenue... and discovered that _most_ of your users hadn't paid you a dime!

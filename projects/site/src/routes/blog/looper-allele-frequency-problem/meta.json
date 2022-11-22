@@ -1,0 +1,9 @@
+{
+	"$schema": "../post.schema.json",
+	"slug": "looper-allele-frequency-problem",
+	"title": "Allele frequency problem in \"Looper\"",
+	"description": "Time travel is always a nonsense generator, but \"Looper\" kicks it up a notch with impossibly rapid evolution.\n",
+	"publishedAt": "2013-01-12T07:55:00.402Z",
+	"legacySlug": "allele-frequency-problem-in-looper",
+	"tags": ["science", "biology", "evolution", "media", "critique"]
+}

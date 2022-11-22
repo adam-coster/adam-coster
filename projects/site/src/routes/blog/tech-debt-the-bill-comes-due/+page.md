@@ -1,20 +1,3 @@
----
-slug: tech-debt-the-bill-comes-due
-title: 'Tech Debt: The Bill Comes Due'
-description: >
-  What is technical debt, and how do you decide when to pay it down?
-  Here are the lessons I learned from shoring up a legacy project.
-publishedAt: 2020-11-06T17:06:19.966Z
-canonical: https://gamasutra.com/blogs/AdamCoster/20201105/373244/Tech_Debt_The_Bill_Comes_Due.php
-tags:
-  - gamedev
-  - devops
-crossPosts:
-  - https://dev.to/adamcoster/tech-debt-the-bill-comes-due-1l9d
-  - https://adamcoster.medium.com/tech-debt-the-bill-comes-due-fdcef2cecf05
-  - https://www.bscotch.net/post/tech-debt-the-bill-comes-due
----
-
 If we don't solve the problems of our past, the futures that we want become ever more difficult to obtain. That's true in life, and it's true in software. In life, the past comes in the form of _baggage_. In software, we call that "technical debt". For both life and software, how do you deal with the past? Do you ignore it and hope for the best? Do you continuously make your future better, via therapy and code refactoring? Do you cut ties with the past completely, via moving to another city and starting a new git repository?
 
 There's no one way to move forward. Context matters, though it's fair to say that we can always benefit from both therapy and refactoring our code.

@@ -1,0 +1,112 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Blog Post",
+	"type": "object",
+	"required": ["slug", "title", "description", "tags", "publishedAt"],
+	"properties": {
+		"slug": {
+			"type": "string",
+			"description": "The unique identifier for the blog post"
+		},
+		"title": {
+			"type": "string",
+			"maxLength": 75
+		},
+		"description": {
+			"type": "string",
+			"maxLength": 175
+		},
+		"canonical": {
+			"type": "string",
+			"format": "uri"
+		},
+		"tags": {
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/tag"
+			}
+		},
+		"legacySlug": { "type": "string" },
+		"editedAt": {
+			"type": "string",
+			"format": "date-time"
+		},
+		"publishedAt": {
+			"type": "string",
+			"format": "date-time"
+		}
+	},
+	"definitions": {
+		"tag": {
+			"enum": [
+				"math",
+				"learn",
+				"statistics",
+				"simulation",
+				"programming",
+				"python",
+				"science",
+				"biology",
+				"experiments",
+				"tools",
+				"productivity",
+				"node",
+				"webdev",
+				"javascript",
+				"documentation",
+				"writing",
+				"devops",
+				"discuss",
+				"computer-science",
+				"encoding",
+				"serialization",
+				"communication",
+				"binary",
+				"beginners",
+				"data",
+				"linux",
+				"windows",
+				"docker",
+				"html",
+				"css",
+				"email",
+				"marketing",
+				"typescript",
+				"tutorial",
+				"video",
+				"expressjs",
+				"json",
+				"phd",
+				"vscode",
+				"motivation",
+				"mental-health",
+				"adhd",
+				"life",
+				"philosophy",
+				"privilege",
+				"definition",
+				"evolution",
+				"media",
+				"critique",
+				"notion",
+				"ergonomics",
+				"health",
+				"permissions",
+				"security",
+				"authentication",
+				"npm",
+				"testing",
+				"tdd",
+				"mochajs",
+				"gamedev",
+				"google",
+				"business",
+				"apple",
+				"cors",
+				"cookies",
+				"http",
+				"jsdoc"
+			]
+		}
+	}
+}

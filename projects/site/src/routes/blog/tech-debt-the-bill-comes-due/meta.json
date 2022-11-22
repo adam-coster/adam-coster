@@ -1,0 +1,14 @@
+{
+	"$schema": "../post.schema.json",
+	"slug": "tech-debt-the-bill-comes-due",
+	"title": "Tech Debt: The Bill Comes Due",
+	"description": "What is technical debt, and how do you decide when to pay it down? Here are the lessons I learned from shoring up a legacy project.\n",
+	"publishedAt": "2020-11-06T17:06:19.966Z",
+	"canonical": "https://gamasutra.com/blogs/AdamCoster/20201105/373244/Tech_Debt_The_Bill_Comes_Due.php",
+	"tags": ["gamedev", "devops"],
+	"crossPosts": [
+		"https://dev.to/adamcoster/tech-debt-the-bill-comes-due-1l9d",
+		"https://adamcoster.medium.com/tech-debt-the-bill-comes-due-fdcef2cecf05",
+		"https://www.bscotch.net/post/tech-debt-the-bill-comes-due"
+	]
+}

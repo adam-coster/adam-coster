@@ -1,20 +1,3 @@
----
-slug: monty-hall-python
-title: 'The Monty Hall problem modeled in Python'
-description: >
-  The Monty Hall problem is a classic example of how difficult
-  statistical reasoning can be. Let's simulate it in Python.
-publishedAt: 2011-02-20
-legacySlug: python-monty-hall-modeling
-tags:
-  - math
-  - learn
-  - statistics
-  - simulation
-  - programming
-  - python
----
-
 You've all heard this [classic statistics problem](https://en.wikipedia.org/wiki/Monty_Hall_problem), based on an old game show:
 
 A contestant is shown 3 doors. Only one of those three doors hides something of value to the contestant (perhaps a new car), while the other two contain nothing. The contestant chooses one door, but that door remains closed. The host then opens up a 2nd door, and this door is _always_ a losing door. At this point, the contestant may choose to now open the originally-chosen door, or switch to and open the last remaining door.

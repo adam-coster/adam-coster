@@ -1,0 +1,10 @@
+{
+	"$schema": "../post.schema.json",
+	"slug": "how-email-previews-work",
+	"title": "How email previews work",
+	"description": "Email clients show the first line of an email before you open it. Here's how that works, and how you can hack it.\n",
+	"editedAt": "2021-03-23T15:47:23.601Z",
+	"publishedAt": "2021-03-23T15:47:02.873Z",
+	"tags": ["webdev", "html", "css", "email", "marketing", "encoding"],
+	"crossPosts": ["https://dev.to/adamcoster/how-email-previews-work-1ije"]
+}

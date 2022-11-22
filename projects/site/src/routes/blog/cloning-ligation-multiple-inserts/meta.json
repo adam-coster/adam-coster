@@ -1,0 +1,17 @@
+{
+	"$schema": "../post.schema.json",
+	"slug": "cloning-ligation-multiple-inserts",
+	"title": "Cloning trick: ligation of multiple inserts",
+	"description": "Stitching multiple DNA inserts together through standard cloning yields terrible results. But you can amplify the rare successes!\n",
+	"editedAt": "2013-02-26T00:00:00.000Z",
+	"publishedAt": "2011-07-11T00:00:00.000Z",
+	"legacySlug": "cloning-trick-ligation-of-multiple-inserts",
+	"tags": [
+		"science",
+		"biology",
+		"experiments",
+		"tools",
+		"productivity",
+		"learn"
+	]
+}

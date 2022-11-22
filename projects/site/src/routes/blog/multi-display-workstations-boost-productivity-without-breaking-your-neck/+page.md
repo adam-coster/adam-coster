@@ -1,22 +1,3 @@
----
-slug: multi-display-workstations-boost-productivity-without-breaking-your-neck
-title: 'Multi-display workstations: boost productivity without breaking your neck'
-description: >
-  Use multiple displays without creating an ergonomic nightmare.
-editedAt: 2021-04-19T14:52:59.560Z
-publishedAt: 2021-04-19T12:55:42.500Z
-canonical: null
-tags:
-  - productivity
-  - ergonomics
-  - health
-  - windows
-  - discuss
-  - programming
-crossPosts:
-  - https://dev.to/adamcoster/multi-display-workstations-boost-productivity-without-breaking-your-neck-1g6a
----
-
 I got in on that standing desk phenomenon a couple of weeks ago (quite late to the party), and used that as the trigger for what I guess we could call "Continuous Workstation Development".
 
 By which I mean: I've been doing lots of experiments with my workspace setup.
