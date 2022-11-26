@@ -43,8 +43,8 @@
 			await goto(
 				patchQueryParams($page.url, { search: searchText }).toString(),
 				{
-					keepfocus: true,
-					noscroll: true,
+					keepFocus: true,
+					noScroll: true,
 				},
 			);
 		}
@@ -230,9 +230,6 @@
 				// margin-left: calc(var(--size) * 1);
 				margin-top: calc(var(--size) * 0.5);
 				color: var(--color-subtle);
-			}
-			.summary {
-				// margin-left: calc(var(--size) * 1);
 			}
 		}
 	}

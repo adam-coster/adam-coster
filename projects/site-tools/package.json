@@ -22,11 +22,11 @@
 		"@sveltejs/adapter-cloudflare": "1.0.0-next.40",
 		"feed": "4.2.2",
 		"gray-matter": "4.0.3",
-		"highlight.js": "11.6.0",
+		"highlight.js": "11.7.0",
 		"lunr": "2.3.9",
-		"marked": "4.2.2",
+		"marked": "4.2.3",
 		"node-html-parser": "6.1.4",
-		"puppeteer": "^19.2.2",
+		"puppeteer": "^19.3.0",
 		"rehype-accessible-emojis": "0.3.2",
 		"rehype-autolink-headings": "6.1.1",
 		"rehype-highlight": "6.0.0",
@@ -42,7 +42,7 @@
 		"vite": "3.2.4"
 	},
 	"devDependencies": {
-		"@sveltejs/kit": "1.0.0-next.553",
+		"@sveltejs/kit": "1.0.0-next.561",
 		"@types/hast": "^2.3.4",
 		"@types/lunr": "2.3.4",
 		"@types/marked": "4.0.7",

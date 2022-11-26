@@ -4,12 +4,7 @@ import type { Config } from '@sveltejs/kit';
 import { default as preprocess } from 'svelte-preprocess';
 import { markdownToSvelte } from './markdownToHtml.js';
 
-export function createConfig(options: {
-	articlesDir: string;
-	productionBaseUrl: string;
-	staticDir: string;
-	feedsDir: string;
-}): Config {
+export function createConfig(): Config {
 	return {
 		extensions: ['.svelte', '.md'],
 
@@ -23,14 +18,7 @@ export function createConfig(options: {
 			adapter: adapter(),
 			prerender: {
 				crawl: true,
-				enabled: true,
-				// entries: ['/', ...listArticleUrls(options.articlesDir)],
 			},
-			trailingSlash: 'never',
-			// // @ts-expect-error This type misbehaving weirdly with latest Vite
-			// vite: {
-			//   plugins: [updateArticleSearch(options)],
-			// },
 		},
 	};
 }

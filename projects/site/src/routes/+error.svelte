@@ -28,7 +28,7 @@
 		},
 		generalErrors[`${$page.status}`] || {},
 	);
-	console.error($page.error.message);
+	console.error($page.error?.message);
 
 	$metadata = {
 		title: info.title,
@@ -46,15 +46,11 @@
 <p class="error-message">{info.message}</p>
 {#if dev && $page.error}
 	<h2>🪲 {$page.error.message}</h2>
-	<pre class="error-details">{$page.error.stack}</pre>
 {/if}
 
 <style lang="scss">
 	.error-status {
 		color: var(--color-bad);
 		font-weight: var(--font-weight-regular);
-	}
-	.error-details {
-		overflow-x: auto;
 	}
 </style>

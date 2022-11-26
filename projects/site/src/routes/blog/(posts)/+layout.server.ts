@@ -1,12 +1,13 @@
 import { ArticleSearcher } from '$lib/articleSearcher';
 import { createArticleMicrodata, type MetadataFull } from '$lib/metadata';
 import { error } from '@sveltejs/kit';
-import type { PageLoad } from './$types';
+import path from 'path';
+import type { LayoutServerLoad } from './$types';
 
 export const csr = true;
 
-export const load: PageLoad = async (input) => {
-	const { slug } = input.params;
+export const load: LayoutServerLoad = async (input) => {
+	const slug = path.dirname(input.route.id);
 	const articleSearcher = new ArticleSearcher(input.fetch);
 
 	const [frontmatter, microdata] = await Promise.all([

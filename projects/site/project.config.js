@@ -5,7 +5,7 @@ const root = new Pathy(fileURLToPath(import.meta.url)).up();
 
 export const options = {
 	staticDir: root.join('./static').absolute,
-	articlesDir: root.join('./src/articles').absolute,
+	articlesDir: root.join('./src/routes/blog/(posts)').absolute,
 	feedsDir: root.join('./static/feeds').absolute,
 	productionBaseUrl: 'https://adamcoster.com',
 };

@@ -1,5 +1,5 @@
 import { Plugin as VitePlugin } from 'vite';
-import { generateArticleSummaries } from './blog.js';
+import { generateArticleSummaries, pathIsPost } from './blog.js';
 
 export function updateArticleSearch(options: {
 	productionBaseUrl: string;
@@ -10,8 +10,7 @@ export function updateArticleSearch(options: {
 	return {
 		name: 'vite-plugin-update-blog-search',
 		async handleHotUpdate(ctx) {
-			const isArticle = !!ctx.file.match(/\/blog\/\[slug\]\/.*\.md/);
-			if (isArticle) {
+			if (pathIsPost(ctx.file)) {
 				console.log('Article updated', ctx.file);
 				// Run a full index re-build -- no need to optimize it (yet)!
 				console.log('Re-building article search index');

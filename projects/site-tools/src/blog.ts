@@ -9,12 +9,34 @@
 import fs from 'fs/promises';
 import lunr from 'lunr';
 import type { ArticleFrontMatter, ArticleIndexEntry } from './types/Article.js';
-import { searchableTextFromMarkdown } from './markdownToSearchable.js';
-import { pick, omit } from '@adam-coster/utility';
+import { pick } from '@adam-coster/utility';
 import path from 'path';
 import { writeJson } from './files.js';
 import { Feed } from 'feed';
 import { markdownToMicrodata } from './markdownToMicrodata.js';
+import { Pathy, pathy } from '@bscotch/pathy';
+
+export interface PostPaths {
+	dir: Pathy;
+	post: Pathy;
+	metadata: Pathy;
+}
+
+export function pathIsPost(path: string) {
+	return !!path.match(/\/blog\/\(posts\)\/.*\/\+page\.md/);
+}
+
+export async function listPosts(
+	postsFolder: string | Pathy,
+): Promise<PostPaths[]> {
+	let postFolders = await pathy(postsFolder).listChildren();
+	postFolders = postFolders.filter((p) => p.join('+page.md').existsSync());
+	return postFolders.map((p) => ({
+		dir: p,
+		post: p.join('+page.md'),
+		metadata: p.join('meta.json'),
+	}));
+}
 
 /**
  * For all articles, parse out the metadata to create, write, and return:
@@ -61,49 +83,51 @@ export async function generateArticleSummaries(options: {
 		},
 	});
 
-	const filenames = (await fs.readdir(options.articlesDir)).filter((fileName) =>
-		fileName.endsWith('.md'),
-	);
+	const postsFiles = await listPosts(options.articlesDir);
 
 	const waits: Promise<unknown>[] = [];
-	for (const filename of filenames) {
-		const filePath = path.join(options.articlesDir, filename);
-		const loader = fs.readFile(filePath, 'utf8').then(async (content) => {
-			const parsed = searchableTextFromMarkdown(content);
-			if (!parsed.publishedAt) {
-				return;
-			}
-			if (Array.isArray(parsed.tags)) {
-				parsed.tags.forEach((tag) => articleTags.add(tag));
-			}
-			const url = `${baseArticlesUrl}/${parsed.slug}`;
-			const publishedAt = new Date(parsed.publishedAt);
-			articlesMetadata.push(omit(parsed, ['body']));
-			articleSearchDocs.push(
-				pick(parsed, ['body', 'title', 'slug', 'description', 'tags']),
-			);
-			feed.addItem({
-				title: parsed.title,
-				id: url,
-				link: url,
-				description: parsed.description,
-				content: parsed.description,
-				date: publishedAt,
-				image: `${options.productionBaseUrl}/previews/blog/${parsed.slug}/preview.jpg`,
-				copyright: `Copyright © ${publishedAt.getFullYear()} Adam Coster. All rights reserved.`,
-				author: [author],
-				// TODO: Add categories
-			});
+	for (const postFiles of postsFiles) {
+		const loader = postFiles.metadata
+			.read<ArticleFrontMatter>()
+			.then(async (parsed) => {
+				if (!parsed.publishedAt) {
+					return;
+				}
+				// Make sure that the slug matches the folder name
+				parsed.slug = postFiles.dir.basename;
+				if (Array.isArray(parsed.tags)) {
+					parsed.tags.forEach((tag) => articleTags.add(tag));
+				}
+				const url = `${baseArticlesUrl}/${parsed.slug}`;
+				const publishedAt = new Date(parsed.publishedAt);
+				articlesMetadata.push(parsed);
+				const content = await postFiles.post.read<string>();
+				articleSearchDocs.push({
+					...pick(parsed, ['title', 'slug', 'description', 'tags']),
+					body: content,
+				});
+				feed.addItem({
+					title: parsed.title,
+					id: url,
+					link: url,
+					description: parsed.description,
+					content: parsed.description,
+					date: publishedAt,
+					image: `${options.productionBaseUrl}/previews/blog/${parsed.slug}/preview.jpg`,
+					copyright: `Copyright © ${publishedAt.getFullYear()} Adam Coster. All rights reserved.`,
+					author: [author],
+					// TODO: Add categories
+				});
 
-			// Generate Microdata
-			const microdata = await markdownToMicrodata(content);
-			const folder = path.join(options.staticDir, 'microdata', 'blog');
-			await fs.mkdir(folder, { recursive: true });
-			await fs.writeFile(
-				path.join(folder, `${parsed.slug}.json`),
-				JSON.stringify(microdata, null, '\t'),
-			);
-		});
+				// Generate Microdata
+				const microdata = await markdownToMicrodata(content);
+				const folder = path.join(options.staticDir, 'microdata', 'blog');
+				await fs.mkdir(folder, { recursive: true });
+				await fs.writeFile(
+					path.join(folder, `${parsed.slug}.json`),
+					JSON.stringify(microdata, null, '\t'),
+				);
+			});
 		waits.push(loader);
 	}
 	await Promise.all(waits);

@@ -1,6 +1,6 @@
 import type { ArticleFrontMatter } from '@adam-coster/site-tools';
 import type { LoadEvent } from '@sveltejs/kit';
-import * as lunr from 'lunr';
+import lunr from 'lunr';
 import { asDateIfExists } from './utility';
 
 type Fetch = LoadEvent['fetch'];

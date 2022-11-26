@@ -11,11 +11,10 @@
 		faClock,
 		faExternalLinkSquareAlt,
 	} from '@fortawesome/free-solid-svg-icons';
-	import { onMount, type ComponentType } from 'svelte';
 	import Icon from 'svelte-fa';
-	import type { PageData } from './$types';
+	import type { LayoutData } from './$types';
 
-	export let data: PageData;
+	export let data: LayoutData;
 
 	$metadata = data.meta;
 
@@ -24,12 +23,6 @@
 			return new Date(frontmatter.editedAt);
 		}
 	}
-
-	let PostComponent: ComponentType;
-
-	onMount(async () => {
-		PostComponent = (await import(`../../../articles/${data.slug}.md`)).default;
-	});
 </script>
 
 <Head />
@@ -107,7 +100,7 @@
 		</div>
 	</header>
 	<div class="body">
-		<svelte:component this={PostComponent} />
+		<slot />
 	</div>
 </article>
 

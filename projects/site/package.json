@@ -22,10 +22,10 @@
 	},
 	"devDependencies": {
 		"@fortawesome/free-brands-svg-icons": "6.2.1",
-		"@sveltejs/kit": "1.0.0-next.553",
+		"@sveltejs/kit": "1.0.0-next.561",
 		"@types/lunr": "2.3.4",
-		"concurrently": "7.5.0",
-		"cypress": "11.1.0",
+		"concurrently": "7.6.0",
+		"cypress": "^11.2.0",
 		"gray-matter": "4.0.3",
 		"lunr": "2.3.9",
 		"schema-dts": "1.1.0",
