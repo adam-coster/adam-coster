@@ -7,7 +7,7 @@ import type { LayoutServerLoad } from './$types';
 export const csr = true;
 
 export const load: LayoutServerLoad = async (input) => {
-	const slug = path.dirname(input.route.id);
+	const slug = path.basename(input.route.id);
 	const articleSearcher = new ArticleSearcher(input.fetch);
 
 	const [frontmatter, microdata] = await Promise.all([
@@ -38,7 +38,7 @@ export const load: LayoutServerLoad = async (input) => {
 	};
 
 	return {
-		frontmatter,
+		frontmatter: frontmatter.toJSON(),
 		meta,
 		slug,
 	};

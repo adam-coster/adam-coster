@@ -19,11 +19,11 @@ export class ArticleMetadata {
 	get canonicalIsHere() {
 		return !this.frontMatter.canonical;
 	}
-	get publishedAt() {
-		return asDateIfExists(this.frontMatter.publishedAt);
+	get publishedAt(): Date {
+		return asDateIfExists(this.frontMatter.publishedAt)!;
 	}
-	get editedAt() {
-		return asDateIfExists(this.frontMatter.editedAt);
+	get editedAt(): Date {
+		return asDateIfExists(this.frontMatter.editedAt || this.publishedAt)!;
 	}
 	get legacySlug() {
 		return this.frontMatter.legacySlug;
@@ -42,6 +42,9 @@ export class ArticleMetadata {
 	}
 	get crossPosts() {
 		return [...(this.frontMatter.crossPosts || [])];
+	}
+	toJSON() {
+		return { ...this.frontMatter };
 	}
 }
 

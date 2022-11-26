@@ -27,7 +27,10 @@ export function dateToIso(date: string | Date) {
 	return new Date(date).toISOString();
 }
 
-export function dateIsLater(date: Date | string, comparedTo: Date | string) {
+export function dateIsLater(
+	date: Date | string | undefined,
+	comparedTo: Date | string | undefined,
+) {
 	if (!date || !comparedTo) {
 		return false;
 	}
@@ -61,7 +64,7 @@ export function patchQueryParams(
 	return url;
 }
 
-export function asDateIfExists(value: any) {
+export function asDateIfExists(value: any): Date | undefined {
 	const asDate = value && new Date(value);
 	if (asDate && asDate.getTime()) {
 		return asDate;

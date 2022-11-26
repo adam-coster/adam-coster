@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { ArticleMetadata } from '$lib/articleSearcher';
+	import { ArticleMetadata } from '$lib/articleSearcher';
 	import Head, { metadata } from '$lib/Head.svelte';
 	import {
 		dateIsLater,
@@ -15,12 +15,13 @@
 	import type { LayoutData } from './$types';
 
 	export let data: LayoutData;
+	const frontmatter = new ArticleMetadata(data.frontmatter);
 
 	$metadata = data.meta;
 
 	function updatedAt(frontmatter: ArticleMetadata) {
 		if (dateIsLater(frontmatter.editedAt, frontmatter.publishedAt)) {
-			return new Date(frontmatter.editedAt);
+			return new Date(frontmatter.editedAt!);
 		}
 	}
 </script>
@@ -29,10 +30,10 @@
 
 <article class="article blog-post">
 	<header class="social-preview">
-		<h1 class="title">{data.frontmatter.title}</h1>
+		<h1 class="title">{frontmatter.title}</h1>
 
 		<ul class="tags" aria-label="Topic tags found on this article.">
-			{#each data.frontmatter.tags as tag, j (j)}
+			{#each frontmatter.tags as tag, j (j)}
 				<li class="tag">
 					<a
 						href={`/blog?search=tags:${tag}`}
@@ -52,42 +53,42 @@
 					Published
 					<time
 						class="date"
-						datetime={robotDate(data.frontmatter.publishedAt)}
+						datetime={robotDate(frontmatter.publishedAt)}
 						aria-label="Publication date"
 					>
-						{humanDate(data.frontmatter.publishedAt)}</time
+						{humanDate(frontmatter.publishedAt)}</time
 					>
 				</span>
-				{#if updatedAt(data.frontmatter)}
+				{#if updatedAt(frontmatter)}
 					<span class="date-info">
 						(Updated
 						<time
 							class="date"
-							datetime={robotDate(data.frontmatter.editedAt)}
+							datetime={robotDate(frontmatter.editedAt)}
 							aria-label="Last updated date"
 						>
-							{humanDate(data.frontmatter.editedAt)}</time
+							{humanDate(frontmatter.editedAt)}</time
 						>)
 					</span>
 				{/if}
 			</p>
-			{#if !data.frontmatter.canonicalIsHere}
+			{#if !frontmatter.canonicalIsHere}
 				<p class="canonical">
 					<Icon icon={faExternalLinkSquareAlt} size="sm" />
 					Original:
-					<a href={data.frontmatter.canonical}>
-						{getUrlHostName(data.frontmatter.canonical)}
+					<a href={frontmatter.canonical}>
+						{getUrlHostName(frontmatter.canonical)}
 					</a>
 				</p>
 			{/if}
-			{#if data.frontmatter.crossPosts?.length}
+			{#if frontmatter.crossPosts?.length}
 				<div>
 					<p class="cross-posts">
 						<Icon icon={faExternalLinkSquareAlt} size="sm" />
 						Cross-posts:
 					</p>
 					<ul class="cross-posts-list">
-						{#each data.frontmatter.crossPosts as crossPost}
+						{#each frontmatter.crossPosts as crossPost}
 							<li>
 								<a href={crossPost}>
 									{getUrlHostName(crossPost)}
