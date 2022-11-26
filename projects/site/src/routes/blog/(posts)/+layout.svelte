@@ -128,17 +128,13 @@
 	}
 	.date-info {
 		color: var(--color-subtle);
-		// margin: 0;
 		display: inline-block;
 	}
 	.date {
-		// font-weight: var(--font-weight-boldest);
 		letter-spacing: 0.05em;
 		color: var(--color-text);
-		// margin-left: calc(var(--size) * 0.5);
 	}
 	.tags {
-		// text-align: center;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
@@ -149,7 +145,6 @@
 		}
 	}
 	.canonical a {
-		// margin-left: var(--button-padding-horizontal);
 		&:not(:hover) {
 			text-decoration: none;
 		}

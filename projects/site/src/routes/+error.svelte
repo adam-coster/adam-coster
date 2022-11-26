@@ -51,6 +51,6 @@
 <style lang="scss">
 	.error-status {
 		color: var(--color-bad);
-		font-weight: var(--font-weight-regular);
+		font-weight: 400;
 	}
 </style>

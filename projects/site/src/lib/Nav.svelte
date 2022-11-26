@@ -4,8 +4,7 @@
 	import Icon from 'svelte-fa';
 
 	const navlinks = digitalIdentities.filter(
-		(d) =>
-			d.type == 'content' || ['GitHub', 'Twitter', 'LinkedIn'].includes(d.name),
+		(d) => d.type == 'content' || ['GitHub'].includes(d.name),
 	);
 	navlinks.unshift({
 		name: 'About',
@@ -22,7 +21,7 @@
 	aria-label="Site navigation and external links."
 	class={`nav-main ${placement}`}
 >
-	<ul class="nav-links">
+	<menu class="nav-links">
 		{#each navlinks as navlink}
 			<li class="nav-link">
 				<a
@@ -34,5 +33,60 @@
 				</a>
 			</li>
 		{/each}
-	</ul>
+	</menu>
 </nav>
+
+<style lang="scss">
+	nav {
+		@media screen and (max-width: 500px) {
+			--small-screen-scaler: 0.7;
+			// font-size: calc(var(--size) * 0.6);
+		}
+
+		--small-screen-scaler: 1;
+		--relative-size: calc(1 * var(--small-screen-scaler));
+		--link-width: calc(calc(var(--size) * 5) * var(--relative-size));
+
+		&.header {
+			margin: calc(calc(var(--size) * 1)) 0;
+		}
+
+		&.footer {
+			--relative-size: calc(0.8 * var(--small-screen-scaler));
+		}
+
+		font-size: calc(var(--size) * var(--relative-size));
+
+		menu {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			display: flex;
+			flex-shrink: 0;
+			justify-content: center;
+			align-items: center;
+		}
+
+		li.nav-link {
+			display: flex;
+			width: var(--link-width);
+			justify-content: center;
+			align-items: center;
+
+			& a {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+		}
+
+		.nav-link a,
+		.nav-link svg {
+			color: var(--color-text);
+
+			&:hover {
+				color: var(--color-link);
+			}
+		}
+	}
+</style>

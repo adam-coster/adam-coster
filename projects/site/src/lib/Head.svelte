@@ -1,7 +1,7 @@
 <script lang="ts" context="module">
 	import { asCanonicalUrl, createMetadata } from './metadata.js';
 	import { ldJsonify } from './microdata.js';
-	import { ensureArray } from './utility';
+	import { ensureArray } from './utility.js';
 
 	export function previewPathFromUrl(url: string) {
 		const urlAsObj = new URL(url);

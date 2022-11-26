@@ -27,11 +27,6 @@
 
 	--font-family: 'Ubuntu', sans-serif;
 
-	--font-weight-light: 300;
-	--font-weight-regular: 400;
-	--font-weight-medium: 500;
-	--font-weight-boldest: 700;
-
 	/* HEADERS */
 	--font-size-h6: calc(var(--size) * 1);
 	--font-size-h5: calc(var(--size) * 1);
