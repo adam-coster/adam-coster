@@ -97,7 +97,7 @@
 							{typeTitles[type].description}
 						</p>
 					{/if}
-					<ul>
+					<ul class="reset">
 						{#each digitalIdentities.filter((d) => d.type == type) as id}
 							<li>
 								<a href={id.url} title={id.title}>

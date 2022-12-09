@@ -45,7 +45,7 @@
 
 		--small-screen-scaler: 1;
 		--relative-size: calc(1 * var(--small-screen-scaler));
-		--link-width: calc(calc(var(--size) * 5) * var(--relative-size));
+		--link-width: calc(calc(var(--size) * 4) * var(--relative-size));
 
 		&.header {
 			margin: calc(calc(var(--size) * 1)) 0;
@@ -63,6 +63,7 @@
 			margin: 0;
 			display: flex;
 			flex-shrink: 0;
+			gap: 0.25em;
 			justify-content: center;
 			align-items: center;
 		}

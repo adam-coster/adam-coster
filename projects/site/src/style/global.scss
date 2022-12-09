@@ -1,11 +1,4 @@
-@layer reset,vars,global,lists;
 /* Main content container */
-#svelte {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-	padding: var(--view-padding);
-}
 
 @layer global {
 	@for $i from 1 through 6 {
@@ -34,40 +27,6 @@
 				}
 			}
 		}
-	}
-
-	p,
-	figure {
-		margin: calc(var(--size) * 0.75) 0 calc(var(--size) * 1) 0;
-	}
-
-	a {
-		color: var(--color-link);
-		text-decoration: none;
-	}
-
-	a:hover,
-	a:focus {
-		color: var(--color-link-hover);
-	}
-
-	p a,
-	a:hover,
-	a:focus {
-		text-decoration: underline;
-		cursor: pointer;
-		text-decoration-color: var(--color-link-underline);
-		text-decoration-thickness: calc(var(--size) * 0.1);
-		text-underline-offset: calc(var(--size) * 0.1);
-	}
-
-	input {
-		border: 1px solid var(--color-text);
-		border-radius: var(--border-radius);
-		background-color: transparent;
-		color: var(--color-text);
-		padding: var(--button-padding);
-		width: 100%;
 	}
 
 	// svg.fa,
