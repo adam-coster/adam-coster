@@ -1,5 +1,5 @@
 {
-	"$schema": "../post.schema.json",
+	"$schema": "../../post.schema.json",
 	"slug": "monty-hall-python",
 	"title": "The Monty Hall problem modeled in Python",
 	"description": "The Monty Hall problem is a classic example of how difficult statistical reasoning can be. Let's simulate it in Python.\n",

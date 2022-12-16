@@ -1,5 +1,5 @@
 {
-	"$schema": "../post.schema.json",
+	"$schema": "../../post.schema.json",
 	"slug": "resolving-e404-on-global-install-of-a-private-npm-package-linux",
 	"title": "Resolving E404 on global install of a private npm package (Linux)",
 	"description": "If you're getting E404 \"Not Found\" when trying to install a private npm package, make sure you're logged into the right scope (root or user).\n",

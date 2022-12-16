@@ -1,5 +1,5 @@
 {
-	"$schema": "../post.schema.json",
+	"$schema": "../../post.schema.json",
 	"slug": "how-to-stringify-class-instances-in-javascript-and-express-js",
 	"title": "How to stringify class instances in Javascript and Express.js",
 	"description": "Bend JSON stringification to your will with custom .toJSON() class methods and replacers.\n",

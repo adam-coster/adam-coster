@@ -1,5 +1,5 @@
 {
-	"$schema": "../post.schema.json",
+	"$schema": "../../post.schema.json",
 	"slug": "super-charge-email-google-workspace",
 	"title": "🚀 Super-charge your email with your own domain, routing, aliases, and catch-alls via Google Workspace",
 	"description": "Using an email address with your own custom domain signals professionalism. But that's not the only benefit!\n",

@@ -1,5 +1,5 @@
 {
-	"$schema": "../post.schema.json",
+	"$schema": "../../post.schema.json",
 	"slug": "looper-allele-frequency-problem",
 	"title": "Allele frequency problem in \"Looper\"",
 	"description": "Time travel is always a nonsense generator, but \"Looper\" kicks it up a notch with impossibly rapid evolution.\n",

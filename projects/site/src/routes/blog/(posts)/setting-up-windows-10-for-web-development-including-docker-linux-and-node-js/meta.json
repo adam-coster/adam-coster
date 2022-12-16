@@ -1,5 +1,5 @@
 {
-	"$schema": "../post.schema.json",
+	"$schema": "../../post.schema.json",
 	"slug": "setting-up-windows-10-for-web-development-including-docker-linux-and-node-js",
 	"title": "Setting up Windows 10 for web development, including Docker, Linux, and Node.js",
 	"description": "If you run your websites on Linux servers, you probably want to use Linux for development, too. Here's how to get set up for that on Windows 10.\n",

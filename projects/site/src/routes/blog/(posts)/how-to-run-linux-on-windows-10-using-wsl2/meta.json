@@ -1,5 +1,5 @@
 {
-	"$schema": "../post.schema.json",
+	"$schema": "../../post.schema.json",
 	"slug": "how-to-run-linux-on-windows-10-using-wsl2",
 	"title": "How to run Linux on Windows 10 using WSL2",
 	"description": "Use Linux and Windows 10 at the same time, while making Windows do all the hard work. Here's how.\n",

@@ -1,5 +1,5 @@
 {
-	"$schema": "../post.schema.json",
+	"$schema": "../../post.schema.json",
 	"slug": "create-a-live-reload-server-for-front-end-development",
 	"title": "Create a live-reload server for front-end development",
 	"description": "Manually reloading a webpage when you make changes is a pain. You can solve this with a live-reload server. Here's how to make one.\n",

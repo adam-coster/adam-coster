@@ -1,5 +1,5 @@
 {
-	"$schema": "../post.schema.json",
+	"$schema": "../../post.schema.json",
 	"slug": "image-correction-microscopy",
 	"title": "Image Correction Microscopy",
 	"description": "Fluorescence microscopy images are plagued with background noise. The standard approach to correcting for this is insufficient.\n",

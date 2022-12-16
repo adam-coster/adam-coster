@@ -1,5 +1,5 @@
 {
-	"$schema": "../post.schema.json",
+	"$schema": "../../post.schema.json",
 	"slug": "how-binary-encoding-works",
 	"title": "Learn how binary encoding works",
 	"description": "\"Binary encoding\" sounds complicated. It's more approachable than you think, and understanding it unlocks a wealth of knowledge and tools.\n",

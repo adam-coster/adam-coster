@@ -1,5 +1,5 @@
 {
-	"$schema": "../post.schema.json",
+	"$schema": "../../post.schema.json",
 	"slug": "how-to-set-up-a-node-project-with-typescript",
 	"title": "Live Dev: How to set up a Node project with Typescript",
 	"description": "Modern web development requires a lot of setup. I'll walk you through it, diving deep into the details along the way.\n",

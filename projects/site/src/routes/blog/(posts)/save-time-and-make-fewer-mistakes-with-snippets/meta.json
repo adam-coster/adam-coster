@@ -1,5 +1,5 @@
 {
-	"$schema": "../post.schema.json",
+	"$schema": "../../post.schema.json",
 	"slug": "save-time-and-make-fewer-mistakes-with-snippets",
 	"title": "✂ Save time and make fewer mistakes with Snippets",
 	"description": "If you aren't using snippets in VSCode, you're going to be bummed when you find out how much time you could have been saving...\n",

@@ -1,5 +1,5 @@
 {
-	"$schema": "../post.schema.json",
+	"$schema": "../../post.schema.json",
 	"slug": "multi-display-workstations-boost-productivity-without-breaking-your-neck",
 	"title": "Multi-display workstations: boost productivity without breaking your neck",
 	"description": "Use multiple displays without creating an ergonomic nightmare.\n",

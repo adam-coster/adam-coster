@@ -12,7 +12,7 @@ for (const folder of folders) {
 	/** @type {string} */
 	const postData = await post.read();
 	const { content, data } = grayMatter(postData);
-	await meta.write({ $schema: '../post.schema.json', ...data });
+	await meta.write({ $schema: '../../post.schema.json', ...data });
 	6555;
 	await post.write(content.trim() + '\n');
 }

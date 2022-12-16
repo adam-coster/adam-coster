@@ -1,5 +1,5 @@
 {
-	"$schema": "../post.schema.json",
+	"$schema": "../../post.schema.json",
 	"slug": "joyful-coding-vscode-extensions-settings",
 	"title": "Make coding a joy with these core VSCode extensions and settings",
 	"description": "You can only be as good as your tools. Here are the core VSCode extensions and settings that I use to make web development a blast.\n",

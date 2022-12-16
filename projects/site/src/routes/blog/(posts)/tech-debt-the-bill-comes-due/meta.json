@@ -1,5 +1,5 @@
 {
-	"$schema": "../post.schema.json",
+	"$schema": "../../post.schema.json",
 	"slug": "tech-debt-the-bill-comes-due",
 	"title": "Tech Debt: The Bill Comes Due",
 	"description": "What is technical debt, and how do you decide when to pay it down? Here are the lessons I learned from shoring up a legacy project.\n",

@@ -1,5 +1,5 @@
 {
-	"$schema": "../post.schema.json",
+	"$schema": "../../post.schema.json",
 	"slug": "does-game-piracy-matter",
 	"title": "Does game piracy matter?",
 	"description": "People will pirate your game in enormous numbers. The most effective way to fight it is to make it not matter. Treat piracy as a design constraint.\n",

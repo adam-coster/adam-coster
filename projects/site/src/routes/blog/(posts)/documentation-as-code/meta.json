@@ -1,5 +1,5 @@
 {
-	"$schema": "../post.schema.json",
+	"$schema": "../../post.schema.json",
 	"slug": "documentation-as-code",
 	"title": "💻 Documentation as code",
 	"description": "Documenting code in a scalable and maintainable way seems to be impossible. Let's re-think it.\n",

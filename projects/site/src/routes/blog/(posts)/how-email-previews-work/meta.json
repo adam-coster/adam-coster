@@ -1,5 +1,5 @@
 {
-	"$schema": "../post.schema.json",
+	"$schema": "../../post.schema.json",
 	"slug": "how-email-previews-work",
 	"title": "How email previews work",
 	"description": "Email clients show the first line of an email before you open it. Here's how that works, and how you can hack it.\n",

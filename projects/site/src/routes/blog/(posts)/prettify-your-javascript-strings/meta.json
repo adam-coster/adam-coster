@@ -1,5 +1,5 @@
 {
-	"$schema": "../post.schema.json",
+	"$schema": "../../post.schema.json",
 	"slug": "prettify-your-javascript-strings",
 	"title": "Prettify your JavaScript strings",
 	"description": "Use JavaScript's template literals to make it a breeze to stick strings together and insert data into them.\n",
