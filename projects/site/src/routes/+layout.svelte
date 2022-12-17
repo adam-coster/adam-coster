@@ -41,13 +41,16 @@
 	}
 	// [skip link](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#skip_links)
 	#skip-nav {
-		padding: 8px;
 		position: absolute;
+		padding-inline: 0.5em;
 		transform: translateY(-300%);
 		transition: transform 0.2s;
+		background-color: var(--color-background);
+		z-index: 1;
+		border: none;
 	}
 	#skip-nav:focus {
-		transform: translateY(-100%);
+		transform: translateY(-75%);
 	}
 	a.logo {
 		--local-size: calc(2.5 * var(--size));

@@ -232,6 +232,10 @@
 			a:hover{
 				color: var(--color-link-hover);
 			}
+			a:where(:focus,:focus-visible){
+				outline: 2px solid var(--color-link);
+				outline-offset: 2px;
+			}
 
 
 			ol,

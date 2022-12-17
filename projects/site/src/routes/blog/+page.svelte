@@ -32,7 +32,7 @@
 	async function updateSearchNow(searchOverride?: string) {
 		searchText =
 			typeof searchOverride == 'string' ? searchOverride : searchText;
-		searchbar.scrollIntoView({ behavior: 'smooth' });
+		// searchbar.scrollIntoView({ behavior: 'smooth' });
 
 		if (lastSearchText === searchText) {
 			return;
@@ -48,7 +48,7 @@
 				},
 			);
 		}
-		searchbar.scrollIntoView({ behavior: 'smooth' });
+		// searchbar.scrollIntoView({ behavior: 'smooth' });
 		data.searchResults = await data.articleSearcher.search(lastSearchText);
 	}
 
@@ -77,7 +77,7 @@
 </div>
 
 <nav aria-label="Search results for blog posts written by Adam Coster">
-	<p class="search-container">
+	<p class="search-container" class:focused={searchHasFocus}>
 		<label for="searchbar" class="sr-only">Search posts</label>
 		<span class:focused={searchHasFocus} class="search-icon" aria-hidden="true"
 			>🔍&#xFE0E;</span
@@ -120,7 +120,7 @@
 		</p>
 		{#if articles.length}
 			<ol
-				class="article-snippets"
+				class="article-snippets reset"
 				aria-label="Article search results as preview snippets"
 			>
 				{#each articles as article (article.slug)}
@@ -132,7 +132,7 @@
 						<article class="article-snippet">
 							<header>
 								<h2>
-									<a href={`/blog/${article.slug}`} sveltekit:prefetch>
+									<a href={`/blog/${article.slug}`} data-sveltekit-preload-data>
 										{article.title}
 									</a>
 								</h2>
@@ -145,7 +145,7 @@
 										{humanDate(article.publishedAt)}
 									</time>
 									<ul
-										class="tags"
+										class="tags reset"
 										aria-label="Topic tags found on this article."
 									>
 										{#each article.tags as tag, j (j)}
@@ -154,7 +154,7 @@
 													href={`/blog?search=tags:${tag}`}
 													title={`List all "${tag}" posts`}
 													rel="tag"
-													sveltekit:noscroll
+													data-sveltekit-noscroll
 													on:click|preventDefault={() =>
 														updateSearchNow(`tags:${tag}`)}
 												>
@@ -192,11 +192,24 @@
 		color: var(--color-subtle);
 		font-style: italic;
 	}
+	nav {
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+		margin-block-start: 1em;
+	}
+	p {
+		margin: 0;
+	}
 	.article-snippets {
+		display: flex;
+		flex-direction: column;
+		gap: 1.25em;
+
 		.article-snippet {
 			// border-bottom: 1px solid gray;
 			// border-radius: var(--border-radius);
-			margin: calc(var(--size) * 2) 0;
+			// margin: calc(var(--size) * 2) 0;
 			height: 100%;
 			h2 {
 				--font-size: calc(var(--size) * 1.2);
@@ -212,16 +225,17 @@
 			}
 			.date,
 			.tags {
-				display: inline-block;
 				margin-right: var(--button-padding-horizontal);
 			}
 			.date {
 				color: var(--color-subtle);
 			}
-			.tags {
-				.tag {
-					display: inline-block;
-					margin-right: var(--button-padding-horizontal);
+			.tag {
+				display: inline-flex;
+				flex-wrap: wrap;
+				flex-direction: row;
+				gap: 0.25em;
+				.tags {
 					font-size: calc(var(--size) * 0.8);
 				}
 			}
@@ -237,15 +251,22 @@
 	.search-container {
 		--search-color-blur: gray;
 		--search-color-focus: var(--color-text);
-		--search-icon-width: 20px;
-		--horizontal-padding: 10px;
+		--search-icon-width: 1em;
+		--horizontal-padding: 0.5em;
 		--input-horizontal-padding: calc(
 			var(--horizontal-padding) * 2 + var(--search-icon-width)
 		);
+		// margin-block-start: 0.5em;
 		display: flex;
 		position: relative;
 		align-items: center;
 		justify-content: space-between;
+		border: 0.1em solid var(--search-color-blur);
+		border-radius: var(--border-radius);
+		&.focused {
+			border-color: var(--color-background);
+			outline: 0.1em solid var(--search-color-focus);
+		}
 		.search-icon {
 			position: absolute;
 			top: var(--vertical-padding);
