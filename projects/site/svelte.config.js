@@ -7,5 +7,5 @@ import { options } from './project.config.js';
 // Run during import to ensure that article summary files exist, to prevent downstream errors.
 generateArticleSummaries(options);
 
-const config = createConfig();
+const config = createConfig(options);
 export default config;

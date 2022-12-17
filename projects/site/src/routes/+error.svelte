@@ -1,4 +1,4 @@
-<script type="ts">
+<script lang="ts">
 	import { dev } from '$app/environment';
 	import { page } from '$app/stores';
 	import Head, { metadata } from '$lib/Head.svelte';

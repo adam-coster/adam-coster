@@ -1,4 +1,4 @@
-import type { LayoutLoad } from './$types';
+import type { LayoutLoad } from './$types.js';
 
 export const prerender = true;
 export const csr = false;
