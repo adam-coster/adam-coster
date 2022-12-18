@@ -261,16 +261,20 @@
 				list-style: outside '◈';
 			}
 
+			ul>li,
+			ol>li {
+				padding-left: 0.5em;
+				margin-bottom: 0.25em;
+			}
+
 			.reset:where(ul, ol, menu) {
 				list-style: none;
 				padding: 0;
 				margin: 0;
 			}
-
-			ul>li,
-			ol>li {
-				padding-left: 0.5em;
-				margin-bottom: 0.25em;
+			.reset>li {
+				padding: 0;
+				margin: 0;
 			}
 
 			::marker {

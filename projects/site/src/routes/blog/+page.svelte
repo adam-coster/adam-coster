@@ -204,7 +204,7 @@
 	.article-snippets {
 		display: flex;
 		flex-direction: column;
-		gap: 1.25em;
+		gap: 1.75em;
 
 		.article-snippet {
 			// border-bottom: 1px solid gray;
@@ -223,20 +223,23 @@
 					color: var(--color-text);
 				}
 			}
-			.date,
-			.tags {
-				margin-right: var(--button-padding-horizontal);
+			.summary {
+				line-height: 1.25em;
+				margin-top: 0.5em;
 			}
 			.date {
 				color: var(--color-subtle);
+				font-size: 0.9em;
+				font-style: italic;
+				display: inline;
+				margin-right: 0.25em;
 			}
-			.tag {
-				display: inline-flex;
-				flex-wrap: wrap;
-				flex-direction: row;
-				gap: 0.25em;
-				.tags {
+			.tags {
+				display: inline;
+				.tag {
+					display: inline;
 					font-size: calc(var(--size) * 0.8);
+					margin-right: 0.25em;
 				}
 			}
 			.description {
