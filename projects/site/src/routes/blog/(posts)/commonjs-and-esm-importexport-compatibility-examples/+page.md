@@ -138,7 +138,7 @@ function requireModule(modulePath, exportName) {
 
 And the output of `node importer.cjs`:
 
-```
+```js
 {
   title: 'Importing into a CommonJS module',
   defaultCjsExport: [Function: defaultCjsExport] {

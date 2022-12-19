@@ -4,14 +4,17 @@
 	@for $i from 1 through 6 {
 		article.article > .body {
 			h#{$i} {
+				position: relative;
 				& > a {
-					--width: calc(var(--font-size));
-					--left: calc(var(--width) * 1.2);
-					margin-left: calc(var(--left) * -1);
+					position: absolute;
+					--width: 0.75em;
+					--left: var(--width);
+					top:0;
+					left: calc(var(--left) * -1.2);
 					width: var(--left);
 					height: var(--width);
 					display: inline-block;
-					vertical-align: middle;
+					// vertical-align: middle;
 				}
 
 				& svg {
@@ -50,24 +53,36 @@
 		padding: var(--content-padding);
 	}
 
-	code:not([class*='language-']) {
-		--padding: calc(var(--size) * 0.3);
+	pre {
+		tab-size: 2;
+	}
+	code {
+		font-family: var(--font-family-code);
+	}
+
+	:not(pre) > code {
 		color: var(--color-inline-code);
+		padding: 0.3em 0.25em;
+		margin-inline: 0.1em;
 		background-color: var(--color-background-inline-code);
-		padding: 0 var(--padding);
-		border-radius: var(--padding);
-		font-size: 80%;
+		box-decoration-break: clone;
+		-webkit-box-decoration-break: clone;
+		border-radius: 0.4em;
+		outline: 0.1em solid rgb(60, 60, 60);
 	}
 
 	// Override aspects of the Prism theme
 
-	pre > code[class*='language-'] {
+	pre > code {
 		display: block;
 		border: 1px solid var(--color-text);
 		margin: calc(var(--size) * 1.25) 0;
 		font-size: var(--code-size);
-		padding: var(--content-padding);
+		padding: 0.75em 0.75em;
 		overflow-x: auto;
+		white-space: pre;
+		line-height: 1.3em;
+		box-shadow: 0.25em 0.25em 0.25em black;
 	}
 
 	// Articles
