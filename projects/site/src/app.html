@@ -236,13 +236,13 @@
 					width: 1px;
 				}
 
-				:where(h1, h2, h3, h4, h5, h6, p, ul, ol, menu)
-					+ :where(p, ul, ol, menu) {
+				:where(h1, h2, h3, h4, h5, h6, p, ul, ol, menu, figure)
+					+ :where(p, ul, ol, menu, figure) {
 					margin-top: 1em;
 				}
 
-				:where(p, ul, ol, menu) + :where(h1, h2, h3, h4, h5, h6) {
-					margin-top: 1em;
+				:where(p, ul, ol, menu, figure) + :where(h1, h2, h3, h4, h5, h6) {
+					margin-top: 1.25em;
 				}
 
 				a {
@@ -268,7 +268,7 @@
 				ol,
 				ul,
 				menu {
-					margin-left: 1.5em;
+					margin-left: 1em;
 				}
 
 				ol {

@@ -53,11 +53,11 @@
 		transform: translateY(-75%);
 	}
 	a.logo {
-		--local-size: calc(2.5 * var(--size));
 		display: block;
 		margin: auto;
 		text-align: center;
-		font-size: var(--local-size);
+		font-size: 2.5em;
+		line-height: 1.5em;
 
 		@media screen and (max-width: 500px) {
 			display: flex;
@@ -88,6 +88,7 @@
 		font-size: calc(0.8 * var(--size));
 		color: var(--color-subtle);
 		.copyright {
+			text-align: center;
 			margin-top: calc(0.3 * var(--size));
 		}
 	}

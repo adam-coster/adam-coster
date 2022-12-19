@@ -47,10 +47,6 @@
 		--relative-size: calc(1 * var(--small-screen-scaler));
 		--link-width: calc(calc(var(--size) * 4) * var(--relative-size));
 
-		&.header {
-			margin: calc(calc(var(--size) * 1)) 0;
-		}
-
 		&.footer {
 			--relative-size: calc(0.8 * var(--small-screen-scaler));
 		}
@@ -63,7 +59,6 @@
 			margin: 0;
 			display: flex;
 			flex-shrink: 0;
-			gap: 0.25em;
 			justify-content: center;
 			align-items: center;
 		}
@@ -89,5 +84,7 @@
 				color: var(--color-link);
 			}
 		}
+
+		margin: 0;
 	}
 </style>

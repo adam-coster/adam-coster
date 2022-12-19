@@ -17,6 +17,8 @@
 	export let data: LayoutData;
 	const frontmatter = new ArticleMetadata(data.frontmatter);
 
+	console.log(data);
+
 	$metadata = data.meta;
 
 	function updatedAt(frontmatter: ArticleMetadata) {
@@ -31,8 +33,11 @@
 <article class="article blog-post">
 	<header class="social-preview">
 		<h1 class="title">{frontmatter.title}</h1>
-
-		<ul class="tags" aria-label="Topic tags found on this article.">
+		<ul
+			role="navigation"
+			class="tags reset"
+			aria-label="Topic tags found on this article."
+		>
 			{#each frontmatter.tags as tag, j (j)}
 				<li class="tag">
 					<a
@@ -45,7 +50,6 @@
 				</li>
 			{/each}
 		</ul>
-
 		<div class="metadata">
 			<p class="publication-date">
 				<span class="date-info">
@@ -87,7 +91,7 @@
 						<Icon icon={faExternalLinkSquareAlt} size="sm" />
 						Cross-posts:
 					</p>
-					<ul class="cross-posts-list">
+					<ul class="cross-posts-list reset">
 						{#each frontmatter.crossPosts as crossPost}
 							<li>
 								<a href={crossPost}>
@@ -117,7 +121,8 @@
 		font-size: calc(var(--size) * 0.8);
 		text-align: center;
 		word-spacing: 0.2em;
-
+		margin-top: 0.75em;
+		line-height: 1.5em;
 		.publication-date {
 			margin: 0;
 			display: flex;
@@ -139,8 +144,8 @@
 		flex-wrap: wrap;
 		justify-content: center;
 		column-gap: var(--button-padding-horizontal);
+		line-height: 1em;
 		.tag {
-			display: inline-block;
 			font-size: calc(var(--size) * 0.8);
 		}
 	}

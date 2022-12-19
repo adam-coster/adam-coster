@@ -60,9 +60,9 @@
 		font-family: var(--font-family-code);
 	}
 
-	:not(pre) > code {
+	p > code {
 		color: var(--color-inline-code);
-		padding: 0.3em 0.25em;
+		padding: 0.25em 0.25em;
 		margin-inline: 0.1em;
 		background-color: var(--color-background-inline-code);
 		box-decoration-break: clone;
