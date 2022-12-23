@@ -1,0 +1,35 @@
+{
+	"name": "cognitive-unload",
+	"displayName": "Cognitive Unload",
+	"description": "",
+	"type": "module",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.74.0"
+	},
+	"scripts": {
+		"build": "tsc -b",
+		"watch": "tsc -b -w"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "Cognitive Unload",
+				"uiTheme": "vs-dark",
+				"path": "./themes/cognitive-unload-color-theme.json"
+			}
+		]
+	},
+	"devDependencies": {
+		"@bscotch/pathy": "2.5.1",
+		"@bscotch/utility": "6.7.0",
+		"@types/color": "3.0.3",
+		"color": "4.2.3",
+		"eslint": "8.30.0",
+		"prettier": "2.8.1",
+		"typescript": "4.9.3"
+	}
+}

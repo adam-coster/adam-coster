@@ -40,7 +40,6 @@
 		"@typescript-eslint/eslint-plugin": "5.44.0",
 		"@typescript-eslint/parser": "5.44.0",
 		"depcheck": "1.4.3",
-		"eslint": "8.28.0",
 		"eslint-config-prettier": "8.5.0",
 		"eslint-plugin-cypress": "2.12.1",
 		"eslint-plugin-html": "7.1.0",
@@ -73,5 +72,8 @@
 	"optionalDependencies": {
 		"nodemon": "^2.0.20"
 	},
-	"packageManager": "pnpm@7.16.1"
+	"packageManager": "pnpm@7.16.1",
+	"devDependencies": {
+		"eslint": "8.28.0"
+	}
 }

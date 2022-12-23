@@ -1,0 +1,12 @@
+{
+	"name": "Cognitive Unload",
+	"semanticHighlighting": true,
+	"semanticTokenColors": {},
+	"colors": {
+		"editor.background": "#000000",
+		"activityBarBadge.background": "#000000",
+		"editor.foreground": "#ffffff",
+		"sideBarTitle.foreground": "#ffffff"
+	},
+	"tokenColors": []
+}
