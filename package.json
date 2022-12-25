@@ -36,7 +36,6 @@
 	"dependencies": {
 		"@bscotch/trebuchet": "2.7.2",
 		"@types/mocha": "10.0.0",
-		"@types/node": "18.11.9",
 		"@typescript-eslint/eslint-plugin": "5.44.0",
 		"@typescript-eslint/parser": "5.44.0",
 		"depcheck": "1.4.3",
@@ -74,6 +73,7 @@
 	},
 	"packageManager": "pnpm@7.16.1",
 	"devDependencies": {
+		"@types/node": "18.11.17",
 		"eslint": "8.28.0"
 	}
 }

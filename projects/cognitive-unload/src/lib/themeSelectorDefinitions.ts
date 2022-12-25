@@ -1,4 +1,4 @@
-export const themeSelectorDefinitions = {
+export const appSelectorDefinitions = {
 	/**
 	 * An extra border around active elements to separate them from others for greater contrast.
 	 */
@@ -765,14 +765,6 @@ export const themeSelectorDefinitions = {
 	'activityBar.activeFocusBorder': {
 		selector: 'activityBar.activeFocusBorder',
 		description: 'Activity bar focus border color for the active item.',
-	},
-	/**
-	 * Activity Bar optional background color for the active element.
-	 */
-	'activityBar.activeBackground': {
-		selector: 'activityBar.activeBackground',
-		description:
-			'Activity Bar optional background color for the active element.',
 	},
 	/**
 	 * Foreground color for the profile entry on the activity bar.
@@ -3901,3 +3893,5 @@ export const themeSelectorDefinitions = {
 			'The color of the icon for a port that has an associated running process.',
 	},
 };
+export const appSelectorNames: (keyof typeof appSelectorDefinitions)[] =
+	Object.keys(appSelectorDefinitions) as any;

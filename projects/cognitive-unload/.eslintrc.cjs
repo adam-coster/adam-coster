@@ -6,6 +6,7 @@ module.exports = {
 		parser: '@typescript-eslint/parser',
 		sourceType: 'module',
 		createDefaultProgram: true,
+		project: ['./tsconfig.json'],
 	},
 	plugins: ['@typescript-eslint', 'html', 'prettier'],
 	extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
@@ -38,28 +39,6 @@ module.exports = {
 		'space-before-function-paren': 'off',
 		'no-control-regex': 'warn',
 		'no-misleading-character-class': 'warn',
-	},
-	overrides: [
-		{
-			files: ['*.svelte'],
-			plugins: ['svelte3', '@typescript-eslint', 'prettier'],
-			processor: 'svelte3/svelte3',
-		},
-		{
-			files: ['projects/*/**/*.ts'],
-			parserOptions: {
-				ecmaVersion: 'latest',
-				parser: '@typescript-eslint/parser',
-				sourceType: 'module',
-				createDefaultProgram: true,
-				project: ['./projects/**/tsconfig.json'],
-			},
-			rules: {
-				'@typescript-eslint/no-floating-promises': 'error',
-			},
-		},
-	],
-	settings: {
-		'svelte3/typescript': () => require('typescript'),
+		'@typescript-eslint/no-floating-promises': 'error',
 	},
 };

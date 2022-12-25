@@ -5,8 +5,8 @@
 	"colors": {
 		"editor.background": "#000000",
 		"activityBarBadge.background": "#000000",
-		"editor.foreground": "#ffffff",
-		"sideBarTitle.foreground": "#ffffff"
+		"editor.foreground": "#FFFFFF",
+		"sideBarTitle.foreground": "#FFFFFF"
 	},
 	"tokenColors": []
 }

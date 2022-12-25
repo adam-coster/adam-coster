@@ -6,6 +6,7 @@ import type {
 	ThemeJson,
 	TokenColorJson,
 } from './types.js';
+import Color from 'color';
 
 export type ColorName<P extends Palette> = keyof P & string;
 
@@ -23,7 +24,7 @@ export class Theme<P extends Palette> {
 	style(style: ColorName<P> | Style<ColorName<P>>, selectors: Selector[]) {
 		const colorName: ColorName<P> =
 			style instanceof Style ? style.color : style;
-		const color = this.palette[colorName];
+		const color = Color(this.palette[colorName]).hex();
 		const dereferencedStyle =
 			style instanceof Style ? style.recolor(color) : new Style(color);
 		for (const selector of selectors) {

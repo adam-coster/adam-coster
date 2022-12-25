@@ -1,0 +1,13 @@
+{
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"explorer.fileNesting.enabled": true,
+	"explorer.fileNesting.patterns": {
+		"*.ts": "${capture}.*",
+		"package.json": "*.rc, *ignore, *.json, yarn.lock, *.yaml"
+	},
+	"editor.formatOnSave": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	},
+	"eslint.validate": ["javascript", "typescript"]
+}

@@ -10,7 +10,7 @@
 	"scripts": {
 		"build": "tsc -b && node scripts/update-theme.mjs",
 		"watch": "nodemon -w src -w scripts -e ts,mjs,js --exec \"pnpm run build\"",
-		"update:definitions": "node scripts/update-definitions.mjs"
+		"update:definitions": "node dist/utils/update-definitions.js"
 	},
 	"categories": [
 		"Themes"
@@ -30,6 +30,7 @@
 		"@types/color": "3.0.3",
 		"color": "4.2.3",
 		"eslint": "8.30.0",
+		"node-fetch": "3.3.0",
 		"nodemon": "^2.0.20",
 		"prettier": "2.8.1",
 		"typescript": "4.9.3",

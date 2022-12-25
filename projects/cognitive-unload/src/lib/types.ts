@@ -20,7 +20,7 @@ export interface ThemeJson {
 	tokenColors: TokenColorJson[];
 }
 
-export type Palette = { [name: string]: ColorString };
+export type Palette = { [name: string]: string };
 
 export type ThemeSelectorDefinition = z.infer<
 	typeof themeSelectorDefinitionSchema
