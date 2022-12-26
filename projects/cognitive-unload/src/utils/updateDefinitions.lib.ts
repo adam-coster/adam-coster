@@ -146,7 +146,7 @@ export async function parseDefinitionsHtml(
 	const selectorTypes: SelectorType[] = [];
 	const themeDefinitions = [
 		...themeDefinitionsHtml.matchAll(
-			/<li><code>(?<selector>[a-zA-Z0-9.-]+)<\/code>:\s*(?<description>.*?)<\/li>/gms,
+			/<code>(?<selector>[a-zA-Z0-9.-]+)<\/code>:\s*(?<description>.*?)<\//gms,
 		),
 	]
 		.map((d) => {

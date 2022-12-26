@@ -31,17 +31,16 @@ VS Code theme definitions are broken into three primary types of styles:
 
 There are a huge number of stylable elements in the VSCode app itself. VSCode lists these in [the official docs](https://code.visualstudio.com/api/references/theme-color) (though those docs might not be kept in sync with updates to VS Code).
 
-As of writing, there are **532** defined selectors in the docs. This is why people tend to start with an existing theme and edit it to create new ones, since starting from scratch is quite the ordeal!
+As of writing, there are **656** defined selectors in the docs. This is why people tend to start with an existing theme and edit it to create new ones, since starting from scratch is quite the ordeal!
 
 However, some analysis of these selectors shows a few useful patterns.
 
-These four components are mutually exclusive and collectively found in ~92% of all selectors.
+The following three components are mutually exclusive and collectively found in **91%** _(595/656)_ of all selectors.
 
 ```yml
-foreground: 192
-background: 180
-border: 104
-ansi: 16
+foreground: 236
+background: 228
+border: 131
 ```
 
 Of these, the `ansi` component is quite separate. If we look at the sibling components for the other three, we see that they share a set of "modifier" components that are found pretty frequently:
