@@ -1,3 +1,5 @@
+import Color from 'color';
+import { AppSelector } from './selector.app.js';
 import { Selector } from './selectors.js';
 import { Style } from './styles.js';
 import type {
@@ -6,7 +8,6 @@ import type {
 	ThemeJson,
 	TokenColorJson,
 } from './types.js';
-import Color from 'color';
 
 export type ColorName<P extends Palette> = keyof P & string;
 
@@ -15,6 +16,11 @@ export class Theme<P extends Palette> {
 		selector: Selector;
 		style: Style<ColorName<P>>;
 	}[] = [];
+	/**
+	 * To allow easy overriding of app
+	 * selectors that are used multiple times.
+	 */
+	protected appSelectorIndexes: { [selector: string]: number } = {};
 
 	constructor(readonly name: string, readonly palette: P) {}
 
@@ -28,6 +34,19 @@ export class Theme<P extends Palette> {
 		const dereferencedStyle =
 			style instanceof Style ? style.recolor(color) : new Style(color);
 		for (const selector of selectors) {
+			// Override if already exists
+			if (selector instanceof AppSelector) {
+				const idx = this.appSelectorIndexes[selector.selector];
+				if (idx !== undefined) {
+					this.selectors[idx] = {
+						selector,
+						style: dereferencedStyle,
+					};
+					continue;
+				} else {
+					this.appSelectorIndexes[selector.selector] = this.selectors.length;
+				}
+			}
 			this.selectors.push({
 				selector,
 				style: dereferencedStyle,

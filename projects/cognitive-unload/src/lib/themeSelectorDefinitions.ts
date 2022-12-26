@@ -789,6 +789,437 @@ export const appSelectorDefinitions = {
 		description: 'Background color for the profile entry on the activity bar.',
 	},
 	/**
+	 * Side Bar background color.
+	 */
+	'sideBar.background': {
+		selector: 'sideBar.background',
+		description: 'Side Bar background color.',
+	},
+	/**
+	 * Side Bar foreground color. The Side Bar is the container for views like Explorer and Search.
+	 */
+	'sideBar.foreground': {
+		selector: 'sideBar.foreground',
+		description:
+			'Side Bar foreground color. The Side Bar is the container for views like Explorer and Search.',
+	},
+	/**
+	 * Side Bar border color on the side separating the editor.
+	 */
+	'sideBar.border': {
+		selector: 'sideBar.border',
+		description: 'Side Bar border color on the side separating the editor.',
+	},
+	/**
+	 * Drag and drop feedback color for the side bar sections. The color should have transparency so that the side bar sections can still shine through.
+	 */
+	'sideBar.dropBackground': {
+		selector: 'sideBar.dropBackground',
+		description:
+			'Drag and drop feedback color for the side bar sections. The color should have transparency so that the side bar sections can still shine through.',
+	},
+	/**
+	 * Side Bar title foreground color.
+	 */
+	'sideBarTitle.foreground': {
+		selector: 'sideBarTitle.foreground',
+		description: 'Side Bar title foreground color.',
+	},
+	/**
+	 * Side Bar section header background color.
+	 */
+	'sideBarSectionHeader.background': {
+		selector: 'sideBarSectionHeader.background',
+		description: 'Side Bar section header background color.',
+	},
+	/**
+	 * Side Bar section header foreground color.
+	 */
+	'sideBarSectionHeader.foreground': {
+		selector: 'sideBarSectionHeader.foreground',
+		description: 'Side Bar section header foreground color.',
+	},
+	/**
+	 * Side bar section header border color.
+	 */
+	'sideBarSectionHeader.border': {
+		selector: 'sideBarSectionHeader.border',
+		description: 'Side bar section header border color.',
+	},
+	/**
+	 * Highlight color for matches from search within files.
+	 */
+	'minimap.findMatchHighlight': {
+		selector: 'minimap.findMatchHighlight',
+		description: 'Highlight color for matches from search within files.',
+	},
+	/**
+	 * Highlight color for the editor selection.
+	 */
+	'minimap.selectionHighlight': {
+		selector: 'minimap.selectionHighlight',
+		description: 'Highlight color for the editor selection.',
+	},
+	/**
+	 * Highlight color for errors within the editor.
+	 */
+	'minimap.errorHighlight': {
+		selector: 'minimap.errorHighlight',
+		description: 'Highlight color for errors within the editor.',
+	},
+	/**
+	 * Highlight color for warnings within the editor.
+	 */
+	'minimap.warningHighlight': {
+		selector: 'minimap.warningHighlight',
+		description: 'Highlight color for warnings within the editor.',
+	},
+	/**
+	 * Minimap background color.
+	 */
+	'minimap.background': {
+		selector: 'minimap.background',
+		description: 'Minimap background color.',
+	},
+	/**
+	 * Minimap marker color for repeating editor selections.
+	 */
+	'minimap.selectionOccurrenceHighlight': {
+		selector: 'minimap.selectionOccurrenceHighlight',
+		description: 'Minimap marker color for repeating editor selections.',
+	},
+	/**
+	 * Opacity of foreground elements rendered in the minimap. For example, &quot;#000000c0&quot; will render the elements with 75% opacity.
+	 */
+	'minimap.foregroundOpacity': {
+		selector: 'minimap.foregroundOpacity',
+		description:
+			'Opacity of foreground elements rendered in the minimap. For example, &quot;#000000c0&quot; will render the elements with 75% opacity.',
+	},
+	/**
+	 * Minimap slider background color.
+	 */
+	'minimapSlider.background': {
+		selector: 'minimapSlider.background',
+		description: 'Minimap slider background color.',
+	},
+	/**
+	 * Minimap slider background color when hovering.
+	 */
+	'minimapSlider.hoverBackground': {
+		selector: 'minimapSlider.hoverBackground',
+		description: 'Minimap slider background color when hovering.',
+	},
+	/**
+	 * Minimap slider background color when clicked on.
+	 */
+	'minimapSlider.activeBackground': {
+		selector: 'minimapSlider.activeBackground',
+		description: 'Minimap slider background color when clicked on.',
+	},
+	/**
+	 * Minimap gutter color for added content.
+	 */
+	'minimapGutter.addedBackground': {
+		selector: 'minimapGutter.addedBackground',
+		description: 'Minimap gutter color for added content.',
+	},
+	/**
+	 * Minimap gutter color for modified content.
+	 */
+	'minimapGutter.modifiedBackground': {
+		selector: 'minimapGutter.modifiedBackground',
+		description: 'Minimap gutter color for modified content.',
+	},
+	/**
+	 * Minimap gutter color for deleted content.
+	 */
+	'minimapGutter.deletedBackground': {
+		selector: 'minimapGutter.deletedBackground',
+		description: 'Minimap gutter color for deleted content.',
+	},
+	/**
+	 * Color to separate multiple editor groups from each other.
+	 */
+	'editorGroup.border': {
+		selector: 'editorGroup.border',
+		description: 'Color to separate multiple editor groups from each other.',
+	},
+	/**
+	 * Background color when dragging editors around.
+	 */
+	'editorGroup.dropBackground': {
+		selector: 'editorGroup.dropBackground',
+		description: 'Background color when dragging editors around.',
+	},
+	/**
+	 * Background color of the editor group title header when Tabs are disabled (set <code>&quot;workbench.editor.showTabs&quot;: false
+	 */
+	'editorGroupHeader.noTabsBackground': {
+		selector: 'editorGroupHeader.noTabsBackground',
+		description:
+			'Background color of the editor group title header when Tabs are disabled (set <code>&quot;workbench.editor.showTabs&quot;: false',
+	},
+	/**
+	 * Background color of the Tabs container.
+	 */
+	'editorGroupHeader.tabsBackground': {
+		selector: 'editorGroupHeader.tabsBackground',
+		description: 'Background color of the Tabs container.',
+	},
+	/**
+	 * Border color below the editor tabs control when tabs are enabled.
+	 */
+	'editorGroupHeader.tabsBorder': {
+		selector: 'editorGroupHeader.tabsBorder',
+		description:
+			'Border color below the editor tabs control when tabs are enabled.',
+	},
+	/**
+	 * Border color between editor group header and editor (below breadcrumbs if enabled).
+	 */
+	'editorGroupHeader.border': {
+		selector: 'editorGroupHeader.border',
+		description:
+			'Border color between editor group header and editor (below breadcrumbs if enabled).',
+	},
+	/**
+	 * Background color of an empty editor group.
+	 */
+	'editorGroup.emptyBackground': {
+		selector: 'editorGroup.emptyBackground',
+		description: 'Background color of an empty editor group.',
+	},
+	/**
+	 * Border color of an empty editor group that is focused.
+	 */
+	'editorGroup.focusedEmptyBorder': {
+		selector: 'editorGroup.focusedEmptyBorder',
+		description: 'Border color of an empty editor group that is focused.',
+	},
+	/**
+	 * Foreground color of text shown over editors when dragging files. This text informs the user that they can hold shift to drop into the editor.
+	 */
+	'editorGroup.dropIntoPromptForeground': {
+		selector: 'editorGroup.dropIntoPromptForeground',
+		description:
+			'Foreground color of text shown over editors when dragging files. This text informs the user that they can hold shift to drop into the editor.',
+	},
+	/**
+	 * Background color of text shown over editors when dragging files. This text informs the user that they can hold shift to drop into the editor.
+	 */
+	'editorGroup.dropIntoPromptBackground': {
+		selector: 'editorGroup.dropIntoPromptBackground',
+		description:
+			'Background color of text shown over editors when dragging files. This text informs the user that they can hold shift to drop into the editor.',
+	},
+	/**
+	 * Border color of text shown over editors when dragging files. This text informs the user that they can hold shift to drop into the editor.
+	 */
+	'editorGroup.dropIntoPromptBorder': {
+		selector: 'editorGroup.dropIntoPromptBorder',
+		description:
+			'Border color of text shown over editors when dragging files. This text informs the user that they can hold shift to drop into the editor.',
+	},
+	/**
+	 * Active Tab background color in an active group.
+	 */
+	'tab.activeBackground': {
+		selector: 'tab.activeBackground',
+		description: 'Active Tab background color in an active group.',
+	},
+	/**
+	 * Active Tab background color in an inactive editor group.
+	 */
+	'tab.unfocusedActiveBackground': {
+		selector: 'tab.unfocusedActiveBackground',
+		description: 'Active Tab background color in an inactive editor group.',
+	},
+	/**
+	 * Active Tab foreground color in an active group.
+	 */
+	'tab.activeForeground': {
+		selector: 'tab.activeForeground',
+		description: 'Active Tab foreground color in an active group.',
+	},
+	/**
+	 * Border to separate Tabs from each other.
+	 */
+	'tab.border': {
+		selector: 'tab.border',
+		description: 'Border to separate Tabs from each other.',
+	},
+	/**
+	 * Bottom border for the active tab.
+	 */
+	'tab.activeBorder': {
+		selector: 'tab.activeBorder',
+		description: 'Bottom border for the active tab.',
+	},
+	/**
+	 * Bottom border for the active tab in an inactive editor group.
+	 */
+	'tab.unfocusedActiveBorder': {
+		selector: 'tab.unfocusedActiveBorder',
+		description:
+			'Bottom border for the active tab in an inactive editor group.',
+	},
+	/**
+	 * Top border for the active tab.
+	 */
+	'tab.activeBorderTop': {
+		selector: 'tab.activeBorderTop',
+		description: 'Top border for the active tab.',
+	},
+	/**
+	 * Top border for the active tab in an inactive editor group
+	 */
+	'tab.unfocusedActiveBorderTop': {
+		selector: 'tab.unfocusedActiveBorderTop',
+		description: 'Top border for the active tab in an inactive editor group',
+	},
+	/**
+	 * Border on the right of the last pinned editor to separate from unpinned editors.
+	 */
+	'tab.lastPinnedBorder': {
+		selector: 'tab.lastPinnedBorder',
+		description:
+			'Border on the right of the last pinned editor to separate from unpinned editors.',
+	},
+	/**
+	 * Inactive Tab background color.
+	 */
+	'tab.inactiveBackground': {
+		selector: 'tab.inactiveBackground',
+		description: 'Inactive Tab background color.',
+	},
+	/**
+	 * Inactive Tab background color in an unfocused group
+	 */
+	'tab.unfocusedInactiveBackground': {
+		selector: 'tab.unfocusedInactiveBackground',
+		description: 'Inactive Tab background color in an unfocused group',
+	},
+	/**
+	 * Inactive Tab foreground color in an active group.
+	 */
+	'tab.inactiveForeground': {
+		selector: 'tab.inactiveForeground',
+		description: 'Inactive Tab foreground color in an active group.',
+	},
+	/**
+	 * Active tab foreground color in an inactive editor group.
+	 */
+	'tab.unfocusedActiveForeground': {
+		selector: 'tab.unfocusedActiveForeground',
+		description: 'Active tab foreground color in an inactive editor group.',
+	},
+	/**
+	 * Inactive tab foreground color in an inactive editor group.
+	 */
+	'tab.unfocusedInactiveForeground': {
+		selector: 'tab.unfocusedInactiveForeground',
+		description: 'Inactive tab foreground color in an inactive editor group.',
+	},
+	/**
+	 * Tab background color when hovering
+	 */
+	'tab.hoverBackground': {
+		selector: 'tab.hoverBackground',
+		description: 'Tab background color when hovering',
+	},
+	/**
+	 * Tab background color in an unfocused group when hovering
+	 */
+	'tab.unfocusedHoverBackground': {
+		selector: 'tab.unfocusedHoverBackground',
+		description: 'Tab background color in an unfocused group when hovering',
+	},
+	/**
+	 * Tab foreground color when hovering
+	 */
+	'tab.hoverForeground': {
+		selector: 'tab.hoverForeground',
+		description: 'Tab foreground color when hovering',
+	},
+	/**
+	 * Tab foreground color in an unfocused group when hovering
+	 */
+	'tab.unfocusedHoverForeground': {
+		selector: 'tab.unfocusedHoverForeground',
+		description: 'Tab foreground color in an unfocused group when hovering',
+	},
+	/**
+	 * Border to highlight tabs when hovering
+	 */
+	'tab.hoverBorder': {
+		selector: 'tab.hoverBorder',
+		description: 'Border to highlight tabs when hovering',
+	},
+	/**
+	 * Border to highlight tabs in an unfocused group when hovering
+	 */
+	'tab.unfocusedHoverBorder': {
+		selector: 'tab.unfocusedHoverBorder',
+		description: 'Border to highlight tabs in an unfocused group when hovering',
+	},
+	/**
+	 * Border on the top of modified (dirty) active tabs in an active group.
+	 */
+	'tab.activeModifiedBorder': {
+		selector: 'tab.activeModifiedBorder',
+		description:
+			'Border on the top of modified (dirty) active tabs in an active group.',
+	},
+	/**
+	 * Border on the top of modified (dirty) inactive tabs in an active group.
+	 */
+	'tab.inactiveModifiedBorder': {
+		selector: 'tab.inactiveModifiedBorder',
+		description:
+			'Border on the top of modified (dirty) inactive tabs in an active group.',
+	},
+	/**
+	 * Border on the top of modified (dirty) active tabs in an unfocused group.
+	 */
+	'tab.unfocusedActiveModifiedBorder': {
+		selector: 'tab.unfocusedActiveModifiedBorder',
+		description:
+			'Border on the top of modified (dirty) active tabs in an unfocused group.',
+	},
+	/**
+	 * Border on the top of modified (dirty) inactive tabs in an unfocused group.
+	 */
+	'tab.unfocusedInactiveModifiedBorder': {
+		selector: 'tab.unfocusedInactiveModifiedBorder',
+		description:
+			'Border on the top of modified (dirty) inactive tabs in an unfocused group.',
+	},
+	/**
+	 * Background color of the editor pane visible on the left and right side of the centered editor layout.
+	 */
+	'editorPane.background': {
+		selector: 'editorPane.background',
+		description:
+			'Background color of the editor pane visible on the left and right side of the centered editor layout.',
+	},
+	/**
+	 * Color to separate two editors from each other when shown side by side in an editor group from top to bottom.
+	 */
+	'sideBySideEditor.horizontalBorder': {
+		selector: 'sideBySideEditor.horizontalBorder',
+		description:
+			'Color to separate two editors from each other when shown side by side in an editor group from top to bottom.',
+	},
+	/**
+	 * Color to separate two editors from each other when shown side by side in an editor group from left to right.
+	 */
+	'sideBySideEditor.verticalBorder': {
+		selector: 'sideBySideEditor.verticalBorder',
+		description:
+			'Color to separate two editors from each other when shown side by side in an editor group from left to right.',
+	},
+	/**
 	 * Editor background color.
 	 */
 	'editor.background': {
@@ -1106,6 +1537,20 @@ export const appSelectorDefinitions = {
 		description: 'Background color of inline hints for parameters',
 	},
 	/**
+	 * Color of the editor rulers.
+	 */
+	'editorRuler.foreground': {
+		selector: 'editorRuler.foreground',
+		description: 'Color of the editor rulers.',
+	},
+	/**
+	 * Background color when the editor is in linked editing mode.
+	 */
+	'editor.linkedEditingBackground': {
+		selector: 'editor.linkedEditingBackground',
+		description: 'Background color when the editor is in linked editing mode.',
+	},
+	/**
 	 * Foreground color of an editor CodeLens.
 	 */
 	'editorCodeLens.foreground': {
@@ -1194,6 +1639,102 @@ export const appSelectorDefinitions = {
 	'editorBracketHighlight.unexpectedBracket.foreground': {
 		selector: 'editorBracketHighlight.unexpectedBracket.foreground',
 		description: 'Foreground color of unexpected brackets.',
+	},
+	/**
+	 * Background color of active bracket pair guides (1). Requires enabling bracket pair guides.
+	 */
+	'editorBracketPairGuide.activeBackground1': {
+		selector: 'editorBracketPairGuide.activeBackground1',
+		description:
+			'Background color of active bracket pair guides (1). Requires enabling bracket pair guides.',
+	},
+	/**
+	 * Background color of active bracket pair guides (2). Requires enabling bracket pair guides.
+	 */
+	'editorBracketPairGuide.activeBackground2': {
+		selector: 'editorBracketPairGuide.activeBackground2',
+		description:
+			'Background color of active bracket pair guides (2). Requires enabling bracket pair guides.',
+	},
+	/**
+	 * Background color of active bracket pair guides (3). Requires enabling bracket pair guides.
+	 */
+	'editorBracketPairGuide.activeBackground3': {
+		selector: 'editorBracketPairGuide.activeBackground3',
+		description:
+			'Background color of active bracket pair guides (3). Requires enabling bracket pair guides.',
+	},
+	/**
+	 * Background color of active bracket pair guides (4). Requires enabling bracket pair guides.
+	 */
+	'editorBracketPairGuide.activeBackground4': {
+		selector: 'editorBracketPairGuide.activeBackground4',
+		description:
+			'Background color of active bracket pair guides (4). Requires enabling bracket pair guides.',
+	},
+	/**
+	 * Background color of active bracket pair guides (5). Requires enabling bracket pair guides.
+	 */
+	'editorBracketPairGuide.activeBackground5': {
+		selector: 'editorBracketPairGuide.activeBackground5',
+		description:
+			'Background color of active bracket pair guides (5). Requires enabling bracket pair guides.',
+	},
+	/**
+	 * Background color of active bracket pair guides (6). Requires enabling bracket pair guides.
+	 */
+	'editorBracketPairGuide.activeBackground6': {
+		selector: 'editorBracketPairGuide.activeBackground6',
+		description:
+			'Background color of active bracket pair guides (6). Requires enabling bracket pair guides.',
+	},
+	/**
+	 * Background color of inactive bracket pair guides (1). Requires enabling bracket pair guides.
+	 */
+	'editorBracketPairGuide.background1': {
+		selector: 'editorBracketPairGuide.background1',
+		description:
+			'Background color of inactive bracket pair guides (1). Requires enabling bracket pair guides.',
+	},
+	/**
+	 * Background color of inactive bracket pair guides (2). Requires enabling bracket pair guides.
+	 */
+	'editorBracketPairGuide.background2': {
+		selector: 'editorBracketPairGuide.background2',
+		description:
+			'Background color of inactive bracket pair guides (2). Requires enabling bracket pair guides.',
+	},
+	/**
+	 * Background color of inactive bracket pair guides (3). Requires enabling bracket pair guides.
+	 */
+	'editorBracketPairGuide.background3': {
+		selector: 'editorBracketPairGuide.background3',
+		description:
+			'Background color of inactive bracket pair guides (3). Requires enabling bracket pair guides.',
+	},
+	/**
+	 * Background color of inactive bracket pair guides (4). Requires enabling bracket pair guides.
+	 */
+	'editorBracketPairGuide.background4': {
+		selector: 'editorBracketPairGuide.background4',
+		description:
+			'Background color of inactive bracket pair guides (4). Requires enabling bracket pair guides.',
+	},
+	/**
+	 * Background color of inactive bracket pair guides (5). Requires enabling bracket pair guides.
+	 */
+	'editorBracketPairGuide.background5': {
+		selector: 'editorBracketPairGuide.background5',
+		description:
+			'Background color of inactive bracket pair guides (5). Requires enabling bracket pair guides.',
+	},
+	/**
+	 * Background color of inactive bracket pair guides (6). Requires enabling bracket pair guides.
+	 */
+	'editorBracketPairGuide.background6': {
+		selector: 'editorBracketPairGuide.background6',
+		description:
+			'Background color of inactive bracket pair guides (6). Requires enabling bracket pair guides.',
 	},
 	/**
 	 * Background color for folded ranges. The color must not be opaque so as not to hide underlying decorations.
@@ -1417,12 +1958,12 @@ export const appSelectorDefinitions = {
 			'Border color of unnecessary (unused) source code in the editor.',
 	},
 	/**
-	 * Opacity of unnecessary (unused) source code in the editor. For example, <code>&quot;#000000c0&quot;</code> will render the code with 75% opacity. For high contrast themes, use the <code>&quot;editorUnnecessaryCode.border&quot;</code> theme color to underline unnecessary code instead of fading it out.
+	 * Opacity of unnecessary (unused) source code in the editor. For example, <code>&quot;#000000c0&quot;
 	 */
 	'editorUnnecessaryCode.opacity': {
 		selector: 'editorUnnecessaryCode.opacity',
 		description:
-			'Opacity of unnecessary (unused) source code in the editor. For example, <code>&quot;#000000c0&quot;</code> will render the code with 75% opacity. For high contrast themes, use the <code>&quot;editorUnnecessaryCode.border&quot;</code> theme color to underline unnecessary code instead of fading it out.',
+			'Opacity of unnecessary (unused) source code in the editor. For example, <code>&quot;#000000c0&quot;',
 	},
 	/**
 	 * Background color of the editor gutter. The gutter contains the glyph margins and the line numbers.
@@ -1599,6 +2140,175 @@ export const appSelectorDefinitions = {
 	'diffEditorOverview.removedForeground': {
 		selector: 'diffEditorOverview.removedForeground',
 		description: 'Diff overview ruler foreground for removed content.',
+	},
+	/**
+	 * Foreground color of editor widgets, such as find/replace.
+	 */
+	'editorWidget.foreground': {
+		selector: 'editorWidget.foreground',
+		description: 'Foreground color of editor widgets, such as find/replace.',
+	},
+	/**
+	 * Background color of editor widgets, such as Find/Replace.
+	 */
+	'editorWidget.background': {
+		selector: 'editorWidget.background',
+		description: 'Background color of editor widgets, such as Find/Replace.',
+	},
+	/**
+	 * Border color of the editor widget unless the widget does not contain a border or defines its own border color.
+	 */
+	'editorWidget.border': {
+		selector: 'editorWidget.border',
+		description:
+			'Border color of the editor widget unless the widget does not contain a border or defines its own border color.',
+	},
+	/**
+	 * Border color of the resize bar of editor widgets. The color is only used if the widget chooses to have a resize border and if the color is not overridden by a widget.
+	 */
+	'editorWidget.resizeBorder': {
+		selector: 'editorWidget.resizeBorder',
+		description:
+			'Border color of the resize bar of editor widgets. The color is only used if the widget chooses to have a resize border and if the color is not overridden by a widget.',
+	},
+	/**
+	 * Background color of the suggestion widget.
+	 */
+	'editorSuggestWidget.background': {
+		selector: 'editorSuggestWidget.background',
+		description: 'Background color of the suggestion widget.',
+	},
+	/**
+	 * Border color of the suggestion widget.
+	 */
+	'editorSuggestWidget.border': {
+		selector: 'editorSuggestWidget.border',
+		description: 'Border color of the suggestion widget.',
+	},
+	/**
+	 * Foreground color of the suggestion widget.
+	 */
+	'editorSuggestWidget.foreground': {
+		selector: 'editorSuggestWidget.foreground',
+		description: 'Foreground color of the suggestion widget.',
+	},
+	/**
+	 * Color of the match highlights in the suggest widget when an item is focused.
+	 */
+	'editorSuggestWidget.focusHighlightForeground': {
+		selector: 'editorSuggestWidget.focusHighlightForeground',
+		description:
+			'Color of the match highlights in the suggest widget when an item is focused.',
+	},
+	/**
+	 * Color of the match highlights in the suggestion widget.
+	 */
+	'editorSuggestWidget.highlightForeground': {
+		selector: 'editorSuggestWidget.highlightForeground',
+		description: 'Color of the match highlights in the suggestion widget.',
+	},
+	/**
+	 * Background color of the selected entry in the suggestion widget.
+	 */
+	'editorSuggestWidget.selectedBackground': {
+		selector: 'editorSuggestWidget.selectedBackground',
+		description:
+			'Background color of the selected entry in the suggestion widget.',
+	},
+	/**
+	 * Foreground color of the selected entry in the suggest widget.
+	 */
+	'editorSuggestWidget.selectedForeground': {
+		selector: 'editorSuggestWidget.selectedForeground',
+		description:
+			'Foreground color of the selected entry in the suggest widget.',
+	},
+	/**
+	 * Icon foreground color of the selected entry in the suggest widget.
+	 */
+	'editorSuggestWidget.selectedIconForeground': {
+		selector: 'editorSuggestWidget.selectedIconForeground',
+		description:
+			'Icon foreground color of the selected entry in the suggest widget.',
+	},
+	/**
+	 * Foreground color of the suggest widget status.
+	 */
+	'editorSuggestWidgetStatus.foreground': {
+		selector: 'editorSuggestWidgetStatus.foreground',
+		description: 'Foreground color of the suggest widget status.',
+	},
+	/**
+	 * Foreground color of the editor hover.
+	 */
+	'editorHoverWidget.foreground': {
+		selector: 'editorHoverWidget.foreground',
+		description: 'Foreground color of the editor hover.',
+	},
+	/**
+	 * Background color of the editor hover.
+	 */
+	'editorHoverWidget.background': {
+		selector: 'editorHoverWidget.background',
+		description: 'Background color of the editor hover.',
+	},
+	/**
+	 * Border color of the editor hover.
+	 */
+	'editorHoverWidget.border': {
+		selector: 'editorHoverWidget.border',
+		description: 'Border color of the editor hover.',
+	},
+	/**
+	 * Foreground color of the active item in the parameter hint.
+	 */
+	'editorHoverWidget.highlightForeground': {
+		selector: 'editorHoverWidget.highlightForeground',
+		description: 'Foreground color of the active item in the parameter hint.',
+	},
+	/**
+	 * Background color of the editor hover status bar.
+	 */
+	'editorHoverWidget.statusBarBackground': {
+		selector: 'editorHoverWidget.statusBarBackground',
+		description: 'Background color of the editor hover status bar.',
+	},
+	/**
+	 * Border color of the ghost text shown by inline completion providers and the suggest preview.
+	 */
+	'editorGhostText.border': {
+		selector: 'editorGhostText.border',
+		description:
+			'Border color of the ghost text shown by inline completion providers and the suggest preview.',
+	},
+	/**
+	 * Background color of the ghost text in the editor.
+	 */
+	'editorGhostText.background': {
+		selector: 'editorGhostText.background',
+		description: 'Background color of the ghost text in the editor.',
+	},
+	/**
+	 * Foreground color of the ghost text shown by inline completion providers and the suggest preview.
+	 */
+	'editorGhostText.foreground': {
+		selector: 'editorGhostText.foreground',
+		description:
+			'Foreground color of the ghost text shown by inline completion providers and the suggest preview.',
+	},
+	/**
+	 * Editor sticky scroll background color
+	 */
+	'editorStickyScroll.background': {
+		selector: 'editorStickyScroll.background',
+		description: 'Editor sticky scroll background color',
+	},
+	/**
+	 * Editor sticky scroll on hover background color
+	 */
+	'editorStickyScrollHover.background': {
+		selector: 'editorStickyScrollHover.background',
+		description: 'Editor sticky scroll on hover background color',
 	},
 	/**
 	 * Exception widget background color.
@@ -2462,12 +3172,12 @@ export const appSelectorDefinitions = {
 		description: 'Color for the icon in front of the banner text.',
 	},
 	/**
-	 * Extension view button foreground color (for example <strong>Install</strong> button).
+	 * Extension view button foreground color (for example <strong>Install
 	 */
 	'extensionButton.prominentForeground': {
 		selector: 'extensionButton.prominentForeground',
 		description:
-			'Extension view button foreground color (for example <strong>Install</strong> button).',
+			'Extension view button foreground color (for example <strong>Install',
 	},
 	/**
 	 * Extension view button background color.
@@ -2872,12 +3582,12 @@ export const appSelectorDefinitions = {
 			'The background color when dragging on top of terminals. The color should have transparency so that the terminal contents can still shine through.',
 	},
 	/**
-	 * Border on the side of the terminal tab in the panel. This defaults to <code>tab.activeBorder</code>.
+	 * Border on the side of the terminal tab in the panel. This defaults to <code>tab.activeBorder
 	 */
 	'terminal.tab.activeBorder': {
 		selector: 'terminal.tab.activeBorder',
 		description:
-			'Border on the side of the terminal tab in the panel. This defaults to <code>tab.activeBorder</code>.',
+			'Border on the side of the terminal tab in the panel. This defaults to <code>tab.activeBorder',
 	},
 	/**
 	 * The default terminal command decoration background color.
@@ -3137,6 +3847,63 @@ export const appSelectorDefinitions = {
 		selector: 'testing.message.info.lineBackground',
 		description:
 			'Margin color beside info messages shown inline in the editor.',
+	},
+	/**
+	 * Background color for the Welcome page.
+	 */
+	'welcomePage.background': {
+		selector: 'welcomePage.background',
+		description: 'Background color for the Welcome page.',
+	},
+	/**
+	 * Foreground color for the Welcome page progress bars.
+	 */
+	'welcomePage.progress.background': {
+		selector: 'welcomePage.progress.background',
+		description: 'Foreground color for the Welcome page progress bars.',
+	},
+	/**
+	 * Background color for the Welcome page progress bars.
+	 */
+	'welcomePage.progress.foreground': {
+		selector: 'welcomePage.progress.foreground',
+		description: 'Background color for the Welcome page progress bars.',
+	},
+	/**
+	 * Background color for the tiles on the Get Started page.
+	 */
+	'welcomePage.tileBackground': {
+		selector: 'welcomePage.tileBackground',
+		description: 'Background color for the tiles on the Get Started page.',
+	},
+	/**
+	 * Hover background color for the tiles on the Get Started.
+	 */
+	'welcomePage.tileHoverBackground': {
+		selector: 'welcomePage.tileHoverBackground',
+		description: 'Hover background color for the tiles on the Get Started.',
+	},
+	/**
+	 * Border color for the tiles on the Get Started page.
+	 */
+	'welcomePage.tileBorder': {
+		selector: 'welcomePage.tileBorder',
+		description: 'Border color for the tiles on the Get Started page.',
+	},
+	/**
+	 * Background color for the embedded editors on the Interactive Playground.
+	 */
+	'walkThrough.embeddedEditorBackground': {
+		selector: 'walkThrough.embeddedEditorBackground',
+		description:
+			'Background color for the embedded editors on the Interactive Playground.',
+	},
+	/**
+	 * Foreground color of the heading of each walkthrough step.
+	 */
+	'walkthrough.stepTitle.foreground': {
+		selector: 'walkthrough.stepTitle.foreground',
+		description: 'Foreground color of the heading of each walkthrough step.',
 	},
 	/**
 	 * SCM Provider separator border.
@@ -3659,6 +4426,146 @@ export const appSelectorDefinitions = {
 	'symbolIcon.variableForeground': {
 		selector: 'symbolIcon.variableForeground',
 		description: 'The foreground color for variable symbols.',
+	},
+	/**
+	 * Icon color for breakpoints.
+	 */
+	'debugIcon.breakpointForeground': {
+		selector: 'debugIcon.breakpointForeground',
+		description: 'Icon color for breakpoints.',
+	},
+	/**
+	 * Icon color for disabled breakpoints.
+	 */
+	'debugIcon.breakpointDisabledForeground': {
+		selector: 'debugIcon.breakpointDisabledForeground',
+		description: 'Icon color for disabled breakpoints.',
+	},
+	/**
+	 * Icon color for unverified breakpoints.
+	 */
+	'debugIcon.breakpointUnverifiedForeground': {
+		selector: 'debugIcon.breakpointUnverifiedForeground',
+		description: 'Icon color for unverified breakpoints.',
+	},
+	/**
+	 * Icon color for the current breakpoint stack frame.
+	 */
+	'debugIcon.breakpointCurrentStackframeForeground': {
+		selector: 'debugIcon.breakpointCurrentStackframeForeground',
+		description: 'Icon color for the current breakpoint stack frame.',
+	},
+	/**
+	 * Icon color for all breakpoint stack frames.
+	 */
+	'debugIcon.breakpointStackframeForeground': {
+		selector: 'debugIcon.breakpointStackframeForeground',
+		description: 'Icon color for all breakpoint stack frames.',
+	},
+	/**
+	 * Debug toolbar icon for start debugging.
+	 */
+	'debugIcon.startForeground': {
+		selector: 'debugIcon.startForeground',
+		description: 'Debug toolbar icon for start debugging.',
+	},
+	/**
+	 * Debug toolbar icon for pause.
+	 */
+	'debugIcon.pauseForeground': {
+		selector: 'debugIcon.pauseForeground',
+		description: 'Debug toolbar icon for pause.',
+	},
+	/**
+	 * Debug toolbar icon for stop.
+	 */
+	'debugIcon.stopForeground': {
+		selector: 'debugIcon.stopForeground',
+		description: 'Debug toolbar icon for stop.',
+	},
+	/**
+	 * Debug toolbar icon for disconnect.
+	 */
+	'debugIcon.disconnectForeground': {
+		selector: 'debugIcon.disconnectForeground',
+		description: 'Debug toolbar icon for disconnect.',
+	},
+	/**
+	 * Debug toolbar icon for restart.
+	 */
+	'debugIcon.restartForeground': {
+		selector: 'debugIcon.restartForeground',
+		description: 'Debug toolbar icon for restart.',
+	},
+	/**
+	 * Debug toolbar icon for step over.
+	 */
+	'debugIcon.stepOverForeground': {
+		selector: 'debugIcon.stepOverForeground',
+		description: 'Debug toolbar icon for step over.',
+	},
+	/**
+	 * Debug toolbar icon for step into.
+	 */
+	'debugIcon.stepIntoForeground': {
+		selector: 'debugIcon.stepIntoForeground',
+		description: 'Debug toolbar icon for step into.',
+	},
+	/**
+	 * Debug toolbar icon for step over.
+	 */
+	'debugIcon.stepOutForeground': {
+		selector: 'debugIcon.stepOutForeground',
+		description: 'Debug toolbar icon for step over.',
+	},
+	/**
+	 * Debug toolbar icon for continue.
+	 */
+	'debugIcon.continueForeground': {
+		selector: 'debugIcon.continueForeground',
+		description: 'Debug toolbar icon for continue.',
+	},
+	/**
+	 * Debug toolbar icon for step back.
+	 */
+	'debugIcon.stepBackForeground': {
+		selector: 'debugIcon.stepBackForeground',
+		description: 'Debug toolbar icon for step back.',
+	},
+	/**
+	 * Foreground color for info messages in debug REPL console.
+	 */
+	'debugConsole.infoForeground': {
+		selector: 'debugConsole.infoForeground',
+		description: 'Foreground color for info messages in debug REPL console.',
+	},
+	/**
+	 * Foreground color for warning messages in debug REPL console.
+	 */
+	'debugConsole.warningForeground': {
+		selector: 'debugConsole.warningForeground',
+		description: 'Foreground color for warning messages in debug REPL console.',
+	},
+	/**
+	 * Foreground color for error messages in debug REPL console.
+	 */
+	'debugConsole.errorForeground': {
+		selector: 'debugConsole.errorForeground',
+		description: 'Foreground color for error messages in debug REPL console.',
+	},
+	/**
+	 * Foreground color for source filenames in debug REPL console.
+	 */
+	'debugConsole.sourceForeground': {
+		selector: 'debugConsole.sourceForeground',
+		description: 'Foreground color for source filenames in debug REPL console.',
+	},
+	/**
+	 * Foreground color for debug console input marker icon.
+	 */
+	'debugConsoleInputIcon.foreground': {
+		selector: 'debugConsoleInputIcon.foreground',
+		description: 'Foreground color for debug console input marker icon.',
 	},
 	/**
 	 * Notebook background color.

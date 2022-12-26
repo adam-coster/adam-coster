@@ -1,13 +1,11 @@
+import { AppSelector } from './selector.app.js';
+export { app } from './selector.app.js';
+
 export type Selector = AppSelector | TokenSelector | SemanticSelector;
 
 interface BaseSelector {
 	kind: 'app' | 'token' | 'semantic';
 	selector: string | string[];
-}
-
-export interface AppSelector extends BaseSelector {
-	kind: 'app';
-	selector: string;
 }
 
 export interface TokenSelector extends BaseSelector {
@@ -21,9 +19,6 @@ export interface SemanticSelector extends BaseSelector {
 	selector: string;
 }
 
-export function app(selector: string): AppSelector {
-	return { kind: 'app', selector };
-}
 export function token(
 	selector: string | string[],
 	description?: string,
