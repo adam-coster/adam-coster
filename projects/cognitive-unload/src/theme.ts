@@ -8,15 +8,16 @@ export const theme = new Theme('Cognitive Unload', {
 	inactiveForeground: 'gray',
 });
 
-theme
-	.style('background', [
-		app('editor.background'),
-		app('activityBarBadge.background'),
-	])
-	.style('foreground', [
-		app('editor.foreground'),
-		app('sideBarTitle.foreground'),
-	]);
+for (const selectorName of appSelectorNames) {
+	const selectorLower = selectorName.toLowerCase();
+	if (selectorLower.includes('foreground')) {
+		theme.style('foreground', [app(selectorName)]);
+	} else if (selectorLower.includes('background')) {
+		theme.style('background', [app(selectorName)]);
+	} else if (selectorLower.includes('border')) {
+		theme.style('foreground', [app(selectorName)]);
+	}
+}
 
 // Start by setting everything to background and foreground (need a way to override...)
 // const foregroundSelectors = appSelectorNames
