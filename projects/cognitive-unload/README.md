@@ -20,7 +20,7 @@ _See [the official docs](https://code.visualstudio.com/api/references/theme-colo
 
 VS Code theme definitions are broken into three primary types of styles:
 
-1. **app styles** _(the `colors` field in the theme file)_. Styles for VSCode itself. The identifiers/selectors for these are in the following format, where an "element" is a visual element of the window and a "component" is a stylable part+state of that element (e.g. "border", "inactiveBorder", etc).
+1. **app styles** _(the `colors` field in the theme file)_. Styles for VSCode itself. The identifiers/selectors for these are in the following format, where a "domain" is a set of closely related visual element and a "component" is a stylable part+state of that domain (e.g. "border", "inactiveBorder", etc).
    ```js
    /^((?<element>[^.])\.)?(?<component>[a-zA-Z0-9]+)$/;
    ```

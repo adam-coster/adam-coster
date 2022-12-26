@@ -1,13 +1,16 @@
-import { AppSelector } from './lib/selector.app.js';
+import { AppSelector } from './lib/selectors.app.js';
 import { Theme } from './lib/themes.js';
 
 export const theme = new Theme('Cognitive Unload', {
 	activeForeground: '#dbdcdd',
-	inactiveForeground: '#d3d3d4',
-	activeBackground: '#36393f',
-	inactiveBackground: '#2f3136',
-	activeBorder: '#d3d3d4',
-	inactiveBorder: '#202225',
+	inactiveForeground: '#a9a9a9',
+	activeBackground: '#1e1e1e',
+	inactiveBackground: '#1e1e1e',
+	activeBorder: '#353535',
+	inactiveBorder: '#1e1e1e',
+	shadow: '#000000',
+	error: '#ff4662',
+	warning: '#ff9f1a',
 });
 
 theme
@@ -16,4 +19,7 @@ theme
 	.style('activeBackground', AppSelector.groups.activeBackground)
 	.style('inactiveBackground', AppSelector.groups.inactiveBackground)
 	.style('activeBorder', AppSelector.groups.activeBorder)
-	.style('inactiveBorder', AppSelector.groups.inactiveBackground);
+	.style('inactiveBorder', AppSelector.groups.inactiveBackground)
+	.style('shadow', AppSelector.groups.shadow)
+	.style('error', AppSelector.groups.errorForeground)
+	.style('warning', AppSelector.groups.warningForeground);

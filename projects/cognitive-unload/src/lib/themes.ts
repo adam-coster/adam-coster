@@ -1,5 +1,5 @@
 import Color from 'color';
-import { AppSelector } from './selector.app.js';
+import { AppSelector } from './selectors.app.js';
 import { Selector } from './selectors.js';
 import { Style } from './styles.js';
 import type {

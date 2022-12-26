@@ -1,5 +1,5 @@
-import { AppSelector } from './selector.app.js';
-export { app } from './selector.app.js';
+import { AppSelector } from './selectors.app.js';
+export { app } from './selectors.app.js';
 
 export type Selector = AppSelector | TokenSelector | SemanticSelector;
 

@@ -4,6 +4,7 @@ import {
 	ThemeSelectorDefinitions,
 	themeSelectorDefinitionsSchema,
 } from '../lib/types.js';
+import { stringify } from './json.js';
 import { toSortedObject } from './sorts.js';
 
 export async function fetchDefinitionsHtml(): Promise<string> {
@@ -167,19 +168,55 @@ export async function createTypescriptDefinitions(
 	themeDefinitions: ThemeSelectorDefinitions,
 ): Promise<void> {
 	const themeDefinitionsTypescriptPath = pathy(
-		'src/lib/themeSelectorDefinitions.ts',
+		'src/lib/selectors.appDefinitions.ts',
 	);
 
-	const themeDefinitionsTypescript = themeDefinitions.map((d) => {
-		return `  /**
-   * ${d!.description}
-   */
-  '${d!.selector}': ${JSON.stringify(d)}`;
-	});
+	// Get the list of all selectors to output as an array of strings.
+	const selectors = themeDefinitions.map((d) => d.selector);
 
-	await themeDefinitionsTypescriptPath.write(
-		`export const appSelectorDefinitions = \n{${themeDefinitionsTypescript.join(
-			',\n',
-		)}\n};\nexport const appSelectorNames: (keyof typeof appSelectorDefinitions)[] = Object.keys(appSelectorDefinitions) as any;\n`,
-	);
+	// Get the list of all "domain" components of the selectors
+	const domains = new Set<string>();
+	const components = new Set<string>();
+	const domainComponents: { [domain: string]: Set<string> } =
+		Object.create(null);
+	for (const selector of selectors) {
+		const parts = selector.split('.');
+		const domain = parts.length === 1 ? '' : parts[0];
+		const componentsString = parts.at(-1)!;
+		const splitComponents = splitSelectorComponent(componentsString);
+		domains.add(domain);
+		domainComponents[domain] ||= new Set();
+		for (const component of splitComponents.components) {
+			domainComponents[domain].add(component);
+			components.add(component);
+		}
+	}
+
+	let ts = `export const appSelectorDomains = ${stringify(
+		domains,
+	)} as const;\n`;
+	ts += `export const appSelectors = ${stringify(selectors)} as const;\n`;
+	ts += `export const appSelectorComponents = ${stringify(
+		components,
+	)} as const;\n`;
+	ts += `export const appSelectorDomainComponents = ${stringify(
+		domainComponents,
+	)} as const;\n`;
+	await themeDefinitionsTypescriptPath.write(ts);
+
+	// For each domain, get the list of all selector components. Also accumulate
+	// all components.
+
+	// const themeDefinitionsTypescript = themeDefinitions.map((d) => {
+	// 	return `  /**
+	//  * ${d!.description}
+	//  */
+	// '${d!.selector}': ${JSON.stringify(d)}`;
+	// });
+
+	// await themeDefinitionsTypescriptPath.write(
+	// 	`export const appSelectorDefinitions = \n{${themeDefinitionsTypescript.join(
+	// 		',\n',
+	// 	)}\n};\nexport const appSelectorNames: (keyof typeof appSelectorDefinitions)[] = Object.keys(appSelectorDefinitions) as any;\n`,
+	// );
 }
