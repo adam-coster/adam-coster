@@ -27,7 +27,10 @@ export class Theme<P extends Palette> {
 	/**
 	 * Style a group of selectors
 	 */
-	style(style: ColorName<P> | Style<ColorName<P>>, selectors: Selector[]) {
+	style(
+		style: ColorName<P> | Style<ColorName<P>>,
+		selectors: Iterable<Selector>,
+	) {
 		const colorName: ColorName<P> =
 			style instanceof Style ? style.color : style;
 		const color = Color(this.palette[colorName]).hex();

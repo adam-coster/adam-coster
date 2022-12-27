@@ -1,4 +1,4 @@
-import { AppSelector } from './lib/selectors.app.js';
+import { AppSelector, filter } from './lib/selectors.app.js';
 import { Theme } from './lib/themes.js';
 
 export const theme = new Theme('Cognitive Unload', {
@@ -14,12 +14,12 @@ export const theme = new Theme('Cognitive Unload', {
 });
 
 theme
-	.style('activeForeground', AppSelector.groups.activeForeground)
-	.style('inactiveForeground', AppSelector.groups.inactiveForeground)
-	.style('activeBackground', AppSelector.groups.activeBackground)
-	.style('inactiveBackground', AppSelector.groups.inactiveBackground)
-	.style('activeBorder', AppSelector.groups.activeBorder)
-	.style('inactiveBorder', AppSelector.groups.inactiveBackground)
-	.style('shadow', AppSelector.groups.shadow)
-	.style('error', AppSelector.groups.errorForeground)
-	.style('warning', AppSelector.groups.warningForeground);
+	.style('activeForeground', filter().not.inactive.not.background)
+	.style('inactiveForeground', filter().inactive.not.background)
+	.style('activeBackground', filter().background.not.inactive)
+	.style('inactiveBackground', filter().background.inactive)
+	.style('activeBorder', filter().border.not.inactive)
+	.style('inactiveBorder', filter().border.inactive)
+	.style('shadow', filter().shadow)
+	.style('error', filter().error)
+	.style('warning', filter().warning);

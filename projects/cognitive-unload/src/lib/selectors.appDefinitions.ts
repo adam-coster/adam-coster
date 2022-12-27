@@ -1,4 +1,3 @@
-export type AppSelectorDomain = typeof appSelectorDomains[number];
 export const appSelectorDomains = [
 	'',
 	'activityBar',
@@ -805,7 +804,6 @@ export const appSelectors = [
 	'window.activeBorder',
 	'window.inactiveBorder',
 ] as const;
-export type AppSelectorComponent = typeof appSelectorComponents[number];
 export const appSelectorComponents = [
 	'action',
 	'active',
@@ -1015,8 +1013,6 @@ export const appSelectorComponents = [
 	'word',
 	'yellow',
 ] as const;
-export type AppSelectorDomainComponents<Domain extends AppSelectorDomain> =
-	typeof appSelectorDomainComponents[Domain];
 export const appSelectorDomainComponents = {
 	'': [
 		'active',
