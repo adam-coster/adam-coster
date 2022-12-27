@@ -34,7 +34,7 @@ export class AppSelector extends BaseSelector<'app', string> {
 		filters?: (AppSelectorDomainComponent<Domain> | 'not')[],
 	): AppSelectorsFilter<Domain> {
 		const iterator = function* () {
-			for (const selector of AppSelector.selectors) {
+			selectorLoop: for (const selector of AppSelector.selectors) {
 				if (typeof domain === 'string' && selector.domain !== domain) {
 					continue;
 				}
@@ -46,11 +46,13 @@ export class AppSelector extends BaseSelector<'app', string> {
 					}
 					let isMatch = selector.lowerCaseSelector.includes(filter);
 					isMatch = isNot ? !isMatch : isMatch;
-					if (isMatch) {
-						yield selector;
+					if (!isMatch) {
+						// Every filter must match!
+						continue selectorLoop;
 					}
 					isNot = false;
 				}
+				yield selector;
 			}
 		};
 		return new Proxy(
@@ -59,10 +61,8 @@ export class AppSelector extends BaseSelector<'app', string> {
 			},
 			{
 				get(target, p) {
-					console.log(p);
 					if (typeof p === 'symbol') {
 						if (p === Symbol.iterator) {
-							console.log('getting iterator', target[Symbol.iterator]);
 							return target[Symbol.iterator];
 						}
 						throw new Error(`Symbols not supported.`);
