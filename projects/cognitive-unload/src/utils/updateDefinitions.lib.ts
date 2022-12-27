@@ -176,6 +176,7 @@ export async function createTypescriptDefinitions(
 
 	// Get the list of all "domain" components of the selectors
 	const domains = new Set<string>();
+	const domainParts = new Set<string>();
 	const components = new Set<string>();
 	const domainComponents: { [domain: string]: Set<string> } =
 		Object.create(null);
@@ -186,6 +187,11 @@ export async function createTypescriptDefinitions(
 		const splitComponents = splitSelectorComponent(componentsString);
 		domains.add(domain);
 		domainComponents[domain] ||= new Set();
+		for (const domainPart of camelCaseToList(domain)) {
+			if (domainPart) {
+				domainParts.add(domainPart);
+			}
+		}
 		for (const component of splitComponents.components) {
 			domainComponents[domain].add(component);
 			components.add(component);
@@ -196,10 +202,13 @@ export async function createTypescriptDefinitions(
 		domains,
 	)} as const;\n`;
 	ts += `export const appSelectors = ${stringify(selectors)} as const;\n`;
+	ts += `export const appSelectorDomainParts = ${stringify(
+		domainParts,
+	)} as const;\n`;
 	ts += `export const appSelectorComponents = ${stringify(
 		components,
 	)} as const;\n`;
-	ts += `export const appSelectorDomainComponents = ${stringify(
+	ts += `export const appSelectorComponentsByDomain = ${stringify(
 		domainComponents,
 	)} as const;\n`;
 	await themeDefinitionsTypescriptPath.write(ts);
