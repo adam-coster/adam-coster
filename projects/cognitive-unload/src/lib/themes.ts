@@ -60,7 +60,7 @@ export class Theme<P extends Palette> {
 	): this {
 		const colorName: ColorName<P> =
 			style instanceof Style ? style.color : style;
-		const color = Color(this.palette[colorName]).hex();
+		const color = Color(this.palette[colorName]).hexa();
 		const dereferencedStyle =
 			style instanceof Style ? style.recolor(color) : new Style(color);
 		for (const _selectors of selectors) {
