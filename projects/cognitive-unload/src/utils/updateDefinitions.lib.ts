@@ -6,6 +6,7 @@ import {
 } from '../lib/types.js';
 import { stringify } from './json.js';
 import { toSortedObject } from './sorts.js';
+import { ParsedTokens } from './updateDefinitions.tm.js';
 
 export async function fetchDefinitionsHtml(): Promise<string> {
 	const themeDefinitionsUrl = `https://code.visualstudio.com/api/references/theme-color`;
@@ -166,6 +167,7 @@ export async function parseDefinitionsHtml(
 
 export async function createTypescriptDefinitions(
 	themeDefinitions: ThemeSelectorDefinitions,
+	tokenDefinitions: ParsedTokens,
 ): Promise<void> {
 	const themeDefinitionsTypescriptPath = pathy(
 		'src/lib/selectors.appDefinitions.ts',
@@ -210,6 +212,9 @@ export async function createTypescriptDefinitions(
 	)} as const;\n`;
 	ts += `export const appSelectorComponentsByDomain = ${stringify(
 		domainComponents,
+	)} as const;\n`;
+	ts += `export const tokenSelectors = ${stringify(
+		tokenDefinitions,
 	)} as const;\n`;
 	await themeDefinitionsTypescriptPath.write(ts);
 
