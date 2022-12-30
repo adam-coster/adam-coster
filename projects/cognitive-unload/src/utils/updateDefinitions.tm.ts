@@ -3,16 +3,20 @@ import { Pathy, pathy } from '@bscotch/pathy';
 import os from 'os';
 
 const home = pathy(os.homedir());
-const appData = pathy(process.env.APPDATA);
+const vscodeInstallRoot =
+	os.platform() === 'win32'
+		? pathy(process.env.APPDATA).join('Local', 'Programs')
+		: pathy(`/usr/share`);
 
 const VSCODE_EXTENSIONS_ROOT = [
 	home.join('.vscode', 'extensions'),
 	home.join('.vscode-insiders', 'extensions'),
 ];
-const VSCODE_INSTALL_ROOTS = [
-	appData.join('Local', 'Programs', 'Microsoft VS Code'),
-	appData.join('Local', 'Programs', 'Microsoft VS Code Insiders'),
-];
+const VSCODE_INSTALL_ROOTS = (
+	os.platform() === 'win32'
+		? ['Microsoft VS Code', 'Microsoft VS Code Insiders']
+		: ['code', 'code-insiders']
+).map((name) => vscodeInstallRoot.join(name));
 
 interface ExtensionManifest {
 	contributes?: {
