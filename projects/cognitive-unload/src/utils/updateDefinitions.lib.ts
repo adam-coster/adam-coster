@@ -6,9 +6,9 @@ import {
 } from '../lib/types.js';
 import { stringify } from './json.js';
 import { toSortedObject } from './sorts.js';
-import { ParsedTokens } from './updateDefinitions.tm.js';
+import { findGrammarTokens } from './updateDefinitions.tm.js';
 
-export async function fetchDefinitionsHtml(): Promise<string> {
+async function fetchDefinitionsHtml(): Promise<string> {
 	const themeDefinitionsUrl = `https://code.visualstudio.com/api/references/theme-color`;
 
 	const themeDefinitionsHtmlPath = pathy('tmp/theme-definitions.html');
@@ -138,7 +138,7 @@ async function summarizeSelectorComponents(types: SelectorType[]) {
 	});
 }
 
-export async function parseDefinitionsHtml(
+async function parseDefinitionsHtml(
 	themeDefinitionsHtml: string,
 ): Promise<ThemeSelectorDefinitions> {
 	const themeDefinitionsJsonPath = pathy('tmp/theme-definitions.json', {
@@ -165,16 +165,15 @@ export async function parseDefinitionsHtml(
 	return themeDefinitions;
 }
 
-export async function createTypescriptDefinitions(
-	themeDefinitions: ThemeSelectorDefinitions,
-	tokenDefinitions: ParsedTokens,
-): Promise<void> {
-	const themeDefinitionsTypescriptPath = pathy(
-		'src/lib/selectors.appDefinitions.ts',
+async function createAppSelectorDefintionsTs() {
+	const appDefinitions = await parseDefinitionsHtml(
+		await fetchDefinitionsHtml(),
 	);
-
+	const themeDefinitionsTypescriptPath = pathy(
+		`src/lib/selectors.appDefinitions.ts`,
+	);
 	// Get the list of all selectors to output as an array of strings.
-	const selectors = themeDefinitions.map((d) => d.selector);
+	const selectors = appDefinitions.map((d) => d.selector);
 
 	// Get the list of all "domain" components of the selectors
 	const domains = new Set<string>();
@@ -213,24 +212,49 @@ export async function createTypescriptDefinitions(
 	ts += `export const appSelectorComponentsByDomain = ${stringify(
 		domainComponents,
 	)} as const;\n`;
-	ts += `export const tokenSelectors = ${stringify(
-		tokenDefinitions,
-	)} as const;\n`;
 	await themeDefinitionsTypescriptPath.write(ts);
+}
 
-	// For each domain, get the list of all selector components. Also accumulate
-	// all components.
+async function createSyntaxSelectorDefintionsTs() {
+	// Write syntax highlighting selectors
+	const syntaxDefinitions = await findGrammarTokens();
+	const folder = pathy('src/lib/syntax');
+	await folder.delete({ recursive: true });
+	await pathy('src/lib/syntax/README.md').write(
+		[
+			`# Syntax Highlighting Selectors`,
+			`**⚠️ This folder is auto-generated. Do not edit it directly. ⚠️**`,
+			`This folder contains the results of parsing the syntax highlighting grammars for local VSCode extensions. The files are named after their language scope, e.g. \`selectors.\${languageScope}.ts\``,
+		].join('\n\n'),
+	);
+	for (const [name, selectors] of syntaxDefinitions.entries()) {
+		if (!name) {
+			// Then it's the one containing ALL selectors, which
+			// we don't want to deal with right now.
+			continue;
+		}
+		if (!selectors.size) {
+			console.warn(`No selectors found for ${name}`);
+			continue;
+		}
+		const filename = `selectors.${name}.ts`;
+		const filepath = folder.join(filename);
+		const asTs = [
+			`// ⚠️ This file is auto-generated. Do not edit it directly. ⚠️`,
+			`export const globalScope = '${name}' as const;`,
+			`export const selectors = ${stringify(selectors)} as const;`,
+		].join('\n');
+		await filepath.write(asTs + '\n');
+	}
+}
 
-	// const themeDefinitionsTypescript = themeDefinitions.map((d) => {
-	// 	return `  /**
-	//  * ${d!.description}
-	//  */
-	// '${d!.selector}': ${JSON.stringify(d)}`;
-	// });
-
-	// await themeDefinitionsTypescriptPath.write(
-	// 	`export const appSelectorDefinitions = \n{${themeDefinitionsTypescript.join(
-	// 		',\n',
-	// 	)}\n};\nexport const appSelectorNames: (keyof typeof appSelectorDefinitions)[] = Object.keys(appSelectorDefinitions) as any;\n`,
-	// );
+export async function createTypescriptDefinitions(): Promise<void> {
+	if (!process.argv.includes('--skip-app-definitions')) {
+		console.log('UPDATING APP DEFINITIONS');
+		await createAppSelectorDefintionsTs();
+	}
+	if (!process.argv.includes('--skip-syntax-definitions')) {
+		console.log('UPDATING SYNTAX DEFINITIONS');
+		await createSyntaxSelectorDefintionsTs();
+	}
 }

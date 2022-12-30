@@ -46,7 +46,10 @@ async function findExtensions() {
 	return grammarFiles;
 }
 
-export function findGrammarNames(fileContent: unknown, names: Set<string>) {
+export function findGrammarNames(
+	fileContent: unknown,
+	onFind: (name: string) => void,
+) {
 	function recurse(obj: unknown, isRoot = false): void {
 		if (Array.isArray(obj)) {
 			return obj.forEach((item) => recurse(item));
@@ -61,7 +64,7 @@ export function findGrammarNames(fileContent: unknown, names: Set<string>) {
 				// @ts-expect-error
 				for (const token of value.split(' ')) {
 					if (token.match(/^[a-z0-9_.-]+$/)) {
-						names.add(token);
+						onFind(token);
 					}
 				}
 			} else if (typeof value === 'object' && value !== null) {
@@ -70,35 +73,48 @@ export function findGrammarNames(fileContent: unknown, names: Set<string>) {
 		}
 	}
 	recurse(fileContent, true);
-	return names;
 }
 
-export type ParsedTokens = { [key: string]: ParsedTokens };
-export async function findGrammarTokens(): Promise<ParsedTokens> {
+export type SyntaxSelectors = Map<string, SyntaxSelectors>;
+export async function findGrammarTokens(): Promise<SyntaxSelectors> {
 	const extensions = await findExtensions();
-	const names = new Set<string>();
+	const selectors = new Set<string>();
+	const selectorsByLanguage: { [scopeName: string]: Set<string> } = {
+		'': selectors,
+	};
 	await Promise.all(
 		extensions.map(async (ext) => {
 			const manifest = await ext.read();
 			for (const grammar of manifest.contributes?.grammars ?? []) {
 				const grammarPath = ext.up().join(grammar.path);
 				if (!(await grammarPath.exists())) {
-					console.log("Grammar file doesn't exist:", grammar);
+					console.error("Grammar file doesn't exist:", grammar);
 					continue;
 				}
-				names.add(grammar.scopeName);
+				if (!grammar.scopeName) {
+					console.error("Grammar doesn't have a scopeName:", grammar);
+					continue;
+				}
+				selectors.add(grammar.scopeName);
+				selectorsByLanguage[grammar.scopeName] ||= new Set();
 				const grammarContent = await grammarPath.read();
-				findGrammarNames(grammarContent, names);
+				findGrammarNames(grammarContent, (name) => {
+					selectors.add(name);
+					selectorsByLanguage[grammar.scopeName].add(name);
+				});
 			}
 		}),
 	);
-	const nameChains: ParsedTokens = {};
-	for (const name of names) {
-		let current = nameChains;
-		for (const part of name.split('.')) {
-			current[part] ||= {};
-			current = current[part];
+	const syntaxTokens: SyntaxSelectors = new Map();
+	for (const scope of Object.keys(selectorsByLanguage)) {
+		syntaxTokens.set(scope, syntaxTokens.get(scope) ?? new Map());
+		for (const name of selectorsByLanguage[scope]) {
+			let current = syntaxTokens.get(scope)!;
+			for (const part of name.split('.')) {
+				current.set(part, current.get(part) ?? new Map());
+				current = current.get(part)!;
+			}
 		}
 	}
-	return nameChains;
+	return syntaxTokens;
 }

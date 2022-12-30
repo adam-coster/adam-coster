@@ -1,0 +1,9 @@
+{
+	"extends": "./tsconfig.json",
+	"include": ["./src/**/*.cts"],
+	"compilerOptions": {
+		"module": "CommonJS",
+		"moduleResolution": "NodeNext",
+		"types": ["node", "vscode"]
+	}
+}

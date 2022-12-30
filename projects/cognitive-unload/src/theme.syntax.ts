@@ -3,4 +3,4 @@ import { filter } from './lib/selectors.app.js';
 
 const $ = filter;
 
-export function addAppColors(theme: typeof baseTheme) {}
+export function addSyntaxColors(theme: typeof baseTheme) {}

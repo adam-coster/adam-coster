@@ -7,10 +7,11 @@
 	"engines": {
 		"vscode": "^1.74.0"
 	},
+	"main": "./dist/extension.cjs",
 	"scripts": {
-		"build": "tsc -b && node scripts/update-theme.mjs",
-		"watch": "nodemon -w src -w scripts -e ts,mjs,js --exec \"pnpm run build\"",
-		"update:definitions": "node dist/utils/updateDefinitions.js"
+		"build": "tsc -b && node scripts/update-theme.mjs && pnpm run update:definitions",
+		"watch": "nodemon --delay 2 -w src -w scripts -e ts,cts --ignore src/lib/syntax --ignore src/lib/selectors.appDefinitions.ts --exec \"pnpm run build\"",
+		"update:definitions": "node dist/utils/updateDefinitions.js --skip-app-definitions"
 	},
 	"categories": [
 		"Themes"
@@ -22,17 +23,35 @@
 				"uiTheme": "vs-dark",
 				"path": "./themes/cognitive-unload-color-theme.json"
 			}
-		]
+		],
+		"commands": [
+			{
+				"title": "New Nested File...",
+				"command": "cognitive-unload.createNestedFile",
+				"enablement": "!explorerResourceIsFolder && filesExplorerFocus"
+			}
+		],
+		"menus": {
+			"explorer/context": [
+				{
+					"group": "navigation",
+					"when": "!explorerResourceIsFolder && filesExplorerFocus",
+					"command": "cognitive-unload.createNestedFile"
+				}
+			]
+		}
 	},
 	"devDependencies": {
 		"@bscotch/pathy": "2.5.1",
 		"@bscotch/utility": "6.7.0",
 		"@types/color": "3.0.3",
+		"@types/vscode": "1.74.0",
 		"color": "4.2.3",
 		"eslint": "8.30.0",
 		"node-fetch": "3.3.0",
 		"nodemon": "^2.0.20",
 		"prettier": "2.8.1",
+		"tslib": "2.4.1",
 		"typescript": "4.9.3",
 		"zod": "3.20.2"
 	}
