@@ -1,19 +1,17 @@
 import Color from 'color';
 import { AppSelector } from './selectors.app.js';
+import { kind } from './selectors.base.js';
 import { Selector } from './selectors.js';
+import { SyntaxSelector, SyntaxSelectorsFilter } from './selectors.syntax.js';
+import { SyntaxSelectors } from './selectors.types.js';
 import { Style } from './styles.js';
-import type {
-	Palette,
-	SettingsJson,
-	ThemeJson,
-	TokenColorJson,
-} from './types.js';
+import type { Palette, ThemeJson, TokenColorJson } from './types.js';
 
 export type ColorName<P extends Palette> = keyof P & string;
 
 export class Theme<P extends Palette> {
 	protected _selectors: {
-		selector: Selector | null;
+		selector: Selector | SyntaxSelectorsFilter<any> | null;
 		style: Style<ColorName<P>>;
 	}[] = [];
 
@@ -21,7 +19,19 @@ export class Theme<P extends Palette> {
 		selector: Selector;
 		style: Style<ColorName<P>>;
 	}[] {
-		return this._selectors.filter((s) => s.selector !== null) as any;
+		return this._selectors
+			.filter((s) => s.selector !== null)
+			.map((s) => {
+				const { selector, style } = s;
+				return {
+					style,
+					selector:
+						selector![kind] === 'syntaxSelectorsFilter'
+							? // @ts-expect-error
+							  new SyntaxSelector(selector!.toJSON())
+							: s.selector,
+				};
+			}) as any;
 	}
 
 	/**
@@ -56,34 +66,50 @@ export class Theme<P extends Palette> {
 	 */
 	style(
 		style: ColorName<P> | Style<ColorName<P>>,
-		...selectors: Iterable<Selector>[]
+		...selectors: Array<Iterable<AppSelector> | AppSelector>
+	): this;
+	style<T extends SyntaxSelectors>(
+		style: ColorName<P> | Style<ColorName<P>>,
+		...selectors: Array<SyntaxSelector | SyntaxSelectorsFilter<T>>
+	): this;
+	style(
+		style: ColorName<P> | Style<ColorName<P>>,
+		...selectors: Array<
+			| Iterable<AppSelector | SyntaxSelector>
+			| AppSelector
+			| SyntaxSelector
+			| SyntaxSelectorsFilter
+		>
 	): this {
 		const colorName: ColorName<P> =
 			style instanceof Style ? style.color : style;
 		const color = Color(this.palette[colorName]).hexa();
 		const dereferencedStyle =
 			style instanceof Style ? style.recolor(color) : new Style(color);
-		for (const _selectors of selectors) {
-			for (const selector of _selectors) {
-				// Override if already exists
-				if (selector instanceof AppSelector) {
-					const idx = this.appSelectorIndexes[selector.selector];
-					if (idx !== undefined) {
-						this._selectors[idx] = {
-							selector,
-							style: dereferencedStyle,
-						};
-						continue;
-					} else {
-						this.appSelectorIndexes[selector.selector] = this._selectors.length;
-					}
+		const _selectors = selectors
+			.map((s) => (Symbol.iterator in s ? [...s] : s))
+			.flat();
+
+		for (const selector of _selectors) {
+			// Override if already exists
+			if (selector instanceof AppSelector) {
+				const idx = this.appSelectorIndexes[selector.selector];
+				if (idx !== undefined) {
+					this._selectors[idx] = {
+						selector,
+						style: dereferencedStyle,
+					};
+					continue;
+				} else {
+					this.appSelectorIndexes[selector.selector] = this._selectors.length;
 				}
-				this._selectors.push({
-					selector,
-					style: dereferencedStyle,
-				});
 			}
+			this._selectors.push({
+				selector,
+				style: dereferencedStyle,
+			});
 		}
+
 		return this;
 	}
 
@@ -92,22 +118,21 @@ export class Theme<P extends Palette> {
 		return {
 			name: this.name,
 			semanticHighlighting: true,
-			semanticTokenColors: selectors.reduce((json, selector) => {
-				if (selector.selector.kind === 'semantic') {
-					json[selector.selector.selector] = selector.style.toJSON();
-				}
-				return json;
-			}, {} as { [selector: string]: SettingsJson }),
+			// semanticTokenColors: selectors.reduce((json, selector) => {
+			// 	if (selector.selector[kind] === 'semantic') {
+			// 		json[selector.selector.selector] = selector.style.toJSON();
+			// 	}
+			// 	return json;
+			// }, {} as { [selector: string]: SettingsJson }),
 			colors: selectors.reduce((json, selector) => {
-				if (selector.selector.kind === 'app') {
+				if (selector.selector[kind] === 'app') {
 					json[selector.selector.selector] = selector.style.color;
 				}
 				return json;
 			}, {} as { [selector: string]: string }),
 			tokenColors: selectors.reduce((json, selector) => {
-				if (selector.selector.kind === 'token') {
+				if (selector.selector[kind] === 'syntax') {
 					json.push({
-						name: selector.selector.description,
 						scope: selector.selector.selector,
 						settings: selector.style.toJSON(),
 					});

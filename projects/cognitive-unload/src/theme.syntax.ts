@@ -1,6 +1,8 @@
 import type { theme as baseTheme } from 'theme.base.js';
-import { filter } from './lib/selectors.app.js';
+import { SyntaxSelector } from './lib/selectors.syntax.js';
+import { selectors as tsSelectors } from './lib/syntax/selectors.source.ts.js';
 
-const $ = filter;
-
-export function addSyntaxColors(theme: typeof baseTheme) {}
+const ts = SyntaxSelector.createFilter(tsSelectors);
+export function addSyntaxColors(theme: typeof baseTheme) {
+	theme.style('comment', ts.comment);
+}

@@ -23,10 +23,11 @@ export class Style<Color extends string> {
 	toJSON() {
 		return {
 			foreground: this.color,
-			fontStyle: Object.entries(this.mods)
-				.filter(([, value]) => value)
-				.map(([key]) => key)
-				.join(' '),
+			fontStyle:
+				Object.entries(this.mods)
+					.filter(([, value]) => value)
+					.map(([key]) => key)
+					.join(' ') || undefined,
 		};
 	}
 }

@@ -17,3 +17,5 @@ export type AppSelectorFilter<Domain extends AppSelectorDomain | undefined> =
 	Domain extends AppSelectorComponent
 		? AppSelectorComponentsByDomain<Domain>[number] | 'not'
 		: AppSelectorComponent | AppSelectorDomainPart | 'not';
+
+export type SyntaxSelectors = { [subselector: string]: SyntaxSelectors };

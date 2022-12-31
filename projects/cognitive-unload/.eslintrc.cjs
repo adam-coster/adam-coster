@@ -40,5 +40,6 @@ module.exports = {
 		'no-control-regex': 'warn',
 		'no-misleading-character-class': 'warn',
 		'@typescript-eslint/no-floating-promises': 'error',
+		'no-mixed-spaces-and-tabs': 'off',
 	},
 };
