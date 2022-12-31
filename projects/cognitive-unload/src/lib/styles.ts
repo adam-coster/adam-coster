@@ -20,6 +20,10 @@ export class Style<Color extends string> {
 		return new Style(this.color, { ...this.mods, bold: true });
 	}
 
+	toString() {
+		return this.color;
+	}
+
 	toJSON() {
 		return {
 			foreground: this.color,

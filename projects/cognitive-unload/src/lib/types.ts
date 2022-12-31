@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { Style } from './styles.js';
 
 export type FontModifier = 'underline' | 'bold' | 'italic';
 export type ColorString = `#${string}`;
@@ -20,7 +21,7 @@ export interface ThemeJson {
 	tokenColors: TokenColorJson[];
 }
 
-export type Palette = { [name: string]: string };
+export type Palette = { [name: string]: string | Style<string> };
 
 export type ThemeSelectorDefinition = z.infer<
 	typeof themeSelectorDefinitionSchema
