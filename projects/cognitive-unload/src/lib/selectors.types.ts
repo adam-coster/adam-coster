@@ -18,4 +18,6 @@ export type AppSelectorFilter<Domain extends AppSelectorDomain | undefined> =
 		? AppSelectorComponentsByDomain<Domain>[number] | 'not'
 		: AppSelectorComponent | AppSelectorDomainPart | 'not';
 
-export type SyntaxSelectors = { [subselector: string]: SyntaxSelectors };
+export type SyntaxSelectors = {
+	readonly [subselector: string]: SyntaxSelectors;
+};

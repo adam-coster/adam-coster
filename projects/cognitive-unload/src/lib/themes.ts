@@ -78,14 +78,22 @@ export class Theme<P extends Palette> {
 			| Iterable<AppSelector | SyntaxSelector>
 			| AppSelector
 			| SyntaxSelector
-			| SyntaxSelectorsFilter
+			| SyntaxSelectorsFilter<any>
 		>
 	): this {
 		const colorName: ColorName<P> =
 			style instanceof Style ? style.color : style;
+		const colorDef = this.palette[colorName];
 		const color = Color(this.palette[colorName].toString()).hexa();
-		const dereferencedStyle =
-			style instanceof Style ? style.recolor(color) : new Style(color);
+		const dereferencedStyle = new Style(
+			color,
+			style instanceof Style
+				? style.mods
+				: colorDef instanceof Style
+				? colorDef.mods
+				: undefined,
+		);
+		style instanceof Style ? style.recolor(color) : new Style(color);
 		const _selectors = selectors
 			.map((s) => (Symbol.iterator in s ? [...s] : s))
 			.flat();

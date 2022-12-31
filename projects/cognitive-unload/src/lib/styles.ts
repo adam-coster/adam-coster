@@ -10,13 +10,13 @@ export class Style<Color extends string> {
 		return new Style<NewColor>(color, { ...this.mods });
 	}
 
-	underline() {
+	get underline() {
 		return new Style(this.color, { ...this.mods, underline: true });
 	}
-	italic() {
+	get italic() {
 		return new Style(this.color, { ...this.mods, italic: true });
 	}
-	bold() {
+	get bold() {
 		return new Style(this.color, { ...this.mods, bold: true });
 	}
 
@@ -27,11 +27,10 @@ export class Style<Color extends string> {
 	toJSON() {
 		return {
 			foreground: this.color,
-			fontStyle:
-				Object.entries(this.mods)
-					.filter(([, value]) => value)
-					.map(([key]) => key)
-					.join(' ') || undefined,
+			fontStyle: Object.entries(this.mods)
+				.filter(([, value]) => value)
+				.map(([key]) => key)
+				.join(' '),
 		};
 	}
 }

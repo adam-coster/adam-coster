@@ -4,5 +4,9 @@ import { selectors as tsSelectors } from './lib/syntax/selectors.source.ts.js';
 
 const ts = SyntaxSelector.createFilter(tsSelectors);
 export function addSyntaxColors(theme: typeof baseTheme) {
-	theme.style('comment', ts.comment);
+	theme
+		.style('comment', ts.comment)
+		.style('keyword')
+		.style('function', ts.entity.name.function)
+		.style('string', ts.string);
 }

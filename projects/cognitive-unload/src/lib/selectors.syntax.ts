@@ -100,13 +100,12 @@ export class SyntaxSelector<
 	}
 }
 
-export type SyntaxSelectorsFilter<T extends SyntaxSelectors = SyntaxSelectors> =
-	{
-		readonly [K in keyof T]: SyntaxSelectorsFilter<T[K]>;
-	} & {
-		[kind]: 'syntaxSelectorsFilter';
-		within(other: SyntaxSelectorsFilter): SyntaxSelector;
-		and(other: SyntaxSelectorsFilter): SyntaxSelector;
-		not(other: SyntaxSelectorsFilter): SyntaxSelector;
-		toJSON(): string[];
-	};
+export type SyntaxSelectorsFilter<T> = {
+	readonly [K in keyof T]: SyntaxSelectorsFilter<T[K]>;
+} & {
+	[kind]: 'syntaxSelectorsFilter';
+	within<U>(other: SyntaxSelectorsFilter<U>): SyntaxSelector;
+	and<U>(other: SyntaxSelectorsFilter<U>): SyntaxSelector;
+	not<U>(other: SyntaxSelectorsFilter<U>): SyntaxSelector;
+	toJSON(): string[];
+};
