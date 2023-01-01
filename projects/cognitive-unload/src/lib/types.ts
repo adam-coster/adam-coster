@@ -17,7 +17,7 @@ export interface ThemeJson {
 	name: string;
 	semanticHighlighting?: boolean;
 	semanticTokenColors?: { [selector: string]: SettingsJson };
-	colors: { [selector: string]: string };
+	colors: { [selector: string]: string | undefined };
 	tokenColors: TokenColorJson[];
 }
 

@@ -1,11 +1,13 @@
 import { style } from './lib/styles.js';
 
+const s = style;
+
 export const colors = {
 	// SYNTAX HIGHLIGHTING
 	comment: '#737373',
-	keyword: style('#707070').italic,
-	function: '#a93bd1',
-	string: '#ce9178',
+	keyword: s('#707070').italic,
+	function: '#b1d13b',
+	string: s('#a678ce').underline,
 	// APP COLORS
 	activeForeground: '#dbdcdd',
 	inactiveForeground: '#737373',

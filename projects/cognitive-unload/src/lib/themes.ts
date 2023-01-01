@@ -7,7 +7,12 @@ import { SyntaxSelectors } from './selectors.types.js';
 import { Style } from './styles.js';
 import type { Palette, ThemeJson, TokenColorJson } from './types.js';
 
-export type ColorName<P extends Palette> = keyof P & string;
+export type ColorName<P extends Palette> = (keyof P & string) | undefined;
+
+export type StyleColor<P extends Palette> =
+	| undefined
+	| ColorName<P>
+	| Style<ColorName<P>>;
 
 export class Theme<P extends Palette> {
 	protected _selectors: {
@@ -65,15 +70,15 @@ export class Theme<P extends Palette> {
 	 * Style a group of selectors
 	 */
 	style(
-		style: ColorName<P> | Style<ColorName<P>>,
+		style: StyleColor<P>,
 		...selectors: Array<Iterable<AppSelector> | AppSelector>
 	): this;
 	style<T extends SyntaxSelectors>(
-		style: ColorName<P> | Style<ColorName<P>>,
+		style: StyleColor<P>,
 		...selectors: Array<SyntaxSelector | SyntaxSelectorsFilter<T>>
 	): this;
 	style(
-		style: ColorName<P> | Style<ColorName<P>>,
+		style: StyleColor<P>,
 		...selectors: Array<
 			| Iterable<AppSelector | SyntaxSelector>
 			| AppSelector
@@ -81,10 +86,14 @@ export class Theme<P extends Palette> {
 			| SyntaxSelectorsFilter<any>
 		>
 	): this {
-		const colorName: ColorName<P> =
+		const colorName: ColorName<P> | null =
 			style instanceof Style ? style.color : style;
-		const colorDef = this.palette[colorName];
-		const color = Color(this.palette[colorName].toString()).hexa();
+		const colorDef =
+			typeof colorName === 'string' ? this.palette[colorName] : undefined;
+		const color =
+			typeof colorName === 'string'
+				? Color(this.palette[colorName].toString()).hexa()
+				: undefined;
 		const dereferencedStyle = new Style(
 			color,
 			style instanceof Style
@@ -134,10 +143,10 @@ export class Theme<P extends Palette> {
 			// }, {} as { [selector: string]: SettingsJson }),
 			colors: selectors.reduce((json, selector) => {
 				if (selector.selector[kind] === 'app') {
-					json[selector.selector.selector] = selector.style.color;
+					json[selector.selector.selector] = selector.style.color || undefined;
 				}
 				return json;
-			}, {} as { [selector: string]: string }),
+			}, {} as { [selector: string]: string | undefined }),
 			tokenColors: selectors.reduce((json, selector) => {
 				if (selector.selector[kind] === 'syntax') {
 					json.push({

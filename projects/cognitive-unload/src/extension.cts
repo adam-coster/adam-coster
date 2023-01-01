@@ -4,7 +4,7 @@ import * as vscode from 'vscode';
 export function activate(context: vscode.ExtensionContext) {
 	const disposable = vscode.commands.registerCommand(
 		'cognitive-unload.createNestedFile',
-		(workspacePath: string, selectedFiles: vscode.Uri[]) => {
+		async (workspacePath: string, selectedFiles: vscode.Uri[]) => {
 			// TODO: Figure out what info I have available
 			// Need to get the currently selected file
 			assert.ok(
@@ -15,9 +15,14 @@ export function activate(context: vscode.ExtensionContext) {
 			const { base, ext } = selectedFile.match(/^(?<base>.*)(?<ext>\.[^.]+)$/)
 				?.groups as { base: string; ext: string };
 			const nestedFile = `${base}.nested${ext}`;
-
-			const edit = new vscode.WorkspaceEdit();
-			edit.createFile(vscode.Uri.file(nestedFile));
+			await vscode.workspace.fs.writeFile(
+				vscode.Uri.file(nestedFile),
+				Uint8Array.from([]),
+			);
+			await vscode.commands.executeCommand(
+				'vscode.open',
+				vscode.Uri.file(nestedFile),
+			);
 		},
 	);
 
