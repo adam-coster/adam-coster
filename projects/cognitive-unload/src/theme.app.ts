@@ -97,14 +97,6 @@ export function addAppColors(theme: typeof baseTheme) {
 		.style('error', $.error.not.background)
 		.style('warning', $.warning.not.background)
 
-		// EDITOR
-		.style(
-			'editorLineNumberActiveForeground',
-			$('editorLineNumber.activeForeground'),
-		)
-		.style('warning', $('editor.findMatchBorder'))
-		.style('editorActiveLineBackground', $('editor.lineHighlightBackground'))
-
 		// SYNTAX HIGHLIGHTING
 
 		// TEST (to find elements)

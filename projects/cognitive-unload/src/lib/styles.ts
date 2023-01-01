@@ -1,3 +1,4 @@
+import Color from 'color';
 import type { FontModifier } from './types.js';
 
 export class Style<Color extends string | undefined> {
@@ -8,6 +9,11 @@ export class Style<Color extends string | undefined> {
 
 	recolor<NewColor extends string | undefined>(color: NewColor) {
 		return new Style<NewColor>(color, { ...this.mods });
+	}
+
+	alpha(alpha: number): this {
+		const color = Color(this.color).alpha(alpha).hexa();
+		return new Style(color, { ...this.mods }) as any;
 	}
 
 	get underline() {

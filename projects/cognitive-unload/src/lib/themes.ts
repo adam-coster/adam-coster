@@ -3,7 +3,6 @@ import { AppSelector } from './selectors.app.js';
 import { kind } from './selectors.base.js';
 import { Selector } from './selectors.js';
 import { SyntaxSelector, SyntaxSelectorsFilter } from './selectors.syntax.js';
-import { SyntaxSelectors } from './selectors.types.js';
 import { Style } from './styles.js';
 import type { Palette, ThemeJson, TokenColorJson } from './types.js';
 
@@ -12,11 +11,13 @@ export type ColorName<P extends Palette> = (keyof P & string) | undefined;
 export type StyleColor<P extends Palette> =
 	| undefined
 	| ColorName<P>
-	| Style<ColorName<P>>;
+	| Style<ColorName<P>>
+	| `#${string}`
+	| Style<`#${string}`>;
 
 export class Theme<P extends Palette> {
 	protected _selectors: {
-		selector: Selector | SyntaxSelectorsFilter<any> | null;
+		selector: Selector | SyntaxSelectorsFilter<unknown> | null;
 		style: Style<ColorName<P>>;
 	}[] = [];
 
@@ -69,31 +70,29 @@ export class Theme<P extends Palette> {
 	/**
 	 * Style a group of selectors
 	 */
-	style(
-		style: StyleColor<P>,
-		...selectors: Array<Iterable<AppSelector> | AppSelector>
-	): this;
-	style<T extends SyntaxSelectors>(
-		style: StyleColor<P>,
-		...selectors: Array<SyntaxSelector | SyntaxSelectorsFilter<T>>
-	): this;
-	style(
-		style: StyleColor<P>,
-		...selectors: Array<
-			| Iterable<AppSelector | SyntaxSelector>
-			| AppSelector
+	// style(
+	// 	style: StyleColor<P>,
+	// 	...selectors: Array<Iterable<AppSelector> | AppSelector>
+	// ): this;
+	style<
+		T extends (
 			| SyntaxSelector
-			| SyntaxSelectorsFilter<any>
-		>
-	): this {
+			| AppSelector
+			| Iterable<AppSelector>
+			| SyntaxSelectorsFilter<unknown>
+		)[],
+	>(style: StyleColor<P>, ...selectors: T): this {
 		const colorName: ColorName<P> | null =
 			style instanceof Style ? style.color : style;
 		const colorDef =
-			typeof colorName === 'string' ? this.palette[colorName] : undefined;
-		const color =
 			typeof colorName === 'string'
-				? Color(this.palette[colorName].toString()).hexa()
+				? this.palette[colorName] || colorName
 				: undefined;
+		const rawColor =
+			typeof colorName === 'string'
+				? (this.palette[colorName] || colorName).toString()
+				: undefined;
+		const color = rawColor && Color(rawColor).hexa();
 		const dereferencedStyle = new Style(
 			color,
 			style instanceof Style

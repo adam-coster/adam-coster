@@ -2,15 +2,16 @@ import { assert } from '@bscotch/utility';
 import { BaseSelector, kind } from './selectors.base.js';
 import { SyntaxSelectors } from './selectors.types.js';
 
-export type SyntaxSelectorFilterInput =
-	| SyntaxSelector
-	| SyntaxSelectorsFilter<any>
-	| string;
+export type SyntaxSelectorFilterInput<
+	T extends SyntaxSelectors | unknown = unknown,
+> = SyntaxSelector | SyntaxSelectorsFilter<T> | string;
 
-export class SyntaxSelector<
-	Selector extends string[] = string[],
-> extends BaseSelector<'syntax', Selector> {
-	constructor(selector: Selector) {
+export function syntax(selector: string | string[]): SyntaxSelector {
+	return new SyntaxSelector(Array.isArray(selector) ? selector : [selector]);
+}
+
+export class SyntaxSelector extends BaseSelector<'syntax', string[]> {
+	constructor(selector: string[]) {
 		super('syntax', selector);
 	}
 
@@ -18,13 +19,17 @@ export class SyntaxSelector<
 		return new SyntaxSelector([...this.selector, ...other.selector]);
 	}
 
-	not(other: SyntaxSelector) {
+	not<U>(other: SyntaxSelector | SyntaxSelectorsFilter<U>) {
+		const otherSelector =
+			other instanceof SyntaxSelector
+				? other
+				: new SyntaxSelector(other.toJSON());
 		assert(
-			other.selector.length === 1,
+			otherSelector.selector.length === 1,
 			'not() only works with singleton selectors',
 		);
 		return new SyntaxSelector(
-			this.selector.map((s) => `${s}-${other.selector[0]}`),
+			this.selector.map((s) => `${s}-${otherSelector.selector[0]}`),
 		);
 	}
 
@@ -86,7 +91,7 @@ export class SyntaxSelector<
 						selector.selector.length < 2,
 						'Can only add subselectors to a singleton selector',
 					);
-					const newSelector = selector.selector[0]
+					const newSelector: string = selector.selector[0]
 						? `${selector.selector[0]}.${prop}`
 						: prop;
 					return SyntaxSelector.createFilter(
@@ -100,10 +105,11 @@ export class SyntaxSelector<
 	}
 }
 
-export type SyntaxSelectorsFilter<T> = {
+export type SyntaxSelectorsFilter<T = SyntaxSelectors> = {
 	readonly [K in keyof T]: SyntaxSelectorsFilter<T[K]>;
 } & {
-	[kind]: 'syntaxSelectorsFilter';
+	readonly [kind]: 'syntaxSelectorsFilter';
+} & {
 	within<U>(other: SyntaxSelectorsFilter<U>): SyntaxSelector;
 	and<U>(other: SyntaxSelectorsFilter<U>): SyntaxSelector;
 	not<U>(other: SyntaxSelectorsFilter<U>): SyntaxSelector;

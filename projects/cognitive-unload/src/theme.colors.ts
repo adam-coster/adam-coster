@@ -1,13 +1,4 @@
-import { style } from './lib/styles.js';
-
-const s = style;
-
 export const colors = {
-	// SYNTAX HIGHLIGHTING
-	comment: '#737373',
-	keyword: s('#707070').italic,
-	function: '#b1d13b',
-	string: s('#a678ce').underline,
 	// APP COLORS
 	activeForeground: '#dbdcdd',
 	inactiveForeground: '#737373',
@@ -23,8 +14,6 @@ export const colors = {
 	hoverBackground: '#393939',
 	minimapBackground: '#9f9e9e44',
 	listActiveItemBorder: '#6b6b6b',
-	editorLineNumberActiveForeground: '#dc97fe',
-	editorActiveLineBackground: '#dc97fe33',
 	link: '#61afef',
 	shadow: '#000000',
 	error: '#ff4662',
