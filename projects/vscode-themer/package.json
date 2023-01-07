@@ -1,0 +1,40 @@
+{
+	"name": "@adam-coster/vscode-themer",
+	"version": "0.1.0",
+	"private": true,
+	"type": "module",
+	"bin": {
+		"acvt": "./dist/cli.js"
+	},
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js"
+		}
+	},
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"scripts": {
+		"build": "tsc --build",
+		"watch": "tsc --build --watch"
+	},
+	"dependencies": {
+		"@bscotch/pathy": "2.5.1",
+		"@bscotch/utility": "6.7.0",
+		"color": "4.2.3",
+		"node-fetch": "3.3.0",
+		"semver": "7.3.8",
+		"yargs": "17.6.2",
+		"zod": "3.20.2"
+	},
+	"devDependencies": {
+		"@types/color": "3.0.3",
+		"@types/semver": "7.3.13",
+		"@types/yargs": "17.0.19",
+		"eslint": "8.31.0",
+		"nodemon": "^2.0.20",
+		"prettier": "2.8.2",
+		"tslib": "2.4.1",
+		"typescript": "4.9.4"
+	}
+}
