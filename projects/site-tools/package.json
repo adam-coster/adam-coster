@@ -24,7 +24,7 @@
 		"gray-matter": "4.0.3",
 		"highlight.js": "11.7.0",
 		"lunr": "2.3.9",
-		"marked": "4.2.4",
+		"marked": "4.2.5",
 		"node-html-parser": "6.1.4",
 		"puppeteer": "^19.4.1",
 		"rehype-accessible-emojis": "0.3.2",
@@ -39,10 +39,10 @@
 		"svelte-preprocess": "5.0.0",
 		"tslib": "2.4.1",
 		"unified": "10.1.2",
-		"vite": "4.0.1"
+		"vite": "4.0.4"
 	},
 	"devDependencies": {
-		"@sveltejs/kit": "1.0.1",
+		"@sveltejs/kit": "1.0.7",
 		"@types/hast": "^2.3.4",
 		"@types/lunr": "2.3.4",
 		"@types/marked": "4.0.8",

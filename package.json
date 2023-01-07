@@ -4,7 +4,7 @@
 	"private": true,
 	"type": "module",
 	"engines": {
-		"node": ">=16",
+		"node": ">=18",
 		"pnpm": ">=7"
 	},
 	"scripts": {
@@ -35,31 +35,31 @@
 	},
 	"dependencies": {
 		"@bscotch/trebuchet": "2.7.2",
-		"@types/mocha": "10.0.0",
-		"@typescript-eslint/eslint-plugin": "5.44.0",
-		"@typescript-eslint/parser": "5.44.0",
+		"@types/mocha": "10.0.1",
+		"@typescript-eslint/eslint-plugin": "5.48.0",
+		"@typescript-eslint/parser": "5.48.0",
 		"depcheck": "1.4.3",
-		"eslint-config-prettier": "8.5.0",
+		"eslint-config-prettier": "8.6.0",
 		"eslint-plugin-cypress": "2.12.1",
 		"eslint-plugin-html": "7.1.0",
 		"eslint-plugin-prettier": "4.2.1",
 		"eslint-plugin-svelte3": "4.0.0",
-		"husky": "8.0.2",
+		"husky": "8.0.3",
 		"nano-staged": "0.8.0",
-		"prettier": "2.8.0",
-		"prettier-plugin-svelte": "2.8.1",
+		"prettier": "2.8.2",
+		"prettier-plugin-svelte": "2.9.0",
 		"rimraf": "3.0.2",
-		"svelte": "3.53.1",
-		"syncpack": "8.3.9",
+		"svelte": "3.55.0",
+		"syncpack": "8.4.11",
 		"turbo": "1.6.3",
-		"typescript": "4.9.3"
+		"typescript": "4.9.4"
 	},
 	"trebuchet": {
 		"vscodeWorkspaceConfigPath": false
 	},
 	"pnpm": {
 		"overrides": {
-			"typescript": "4.9.3"
+			"typescript": "4.9.4"
 		}
 	},
 	"syncpack": {
@@ -71,9 +71,9 @@
 	"optionalDependencies": {
 		"nodemon": "^2.0.20"
 	},
-	"packageManager": "pnpm@7.16.1",
+	"packageManager": "pnpm@7.22.0",
 	"devDependencies": {
-		"@types/node": "18.11.17",
-		"eslint": "8.28.0"
+		"@types/node": "18.11.18",
+		"eslint": "8.31.0"
 	}
 }
