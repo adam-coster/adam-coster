@@ -6,7 +6,7 @@ import {
 } from '../lib/types.js';
 import { stringify } from '../utils/json.js';
 import { toSortedObject } from '../utils/sorts.js';
-import { findGrammarTokens } from './updateDefinitions.tm.js';
+import { compileGrammars } from './definitions.tm.js';
 
 async function fetchDefinitionsHtml(): Promise<string> {
 	const themeDefinitionsUrl = `https://code.visualstudio.com/api/references/theme-color`;
@@ -222,7 +222,7 @@ async function createSyntaxSelectorDefintionsTs(dir: Pathy) {
 	}[] = [];
 	const folder = dir.join('lib');
 	// Write syntax highlighting selectors
-	const syntaxDefinitions = await findGrammarTokens();
+	const syntaxDefinitions = await compileGrammars();
 	await folder.delete({ recursive: true });
 	for (const [name, selectors] of syntaxDefinitions.entries()) {
 		if (!name) {

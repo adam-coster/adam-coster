@@ -1,5 +1,5 @@
 {
-	"name": "@adam-coster/vscode-themer",
+	"name": "@adam-coster/themer",
 	"version": "0.1.0",
 	"private": true,
 	"type": "module",

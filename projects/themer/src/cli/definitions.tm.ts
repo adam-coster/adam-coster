@@ -1,23 +1,23 @@
 // Textmate Grammar Discovery
 import { Pathy, pathy } from '@bscotch/pathy';
-import os from 'os';
 import semver from 'semver';
+import { stringify } from '../utils/json.js';
+import { extensionRoots } from './definitions.path.js';
 
-const home = pathy(os.homedir());
-const vscodeInstallRoot =
-	os.platform() === 'win32'
-		? pathy(process.env.LOCALAPPDATA).join('Programs')
-		: pathy(`/usr/share`);
+type LanguageId = string;
 
-const VSCODE_EXTENSIONS_ROOT = [
-	home.join('.vscode', 'extensions'),
-	home.join('.vscode-insiders', 'extensions'),
-];
-const VSCODE_INSTALL_ROOTS = (
-	os.platform() === 'win32'
-		? ['Microsoft VS Code', 'Microsoft VS Code Insiders']
-		: ['code', 'code-insiders']
-).map((name) => vscodeInstallRoot.join(name));
+interface GrammarConfig {
+	scopeName: string;
+	path: string;
+	language?: LanguageId;
+	embededLanguages?: { [scope: string]: string };
+	/**
+	 * List of scopes this grammar is injected into.
+	 * Could be the scope for a top-level language, or
+	 * something more internal (for modularization)
+	 */
+	injectTo?: string[];
+}
 
 interface ExtensionManifest {
 	name: string;
@@ -25,21 +25,16 @@ interface ExtensionManifest {
 	version: string;
 	displayName: string;
 	contributes: {
-		grammars?: {
-			scopeName: string;
-			path: string;
-			language?: string;
-			embededLanguages?: { [scope: string]: string };
-			/** List of language scopes this grammar is injected into */
-			injectTo?: string[];
-		}[];
+		grammars?: GrammarConfig[];
 		languages?: {
+			/** Language ID */
 			id: string;
 			aliases?: string[];
 			extensions?: string[];
 			configuration?: string;
 		}[];
 		semanticTokenScopes?: {
+			/** Language ID */
 			language: string;
 			scopes: {
 				[scope: string]: string[];
@@ -48,11 +43,7 @@ interface ExtensionManifest {
 	};
 }
 
-async function findExtensions() {
-	const extensionRoots = VSCODE_INSTALL_ROOTS.map((r) =>
-		r.join('resources', 'app', 'extensions'),
-	).concat(...VSCODE_EXTENSIONS_ROOT);
-
+async function findExtensionManifests(): Promise<ExtensionManifest[]> {
 	/** May have multiple installs in different locations, so when duplicate names found only keep the one with the highest version. */
 	const extensions: Map<string, ExtensionManifest> = new Map();
 	await Promise.all(
@@ -125,13 +116,63 @@ export function findGrammarNames(
 	recurse(fileContent, true);
 }
 
+export class Grammar {
+	static grammars: Grammar[] = [];
+
+	selectors: SyntaxSelectors = new Map();
+	scopeNames: Set<string> = new Set();
+
+	constructor(readonly languageId: string) {}
+
+	static ensureGrammar(languageId: string): Grammar {
+		let grammar = Grammar.grammars.find((g) => g.languageId === languageId);
+		if (!grammar) {
+			grammar = new Grammar(languageId);
+			Grammar.grammars.push(grammar);
+		}
+		return grammar;
+	}
+
+	static compile(manifests: ExtensionManifest[]) {
+		// First find all languages and scopeNames that map onto them
+		const languages = new Set<string>();
+		const languageIdToScopeName: Map<string, Set<string>> = new Map();
+		for (const manifest of manifests) {
+			for (const grammarConfig of manifest.contributes?.grammars || []) {
+				if (!grammarConfig.language) {
+					continue;
+				}
+				languages.add(grammarConfig.language);
+				const grammar = Grammar.ensureGrammar(grammarConfig.language);
+				if (grammarConfig.scopeName) {
+					grammar.scopeNames.add(grammarConfig.scopeName);
+				}
+			}
+			for (const semantics of manifest.contributes?.semanticTokenScopes || []) {
+				if (semantics.language) {
+					languages.add(semantics.language);
+				}
+			}
+		}
+
+		//
+		return {
+			languages,
+			languageIdToScopeName,
+		};
+	}
+}
+
 export type SyntaxSelectors = Map<string, SyntaxSelectors>;
-export async function findGrammarTokens(): Promise<SyntaxSelectors> {
-	const extensions = await findExtensions();
+export async function compileGrammars(): Promise<SyntaxSelectors> {
+	const extensions = await findExtensionManifests();
 	const selectors = new Set<string>();
 	const selectorsByLanguage: { [scopeName: string]: Set<string> } = {
 		'': selectors,
 	};
+	const compiled = Grammar.compile(extensions);
+	await pathy('tmp/grammars.json').write(stringify(compiled));
+
 	/** scope:name pairs */
 	await Promise.all(
 		extensions.map(async (manifest) => {

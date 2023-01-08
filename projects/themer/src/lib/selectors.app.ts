@@ -4,7 +4,7 @@ import {
 	appSelectorDomainParts,
 	appSelectorDomains,
 	appSelectors,
-} from './selectors.appDefinitions.js';
+} from '../theme-definitions/app.js';
 import { BaseSelector } from './selectors.base.js';
 import type {
 	AppSelectorDomain,

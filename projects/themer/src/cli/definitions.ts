@@ -1,4 +1,4 @@
-import { createTypescriptDefinitions } from './updateDefinitions.lib.js';
+import { createTypescriptDefinitions } from './definitions.lib.js';
 import yargs from 'yargs/yargs';
 import { hideBin } from 'yargs/helpers';
 
