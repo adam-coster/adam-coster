@@ -104,7 +104,6 @@ export class Grammar {
 				config = JSON.parse(content);
 			} catch {
 				config = plist.parse(content);
-				await pathy('tmp').join(`${path.name}.json`).write(config);
 			}
 		}
 		const grammarTokens = new Set<string>();
