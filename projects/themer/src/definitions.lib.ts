@@ -3,10 +3,10 @@ import fetch from 'node-fetch';
 import {
 	ThemeSelectorDefinitions,
 	themeSelectorDefinitionsSchema,
-} from '../lib/types.js';
-import { stringify } from '../utils/json.js';
-import { toSortedObject } from '../utils/sorts.js';
-import { compileGrammars } from './definitions.tm.js';
+} from './lib/types.js';
+import { stringify } from './utils/json.js';
+import { toSortedObject } from './utils/sorts.js';
+import { compileGrammars } from './definitions.grammars.js';
 
 async function fetchDefinitionsHtml(): Promise<string> {
 	const themeDefinitionsUrl = `https://code.visualstudio.com/api/references/theme-color`;

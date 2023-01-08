@@ -30,7 +30,7 @@
 			"pnpm prettier --config .prettierrc -w -u"
 		],
 		"*.{ts,svelte}": [
-			"pnpm eslint --fix --cache --quiet --ext ts"
+			"pnpm eslint --fix --cache --ext ts"
 		]
 	},
 	"dependencies": {

@@ -4,7 +4,7 @@
 	"private": true,
 	"type": "module",
 	"bin": {
-		"acvt": "./dist/cli.js"
+		"acthemer-typegen-vscode": "./dist/cli/generate-definitions.js"
 	},
 	"exports": {
 		".": {
@@ -16,19 +16,22 @@
 	"types": "dist/index.d.ts",
 	"scripts": {
 		"build": "tsc --build",
-		"watch": "tsc --build --watch"
+		"watch": "tsc --build --watch",
+		"typegen": "pnpm build && node ./dist/cli/generate-definitions.js"
 	},
 	"dependencies": {
 		"@bscotch/pathy": "2.5.1",
 		"@bscotch/utility": "6.7.0",
 		"color": "4.2.3",
 		"node-fetch": "3.3.0",
+		"plist": "3.0.6",
 		"semver": "7.3.8",
 		"yargs": "17.6.2",
 		"zod": "3.20.2"
 	},
 	"devDependencies": {
 		"@types/color": "3.0.3",
+		"@types/plist": "3.0.2",
 		"@types/semver": "7.3.13",
 		"@types/yargs": "17.0.19",
 		"eslint": "8.31.0",
