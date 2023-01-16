@@ -4,7 +4,8 @@
 		"types": ["node"],
 		"outDir": "dist",
 		"rootDir": "src",
-		"baseUrl": "src"
+		"baseUrl": "src",
+		"noEmitOnError": false
 	},
 	"extends": "../../tsconfig.json"
 }

@@ -26,7 +26,7 @@ export const identityTypes = [
 	'social',
 	'reference',
 ] as const;
-export type IdentityType = typeof identityTypes[number];
+export type IdentityType = (typeof identityTypes)[number];
 interface DigitalIdentity {
 	name: string;
 	icon: IconDefinition;

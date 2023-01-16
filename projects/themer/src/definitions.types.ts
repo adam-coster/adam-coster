@@ -2,6 +2,8 @@ import type { Pathy } from '@bscotch/pathy';
 
 export type LanguageId = string;
 
+export type NestedScopes = { [scope: string]: NestedScopes };
+
 export interface GrammarConfig {
 	scopeName: string;
 	path: string;

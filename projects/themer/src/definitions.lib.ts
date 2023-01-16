@@ -1,12 +1,12 @@
 import { Pathy, pathy } from '@bscotch/pathy';
 import fetch from 'node-fetch';
+import { Grammar } from './definitions.grammars.js';
 import {
 	ThemeSelectorDefinitions,
 	themeSelectorDefinitionsSchema,
 } from './lib/types.js';
 import { stringify } from './utils/json.js';
 import { toSortedObject } from './utils/sorts.js';
-import { compileGrammars } from './definitions.grammars.js';
 
 async function fetchDefinitionsHtml(): Promise<string> {
 	const themeDefinitionsUrl = `https://code.visualstudio.com/api/references/theme-color`;
@@ -213,38 +213,6 @@ async function createAppSelectorDefintionsTs(dir: Pathy) {
 	await themeDefinitionsTypescriptPath.write(ts);
 }
 
-async function createSyntaxSelectorDefintionsTs(dir: Pathy) {
-	const barrelFile = dir.join('syntax.ts');
-	const barrelExports: {
-		scope: string;
-		name: string;
-		file: string;
-	}[] = [];
-	const folder = dir.join('lib');
-	// Write syntax highlighting selectors
-	const syntaxDefinitions = await compileGrammars();
-	await folder.delete({ recursive: true });
-	for (const [name, selectors] of syntaxDefinitions.entries()) {
-		if (!name) {
-			// Then it's the one containing ALL selectors, which
-			// we don't want to deal with right now.
-			continue;
-		}
-		if (!selectors.size) {
-			console.warn(`No selectors found for ${name}`);
-			continue;
-		}
-		const filename = `${name}.ts`;
-		const filepath = folder.join(filename);
-		const asTs = [
-			`// ⚠️ This file is auto-generated. Do not edit it directly. ⚠️`,
-			`export const globalScope = '${name}' as const;`,
-			`export const selectors = ${stringify(selectors)} as const;`,
-		].join('\n');
-		await filepath.write(asTs + '\n');
-	}
-}
-
 export async function createTypescriptDefinitions(
 	outDir: string,
 ): Promise<void> {
@@ -256,6 +224,6 @@ export async function createTypescriptDefinitions(
 	}
 	if (!process.argv.includes('--skip-syntax-definitions')) {
 		console.log('UPDATING SYNTAX DEFINITIONS');
-		await createSyntaxSelectorDefintionsTs(dir);
+		await Grammar.compile(dir.join('grammars'));
 	}
 }

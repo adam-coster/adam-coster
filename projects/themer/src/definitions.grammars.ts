@@ -1,16 +1,16 @@
 // Textmate Grammar Discovery
-import { Pathy, pathy } from '@bscotch/pathy';
-import { stringify } from './utils/json.js';
-import { ExtensionManifest } from './definitions.types.js';
-import { findExtensionManifests } from './definitions.path.js';
+import { Pathy } from '@bscotch/pathy';
 import { ok } from 'assert';
 import plist from 'plist';
+import { findExtensionManifests } from './definitions.path.js';
+import { NestedScopes } from './definitions.types.js';
+import { stringify } from './utils/json.js';
 
 export class Grammar {
 	static grammars: Grammar[] = [];
 
 	tokens: Set<string> = new Set();
-	selectors: SyntaxSelectors = new Map();
+	semanticTokens: Set<string> = new Set();
 	scopeNames: Set<string> = new Set();
 
 	constructor(readonly languageId: string) {}
@@ -19,11 +19,38 @@ export class Grammar {
 		return this.languageId.replace(/[^a-z0-9_-]/gi, '_');
 	}
 
+	toTs() {
+		const tokens: NestedScopes = [...this.tokens]
+			.sort()
+			.map((t) => t.split('.'))
+			.reduce((acc, scopes) => {
+				let scopeHolder = acc;
+				for (const scope of scopes) {
+					scopeHolder[scope] ||= {};
+					scopeHolder = scopeHolder[scope];
+				}
+				return acc;
+			}, {} as NestedScopes);
+
+		return (
+			[
+				`export const scopeNames = Object.freeze(${stringify([
+					...this.scopeNames,
+				])} as const);`,
+				`export const semanticTokens = Object.freeze(${stringify([
+					...this.semanticTokens,
+				])} as const);`,
+				`export const tokens = Object.freeze(${stringify(tokens)} as const);`,
+			].join('\n') + '\n'
+		);
+	}
+
 	toJSON() {
 		return {
 			languageId: this.languageId,
+			pathFriendlyLanguageId: this.pathFriendlyLanguageId,
 			tokens: this.tokens,
-			selectors: this.selectors,
+			semanticTokens: this.semanticTokens,
 			scopeNames: this.scopeNames,
 		};
 	}
@@ -37,7 +64,8 @@ export class Grammar {
 		return grammar;
 	}
 
-	static async compile(manifests: ExtensionManifest[]): Promise<Grammar[]> {
+	static async compile(outDir: Pathy): Promise<Grammar[]> {
+		const manifests = await findExtensionManifests();
 		// First pass to identify all languages and
 		// their scope names, creating Grammar instances
 		// along the way.
@@ -53,7 +81,10 @@ export class Grammar {
 			}
 			for (const semantics of manifest.contributes?.semanticTokenScopes || []) {
 				if (semantics.language) {
-					Grammar.ensureGrammar(semantics.language);
+					const grammar = Grammar.ensureGrammar(semantics.language);
+					Object.keys(semantics.scopes).forEach((scope) =>
+						grammar.semanticTokens.add(scope),
+					);
 				}
 			}
 		}
@@ -86,6 +117,11 @@ export class Grammar {
 			}
 		}
 
+		await outDir.ensureDirectory();
+		for (const grammar of Grammar.grammars) {
+			const path = outDir.join(`${grammar.pathFriendlyLanguageId}.ts`);
+			await path.write(grammar.toTs());
+		}
 		return Grammar.grammars;
 	}
 
@@ -137,57 +173,4 @@ export class Grammar {
 		recurse(config, true);
 		return grammarTokens;
 	}
-}
-
-export type SyntaxSelectors = Map<string, SyntaxSelectors>;
-export async function compileGrammars(): Promise<SyntaxSelectors> {
-	const extensions = await findExtensionManifests();
-	const selectors = new Set<string>();
-	const selectorsByLanguage: { [scopeName: string]: Set<string> } = {
-		'': selectors,
-	};
-	const compiled = Grammar.compile(extensions);
-	await pathy('tmp/grammars.json').write(stringify(compiled));
-
-	return new Map();
-
-	// /** scope:name pairs */
-	// await Promise.all(
-	// 	extensions.map(async (manifest) => {
-	// 		const grammars = (manifest.contributes.grammars || []).filter(
-	// 			(g) => g.language,
-	// 		);
-	// 		const semantics = manifest.contributes.semanticTokenScopes || [];
-	// 		for (const grammar of grammars) {
-	// 			const grammarPath = manifest.dir.join(grammar.path);
-	// 			if (!(await grammarPath.exists())) {
-	// 				// console.error("Grammar file doesn't exist:", grammar);
-	// 				continue;
-	// 			}
-	// 			if (!grammar.scopeName) {
-	// 				// console.error("Grammar doesn't have a scopeName:", grammar);
-	// 				continue;
-	// 			}
-	// 			selectors.add(grammar.scopeName);
-
-	// 			selectorsByLanguage[grammar.scopeName] ||= new Set();
-	// 			await Grammar.grammarTokensFromConfig(grammarPath, (name) => {
-	// 				selectors.add(name);
-	// 				selectorsByLanguage[grammar.scopeName].add(name);
-	// 			});
-	// 		}
-	// 	}),
-	// );
-	// const syntaxTokens: SyntaxSelectors = new Map();
-	// for (const scope of Object.keys(selectorsByLanguage)) {
-	// 	syntaxTokens.set(scope, syntaxTokens.get(scope) ?? new Map());
-	// 	for (const name of selectorsByLanguage[scope]) {
-	// 		let current = syntaxTokens.get(scope)!;
-	// 		for (const part of name.split('.')) {
-	// 			current.set(part, current.get(part) ?? new Map());
-	// 			current = current.get(part)!;
-	// 		}
-	// 	}
-	// }
-	// return syntaxTokens;
 }

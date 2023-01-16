@@ -6,7 +6,6 @@
 	"markdown.extension.toc.updateOnSave": true,
 	"markdown.extension.toc.slugifyMode": "github",
 	"markdown.extension.list.indentationSize": "adaptive",
-	"markdown.extension.syntax.decorations": true,
 	"json.schemas": [
 		{
 			"fileMatch": ["cdk.json"],
