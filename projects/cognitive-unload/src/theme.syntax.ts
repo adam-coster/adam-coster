@@ -1,8 +1,12 @@
+import {
+	filter,
+	style,
+	syntax,
+	SyntaxSelector,
+	underline,
+} from '@adam-coster/themer';
+import { tokens as tsSelectors } from '@adam-coster/themer/grammars/typescript';
 import type { theme as baseTheme } from 'theme.base.js';
-import { filter } from './lib/selectors.app.js';
-import { syntax, SyntaxSelector } from './lib/selectors.syntax.js';
-import { style, underline } from './lib/styles.js';
-import { selectors as tsSelectors } from './lib/syntax/selectors.source.ts.js';
 
 const ts = SyntaxSelector.createFilter(tsSelectors);
 const $ = filter;

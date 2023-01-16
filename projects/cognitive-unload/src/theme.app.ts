@@ -1,5 +1,5 @@
+import { filter } from '@adam-coster/themer';
 import type { theme as baseTheme } from 'theme.base.js';
-import { filter } from './lib/selectors.app.js';
 
 const $ = filter;
 const $list = $('list');

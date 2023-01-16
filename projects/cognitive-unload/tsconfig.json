@@ -5,7 +5,8 @@
 		"outDir": "dist",
 		"rootDir": "src",
 		"baseUrl": "src",
-		"composite": true
+		"composite": true,
+		"moduleResolution": "NodeNext"
 	},
 	"references": [{ "path": "./tsconfig.cjs.json" }]
 }

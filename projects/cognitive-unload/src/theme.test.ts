@@ -1,5 +1,4 @@
-import { SyntaxSelector } from './lib/selectors.syntax.js';
-import { Theme } from './lib/themes.js';
+import { SyntaxSelector, Theme } from '@adam-coster/themer';
 
 const sampleSelectors = {
 	hello: {

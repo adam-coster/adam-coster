@@ -3,13 +3,14 @@
 	"version": "0.1.0",
 	"private": true,
 	"type": "module",
-	"bin": {
-		"acthemer-typegen-vscode": "./dist/cli/generate-definitions.js"
-	},
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
 			"import": "./dist/index.js"
+		},
+		"./grammars/*": {
+			"types": "./dist/theme-definitions/grammars/*.d.ts",
+			"import": "./dist/theme-definitions/grammars/*.js"
 		}
 	},
 	"main": "dist/index.js",

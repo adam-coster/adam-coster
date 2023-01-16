@@ -42,6 +42,7 @@
 		}
 	},
 	"devDependencies": {
+		"@adam-coster/themer": "workspace:*",
 		"@bscotch/pathy": "2.5.1",
 		"@bscotch/utility": "6.7.0",
 		"@types/color": "3.0.3",
