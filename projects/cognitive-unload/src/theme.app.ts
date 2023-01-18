@@ -6,98 +6,91 @@ const $list = $('list');
 const $button = $('button');
 const $tab = $('tab');
 const $activityBar = $('activityBar');
+const $statusBar = $('statusBar');
+const $statusBarItem = $('statusBarItem');
+const $gitDecoration = $('gitDecoration');
 
 export function addAppColors(theme: typeof baseTheme) {
 	// FOREGROUND (DEFAULT)
 	theme
-		.style('inactiveForeground', $('foreground'))
-		.style(
-			'activeForeground',
-			$.foreground.active,
-			$.foreground.hover,
-			$.foreground.focus,
-		)
-
-		// BACKGROUND (DEFAULT)
-		.style('activeBackground', $.background.not.inactive)
-		.style('inactiveBackground', $.background.inactive)
-		.style('hoverBackground', $.drop.background, $.selection.background)
-
-		// BORDERS (DEFAULT)
-		// .style('activeBorder', $.border.active, $.outline.not.inactive)
-		// .style('inactiveBorder', $.border, $.border.inactive, $.separator)
-
-		// ACTIVITY BAR
-		.style('activityBarBackground', $activityBar.background)
-		.style('inactiveForeground', $activityBar.foreground.inactive)
-		.style('activityBarBackground', $activityBar.border)
-		.style('hoverBackground', $activityBar.background.active)
-		.style(
-			'activeForeground',
-			$activityBar.active.border,
-			$activityBar.drop.border,
-		)
-
-		// SIDEBARS
-		.style('sidebarBackground', $('sideBar.background'))
-
-		// STATUS BAR
-		.style('inactiveForeground', $('statusBar.foreground'))
-
-		// MINIMAP
-		.style('minimapBackground', $('minimapSlider').background)
-
-		// BADGES (DEFAULT)
-		.style('badgeBackground', $.badge)
-		.style('badgeForeground', $.badge.foreground)
-
-		// SLIDERS
-		.style('inactiveForeground', $.scrollbar.slider)
-		.style('scrollbarActive', $.scroll.background)
-
-		// LISTS (e.g. File Explorer)
-		.style('hoverBackground', $list.active.background)
-		.style('listActiveItemBorder', $('list').active.border)
-
-		// NOTIFICATIONS
-		.style('warning', $('notificationToast.border'))
-		.style('activeForeground', $('notificationCenterHeader.foreground'))
-		.style('listActiveItemBorder', $('notificationCenter.border'))
-
-		// BUTTONS
-		.style('hoverBackground', $button.background)
-		.style('activeForeground', $button.foreground)
-		.style('activeBorder', $button.border)
-		.style('inactiveBackground', $button.secondary.background)
-		.style('listActiveItemBorder', $button.hover)
-
-		// TOOLBAR
-		.style('hoverBackground', $('toolbar.hoverBackground'))
-
-		// TABS
-		.style('hoverBackground', $tab.background)
-		.style(
-			'inactiveForeground',
-			$tab.foreground.inactive,
-			$tab.foreground.unfocused,
-		)
-		.style(
-			'inactiveBackground',
-			$tab.background.unfocused,
-			$tab.background.inactive,
-		)
-		.style('activeForeground', $tab.hover.border)
-
-		// STICKY SCROLL
-		.style('hoverBackground', $.editor.sticky.scroll)
 
 		// TEXT (DEFAULT)
 		.style('link', $.link.foreground)
 		.style('shadow', $.shadow)
 		.style('error', $.error.not.background)
 		.style('warning', $.warning.not.background)
+		.style('foregroundSubtle', $('foreground'))
+		.style(
+			'foreground',
+			$.foreground.active,
+			$.foreground.hover,
+			$.foreground.focus,
+		)
+		.style('background', $.background)
+		.style('backgroundBump', $.border)
+		.style('backgroundBump', $.outline)
 
-		// SYNTAX HIGHLIGHTING
+		// LIST
+		.style('errorSubtle', $list.error.foreground)
+		.style('warningSubtle', $list.warning)
+		.style('backgroundBump', $list.active.selection.background)
+		.style('foregroundSubtle', $list.outline)
+		.style('foregroundSubtle', $list.hover.foreground)
+		.style('backgroundBump', $list.hover.background)
+
+		// MINIMAP
+		.style('highlightSubtle', $('minimapSlider').background)
+
+		// BADGES (DEFAULT)
+		.style('foregroundSubtle', $.badge)
+		.style('background', $.badge.foreground)
+
+		// SLIDERS
+		.style('highlightSubtle', $.scrollbar.slider)
+		.style('highlightSubtle', $.scroll.background)
+
+		// NOTIFICATIONS
+		.style('warning', $('notificationToast.border'))
+		.style('foreground', $('notificationCenterHeader.foreground'))
+		.style('foreground', $('notificationCenter.border'))
+
+		// BUTTONS
+		.style('foregroundSubtle', $button.background)
+		.style('background', $button.foreground)
+		.style('foregroundSubtle', $button.border)
+		.style('background', $button.secondary.background)
+		.style('foregroundSubtle', $button.hover)
+
+		// TABS
+		.style('backgroundSpotlit', $tab.background)
+		.style(
+			'foregroundSubtle',
+			$tab.foreground.inactive,
+			$tab.foreground.unfocused,
+		)
+		.style('background', $tab.background.unfocused, $tab.background.inactive)
+		.style('foreground', $tab.hover.border)
+
+		// STATUS BAR
+		.style('foregroundSubtle', $statusBar.foreground)
+		.style('backgroundGlowup', $statusBarItem.hover.background)
+		.style('foreground', $statusBarItem.prominent.foreground)
+		.style('error', $statusBarItem.error.foreground)
+		.style('warning', $statusBarItem.warning.foreground)
+		.style('foreground', $statusBarItem.hover.foreground)
+
+		// STICKY SCROLL
+		.style('backgroundSpotlit', $.editor.sticky.scroll)
+
+		// ACTIVITY BAR
+		.style('foreground', $activityBar.foreground)
+		.style('foregroundSubtle', $activityBar.foreground.inactive)
+		.style('background', $activityBar.background)
+		.style('backgroundGlowup', $activityBar.background.active)
+		.style('foreground', $activityBar.active.border)
+
+		// Git
+		.style('foregroundBump', $gitDecoration.modified.foreground)
 
 		// TEST (to find elements)
 		// .style('test', $.background.inactive)

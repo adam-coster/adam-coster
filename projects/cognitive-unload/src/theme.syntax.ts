@@ -26,7 +26,7 @@ export function addSyntaxColors(theme: typeof baseTheme) {
 		// Cognitively redundant due to context
 		.style(s('#707070').i, ts.entity.name.function, ts.keyword)
 		.style('#5d6189', ts.punctuation.separator)
-		.style('inactiveForeground', ts.punctuation.terminator)
+		.style('foregroundSubtle', ts.punctuation.terminator)
 
 		// Things that do stuff
 		.style('#80e397', ts.entity.name.function)
@@ -56,7 +56,7 @@ export function addSyntaxColors(theme: typeof baseTheme) {
 			ts.constant.character.within($regexp),
 		)
 		.style(
-			s('inactiveForeground').underline,
+			s('foregroundSubtle').underline,
 			ts.punctuation.definition.group,
 			ts.keyword.control.within($regexp),
 		)
@@ -74,7 +74,7 @@ export function addSyntaxColors(theme: typeof baseTheme) {
 
 		// Default for control keywords
 		// (like import, export, as, await, etc)
-		.style(s('inactiveForeground').italic, ts.keyword.control, ts.storage)
+		.style(s('foregroundSubtle').italic, ts.keyword.control, ts.storage)
 
 		// EDITOR
 		.style(c.currentLine, $('editorLineNumber.activeForeground'))
