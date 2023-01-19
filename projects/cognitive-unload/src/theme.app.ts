@@ -14,7 +14,7 @@ export function addAppColors(theme: typeof baseTheme) {
 	// FOREGROUND (DEFAULT)
 	theme
 
-		// TEXT (DEFAULT)
+		// BASE
 		.style('link', $.link.foreground)
 		.style('shadow', $.shadow)
 		.style('error', $.error.not.background)
@@ -29,25 +29,36 @@ export function addAppColors(theme: typeof baseTheme) {
 		.style('background', $.background)
 		.style('backgroundBump', $.border)
 		.style('backgroundBump', $.outline)
+		.style('backgroundSelected', $.selection.background)
+
+		// SYMBOLS
+		.style('foregroundBump', $('symbolIcon').foreground)
+
+		// INPUT
+		.style('foreground', $('input.foreground'))
+		.style('backgroundGlowup', $.input.border)
 
 		// LIST
 		.style('errorSubtle', $list.error.foreground)
 		.style('warningSubtle', $list.warning)
 		.style('backgroundBump', $list.active.selection.background)
 		.style('foregroundSubtle', $list.outline)
-		.style('foregroundSubtle', $list.hover.foreground)
+		.style('foreground', $list.hover.foreground)
 		.style('backgroundBump', $list.hover.background)
 
+		// Git
+		.style('foregroundBump', $gitDecoration.modified.foreground)
+
 		// MINIMAP
-		.style('highlightSubtle', $('minimapSlider').background)
+		.style('slider', $('minimapSlider').background)
 
 		// BADGES (DEFAULT)
 		.style('foregroundSubtle', $.badge)
 		.style('background', $.badge.foreground)
 
 		// SLIDERS
-		.style('highlightSubtle', $.scrollbar.slider)
-		.style('highlightSubtle', $.scroll.background)
+		.style('slider', $.scrollbar.slider)
+		.style('slider', $.scroll.background)
 
 		// NOTIFICATIONS
 		.style('warning', $('notificationToast.border'))
@@ -62,25 +73,22 @@ export function addAppColors(theme: typeof baseTheme) {
 		.style('foregroundSubtle', $button.hover)
 
 		// TABS
-		.style('backgroundSpotlit', $tab.background)
+		.style('backgroundBump', $tab.background)
+		.style('foreground', $tab.foreground)
 		.style(
 			'foregroundSubtle',
 			$tab.foreground.inactive,
 			$tab.foreground.unfocused,
 		)
 		.style('background', $tab.background.unfocused, $tab.background.inactive)
-		.style('foreground', $tab.hover.border)
+		.style('foregroundSubtle', $tab.hover.border)
+		.style('foreground', $('tab.activeBorder'))
 
 		// STATUS BAR
-		.style('foregroundSubtle', $statusBar.foreground)
+		.style('foregroundBump', $statusBar.foreground)
 		.style('backgroundGlowup', $statusBarItem.hover.background)
-		.style('foreground', $statusBarItem.prominent.foreground)
 		.style('error', $statusBarItem.error.foreground)
 		.style('warning', $statusBarItem.warning.foreground)
-		.style('foreground', $statusBarItem.hover.foreground)
-
-		// STICKY SCROLL
-		.style('backgroundSpotlit', $.editor.sticky.scroll)
 
 		// ACTIVITY BAR
 		.style('foreground', $activityBar.foreground)
@@ -88,9 +96,6 @@ export function addAppColors(theme: typeof baseTheme) {
 		.style('background', $activityBar.background)
 		.style('backgroundGlowup', $activityBar.background.active)
 		.style('foreground', $activityBar.active.border)
-
-		// Git
-		.style('foregroundBump', $gitDecoration.modified.foreground)
 
 		// TEST (to find elements)
 		// .style('test', $.background.inactive)

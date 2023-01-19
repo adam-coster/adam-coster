@@ -1,14 +1,15 @@
 export const colors = {
 	background: '#1a1a1a',
-	backgroundBump: '#202020',
+	backgroundBump: '#252525',
 	backgroundSpotlit: '#2d2d2d',
+	backgroundSelected: '#5d5d5d3c',
 	backgroundGlowup: '#3c3c3c',
 	foregroundSubtle: '#737373',
-	foregroundBump: '#99919e',
+	foregroundBump: '#8390a7',
 	foreground: '#dbdcdd',
-	highlightSubtle: '#ffffff55',
-	errorSubtle: '#b73a4e',
-	warningSubtle: '#76621e',
+	slider: '#8e8e8e46',
+	errorSubtle: '#d06c7c',
+	warningSubtle: '#afa859',
 
 	// APP COLORS
 	link: '#61afef',

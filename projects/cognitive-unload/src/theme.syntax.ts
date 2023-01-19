@@ -79,5 +79,8 @@ export function addSyntaxColors(theme: typeof baseTheme) {
 		// EDITOR
 		.style(c.currentLine, $('editorLineNumber.activeForeground'))
 		.style('warning', $('editor.findMatchBorder'))
-		.style(c.currentLine.alpha(0.2), $('editor.lineHighlightBorder'));
+		.style(c.currentLine.alpha(0.2), $('editor.lineHighlightBorder'))
+
+		// STICKY SCROLL
+		.style('backgroundBump', $.editor.sticky.scroll);
 }
