@@ -4,6 +4,7 @@ export const colors = {
 	backgroundSpotlit: '#2d2d2d',
 	backgroundSelected: '#5d5d5d3c',
 	backgroundGlowup: '#3c3c3c',
+	foregroundHidden: '#2d2d2d',
 	foregroundSubtle: '#737373',
 	foregroundBump: '#8390a7',
 	foreground: '#dbdcdd',

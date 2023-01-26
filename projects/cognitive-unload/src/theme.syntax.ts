@@ -76,11 +76,11 @@ export function addSyntaxColors(theme: typeof baseTheme) {
 		// (like import, export, as, await, etc)
 		.style(s('foregroundSubtle').italic, ts.keyword.control, ts.storage)
 
+		// STICKY SCROLL
+		.style('backgroundBump', $.editor.sticky.scroll)
+
 		// EDITOR
 		.style(c.currentLine, $('editorLineNumber.activeForeground'))
 		.style('warning', $('editor.findMatchBorder'))
-		.style(c.currentLine.alpha(0.2), $('editor.lineHighlightBorder'))
-
-		// STICKY SCROLL
-		.style('backgroundBump', $.editor.sticky.scroll);
+		.style(c.currentLine.alpha(0.2), $('editor.lineHighlightBorder'));
 }
