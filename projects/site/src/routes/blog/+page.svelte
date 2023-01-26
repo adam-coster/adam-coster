@@ -7,9 +7,9 @@
 	import debounce from 'just-debounce';
 	import { onMount } from 'svelte';
 	import Icon from 'svelte-fa';
-	import { fade, slide } from 'svelte/transition';
 	import { flip } from 'svelte/animate';
 	import { expoInOut } from 'svelte/easing';
+	import { fade, slide } from 'svelte/transition';
 
 	import type { PageData } from './$types';
 
@@ -129,7 +129,7 @@
 						out:slide={{ easing: expoInOut, duration: 500 }}
 						animate:flip={{ easing: expoInOut, duration: 500 }}
 					>
-						<article class="article-snippet">
+						<article class="article-snippet" data-slug={article.slug}>
 							<header>
 								<h2>
 									<a href={`/blog/${article.slug}`} data-sveltekit-preload-data>
@@ -260,10 +260,10 @@
 			var(--horizontal-padding) * 2 + var(--search-icon-width)
 		);
 		// margin-block-start: 0.5em;
-		display: flex;
+		// display: flex;
 		position: relative;
-		align-items: center;
-		justify-content: space-between;
+		// align-items: center;
+		// justify-content: space-between;
 		border: 0.1em solid var(--search-color-blur);
 		border-radius: var(--border-radius);
 		&.focused {
@@ -296,6 +296,7 @@
 			padding-right: var(--input-horizontal-padding);
 			border-color: var(--search-color-blur);
 			color: var(--search-color-blur);
+			width: 100%;
 			&:focus {
 				outline: none;
 				border-color: var(--search-color-focus);
