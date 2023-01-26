@@ -21,8 +21,8 @@
 		"typegen": "pnpm build && node ./dist/cli/generate-definitions.js"
 	},
 	"dependencies": {
-		"@bscotch/pathy": "2.5.1",
-		"@bscotch/utility": "6.7.0",
+		"@bscotch/pathy": "2.6.0",
+		"@bscotch/utility": "6.8.0",
 		"color": "4.2.3",
 		"node-fetch": "3.3.0",
 		"plist": "3.0.6",
@@ -34,10 +34,10 @@
 		"@types/color": "3.0.3",
 		"@types/plist": "3.0.2",
 		"@types/semver": "7.3.13",
-		"@types/yargs": "17.0.19",
-		"eslint": "8.31.0",
+		"@types/yargs": "17.0.20",
+		"eslint": "8.32.0",
 		"nodemon": "^2.0.20",
-		"prettier": "2.8.2",
+		"prettier": "2.8.3",
 		"tslib": "2.4.1",
 		"typescript": "4.9.4"
 	}

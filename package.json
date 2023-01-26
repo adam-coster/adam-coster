@@ -1,30 +1,33 @@
 {
-	"name": "@adam-coster/root",
-	"version": "0.0.1",
-	"private": true,
-	"type": "module",
+	"dependencies": {
+		"@bscotch/trebuchet": "2.8.0",
+		"@types/mocha": "10.0.1",
+		"@typescript-eslint/eslint-plugin": "5.49.0",
+		"@typescript-eslint/parser": "5.49.0",
+		"depcheck": "1.4.3",
+		"eslint-config-prettier": "8.6.0",
+		"eslint-plugin-html": "7.1.0",
+		"eslint-plugin-prettier": "4.2.1",
+		"eslint-plugin-svelte3": "4.0.0",
+		"husky": "8.0.3",
+		"nano-staged": "0.8.0",
+		"prettier": "2.8.3",
+		"prettier-plugin-svelte": "2.9.0",
+		"rimraf": "4.1.2",
+		"svelte": "3.55.1",
+		"syncpack": "8.4.11",
+		"turbo": "1.7.0",
+		"typescript": "4.9.4"
+	},
+	"devDependencies": {
+		"@types/node": "18.11.18",
+		"eslint": "8.32.0"
+	},
 	"engines": {
 		"node": ">=18",
 		"pnpm": ">=7"
 	},
-	"scripts": {
-		"setup:pnpm": "corepack enable && corepack prepare pnpm@7.12.2 --activate",
-		"ci:site": "pnpm install:site && pnpm test:site",
-		"install:site": "pnpm --filter site... --filter root install",
-		"build:site": "turbo run --filter=site build",
-		"test:site": "turbo run --filter=site build test",
-		"build:all": "turbo run build",
-		"build:force": "turbo run build --force",
-		"watch": "turbo run watch --parallel",
-		"fix:deps": "syncpack fix-mismatches",
-		"clean": "pnpm clean:artifacts && pnpm clean:caches && pnpm clean:modules",
-		"clean:modules": "rimraf node_modules projects/*/node_modules",
-		"clean:artifacts": "rimraf projects/*/dist projects/*/build projects/*/*.tsbuildinfo projects/*/package-lock.json rimraf projects/*/.svelte-kit",
-		"clean:caches": "rimraf projects/*/.turbo",
-		"prepare": "husky install",
-		"test": "turbo run test",
-		"local:sync": "nodemon --ext toml,json,yaml,yml,mjs,js,cjs,nu --watch dotfiles --watch scripts scripts/sync-configs.mjs"
-	},
+	"name": "@adam-coster/root",
 	"nano-staged": {
 		"*.{js,ts,json,yaml,yml,md,svelte}": [
 			"pnpm prettier --config .prettierrc -w -u"
@@ -33,47 +36,43 @@
 			"pnpm eslint --fix --cache --ext ts"
 		]
 	},
-	"dependencies": {
-		"@bscotch/trebuchet": "2.7.2",
-		"@types/mocha": "10.0.1",
-		"@typescript-eslint/eslint-plugin": "5.48.0",
-		"@typescript-eslint/parser": "5.48.0",
-		"depcheck": "1.4.3",
-		"eslint-config-prettier": "8.6.0",
-		"eslint-plugin-cypress": "2.12.1",
-		"eslint-plugin-html": "7.1.0",
-		"eslint-plugin-prettier": "4.2.1",
-		"eslint-plugin-svelte3": "4.0.0",
-		"husky": "8.0.3",
-		"nano-staged": "0.8.0",
-		"prettier": "2.8.2",
-		"prettier-plugin-svelte": "2.9.0",
-		"rimraf": "3.0.2",
-		"svelte": "3.55.0",
-		"syncpack": "8.4.11",
-		"turbo": "1.6.3",
-		"typescript": "4.9.4"
+	"optionalDependencies": {
+		"nodemon": "^2.0.20"
 	},
-	"trebuchet": {
-		"vscodeWorkspaceConfigPath": false
-	},
+	"packageManager": "pnpm@7.26.0",
 	"pnpm": {
 		"overrides": {
 			"typescript": "4.9.4"
 		}
 	},
+	"private": true,
+	"scripts": {
+		"build:all": "turbo run build",
+		"build:force": "turbo run build --force",
+		"build:site": "turbo run --filter=site build",
+		"ci:site": "pnpm install:site && pnpm test:site",
+		"clean": "pnpm clean:artifacts && pnpm clean:caches && pnpm clean:modules",
+		"clean:artifacts": "rimraf projects/*/dist projects/*/build projects/*/*.tsbuildinfo projects/*/package-lock.json rimraf projects/*/.svelte-kit",
+		"clean:caches": "rimraf projects/*/.turbo",
+		"clean:modules": "rimraf node_modules projects/*/node_modules",
+		"fix:deps": "syncpack fix-mismatches",
+		"install:site": "pnpm --filter site... --filter root install",
+		"local:sync": "nodemon --ext toml,json,yaml,yml,mjs,js,cjs,nu --watch dotfiles --watch scripts scripts/sync-configs.mjs",
+		"prepare": "husky install",
+		"setup:pnpm": "corepack enable && corepack prepare pnpm@7.12.2 --activate",
+		"test": "turbo run test",
+		"test:site": "turbo run --filter=site build test",
+		"watch": "turbo run watch --parallel"
+	},
 	"syncpack": {
 		"workspace": false
 	},
+	"trebuchet": {
+		"vscodeWorkspaceConfigPath": false
+	},
+	"type": "module",
+	"version": "0.0.1",
 	"workspaces": [
 		"projects/*"
-	],
-	"optionalDependencies": {
-		"nodemon": "^2.0.20"
-	},
-	"packageManager": "pnpm@7.22.0",
-	"devDependencies": {
-		"@types/node": "18.11.18",
-		"eslint": "8.31.0"
-	}
+	]
 }

@@ -15,22 +15,23 @@
 	},
 	"dependencies": {
 		"@adam-coster/site-tools": "workspace:*",
-		"@bscotch/pathy": "2.5.1",
+		"@bscotch/pathy": "2.6.0",
 		"@fortawesome/free-solid-svg-icons": "6.2.1",
 		"just-debounce": "1.1.0",
-		"svelte": "3.55.0",
+		"svelte": "3.55.1",
 		"svelte-fa": "3.0.3"
 	},
 	"devDependencies": {
 		"@fortawesome/free-brands-svg-icons": "6.2.1",
-		"@sveltejs/kit": "1.0.7",
+		"@playwright/test": "1.30.0",
+		"@sveltejs/kit": "1.2.10",
 		"@types/lunr": "2.3.4",
 		"concurrently": "7.6.0",
 		"gray-matter": "4.0.3",
 		"lunr": "2.3.9",
-		"prettier": "2.8.2",
+		"prettier": "2.8.3",
 		"schema-dts": "1.1.0",
-		"svelte-check": "3.0.1",
+		"svelte-check": "3.0.3",
 		"typescript": "4.9.4",
 		"vite": "4.0.4",
 		"wait-on": "7.0.1"
