@@ -36,7 +36,7 @@ export function markdownToMicrodata(rawMarkdown: string): FoundMicrodata {
 			if (isHeader) {
 				questions.push({
 					'@type': 'Question',
-					name: faqLine,
+					name: faqLine.trim(),
 					acceptedAnswer: {
 						'@type': 'Answer',
 						text: '',
@@ -53,8 +53,8 @@ export function markdownToMicrodata(rawMarkdown: string): FoundMicrodata {
 		questions = questions
 			.filter((x) => x.acceptedAnswer.text)
 			.map((x) => {
-				x.acceptedAnswer.text = marked(x.acceptedAnswer.text);
-				x.name = marked(x.name);
+				x.acceptedAnswer.text = marked(x.acceptedAnswer.text).trim();
+				x.name = marked(x.name).trim();
 				return x;
 			});
 
