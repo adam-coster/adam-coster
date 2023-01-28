@@ -10,7 +10,7 @@
 		"preview": "vite preview --port 3037",
 		"test": "concurrently --names serve,test --success command-test --kill-others \"pnpm:preview\" \"pnpm:test:when-ready\"",
 		"test:dev": "TEST_PORT=3000 playwright test --trace on",
-		"test:when-ready": "wait-on --timeout 30000 http://localhost:3037 && cypress run --e2e --config baseUrl=http://localhost:3037",
+		"test:when-ready": "wait-on --timeout 30000 http://localhost:3037 && TEST_PORT=3037 playwright test",
 		"watch": "svelte-kit sync && vite dev --port 3000",
 		"prepare": "svelte-kit sync"
 	},
