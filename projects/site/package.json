@@ -12,7 +12,8 @@
 		"test:dev": "TEST_PORT=3000 playwright test --trace on",
 		"test:when-ready": "wait-on --timeout 30000 http://localhost:3037 && TEST_PORT=3037 playwright test",
 		"watch": "svelte-kit sync && vite dev --port 3000",
-		"prepare": "svelte-kit sync"
+		"prepare": "svelte-kit sync",
+		"ci:publish": "node scripts/ci.publish.js"
 	},
 	"dependencies": {
 		"@adam-coster/site-tools": "workspace:*",
@@ -35,7 +36,9 @@
 		"svelte-check": "3.0.3",
 		"typescript": "4.9.4",
 		"vite": "4.0.4",
-		"wait-on": "7.0.1"
+		"wait-on": "7.0.1",
+		"wrangler": "2.8.1",
+		"zx": "7.1.1"
 	},
 	"packageManager": "pnpm@7.12.2",
 	"engines": {

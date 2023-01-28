@@ -59,7 +59,7 @@
 		"install:site": "pnpm --filter site... --filter root install",
 		"local:sync": "nodemon --ext toml,json,yaml,yml,mjs,js,cjs,nu --watch dotfiles --watch scripts scripts/sync-configs.mjs",
 		"prepare": "husky install",
-		"setup:pnpm": "corepack enable && corepack prepare $npm_package_packageManager --activate",
+		"setup:pnpm": "corepack prepare $npm_package_packageManager --activate",
 		"test": "turbo run test",
 		"test:site": "turbo run --filter=site build test",
 		"watch": "turbo run watch --parallel"

@@ -2,13 +2,27 @@ on:
   push:
     tags:
       - "@adam-coster/site@*"
+    branches:
+      - "preview"
+      - "preview/*"
+
+defaults:
+  run:
+    shell: bash
+
 jobs:
   publish:
     name: Publish to Cloudflare
     runs-on: ubuntu-latest
     steps:
-      - shell: bash
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: corepack enable
+      - run: npm run setup:pnpm
+      - run: pnpm ci:site
+      - run: pnpm ci:publish
         env:
-          HOOK_URL: ${{secrets.CLOUDFLARE_PUBLISH_WEBHOOK}}
-        run: |
-          curl -X POST $HOOK_URL
+          CLOUDFLARE_PUBLISH_WEBHOOK: ${{secrets.CLOUDFLARE_PUBLISH_WEBHOOK}}
+        working-directory: "./projects/site"

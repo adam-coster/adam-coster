@@ -40,6 +40,6 @@ routes.exclude = routes.exclude.filter((path) => {
 });
 routes.exclude = [
 	...routes.exclude,
-	...excludedExtensions.map((ext) => `*.${ext}`),
+	...excludedExtensions.map((ext) => `/*.${ext}`),
 ];
 await routesPath.write(routes);
