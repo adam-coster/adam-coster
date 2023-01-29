@@ -41,49 +41,7 @@
 
 	// NAVIGATION
 
-	@import './hljs';
-
-	summary {
-		cursor: pointer;
-	}
-
-	details[open] {
-		border: 1px solid var(--color-subtle);
-		border-radius: var(--border-radius);
-		padding: var(--content-padding);
-	}
-
-	pre {
-		tab-size: 2;
-	}
-	code {
-		font-family: var(--font-family-code);
-	}
-
-	p > code {
-		color: var(--color-inline-code);
-		padding: 0.25em 0.25em;
-		margin-inline: 0.1em;
-		background-color: var(--color-background-inline-code);
-		box-decoration-break: clone;
-		-webkit-box-decoration-break: clone;
-		border-radius: 0.4em;
-		outline: 0.1em solid rgb(60, 60, 60);
-	}
-
 	// Override aspects of the Prism theme
-
-	pre > code {
-		display: block;
-		border: 1px solid var(--color-text);
-		margin: calc(var(--size) * 1.25) 0;
-		font-size: var(--code-size);
-		padding: 0.75em 0.75em;
-		overflow-x: auto;
-		white-space: pre;
-		line-height: 1.3em;
-		box-shadow: 0.25em 0.25em 0.25em black;
-	}
 
 	// Articles
 

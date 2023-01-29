@@ -16,7 +16,7 @@
 	export let data: PageData;
 
 	$metadata = {
-		title: 'Writing Central',
+		title: "Adam Coster's Blog",
 		description: `The writings of Adam Coster, collected from across the Internet and centralized. Topics include web development, game development, business, mental health, science, and more.`,
 		type: 'website',
 		canonical: '/blog',

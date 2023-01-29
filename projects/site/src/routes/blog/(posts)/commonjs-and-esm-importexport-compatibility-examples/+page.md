@@ -14,7 +14,7 @@ A brief summary of the differences between these two ways of managing JavaScript
 - ESM imports are _asynchronous_ (which also allows for [top-level `await`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await#top_level_await))
 - CommonJS works in Node but does **not** work in browsers
 - ESM is supported by all modern browsers and the latest versions of Node, but does **not** work at all in Node versions below 12
-- Tons of the core JavaScript ecosystem tooling was developed in Node and Node only recently supported ESM, so a huge fraction of existing Node projects are in CommonJS
+- Tons of the core JavaScript ecosystem tooling was developed in Node, and Node only recently started to support ESM, so a huge fraction of existing Node projects are in CommonJS
 
 So that's our situation. Now, to the problem at hand: If you are using ESM, can you import CommonJS? What about the other way around?
 
@@ -48,7 +48,7 @@ module.exports.namedCjsExport = function namedCjsExport() {};
 
 ## How to import CommonJS (cjs) into ESM
 
-If you are importing _into_ an ESM module, it looks the same either whether you're importing a CommonJS or ESM module: you'll use the `import defaultStuff, {namedStuff} from './file.js'` syntax, and the import will be asynchronous.
+If you are importing _into_ an ESM module, it looks the same whether you're importing a CommonJS or ESM module: you'll use the `import defaultStuff, {namedStuff} from './file.js'` syntax, and the import will be asynchronous.
 
 ```js
 /**
