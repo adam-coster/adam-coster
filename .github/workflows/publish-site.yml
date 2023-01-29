@@ -24,5 +24,5 @@ jobs:
       - run: pnpm ci:site
       - run: pnpm ci:publish
         env:
-          CLOUDFLARE_PUBLISH_WEBHOOK: ${{secrets.CLOUDFLARE_PUBLISH_WEBHOOK}}
+          CLOUDFLARE_API_TOKEN: ${{secrets.CLOUDFLARE_API_TOKEN}}
         working-directory: "./projects/site"
