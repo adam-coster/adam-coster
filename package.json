@@ -13,7 +13,6 @@
 		"nano-staged": "0.8.0",
 		"prettier": "2.8.3",
 		"prettier-plugin-svelte": "2.9.0",
-		"rimraf": "4.1.2",
 		"svelte": "3.55.1",
 		"syncpack": "8.4.11",
 		"turbo": "1.7.0",
@@ -21,7 +20,8 @@
 	},
 	"devDependencies": {
 		"@types/node": "18.11.18",
-		"eslint": "8.32.0"
+		"eslint": "8.32.0",
+		"eslint-scope": "7.1.1"
 	},
 	"engines": {
 		"node": ">=18",
@@ -39,7 +39,7 @@
 	"optionalDependencies": {
 		"nodemon": "^2.0.20"
 	},
-	"packageManager": "pnpm@7.26.0",
+	"packageManager": "pnpm@7.26.1",
 	"pnpm": {
 		"overrides": {
 			"typescript": "4.9.4"
@@ -51,10 +51,8 @@
 		"build:force": "turbo run build --force",
 		"build:site": "turbo run --filter=site build",
 		"ci:site": "pnpm install:site && pnpm test:site",
-		"clean": "pnpm clean:artifacts && pnpm clean:caches && pnpm clean:modules",
-		"clean:artifacts": "rimraf projects/*/dist projects/*/build projects/*/*.tsbuildinfo projects/*/package-lock.json rimraf projects/*/.svelte-kit",
-		"clean:caches": "rimraf projects/*/.turbo",
-		"clean:modules": "rimraf node_modules projects/*/node_modules",
+		"clean:artifacts": "rm -rf packages/*/dist && rm -rf packages/*/.svelte-kit",
+		"clean:deps": "find . -name 'node_modules' -type d -prune -exec rm -rf {} +",
 		"fix:deps": "syncpack fix-mismatches",
 		"install:site": "pnpm --filter site... --filter root install",
 		"local:sync": "nodemon --ext toml,json,yaml,yml,mjs,js,cjs,nu --watch dotfiles --watch scripts scripts/sync-configs.mjs",

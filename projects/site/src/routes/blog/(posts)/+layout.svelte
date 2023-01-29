@@ -17,8 +17,6 @@
 	export let data: LayoutData;
 	const frontmatter = new ArticleMetadata(data.frontmatter);
 
-	console.log(data);
-
 	$metadata = data.meta;
 
 	function updatedAt(frontmatter: ArticleMetadata) {

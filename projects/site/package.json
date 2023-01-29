@@ -12,7 +12,6 @@
 		"test:dev": "TEST_PORT=3000 playwright test --trace on",
 		"test:when-ready": "wait-on --timeout 30000 http://localhost:3037 && TEST_PORT=3037 playwright test",
 		"watch": "svelte-kit sync && vite dev --port 3000",
-		"prepare": "svelte-kit sync",
 		"ci:publish": "node scripts/ci.publish.js"
 	},
 	"dependencies": {
