@@ -1,10 +1,25 @@
 import { ok } from 'assert';
 import { $ } from 'zx';
 
-const branch = (await stdout($`git branch --show-current`)).split('/')[0];
+let branch =
+	process.env.GITHUB_REF ||
+	(await stdout($`git branch --show-current`)) ||
+	(await stdout($`git rev-parse --abbrev-ref HEAD`));
+branch = branch.includes('preview')
+	? 'preview'
+	: branch.startsWith('refs/tags/@adam-coster/site')
+	? 'develop'
+	: branch;
 const hash = await stdout($`git rev-parse HEAD`);
 const message = await stdout($`git log -1 --pretty=%B`);
 const dirtyFlag = branch === 'preview' ? 'true' : 'false';
+
+console.log({
+	branch: branch,
+	hash,
+	message,
+	dirtyFlag,
+});
 
 ok(
 	['develop', 'preview'].includes(branch),

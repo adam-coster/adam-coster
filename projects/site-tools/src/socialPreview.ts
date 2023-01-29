@@ -70,15 +70,19 @@ export class PreviewGenerator {
 			.changeExtension('.html', '.jpg');
 		await destPath.up().ensureDirectory();
 		console.log(`⛏️ Rendering preview for:\n  ${relativeUrl}`);
-		const clip = await this.computeBoundingBox(page, {
-			selector: options?.cropBySelector,
-			assert: true,
-		});
-		await page.screenshot({
-			path: destPath.absolute,
-			captureBeyondViewport: true,
-			clip,
-		});
+		try {
+			const clip = await this.computeBoundingBox(page, {
+				selector: options?.cropBySelector,
+				assert: true,
+			});
+			await page.screenshot({
+				path: destPath.absolute,
+				captureBeyondViewport: true,
+				clip,
+			});
+		} catch (err) {
+			console.warn(`⚠️ Failed to render preview for:\n  ${relativeUrl}`);
+		}
 	}
 
 	async createPage(): Promise<Page> {

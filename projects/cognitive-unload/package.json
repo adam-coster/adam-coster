@@ -1,29 +1,19 @@
 {
 	"name": "cognitive-unload",
 	"displayName": "Cognitive Unload",
+	"version": "0.1.0",
 	"description": "",
-	"type": "module",
-	"version": "0.0.1",
-	"engines": {
-		"vscode": "^1.74.0"
-	},
-	"main": "./dist/extension.cjs",
-	"scripts": {
-		"build": "tsc -b && node scripts/update-theme.mjs",
-		"watch": "nodemon --delay 2 -w src -w scripts -e js,cjs,mjs,ts,cts,mts --exec \"pnpm run build\"",
-		"update:definitions": "node dist/utils/updateDefinitions.js"
-	},
 	"categories": [
 		"Themes"
 	],
+	"type": "module",
+	"main": "./dist/extension.cjs",
+	"scripts": {
+		"build": "tsc -b && node scripts/update-theme.mjs",
+		"update:definitions": "node dist/utils/updateDefinitions.js",
+		"watch": "nodemon --delay 2 -w src -w scripts -e js,cjs,mjs,ts,cts,mts --exec \"pnpm run build\""
+	},
 	"contributes": {
-		"themes": [
-			{
-				"label": "Cognitive Unload",
-				"uiTheme": "vs-dark",
-				"path": "./themes/cognitive-unload-color-theme.json"
-			}
-		],
 		"commands": [
 			{
 				"title": "New Nested File...",
@@ -39,7 +29,14 @@
 					"command": "cognitive-unload.createNestedFile"
 				}
 			]
-		}
+		},
+		"themes": [
+			{
+				"label": "Cognitive Unload",
+				"uiTheme": "vs-dark",
+				"path": "./themes/cognitive-unload-color-theme.json"
+			}
+		]
 	},
 	"devDependencies": {
 		"@adam-coster/themer": "workspace:*",
@@ -55,5 +52,8 @@
 		"tslib": "2.4.1",
 		"typescript": "4.9.4",
 		"zod": "3.20.2"
+	},
+	"engines": {
+		"vscode": "^1.74.0"
 	}
 }

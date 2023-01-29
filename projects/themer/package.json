@@ -1,6 +1,6 @@
 {
 	"name": "@adam-coster/themer",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"private": true,
 	"type": "module",
 	"exports": {
@@ -17,8 +17,8 @@
 	"types": "dist/index.d.ts",
 	"scripts": {
 		"build": "tsc --build",
-		"watch": "tsc --build --watch",
-		"typegen": "pnpm build && node ./dist/cli/generate-definitions.js"
+		"typegen": "pnpm build && node ./dist/cli/generate-definitions.js",
+		"watch": "tsc --build --watch"
 	},
 	"dependencies": {
 		"@bscotch/pathy": "2.6.0",

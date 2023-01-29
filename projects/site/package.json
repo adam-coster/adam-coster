@@ -1,18 +1,20 @@
 {
 	"name": "@adam-coster/site",
-	"version": "0.3.0",
+	"version": "0.4.0",
 	"private": true,
 	"type": "module",
 	"scripts": {
 		"build": "svelte-kit sync && vite build && node scripts/postBuild.js",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"ci:publish": "node scripts/ci.publish.js",
+		"prepublish": "exit 1",
+		"version:tag": "git tag -a $npm_package_name@$npm_package_version -m \"Version $npm_package_version\" && git push --follow-tags",
 		"preview": "vite preview --port 3037",
 		"test": "concurrently --names serve,test --success command-test --kill-others \"pnpm:preview\" \"pnpm:test:when-ready\"",
 		"test:dev": "TEST_PORT=3000 playwright test --trace on",
 		"test:when-ready": "wait-on --timeout 30000 http://localhost:3037 && TEST_PORT=3037 playwright test",
-		"watch": "svelte-kit sync && vite dev --port 3000",
-		"ci:publish": "node scripts/ci.publish.js"
+		"watch": "svelte-kit sync && vite dev --port 3000"
 	},
 	"dependencies": {
 		"@adam-coster/site-tools": "workspace:*",
