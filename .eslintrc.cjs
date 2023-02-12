@@ -47,13 +47,13 @@ module.exports = {
 			processor: 'svelte3/svelte3',
 		},
 		{
-			files: ['projects/*/**/*.ts'],
+			files: ['**/*.ts'],
 			parserOptions: {
 				ecmaVersion: 'latest',
 				parser: '@typescript-eslint/parser',
 				sourceType: 'module',
 				createDefaultProgram: true,
-				project: ['./projects/**/tsconfig.json'],
+				project: ['**/tsconfig.json'],
 			},
 			rules: {
 				'@typescript-eslint/no-floating-promises': 'error',
