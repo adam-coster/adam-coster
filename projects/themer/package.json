@@ -21,24 +21,24 @@
 		"watch": "tsc --build --watch"
 	},
 	"dependencies": {
-		"@bscotch/pathy": "2.6.0",
-		"@bscotch/utility": "6.8.0",
+		"@bscotch/pathy": "2.7.3",
+		"@bscotch/utility": "6.8.3",
 		"color": "4.2.3",
-		"node-fetch": "3.3.0",
+		"node-fetch": "3.3.1",
 		"plist": "3.0.6",
-		"semver": "7.3.8",
-		"yargs": "17.6.2",
-		"zod": "3.20.2"
+		"semver": "7.5.0",
+		"yargs": "17.7.2",
+		"zod": "3.21.4"
 	},
 	"devDependencies": {
 		"@types/color": "3.0.3",
 		"@types/plist": "3.0.2",
 		"@types/semver": "7.3.13",
-		"@types/yargs": "17.0.20",
-		"eslint": "8.32.0",
-		"nodemon": "^2.0.20",
-		"prettier": "2.8.3",
-		"tslib": "2.4.1",
-		"typescript": "4.9.4"
+		"@types/yargs": "17.0.24",
+		"eslint": "8.39.0",
+		"nodemon": "^2.0.22",
+		"prettier": "2.8.8",
+		"tslib": "2.5.0",
+		"typescript": "5.0.4"
 	}
 }

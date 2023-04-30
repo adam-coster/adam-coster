@@ -1,0 +1,8 @@
+{
+	"$schema": "../../post.schema.json",
+	"slug": "github-copilot-cli-windows-setup",
+	"publishedAt": "2023-04-13T16:20:18.380Z",
+	"tags": ["copilot", "github", "git", "cli", "windows", "ai"],
+	"title": "Setting up GitHub Copilot CLI on Windows",
+	"description": "GitHub Copilot CLI is rolling out in early access. Here's how to get it working on Windows."
+}

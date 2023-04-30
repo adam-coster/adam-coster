@@ -9,12 +9,24 @@
 import fs from 'fs/promises';
 import lunr from 'lunr';
 import type { ArticleFrontMatter, ArticleIndexEntry } from './types/Article.js';
-import { pick } from '@adam-coster/utility';
 import path from 'path';
 import { writeJson } from './files.js';
 import { Feed } from 'feed';
 import { markdownToMicrodata } from './markdownToMicrodata.js';
 import { Pathy, pathy } from '@bscotch/pathy';
+
+export function pick<T extends Record<PropertyKey, any>, O extends keyof T>(
+	obj: T,
+	keys: O[],
+): Pick<T, O> {
+	return Object.keys(obj).reduce((result, key) => {
+		if (keys.includes(key as O)) {
+			// @ts-ignore
+			result[key] = obj[key];
+		}
+		return result;
+	}, {} as Partial<T>) as Pick<T, O>;
+}
 
 export interface PostPaths {
 	dir: Pathy;

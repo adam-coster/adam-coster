@@ -40,18 +40,18 @@
 	},
 	"devDependencies": {
 		"@adam-coster/themer": "workspace:*",
-		"@bscotch/pathy": "2.6.0",
-		"@bscotch/utility": "6.8.0",
+		"@bscotch/pathy": "2.7.3",
+		"@bscotch/utility": "6.8.3",
 		"@types/color": "3.0.3",
-		"@types/vscode": "1.74.0",
+		"@types/vscode": "1.77.0",
 		"color": "4.2.3",
-		"eslint": "8.32.0",
-		"node-fetch": "3.3.0",
-		"nodemon": "^2.0.20",
-		"prettier": "2.8.3",
-		"tslib": "2.4.1",
-		"typescript": "4.9.4",
-		"zod": "3.20.2"
+		"eslint": "8.39.0",
+		"node-fetch": "3.3.1",
+		"nodemon": "^2.0.22",
+		"prettier": "2.8.8",
+		"tslib": "2.5.0",
+		"typescript": "5.0.4",
+		"zod": "3.21.4"
 	},
 	"engines": {
 		"vscode": "^1.74.0"
