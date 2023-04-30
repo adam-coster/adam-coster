@@ -1,0 +1,8 @@
+{
+	"$schema": "../../post.schema.json",
+	"slug": "wsl-dns-resolution",
+	"title": "WSL: Resolving temporary failures in DNS name resolution",
+	"description": "WSL sometimes forgets how to talk to the Internet. If you're seeing the error \"Temporary failure in name resolution\", here's how to fix it.",
+	"publishedAt": "2023-04-30T21:56:53.510Z",
+	"tags": ["windows", "webdev", "wsl"]
+}
