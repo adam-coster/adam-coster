@@ -1,5 +1,6 @@
 {
 	"dependencies": {
+		"@bscotch/pathy": "2.7.3",
 		"@bscotch/trebuchet": "2.8.4",
 		"@types/mocha": "10.0.1",
 		"@typescript-eslint/eslint-plugin": "5.59.1",
@@ -14,7 +15,8 @@
 		"svelte": "3.58.0",
 		"syncpack": "9.8.6",
 		"turbo": "1.9.3",
-		"typescript": "5.0.4"
+		"typescript": "5.0.4",
+		"zx": "7.2.1"
 	},
 	"devDependencies": {
 		"@types/node": "18.16.3",
@@ -40,6 +42,7 @@
 	},
 	"private": true,
 	"scripts": {
+		"post": "node scripts/post-from-note.mjs",
 		"build:all": "turbo run build",
 		"build:force": "turbo run build --force",
 		"build:site": "turbo run --filter=site build",
