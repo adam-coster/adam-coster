@@ -33,8 +33,7 @@ export class Theme<P extends Palette> {
 					style,
 					selector:
 						selector![kind] === 'syntaxSelectorsFilter'
-							? // @ts-expect-error
-							  new SyntaxSelector(selector!.toJSON())
+							? new SyntaxSelector(selector!.toJSON())
 							: s.selector,
 				};
 			}) as any;
