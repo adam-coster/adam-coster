@@ -1,0 +1,17 @@
+diff --git a/attribution.js b/attribution.js
+deleted file mode 100644
+index eb91de84e48b85c6cb89b30eb1e7856b6479faac..0000000000000000000000000000000000000000
+diff --git a/package.json b/package.json
+index 20568259559c599185ebd9aab7957f75d910f881..8628d26f18adc92934e7ea55b902324e4334bbac 100644
+--- a/package.json
++++ b/package.json
+@@ -24,8 +24,5 @@
+   "version": "6.4.0",
+   "name": "@fortawesome/fontawesome-common-types",
+   "license": "MIT",
+-  "types": "./index.d.ts",
+-  "scripts": {
+-    "postinstall": "node attribution.js"
+-  }
++  "types": "./index.d.ts"
+ }

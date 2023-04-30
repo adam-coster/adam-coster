@@ -32,6 +32,9 @@
 	"pnpm": {
 		"overrides": {
 			"typescript": "5.0.4"
+		},
+		"patchedDependencies": {
+			"@fortawesome/fontawesome-common-types@6.4.0": "patches/@fortawesome__fontawesome-common-types@6.4.0.patch"
 		}
 	},
 	"private": true,
@@ -45,7 +48,6 @@
 		"fix:deps": "syncpack fix-mismatches",
 		"install:site": "pnpm --filter site... --filter root install",
 		"local:sync": "nodemon --ext toml,json,yaml,yml,mjs,js,cjs,nu --watch dotfiles --watch scripts scripts/sync-configs.mjs",
-		"prepare": "husky install",
 		"setup:pnpm": "corepack prepare $npm_package_packageManager --activate",
 		"test": "turbo run test",
 		"test:site": "turbo run --filter=site build test",
