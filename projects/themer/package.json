@@ -1,44 +1,44 @@
 {
-	"name": "@adam-coster/themer",
-	"version": "0.3.0",
-	"private": true,
-	"type": "module",
-	"exports": {
-		".": {
-			"types": "./dist/index.d.ts",
-			"import": "./dist/index.js"
-		},
-		"./grammars/*": {
-			"types": "./dist/theme-definitions/grammars/*.d.ts",
-			"import": "./dist/theme-definitions/grammars/*.js"
-		}
-	},
-	"main": "dist/index.js",
-	"types": "dist/index.d.ts",
-	"scripts": {
-		"build": "tsc --build",
-		"typegen": "pnpm build && node ./dist/cli/generate-definitions.js",
-		"watch": "tsc --build --watch"
-	},
-	"dependencies": {
-		"@bscotch/pathy": "2.7.3",
-		"@bscotch/utility": "6.8.3",
-		"color": "4.2.3",
-		"node-fetch": "3.3.1",
-		"plist": "3.0.6",
-		"semver": "7.5.0",
-		"yargs": "17.7.2",
-		"zod": "3.21.4"
-	},
-	"devDependencies": {
-		"@types/color": "3.0.3",
-		"@types/plist": "3.0.2",
-		"@types/semver": "7.3.13",
-		"@types/yargs": "17.0.24",
-		"eslint": "8.39.0",
-		"nodemon": "^2.0.22",
-		"prettier": "2.8.8",
-		"tslib": "2.5.0",
-		"typescript": "5.0.4"
-	}
+  "name": "@adam-coster/themer",
+  "version": "0.4.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./grammars/*": {
+      "types": "./dist/theme-definitions/grammars/*.d.ts",
+      "import": "./dist/theme-definitions/grammars/*.js"
+    }
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc --build",
+    "typegen": "pnpm build && node ./dist/cli/generate-definitions.js",
+    "watch": "tsc --build --watch"
+  },
+  "dependencies": {
+    "@bscotch/pathy": "2.7.3",
+    "@bscotch/utility": "6.8.3",
+    "color": "4.2.3",
+    "node-fetch": "3.3.1",
+    "plist": "3.0.6",
+    "semver": "7.5.0",
+    "yargs": "17.7.2",
+    "zod": "3.21.4"
+  },
+  "devDependencies": {
+    "@types/color": "3.0.3",
+    "@types/plist": "3.0.2",
+    "@types/semver": "7.3.13",
+    "@types/yargs": "17.0.24",
+    "eslint": "8.39.0",
+    "nodemon": "^2.0.22",
+    "prettier": "2.8.8",
+    "tslib": "2.5.0",
+    "typescript": "5.0.4"
+  }
 }
