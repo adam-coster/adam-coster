@@ -1,18 +1,7 @@
 # TODO
 
-- Switch to pnpm
-
 ## Website
 
-- Milestone: Deployed
-  - Add a sitemap
-  - Inform Google Search of the sitemap & trigger indexing
-- Add testing to run after build
-  - social previews
-  - sitemaps
-  - feeds
-  - 404 page
-  - redirect(s)
 - Add themes
   - In developer mode, expose a bunch of global CSS variables for easy editing
   - Add a theme selector (once some themes exist)
