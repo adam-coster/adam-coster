@@ -1,0 +1,9 @@
+{
+	"$schema": "../../post.schema.json",
+	"crossPosts": [],
+	"description": "pnpm is a delightful package manager for Node.js, and is great right out of the box (especially for monorepos). Make it even better with the right configuration settings.",
+	"publishedAt": "2023-05-26T19:03:21.532Z",
+	"slug": "pnpm-config",
+	"tags": ["node", "pnpm", "npm", "programming", "webdev"],
+	"title": "Configure pnpm for the best possible developer experience"
+}
