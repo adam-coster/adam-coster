@@ -5,6 +5,9 @@
 		article.article > .body {
 			h#{$i} {
 				position: relative;
+				@if ($i != 1) {
+					margin-top: calc(var(--size) * 2);
+				}
 				& > a {
 					position: absolute;
 					--width: 0.75em;

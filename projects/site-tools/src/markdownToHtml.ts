@@ -43,7 +43,7 @@ const markdownNormalizer = unified();
 markdownNormalizer.use(remarkParse);
 markdownNormalizer.use(remarkGfm);
 markdownNormalizer.use(remarkRehype, { allowDangerousHtml: true });
-markdownNormalizer.use(rehypeHighlight, { languages: { json5: hljsJson } });
+markdownNormalizer.use(rehypeHighlight, { languages: { json5: hljsJson, jsonc: hljsJson } });
 markdownNormalizer.use(rehypeSlug);
 markdownNormalizer.use(rehypeAccessibleEmojis);
 markdownNormalizer.use(rehypeAutolinkHeadings, {
