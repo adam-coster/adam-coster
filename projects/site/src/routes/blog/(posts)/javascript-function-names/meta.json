@@ -1,0 +1,9 @@
+{
+	"$schema": "../../post.schema.json",
+	"crossPosts": [],
+	"description": "There's no such thing as an anonymous function in JavaScript.",
+	"publishedAt": "2023-05-29T18:29:41.229Z",
+	"slug": "javascript-function-names",
+	"tags": ["javascript", "webdev"],
+	"title": "JavaScript wants your functions to have names"
+}
