@@ -66,6 +66,7 @@
 				margin-top: calc(var(--size) * -0.5);
 				margin-bottom: calc(var(--size) * -1);
 			}
+			margin-block-end: 0.75em;
 		}
 		.firstname {
 			color: var(--color-link);
