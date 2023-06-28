@@ -26,19 +26,19 @@
     "color": "4.2.3",
     "node-fetch": "3.3.1",
     "plist": "3.0.6",
-    "semver": "7.5.0",
+    "semver": "7.5.3",
     "yargs": "17.7.2",
     "zod": "3.21.4"
   },
   "devDependencies": {
     "@types/color": "3.0.3",
     "@types/plist": "3.0.2",
-    "@types/semver": "7.3.13",
+    "@types/semver": "7.5.0",
     "@types/yargs": "17.0.24",
-    "eslint": "8.39.0",
+    "eslint": "8.43.0",
     "nodemon": "^2.0.22",
     "prettier": "2.8.8",
-    "tslib": "2.5.0",
-    "typescript": "5.0.4"
+    "tslib": "2.6.0",
+    "typescript": "5.1.5"
   }
 }

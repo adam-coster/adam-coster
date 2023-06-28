@@ -18,36 +18,36 @@
   "dependencies": {
     "@bscotch/pathy": "2.7.3",
     "@bscotch/utility": "6.8.3",
-    "@sveltejs/adapter-cloudflare": "2.2.1",
+    "@sveltejs/adapter-cloudflare": "2.3.0",
     "feed": "4.2.2",
     "gray-matter": "4.0.3",
     "highlight.js": "11.8.0",
     "lunr": "2.3.9",
-    "marked": "4.3.0",
+    "marked": "5.1.0",
     "node-html-parser": "6.1.5",
-    "puppeteer": "^19.11.1",
+    "puppeteer": "^20.7.3",
     "rehype-accessible-emojis": "0.3.2",
     "rehype-autolink-headings": "6.1.1",
     "rehype-highlight": "6.0.0",
     "rehype-slug": "5.1.0",
     "rehype-stringify": "9.0.3",
     "remark-gfm": "3.0.1",
-    "remark-parse": "10.0.1",
+    "remark-parse": "10.0.2",
     "remark-rehype": "10.1.0",
     "remove-markdown": "0.5.0",
-    "svelte-preprocess": "5.0.3",
-    "tslib": "2.5.0",
+    "svelte-preprocess": "5.0.4",
+    "tslib": "2.6.0",
     "unified": "10.1.2",
-    "vite": "4.3.3"
+    "vite": "4.3.9"
   },
   "devDependencies": {
-    "@sveltejs/kit": "1.15.9",
+    "@sveltejs/kit": "1.20.5",
     "@types/hast": "^2.3.4",
     "@types/lunr": "2.3.4",
-    "@types/marked": "4.0.8",
+    "@types/marked": "5.0.0",
     "@types/puppeteer": "^5.4.7",
     "@types/remove-markdown": "0.3.1",
     "hast": "1.0.0",
-    "typescript": "5.0.4"
+    "typescript": "5.1.5"
   }
 }
