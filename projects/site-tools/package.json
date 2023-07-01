@@ -25,7 +25,7 @@
     "lunr": "2.3.9",
     "marked": "5.1.0",
     "node-html-parser": "6.1.5",
-    "puppeteer": "^20.7.3",
+    "puppeteer": "^20.7.4",
     "rehype-accessible-emojis": "0.3.2",
     "rehype-autolink-headings": "6.1.1",
     "rehype-highlight": "6.0.0",
@@ -41,13 +41,13 @@
     "vite": "4.3.9"
   },
   "devDependencies": {
-    "@sveltejs/kit": "1.20.5",
+    "@sveltejs/kit": "1.21.0",
     "@types/hast": "^2.3.4",
     "@types/lunr": "2.3.4",
     "@types/marked": "5.0.0",
     "@types/puppeteer": "^5.4.7",
     "@types/remove-markdown": "0.3.1",
     "hast": "1.0.0",
-    "typescript": "5.1.5"
+    "typescript": "5.1.6"
   }
 }
