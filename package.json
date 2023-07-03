@@ -36,8 +36,7 @@
 			"typescript": "5.0.4"
 		},
 		"patchedDependencies": {
-			"@fortawesome/fontawesome-common-types@6.4.0": "patches/@fortawesome__fontawesome-common-types@6.4.0.patch",
-			"svelte-preprocess@5.0.3": "patches/svelte-preprocess@5.0.3.patch"
+			"@fortawesome/fontawesome-common-types@6.4.0": "patches/@fortawesome__fontawesome-common-types@6.4.0.patch"
 		}
 	},
 	"private": true,
