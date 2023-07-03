@@ -182,7 +182,7 @@ The main downsides of YAML are that it's easy to make hard-to-spot mistakes and 
 
 All of the above data formats are well-defined, standardized, and common. Well, except for generic binary data, since that could be anything. Which brings us to this last category, which I'm calling "bespoke" data.
 
-By this I mean any propriety or otherwise uncommon format that is not widely used. File types that are super specific to a certain piece of software often fall into this category, as might custom formats developed for hyper-specific storage goals, like for managing enormous amounts of well-understood data. (Levelhead levels are a great example of this — we have our own custom file structure, all in binary, with custom reader and writer utilities to interpret them, all so that we can make those files as small as possible.)
+By this I mean any propriety or otherwise uncommon format that is not widely used. File types that are super specific to a certain piece of software often fall into this category, as might custom formats developed for hyper-specific storage goals, like for managing enormous amounts of well-understood data. ([Levelhead](https://www.bscotch.net/games/levelhead) levels are a great example of this — we have our own custom file structure, all in binary, with custom reader and writer utilities to interpret them, all so that we can make those files as small as possible.)
 
 These days you'll likely be able to do a ton of your automation without getting stuck on hard-to-parse bespoke data, but it still does happen from time to time. Your best bet in such a scenario is to do a lot of digging to see if anyone else has already created some sort of converter or parser to make your life easier. Otherwise things can get very tricky!
 
@@ -200,7 +200,7 @@ The key to dealing with data on the Internet is the HTTP Request (a.k.a. "Web Re
 
 MDN has [a good write-up on HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages) but it's more technical than we need here. I've provided my own guide, which should give you everything you need to know to get started using automation tools with web services:
 
-[HTTP (Web Request) Guide](Automation%20Tools%20&%20Concepts%201890aa6e9b3b4038961247ede20ea733/HTTP%20(Web%20Request)%20Guide%2081307d1660164bf5a3c3375f1be6aa73.md)
+[HTTP (Web Request) Guide](./http-guide)
 
 ### Webhooks
 
