@@ -1,5 +1,3 @@
-# JSON Guide
-
 [JSON](https://en.wikipedia.org/wiki/JSON) (JavaScript Object Notation) is a super popular way of representing complex data for several reasons:
 
 - It's *precise* and *unambiguous* (so computers can read it)
@@ -76,7 +74,7 @@ While you'll frequently see things like lists of objects, it is rare that you'll
 
 Typically, if you're getting JSON data from some source it will be an Object whose root keys are for both metadata and the actual data itself. For example:
 
-```jsonc
+```json5
 {
 	// metadata...
 	"page": 1,

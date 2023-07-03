@@ -15,7 +15,7 @@ There are some differences that are good to be aware of:
 - You can also run your installed binaries with `pnpm <command>`. For example, you might want to run local versions of Typescript (`pnpm tsc`) or eslint (`pnpm eslint`). npm uses a separate command (`npx`) to run binaries.
 - pnpm separates the installing the dependencies listed in your `package.json` (via the command `pnpm install`) from adding new dependencies (via the command `pnpm add`). npm uses `npm install` for both.
 - To add a local dependency within a monorepo, in your `package.json` `"dependencies"` field you'll prefix your local dependencies' version-range strings with `workspace:` (a.k.a. the "workspace protocol"). When publishing, pnpm resolves those prefixed versions to their actual versions in the published packages. For example, if I have package `a` depending on `b` in my monorepo, the `package.json` for `a` would look like:
-    ```jsonc
+    ```json5
     "dependencies":{
       "b": "workspace:*" // (where '*' means "any version")
     }

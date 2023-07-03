@@ -1,0 +1,16 @@
+{
+	"$schema": "../../post.schema.json",
+	"slug": "json-guide",
+	"title": "JSON Guide",
+	"description": "JSON is one of the most common ways to represent data on the Internet. How does it work?",
+	"publishedAt": "2023-07-03T19:21:23.027Z",
+	"tags": [
+		"beginners",
+		"computer-science",
+		"encoding",
+		"webdev",
+		"data",
+		"json"
+	],
+	"crossPosts": []
+}
