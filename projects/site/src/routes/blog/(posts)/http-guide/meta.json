@@ -1,0 +1,9 @@
+{
+	"$schema": "../../post.schema.json",
+	"slug": "http-guide",
+	"title": "HTTP Guide",
+	"description": "HTTP makes the Internet go round. This guide provides a high-level, practical overview of how it works.",
+	"publishedAt": "2023-07-03T20:49:36.030Z",
+	"tags": ["webdev", "beginners", "computer-science", "http"],
+	"crossPosts": []
+}

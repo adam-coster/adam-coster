@@ -1,5 +1,3 @@
-# HTTP (Web Request) Guide
-
 HTTP (Hyper Text Transfer Protocol) is the main way you get information from other people's computers (a.k.a. "the cloud", a.k.a. "the Internet"). It's how browsers fetch web pages, and how automated systems talk to web services.
 
 Here we'll be talking about HTTP in a practical way, under the assumption that you don't care about the technical details and need to know just enough to be empowered to make use of HTTP in your automation toolkit.
