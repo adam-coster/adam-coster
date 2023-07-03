@@ -22,7 +22,7 @@ console.log({
 });
 
 ok(
-	['develop', 'preview'].includes(branch),
+	branch.match(/^(.*\/)?(develop|preview)$/),
 	`This script is only meant to run on the "develop" or "preview" branches, but is running on "${branch}"`,
 );
 
