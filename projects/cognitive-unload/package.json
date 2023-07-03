@@ -1,59 +1,59 @@
 {
-	"categories": [
-		"Themes"
-	],
-	"contributes": {
-		"commands": [
-			{
-				"command": "cognitive-unload.createNestedFile",
-				"enablement": "!explorerResourceIsFolder && filesExplorerFocus",
-				"title": "New Nested File..."
-			}
-		],
-		"menus": {
-			"explorer/context": [
-				{
-					"command": "cognitive-unload.createNestedFile",
-					"group": "navigation",
-					"when": "!explorerResourceIsFolder && filesExplorerFocus"
-				}
-			]
-		},
-		"themes": [
-			{
-				"label": "Cognitive Unload",
-				"path": "./themes/cognitive-unload-color-theme.json",
-				"uiTheme": "vs-dark"
-			}
-		]
-	},
-	"description": "",
-	"devDependencies": {
-		"@adam-coster/themer": "workspace:*",
-		"@bscotch/pathy": "2.7.3",
-		"@bscotch/utility": "6.8.3",
-		"@types/color": "3.0.3",
-		"@types/vscode": "1.79.1",
-		"color": "4.2.3",
-		"eslint": "8.44.0",
-		"node-fetch": "3.3.1",
-		"nodemon": "^2.0.22",
-		"prettier": "2.8.8",
-		"tslib": "2.6.0",
-		"typescript": "5.1.6",
-		"zod": "3.21.4"
-	},
-	"displayName": "Cognitive Unload",
-	"engines": {
-		"vscode": "^1.74.0"
-	},
-	"main": "./dist/extension.cjs",
-	"name": "cognitive-unload",
-	"scripts": {
-		"build": "tsc -b && node scripts/update-theme.mjs",
-		"update:definitions": "node dist/utils/updateDefinitions.js",
-		"watch": "nodemon --delay 2 -w src -w scripts -e js,cjs,mjs,ts,cts,mts --exec \"pnpm run build\""
-	},
-	"type": "module",
-	"version": "0.3.0"
+  "name": "cognitive-unload",
+  "displayName": "Cognitive Unload",
+  "version": "0.3.1",
+  "description": "",
+  "categories": [
+    "Themes"
+  ],
+  "type": "module",
+  "main": "./dist/extension.cjs",
+  "scripts": {
+    "build": "tsc -b && node scripts/update-theme.mjs",
+    "update:definitions": "node dist/utils/updateDefinitions.js",
+    "watch": "nodemon --delay 2 -w src -w scripts -e js,cjs,mjs,ts,cts,mts --exec \"pnpm run build\""
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "cognitive-unload.createNestedFile",
+        "enablement": "!explorerResourceIsFolder && filesExplorerFocus",
+        "title": "New Nested File..."
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "cognitive-unload.createNestedFile",
+          "group": "navigation",
+          "when": "!explorerResourceIsFolder && filesExplorerFocus"
+        }
+      ]
+    },
+    "themes": [
+      {
+        "label": "Cognitive Unload",
+        "path": "./themes/cognitive-unload-color-theme.json",
+        "uiTheme": "vs-dark"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@adam-coster/themer": "workspace:*",
+    "@bscotch/pathy": "2.7.3",
+    "@bscotch/utility": "6.8.3",
+    "@types/color": "3.0.3",
+    "@types/vscode": "1.79.1",
+    "color": "4.2.3",
+    "eslint": "8.44.0",
+    "node-fetch": "3.3.1",
+    "nodemon": "^2.0.22",
+    "prettier": "2.8.8",
+    "tslib": "2.6.0",
+    "typescript": "5.1.6",
+    "zod": "3.21.4"
+  },
+  "engines": {
+    "vscode": "^1.74.0"
+  }
 }

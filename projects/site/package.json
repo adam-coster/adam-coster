@@ -1,45 +1,45 @@
 {
-	"dependencies": {
-		"@adam-coster/site-tools": "workspace:*",
-		"@bscotch/pathy": "2.7.3",
-		"@fortawesome/free-brands-svg-icons": "6.4.0",
-		"@fortawesome/free-solid-svg-icons": "6.4.0",
-		"just-debounce": "1.1.0",
-		"svelte": "4.0.1",
-		"svelte-fa": "3.0.4"
-	},
-	"devDependencies": {
-		"@fortawesome/fontawesome-common-types": "6.4.0",
-		"@playwright/test": "1.35.1",
-		"@sveltejs/kit": "1.21.0",
-		"@types/lunr": "2.3.4",
-		"concurrently": "8.2.0",
-		"gray-matter": "4.0.3",
-		"lunr": "2.3.9",
-		"prettier": "2.8.8",
-		"schema-dts": "1.1.2",
-		"svelte-check": "3.4.4",
-		"typescript": "5.1.6",
-		"vite": "4.3.9",
-		"wait-on": "7.0.1",
-		"wrangler": "3.1.1",
-		"zx": "7.2.2"
-	},
-	"name": "@adam-coster/site",
-	"private": true,
-	"scripts": {
-		"build": "svelte-kit sync && vite build && node scripts/postBuild.js",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"ci:publish": "node scripts/ci.publish.js",
-		"prepublish": "exit 1",
-		"preview": "vite preview --port 3037",
-		"test": "concurrently --names serve,test --success command-test --kill-others \"pnpm:preview\" \"pnpm:test:when-ready\"",
-		"test:dev": "TEST_PORT=3000 playwright test --trace on",
-		"test:when-ready": "wait-on --timeout 30000 http://localhost:3037 && TEST_PORT=3037 playwright test",
-		"version:tag": "git tag -a $npm_package_name@$npm_package_version -m \"Version $npm_package_version\" && git push --follow-tags",
-		"watch": "svelte-kit sync && vite dev --port 3000"
-	},
-	"type": "module",
-	"version": "0.8.0"
+  "name": "@adam-coster/site",
+  "version": "0.9.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "svelte-kit sync && vite build && node scripts/postBuild.js",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "ci:publish": "node scripts/ci.publish.js",
+    "preview": "vite preview --port 3037",
+    "prepublish": "exit 1",
+    "test": "concurrently --names serve,test --success command-test --kill-others \"pnpm:preview\" \"pnpm:test:when-ready\"",
+    "test:dev": "TEST_PORT=3000 playwright test --trace on",
+    "test:when-ready": "wait-on --timeout 30000 http://localhost:3037 && TEST_PORT=3037 playwright test",
+    "version:tag": "git tag -a $npm_package_name@$npm_package_version -m \"Version $npm_package_version\" && git push --follow-tags",
+    "watch": "svelte-kit sync && vite dev --port 3000"
+  },
+  "dependencies": {
+    "@adam-coster/site-tools": "workspace:*",
+    "@bscotch/pathy": "2.7.3",
+    "@fortawesome/free-brands-svg-icons": "6.4.0",
+    "@fortawesome/free-solid-svg-icons": "6.4.0",
+    "just-debounce": "1.1.0",
+    "svelte": "4.0.1",
+    "svelte-fa": "3.0.4"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-common-types": "6.4.0",
+    "@playwright/test": "1.35.1",
+    "@sveltejs/kit": "1.21.0",
+    "@types/lunr": "2.3.4",
+    "concurrently": "8.2.0",
+    "gray-matter": "4.0.3",
+    "lunr": "2.3.9",
+    "prettier": "2.8.8",
+    "schema-dts": "1.1.2",
+    "svelte-check": "3.4.4",
+    "typescript": "5.1.6",
+    "vite": "4.3.9",
+    "wait-on": "7.0.1",
+    "wrangler": "3.1.1",
+    "zx": "7.2.2"
+  }
 }
