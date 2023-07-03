@@ -2,82 +2,99 @@
 
 Useful concepts, tools, and examples to help you on your automagician journey. Whether you're a skilled programmer or have never even heard of a `for` loop, there's stuff in here for you. Advanced stuff will be linked out, and this doc builds from top to bottom so that's the best way to approach it.
 
-If you haven't read the general definitions and ideas behind what automation is and why it's important, [start there](../Automating%20Workflows%201c0edff99bdd42d1b0585993e9807424.md)!
+If you haven't read the general definitions and ideas behind what automation is and why it's important, [start there](./automation-definitions)!
 
 These days most of our data lives in "the cloud" in various web services, so a lot of what it means to automate our work is to link services together or trigger events within them. For that reason this document biases towards web-based tools and concepts.
 
-- **Table of Contents**
-
 ## Useful Terms
 
-- **Programming Language**
+The following are terms you'll likely see in the world of automation.
+
+### Programming Language
     
-    A precisely, explicitly, and completely defined set of rules for how to write text that can be converted into something that a computer can *do*. When learning a language, you have to always always remember that *precision is what makes it work*. Something as simple as a `+` sign can do completely different things depending on the language, and even depending on context within the same language!
+A precisely, explicitly, and completely defined set of rules for how to write text that can be converted into something that a computer can *do*. When learning a language, you have to always always remember that *precision is what makes it work*. Something as simple as a `+` sign can do completely different things depending on the language, and even depending on context within the same language!
     
-    *Examples*
+Some example programming languages:
     
-    - Node.js
-    - JavaScript
-    - Python
-    - C++
-    - GML (GameMaker Language)
-- **Markup Language**
+- Node.js
+- JavaScript
+- Typescript
+- Python
+- C++
+- Rust
+- GML (GameMaker Language)
+
+### Markup Language
     
-    While a "programming" language is mostly about making a computer *do* something, a "markup" language is mostly about making something *look a certain way*.
+While a "programming" language is mostly about making a computer *do* something, a "markup" language is mostly *describing* something.
     
-    *Examples*
+Some example markup languages:
+
+- HTML
+- Markdown
+- XML
+- LaTeX
+- BBCode
+- MermaidJS
+
+### Text Editor
     
-    - HTML
-    - Markdown
-    - XML
-    - LaTeX
-    - BBCode
-    - MermaidJS
-- **Text Editor**
+A program that shows you the contents of a file *interpreted as plain old text*. So what you see is also what's in the file. Text Editors will often let you open any kind of file within them, but you'll see some pretty wild stuff if that file isn't a text file! (This has to do with *encoding*, which we'll get to later.)
     
-    A program that shows you the contents of a file *interpreted as plain old text*. So what you see is also what's in the file. Text Editors will often let you up any kind of file within them, but you'll see some pretty wild stuff if that file isn't a text file!
+Example text editors:
+
+- [VSCode](https://code.visualstudio.com/) 💖
+- [Notepad++](https://notepad-plus-plus.org/downloads/) 😊
+- Notepad 🤮
     
-    *Examples*: [VSCode](https://code.visualstudio.com/) 💖, Notepad 🤮, [Notepad++](https://notepad-plus-plus.org/downloads/) 😊
+### WYSIWYG
     
-- **[WYSIWYG](https://en.wikipedia.org/wiki/WYSIWYG) ("whizzy-wig")**
+Short for ["What You See Is What You Get"](https://en.wikipedia.org/wiki/WYSIWYG) (pronounced "whizzy-wig"), which is a term to describe things like word processors (Microsoft Word, Google Docs, etc) where what you see on the screen is the end product. This is in contrast to ["Markup" languages](#markup-language) like Markdown or HTML, where what you see when editing is *not* what you get in the end product.
     
-    Short for "What You See Is What You Get", which is a term to describe things like word processors (Word, Google Docs, etc) where what you see on the screen is the end product. This is in contrast to "Markup" languages like Markdown or HTML, where what you see when editing is *not* what you see in the end product.
+### Word Processor
     
-- **Word Processor**
+A program built for [WYSIWYG](#wysiwyg) editing of files that typically integrate visual formatting, embedded images, tables, and so on. Word Processors typically output some sort of custom file type (like `.docx`), though many can import from and export to multiple types.
     
-    A program built for WYSIWYG editing of files that typically integrate visual formatting, embedding images, tables, and so on. Word Processors typically output some sort of custom file type (like `.docx`), though many can import from and export to multiple types. 
+*Examples*: Google Docs, Microsoft Word
     
-    *Examples*: Google Docs, Microsoft Word
+### IDE
     
-- **IDE**
+Short for "Integrated Desktop Environment". An IDE is a program that mostly operates on regular text files, where the text in those files is *code* written by a programmer, and where the IDE is somehow assisting the coding process. For example: auto-complete of code snippets, auto-indenting, highlighting of invalid code, auto-fixing of invalid code, automatically running test suites and formatters, and so on.
+
+You can think of an IDE as a fancy [Text Editor](#text-editor) specifically for writing code.
     
-    Short for "Integrated Desktop Environment". A program that mostly operates on regular text files, where the text in those files is mostly *code* written by a programmer, and where the IDE is somehow assisting the coding process. For example: auto-complete of code snippets, auto-indenting, highlighting of invalid code, auto-fixing of invalid code, automatically running test suites and formatters, and so on. You can think of an IDE as a fancy Text Editor specifically for writing code.
+Example IDEs:
+
+- Visual Studio
+- VSCode (part of the "Visual Studio" branding, but a standalone product predominantly used for programming website-related languages)
+- PyCharm (for Python)
+- JetBrains (webdev)
+- GameMaker
+
+### Encoding
     
-    *Examples*
+A set of rules or a conversion map for representing some sort of data using another sort of data. For computer stuff, we we're typically trying to represent something using *binary* data, since that's what computers can understand.
+
+A program needs to know how the raw, binary data it sees is "encoded" so that it can properly read and do stuff with it.
     
-    - Visual Studio (old guard, enormous IDE that can handle tons of languages — most commonly used with C-like languages)
-    - VSCode (part of the "Visual Studio" branding, but a standalone product predominantly used for programming website-related languages)
-    - PyCharm (for Python)
-    - JetBrains (webdev)
-- **Encoding**
+*Examples*
+
+- ASCII (for English-centric text)
+- UTF-8 (for text from all languages)
+- PNG (an image format)
+- WAV (a sound format)
+
+### MIME Types, File Types, and Extensions
     
-    A set of rules or a conversion map for representing some sort of data as binary. A program needs to know how the raw data it sees is "encoded" so that it can properly parse and do stuff with it.
+When we refer to a file's "type" we are referring to how that file is structured and therefore which applications can "understand" it. For example, when a browser downloads an image from the web it needs to know that (1) it actually is an image, and (2) what specific type of image it is (PNG, JPG, GIF) so that the browser can convert the raw binary data of that image into the right colors of pixels on your screen.
     
-    *Examples*
+There are two common approaches we use to keep track of our filetypes and inform applications about them.
     
-    - ASCII (for English-centric text)
-    - UTF-8 (for text from all languages)
-    - PNG (an image format)
-    - WAV (a sound format)
-- **MIME Types & File Types & Extensions**
-    
-    When we refer to a file's "type" we are referring to how that file is structured and therefore which applications can "understand" it. For example, when a browser downloads an image from the web it needs to know that (1) it actually is an image, and (2) what specific type of image it is (PNG, JPG, GIF) so that the browser can convert the raw binary data of that image into the right colors of pixels on your screen.
-    
-    There are two common approaches we use to keep track of our filetypes and inform applications about them.
-    
-    1. For files on your computer we use a *file extension*. It's the last part of a filename, like `.txt` (a plaintext file) or `.docx` (a Word document).
-    📝 Note that your operating system probably hides extensions from you most of the time: you can disable this!
-    2. For files sent over the Internet, we *may* use an extension (in the URL) but *definitely* use a "[MIME Type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)" that is sent along with the file. The MIME Type does the same thing as an extension, but is more verbose. They typically take the form of `{general}/{specific}`, e.g. `text/plain`, `text/markdown`, `application/json`, etc.
+1. For files on your computer we use a *file extension*. It's the last part of a filename, like `.txt` (a plaintext file) or `.docx` (a Word document).
+  - 📝 Note that your operating system probably hides extensions from you most of the time: you can disable this!
+2. For files sent over the Internet, we *may* use an extension (in the URL) but *almost definitely* use a "[MIME Type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)" in the metadata that is sent along with the file. The MIME Type does the same thing as an extension, but is more verbose. They typically take the form of `{general}/{specific}`, e.g. `text/plain`, `text/markdown`, `application/json`, etc.
+
+You may be wondering what happens if the file extension isn't there, or if the there are multiple kinds of files that use the same extension, or if the file has the *wrong* extension. The answer is... any number of things, depending on what the application's programmers accounted for: the app could crash, show you something really weird, corrupt the file by trying to "fix" it, tell you that the file is "corrupted", or any number of things. For apps that can open lots of kinds of files, they might do "content sniffing" where they compare the structure of the file to those of common file types and try to guess what it is.
 
 ## Representing Data
 
@@ -85,44 +102,42 @@ Data is what automation is all about! Whether we're moving data from one place t
 
 What *is* data, you ask? Well, just about anything, really. I could say something like, "Data is information!" but that's just how synonyms work. For practical purposes, we can think of "data" as anything that a computer can store and process.
 
-You'd be hard-pressed to find something in the world that you *can't* store and process on a computer. That brings us to the subsections below: common ways to represent data!
+You'd be hard-pressed to find something in the world that you *can't* store and process on a computer. That brings us to the subsections below: common ways to represent ("encode") data!
 
 ### Binary
 
 *Other terms for binary data: blob, binary string, octet string, octet-stream*
 
-💾 Common MIME Types & Extensions: `.bin`, `application/octet-stream`
+> 💾 Common MIME Types & Extensions: `.bin`, `application/octet-stream`
 
-Computers store everything as "binary data", which people typically describe as "a series of ones and zeroes." We won't get into what that means here, but the point is that if a computer is storing it... it's a bunch of ones and zeroes! Images, sounds, text documents, computer programs, video games, etc. Doesn't matter what it is; the computer stores it the same way: in **binary**.
+Computers store everything as "binary data", which people typically describe as "a series of ones and zeroes." We won't get into what that means here, but the point is that if a computer is storing it... it's a bunch of ones and zeroes! Images, sounds, text documents, computer programs, video games, etc. Doesn't matter what it is, the computer stores it the same way: in **binary**.
 
-To see that data as something different than the ones and zeroes in which it's stored, we have to *interpret it*. But how do we know how to do that? [Encodings](Automation%20Tools%20&%20Concepts%201890aa6e9b3b4038961247ede20ea733.md)!
+To see that data as something different than the ones and zeroes in which it's stored, we have to *interpret it*. But how do we know how to do that? [Encodings](#encoding)!
 
-But sometimes we don't know or don't care what the encoding of our data is. In that case we just think about it in its raw, pure, wholesome "binary" form.
+But sometimes we don't know or don't care what the encoding of our data is. For example, if we're just moving some data from one place to another without looking at it. In that case we just think about it in its raw "binary" form.
 
 ### Text
 
-💾 Common MIME Types & Extensions: `.txt`, `text/plain`
+> 💾 Common MIME Types & Extensions: `.txt`, `text/plain`
 
 Text is the most familiar and easy-to-use type of data. You've probably heard of [ASCII](https://en.wikipedia.org/wiki/ASCII), which is one of the original ways of encoding English-centric text. You may have also heard of "[UTF-8](https://en.wikipedia.org/wiki/UTF-8)", which is now the dominant way of encoding text because it can handle *all* languages (and ASCII is actually a subset of it!).
 
 Most of the time you don't have to worry about how your text is encoded, since the software you use will be dealing with that for you. If you ever need to specify, go with UTF8!
 
-> 📝 Data that is stored as text, where all of that text is for human reading, is typically called "plaintext". We call it "plain" because there's nothing fancy going on. It's just some text! Sometimes we want to be more specific so we'll say it's a "markdown file" or an "html file". These are still text, we're just being more specific about how to understand read it.
-> 
+> 📝 Data that is stored as text, where all of that text is for human reading, is typically called "plaintext". We call it "plain" because there's nothing fancy going on. It's just some text! Sometimes we want to be more specific so we'll say it's a "markdown file" or an "html file". These are still text (because they use the same *encoding*), we're just being more specific about how to understand it.
 
-> ⚠ An easy thing to get confused by is that a Word Processor file (e.g. `.docx`) *is not a plaintext file*. That sounds wrong, doesn't it? I mean, you put text right into that thing! But if you open up in a `.docx` file in a Text Editor (not a Word Processor!) you'll see the data interpreted *as text*, which can get quite weird.
-> 
+> ⚠ An easy thing to get confused by is that a [Word Processor](#word-processor) file (e.g. `.docx`) *is not a plaintext file*. That sounds wrong, doesn't it? I mean, you put text right into that thing! But if you open up a `.docx` file in a [Text Editor](#text-editor) (not a [Word Processor](#word-processor)) you'll see the data interpreted *as text*, which can get quite weird.
+
 
 ### Markdown
 
-💾 Common MIME Types & Extensions: `.md`, `.markdown`, `.txt`, `text/markdown`, `text/x-markdown`, `text/plain`
+> 💾 Common MIME Types & Extensions: `.md`, `.markdown`, `.txt`, `text/markdown`, `text/x-markdown`, `text/plain`
 
-Markdown is a *family* of a markup languages, all with similar but slightly different rules (people refer to these as different "flavors"). The most popular one is GFM ([GitHub Flavored Markdown](https://github.github.com/gfm/)). You'll find that tons of apps and services support some subset ("flavor") of Markdown. For example, Discord lets you use italics, bold, and code blocks, but it doesn't let you create lists. Favro lets you create lists, but only allows a few headers. Notion supports its own Markdown flavor. And on and on.
+Markdown is a *family* of a markup languages, all with similar but slightly different rules (people refer to these as different "flavors"). The most popular one is probably GFM ([GitHub Flavored Markdown](https://github.github.com/gfm/)). You'll find that tons of apps and services support some subset ("flavor") of Markdown. For example, Discord lets you use italics, bold, and code blocks, but it doesn't let you create lists. Favro lets you create lists, but only allows a few heading sizes. Notion supports its own Markdown flavor. And on and on.
 
-Markdown was originally created as a more human-friendly alternative to HTML. The idea was to allow writers to draft text-only content, where some of that text describes how the rest of the text should look, while minimizing typing and keeping everything as readable as possible.
+Markdown was originally created as a more human-friendly alternative to HTML, meant to be converted *into* HTML for display purposes. The idea was to allow writers to draft text-only content, where some of that text describes how the rest of the text should look, while minimizing typing and keeping everything as readable as possible.
 
 > 📝 It's called "Mark**down**" as a sort of commentary about typical "Mark**up**" languages: they're usually super complicated and hard for people to read!
-> 
 
 The things about Markdown to pay attention to:
 
@@ -133,27 +148,25 @@ The things about Markdown to pay attention to:
 
 ### HTML
 
-💾 Common MIME Types & Extensions: `.html`, `.htm`, `text/html`
+> 💾 Common MIME Types & Extensions: `.html`, `.htm`, `text/html`
 
-[HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) is *hideous*, but it's the most popular markup language by a jillion miles. Why? Because it's the de facto markup language for the *entire internet*. HTML is what web pages are written in. The main job of your browser is to parse and render HTML!
+[HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) is *hideous*, but it's the most popular markup language by a jillion miles. Why? Because it's the de facto markup language for the *entire Internet*. HTML is what web pages are written in. The main job of your browser is to parse and render HTML!
 
-Since HTML is the markup of the Internet, you'll run into it constantly while doing automations. Many things that aren't HTML are just HTML in disguise, like Markdown (designed as a simpler markup language that converts to HTML).
+Since HTML is the markup of the Internet, you'll run into it constantly while doing automations. Many things that aren't HTML are just HTML in disguise, like [Markdown](#markdown) (designed as a simpler markup language that converts to HTML).
 
 ### XML
 
-💾 Common MIME Types & Extensions: `.xml`, `text/xml`, `application/xml`, `{general}/{specific}+xml` (for any of many specific XML formats, like `image/svg+xml`)
+> 💾 Common MIME Types & Extensions: `.xml`, `text/xml`, `application/xml`, `{general}/{specific}+xml` (for any of many specific XML formats, like `image/svg+xml`)
 
-[XML](https://developer.mozilla.org/en-US/docs/Web/XML/XML_introduction) is a general way to represent nested data using text. It is *very* similar to HTML, so if you understand the principles of one you've also got the other. XML and XML-like formats are found all over the place (HTML, SVG, RSS). Web services have largely moved on to simpler formats like JSON for non-markup data.
+[XML](https://developer.mozilla.org/en-US/docs/Web/XML/XML_introduction) is a general way to represent nested data using text. It is *very* similar to HTML, so if you understand the principles of one you've also got the other. XML and XML-like formats are found all over the place (HTML, SVG, RSS). Web services have largely moved on to more human-friendly formats like [JSON](#json) for non-markup data.
 
 ### JSON
 
 💾 Common MIME Types & Extensions: `.json`, `application/json`
 
-JavaScript Object Notation ("JSON") is probably the most common way of representing complex data on the web. Why? It's in the name! JSON data can be directly used by JavaScript (the programming language of the Internet), so it's super portable. It's also not *too* human-hostile (especially compared to XML).
+JavaScript Object Notation ("JSON") is probably the most common way of representing non-text/image/audio/video data on the modern web. Why? It's in the name! JSON data can be directly used by JavaScript (the programming language of the Internet), so it's super portable. It's also not *too* human-hostile to read and write (especially compared to [XML](#xml)).
 
-All of the guides I can find on the topic make use of a lot of JavaScript in the explanations, so I've had to roll my own:
-
-[JSON Guide](Automation%20Tools%20&%20Concepts%201890aa6e9b3b4038961247ede20ea733/JSON%20Guide%20d6406800876b416f8cc071520e11cccd.md)
+All of the guides I can find on the topic make use of a lot of JavaScript in the explanations, so I've written a simpler [JSON Guide](./json-guide) that gets right to the point.
 
 ### YAML
 
