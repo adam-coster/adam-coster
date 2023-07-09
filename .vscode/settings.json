@@ -62,7 +62,7 @@
 	"typescript.tsdk": "node_modules/typescript/lib",
 	"npm.packageManager": "pnpm",
 	"eslint.packageManager": "pnpm",
-	"cSpell.words": ["sveltekit"],
+	"cSpell.words": ["automations", "sveltekit"],
 	"svelte.plugin.css.globals": "projects/site/src/style/root.css",
 	"eslint.onIgnoredFiles": "warn"
 }

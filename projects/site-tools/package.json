@@ -24,6 +24,7 @@
     "highlight.js": "11.8.0",
     "lunr": "2.3.9",
     "marked": "5.1.0",
+    "marked-gfm-heading-id": "3.0.4",
     "node-html-parser": "6.1.5",
     "puppeteer": "^20.7.4",
     "rehype-accessible-emojis": "0.3.2",

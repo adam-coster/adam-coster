@@ -1,5 +1,12 @@
 import grayMatter from 'gray-matter';
 import { marked } from 'marked';
+import { gfmHeadingId } from 'marked-gfm-heading-id';
+
+marked.use(gfmHeadingId());
+
+function markdownToHtml(md: string): string {
+	return marked(md, { mangle: false });
+}
 
 interface MicrodataFaqQuestion {
 	'@type': 'Question';
@@ -53,8 +60,8 @@ export function markdownToMicrodata(rawMarkdown: string): FoundMicrodata {
 		questions = questions
 			.filter((x) => x.acceptedAnswer.text)
 			.map((x) => {
-				x.acceptedAnswer.text = marked(x.acceptedAnswer.text).trim();
-				x.name = marked(x.name).trim();
+				x.acceptedAnswer.text = markdownToHtml(x.acceptedAnswer.text).trim();
+				x.name = markdownToHtml(x.name).trim();
 				return x;
 			});
 
