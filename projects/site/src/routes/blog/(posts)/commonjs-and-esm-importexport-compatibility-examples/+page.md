@@ -2,7 +2,7 @@ Node's [CommonJS](https://nodejs.org/docs/latest-v16.x/api/modules.html) (<abbr 
 
 I can often go for weeks at a time before running into new incompatibility problems, so then each time I have to remind myself how interoperability works between them. Well, this time I made a tiny, simple demo so that _next_ time I can just refer to it. And now you can, too!
 
-## CommonJS (cjs) vs. Modules (ESM)
+## CommonJS (cjs) vs. ES Modules (ESM)
 
 A brief summary of the differences between these two ways of managing JavaScript code:
 
@@ -87,7 +87,7 @@ Perfect! If we're using ESM we can basically treat _all_ code as if it's also ES
 
 ## Importing ESM into CommonJS (cjs)
 
-Since `require()` is synchronous, you can't use it to import ESM modules. Instead, to import ESM into CommonJS you'll use the asynchronous `import()` _function_. The returned promise resolves to an object with a `default` field (which points to the default exported value), plus a field per any named export.
+Since `require()` is synchronous, you can't use it to import ES modules. Instead, to import ESM into CommonJS you'll use the asynchronous `import()` _function_. The returned promise resolves to an object with a `default` field (which points to the default exported value), plus a field per any named export.
 
 Let's take a look:
 
@@ -162,5 +162,5 @@ I've been all-in on ESM for a while now. It's a better developer experience and 
 - (But also note that some tools don't know about those extensions...)
 - Tools written in CommonJS (i.e. _most_ existing Node-based tools) usually handle ESM poorly. Even extremely popular projects. If you want to guarantee that you can use a tool with your code, you may want to stick with CommonJS.
 - If you will mostly be importing other packages into your project (versus having yours imported into others), ESM will let you not have to worry much about what kind of modules you're importing.
-- ESM spec requires that import paths be valid paths, meaning you need the file extension and everything (CommonJS doesn't require that). Node has an option [to skip out on that requirement](https://nodejs.org/docs/latest-v16.x/api/esm.html#customizing-esm-specifier-resolution-algorithm) for ESM modules, if you want to keep it old-school: `node --es-module-specifier-resolution=node your-dope-module.mjs`
+- ESM spec requires that import paths be valid paths, meaning you need the file extension and everything (CommonJS doesn't require that). Node has an option [to skip out on that requirement](https://nodejs.org/docs/latest-v16.x/api/esm.html#customizing-esm-specifier-resolution-algorithm) for ES modules, if you want to keep it old-school: `node --es-module-specifier-resolution=node your-dope-module.mjs`
 - If you do decide to go all-in on ESM in Node, be ready to do a lot of very annoying troubleshooting!
