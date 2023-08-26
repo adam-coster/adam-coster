@@ -1,0 +1,9 @@
+{
+	"$schema": "../../post.schema.json",
+	"crossPosts": [],
+	"description": "Tons of things in JavaScript are objects of one sort or another. How can you differentiate between plain vanilla objects and others?",
+	"publishedAt": "2023-08-26T22:22:05.931Z",
+	"slug": "pojo-detector",
+	"tags": ["javascript", "typescript", "programming"],
+	"title": "How to tell if something is a plain old JavaScript object (POJO)"
+}
