@@ -1,0 +1,9 @@
+{
+	"$schema": "../../post.schema.json",
+	"slug": "electron-autoupdater-hacks",
+	"title": "Statically host your Electron app updates: No server required!",
+	"description": "The Electron docs describe autoupdate servers you can use for your app. But you can also get by with a static host.",
+	"publishedAt": "2023-08-27T21:25:26.155Z",
+	"tags": ["programming", "node", "javascript"],
+	"crossPosts": []
+}
