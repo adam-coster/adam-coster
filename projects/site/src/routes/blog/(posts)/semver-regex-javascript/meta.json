@@ -1,0 +1,9 @@
+{
+	"$schema": "../../post.schema.json",
+	"slug": "semver-regex-javascript",
+	"title": "JavaScript regex for semver strings",
+	"description": "A comprehensive JavaScript regular expression for matching semver strings, plus a simple semver parser.",
+	"publishedAt": "2023-09-18T16:34:56.039Z",
+	"tags": ["javascript", "regex", "programming"],
+	"crossPosts": []
+}
