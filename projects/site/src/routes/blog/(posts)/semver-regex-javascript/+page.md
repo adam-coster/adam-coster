@@ -3,7 +3,11 @@ The official [semver docs](https://semver.org/) list a couple of regular express
 Here's the official regex with minimal edits to make it JavaScript compatible:
 
 ```js
+/** Regex matching the official semver spec, with named capture groups. */
 const semverPattern = /^(?<major>0|[1-9]\d*)\.(?<minor>0|[1-9]\d*)\.(?<patch>0|[1-9]\d*)(?:-(?<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/
+
+/** Pattern matching the official semver spec, with named capture groups, that can be used as a RegExp source. */
+const semverPatternString = '^(?<major>0|[1-9]\\d*)\\.(?<minor>0|[1-9]\\d*)\\.(?<patch>0|[1-9]\\d*)(?:-(?<prerelease>(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+(?<buildmetadata>[0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$'
 ```
 
 See it in action: [https://regex101.com/r/M4Un5m/1](https://regex101.com/r/M4Un5m/1)
