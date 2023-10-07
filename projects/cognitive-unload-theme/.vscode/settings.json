@@ -1,7 +1,4 @@
 {
-	"editor.fontFamily": "Ubuntu Mono",
-	"terminal.integrated.fontFamily": "Ubuntu Mono",
-	"terminal.integrated.fontWeight": "bold",
 	"workbench.colorCustomizations": {
 		"[Default Dark Modern]": {
 			"editorBracketHighlight.foreground1": "#a0a0a0",
@@ -11,6 +8,7 @@
 			"editorBracketHighlight.foreground5": "#a0a0a0",
 			"editorBracketHighlight.foreground6": "#8f8f8f",
 			"editorBracketHighlight.unexpectedBracket.foreground": "#ff0000",
+			"editorBracketMatch.border": "#cdd400ff",
 			"actionBar.toggledBackground": "#383a49",
 			"activityBar.activeBorder": "#cdd400",
 			"activityBar.background": "#181818",
@@ -70,6 +68,9 @@
 			"keybindingLabel.foreground": "#cccccc",
 			"list.activeSelectionIconForeground": "#ffffff",
 			"list.dropBackground": "#383b3d",
+			"list.focusForeground": "#ffffff",
+			"list.focusBackground": "#383b3d",
+			"list.activeSelectionBackground": "#2c292d",
 			"menu.background": "#1f1f1f",
 			"menu.border": "#454545",
 			"menu.foreground": "#cccccc",
@@ -92,8 +93,10 @@
 			"pickerGroup.border": "#3c3c3c",
 			"ports.iconRunningProcessForeground": "#369432",
 			"progressBar.background": "#cdd400",
-			"quickInput.background": "#222222",
-			"quickInput.foreground": "#cccccc",
+			"quickInput.background": "#0f0f0f",
+			"quickInput.foreground": "#8c8c8c",
+			"quickInputList.focusForeground": "#ffffff",
+			"quickInputList.focusBackground": "#242424",
 			"settings.dropdownBackground": "#313131",
 			"settings.dropdownBorder": "#3c3c3c",
 			"settings.headerForeground": "#ffffff",
