@@ -35,11 +35,8 @@
 	</p>
 </footer>
 
-<style lang="scss">
-	:global {
-		@import '../style/global';
-	}
-	// [skip link](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#skip_links)
+<style>
+	/* [skip link](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#skip_links) */
 	#skip-nav {
 		position: absolute;
 		padding-inline: 0.5em;
@@ -58,27 +55,28 @@
 		text-align: center;
 		font-size: 2.5em;
 		line-height: 1.5em;
-
-		@media screen and (max-width: 500px) {
+	}
+	@media screen and (max-width: 500px) {
+		a.logo {
 			display: flex;
 			flex-direction: column;
-			span {
-				margin-top: calc(var(--size) * -0.5);
-				margin-bottom: calc(var(--size) * -1);
-			}
 			margin-block-end: 0.75em;
 		}
-		.firstname {
-			color: var(--color-link);
-			font-weight: bold;
+		a.logo span {
+			margin-top: calc(var(--size) * -0.5);
+			margin-bottom: calc(var(--size) * -1);
 		}
-		.lastname {
-			color: var(--color-link-hover);
-			font-weight: bold;
-		}
-		.domain {
-			color: var(--color-subtle);
-		}
+	}
+	.firstname {
+		color: var(--color-link);
+		font-weight: bold;
+	}
+	.lastname {
+		color: var(--color-link-hover);
+		font-weight: bold;
+	}
+	.domain {
+		color: var(--color-subtle);
 	}
 	main {
 		flex-grow: 1;
@@ -88,9 +86,9 @@
 		padding-top: 50px;
 		font-size: calc(0.8 * var(--size));
 		color: var(--color-subtle);
-		.copyright {
-			text-align: center;
-			margin-top: calc(0.3 * var(--size));
-		}
+	}
+	.copyright {
+		text-align: center;
+		margin-top: calc(0.3 * var(--size));
 	}
 </style>

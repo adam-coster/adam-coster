@@ -113,15 +113,15 @@
 	</div>
 </article>
 
-<style lang="scss">
+<style>
 	article header :is(h1, h2) {
 		text-align: center;
 	}
 	article + article {
 		margin-top: 2em;
 	}
-	.identity-groups {
-		@media screen and (min-width: 800px) {
+	@media screen and (min-width: 800px) {
+		.identity-groups {
 			display: grid;
 			grid-gap: 1rem;
 			grid-template-columns: 1fr 1fr 1fr;
@@ -132,10 +132,12 @@
 	}
 	.whoami {
 		display: flex;
-		.text {
-			padding: calc(var(--size));
-		}
-		@media screen and (max-width: 720px) {
+	}
+	.whoami .text {
+		padding: calc(var(--size));
+	}
+	@media screen and (max-width: 720px) {
+		.whoami {
 			flex-direction: column;
 			align-items: center;
 		}

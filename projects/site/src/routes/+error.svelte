@@ -48,7 +48,7 @@
 	<h2>🪲 {$page.error.message}</h2>
 {/if}
 
-<style lang="scss">
+<style>
 	.error-status {
 		color: var(--color-bad);
 		font-weight: 400;

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -36,7 +36,8 @@
 		vars,
 		global,
 		lists,
-		code;
+		code,
+		post;
 		</style>
 		<style>
 			/* reset */
@@ -499,6 +500,150 @@
 					.hljs-selector-tag {
 						font-weight: bold;
 					}
+				}
+			}
+		</style>
+		<style>
+			@layer post {
+				article.article > .body :where(h1, h2, h3, h4, h5, h6) {
+					position: relative;
+				}
+				article.article > .body :where(h1, h2, h3, h4, h5, h6) a {
+					position: absolute;
+					--width: 0.75em;
+					--left: var(--width);
+					top: 0;
+					left: calc(var(--left) * -1.2);
+					width: var(--left);
+					height: var(--width);
+					display: inline-block;
+				}
+
+				article.article > .body :where(h1, h2, h3, h4, h5, h6) svg {
+					visibility: hidden;
+				}
+
+				article.article > .body :where(h1, h2, h3, h4, h5, h6):hover svg {
+					color: var(--color-subtle);
+					fill: currentColor;
+					width: var(--width);
+					height: var(--width);
+					visibility: visible;
+				}
+
+				article.article > .body :where(h2, h3, h4, h5, h6) {
+					margin-top: calc(var(--size) * 2);
+				}
+
+				article.article > .body,
+				article.body {
+					--blockquote-margin: calc(var(--size) * 3.5);
+
+					counter-reset: figure;
+				}
+
+				:where(article.article > .body, article.body) :where(img, iframe) {
+					max-width: 100%;
+					margin: auto;
+				}
+
+				figure {
+					border: 1px solid var(--color-text);
+					border-radius: var(--border-radius);
+					padding: calc(var(--size) * 0.5) calc(var(--size) * 1);
+					text-align: center;
+				}
+
+				figcaption {
+					font-size: calc(var(--size) * 0.9);
+					text-align: center;
+					font-style: italic;
+				}
+
+				figcaption:before {
+					counter-increment: figure;
+					content: 'Fig. ' counter(figure);
+					font-weight: bold;
+					margin-right: calc(var(--size) * 0.5);
+				}
+
+				figcaption p:first-child {
+					display: inline;
+				}
+
+				/* Tables */
+
+				table {
+					margin-top: calc(var(--size) * 0.5);
+					display: inline-table;
+					border-spacing: 0;
+					max-width: 100%;
+				}
+				td,
+				th {
+					padding: calc(var(--size) * 0.1) calc(var(--size) * 0.4);
+					outline: 2px solid var(--color-background);
+					border-width: 0 2px 0 0;
+					border-color: currentColor;
+				}
+
+				td {
+					outline: none;
+					border-bottom: 3px solid var(--color-background);
+					padding-top: 0;
+					padding-bottom: 0;
+				}
+
+				tr:nth-child(even) {
+					color: var(--color-subtle);
+				}
+
+				td:last-child,
+				th:last-child {
+					border-right: none;
+				}
+
+				th {
+					color: var(--color-background);
+					background-color: var(--color-text);
+					margin: calc(var(--size) * 0.25);
+				}
+
+				/* Quotes */
+
+				:where(article.article > .body, article.body) blockquote {
+					color: var(--color-subtle);
+				}
+
+				:where(article.article > .body, article.body) blockquote p {
+					margin: 0 var(--blockquote-margin);
+					font-style: italic;
+				}
+
+				:where(article.article > .body, article.body)
+					blockquote
+					p:first-child::before {
+					content: '“';
+					font-family: Georgia;
+					font-size: calc(var(--size) * 6);
+					margin-left: calc(var(--blockquote-margin) * -1);
+					margin-top: 0.25em;
+					position: absolute;
+					opacity: 0.5;
+				}
+
+				/* Footnotes */
+
+				:where(article.article > .body, article.body) sup {
+					--padding: calc(var(--size) * 0.2);
+					padding-left: var(--padding);
+					padding-right: var(--padding);
+				}
+
+				:where(article.article > .body, article.body) .footnotes {
+					border-top: 1px solid var(--color-subtle);
+					padding-top: calc(var(--size) * 1);
+					margin-top: calc(var(--size) * 1);
 				}
 			}
 		</style>

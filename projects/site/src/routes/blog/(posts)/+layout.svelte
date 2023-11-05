@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { ArticleMetadata } from '$lib/articleSearcher';
 	import Head, { metadata } from '$lib/Head.svelte';
+	import { ArticleMetadata } from '$lib/articleSearcher';
 	import {
 		dateIsLater,
 		getUrlHostName,
@@ -107,7 +107,7 @@
 	</div>
 </article>
 
-<style lang="scss">
+<style>
 	header {
 		margin: var(--size) 0;
 	}
@@ -121,13 +121,13 @@
 		word-spacing: 0.2em;
 		margin-top: 0.75em;
 		line-height: 1.5em;
-		.publication-date {
-			margin: 0;
-			display: flex;
-			column-gap: 0.5em;
-			flex-wrap: wrap;
-			justify-content: center;
-		}
+	}
+	.publication-date {
+		margin: 0;
+		display: flex;
+		column-gap: 0.5em;
+		flex-wrap: wrap;
+		justify-content: center;
 	}
 	.date-info {
 		color: var(--color-subtle);
@@ -143,14 +143,12 @@
 		justify-content: center;
 		column-gap: var(--button-padding-horizontal);
 		line-height: 1em;
-		.tag {
-			font-size: calc(var(--size) * 0.8);
-		}
 	}
-	.canonical a {
-		&:not(:hover) {
-			text-decoration: none;
-		}
+	.tag {
+		font-size: calc(var(--size) * 0.8);
+	}
+	.canonical a:not(:hover) {
+		text-decoration: none;
 	}
 	.cross-posts,
 	.canonical {

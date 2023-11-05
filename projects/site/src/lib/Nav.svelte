@@ -36,55 +36,52 @@
 	</menu>
 </nav>
 
-<style lang="scss">
+<style>
 	nav {
-		@media screen and (max-width: 500px) {
-			--small-screen-scaler: 0.7;
-			// font-size: calc(var(--size) * 0.6);
-		}
-
 		--small-screen-scaler: 1;
 		--relative-size: calc(1 * var(--small-screen-scaler));
 		--link-width: calc(calc(var(--size) * 4) * var(--relative-size));
-
-		&.footer {
-			--relative-size: calc(0.8 * var(--small-screen-scaler));
-		}
-
 		font-size: calc(var(--size) * var(--relative-size));
-
-		menu {
-			list-style: none;
-			padding: 0;
-			margin: 0;
-			display: flex;
-			flex-shrink: 0;
-			justify-content: center;
-			align-items: center;
-		}
-
-		li.nav-link {
-			display: flex;
-			width: var(--link-width);
-			justify-content: center;
-			align-items: center;
-
-			& a {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-			}
-		}
-
-		.nav-link a,
-		.nav-link svg {
-			color: var(--color-text);
-
-			&:hover {
-				color: var(--color-link);
-			}
-		}
-
 		margin: 0;
+	}
+	@media screen and (max-width: 500px) {
+		nav {
+			--small-screen-scaler: 0.7;
+		}
+	}
+
+	.footer {
+		--relative-size: calc(0.8 * var(--small-screen-scaler));
+	}
+
+	menu {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-shrink: 0;
+		justify-content: center;
+		align-items: center;
+	}
+
+	li.nav-link {
+		display: flex;
+		width: var(--link-width);
+		justify-content: center;
+		align-items: center;
+	}
+	li.nav-link a {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.nav-link a,
+	.nav-link svg {
+		color: var(--color-text);
+
+		&:hover {
+			color: var(--color-link);
+		}
 	}
 </style>

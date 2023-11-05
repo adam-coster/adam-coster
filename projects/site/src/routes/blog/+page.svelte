@@ -184,7 +184,7 @@
 	{/await}
 </nav>
 
-<style lang="scss">
+<style>
 	h1 {
 		text-align: center;
 	}
@@ -205,50 +205,46 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1.75em;
+	}
 
-		.article-snippet {
-			// border-bottom: 1px solid gray;
-			// border-radius: var(--border-radius);
-			// margin: calc(var(--size) * 2) 0;
-			height: 100%;
-			h2 {
-				--font-size: calc(var(--size) * 1.2);
-				background-color: var(--color-background);
-				margin: 0;
-				padding: 0;
-				font-size: var(--font-size);
-				text-align: left;
-				font-weight: normal;
-				a {
-					color: var(--color-text);
-				}
-			}
-			.summary {
-				line-height: 1.25em;
-				margin-top: 0.5em;
-			}
-			.date {
-				color: var(--color-subtle);
-				font-size: 0.9em;
-				font-style: italic;
-				display: inline;
-				margin-right: 0.25em;
-			}
-			.tags {
-				display: inline;
-				.tag {
-					display: inline;
-					font-size: calc(var(--size) * 0.8);
-					margin-right: 0.25em;
-				}
-			}
-			.description {
-				margin: 0;
-				// margin-left: calc(var(--size) * 1);
-				margin-top: calc(var(--size) * 0.5);
-				color: var(--color-subtle);
-			}
-		}
+	.article-snippet {
+		height: 100%;
+	}
+	.article-snippet h2 {
+		--font-size: calc(var(--size) * 1.2);
+		background-color: var(--color-background);
+		margin: 0;
+		padding: 0;
+		font-size: var(--font-size);
+		text-align: left;
+		font-weight: normal;
+	}
+	.article-snippet h2 a {
+		color: var(--color-text);
+	}
+	.article-snippet .summary {
+		line-height: 1.25em;
+		margin-top: 0.5em;
+	}
+	.article-snippet .date {
+		color: var(--color-subtle);
+		font-size: 0.9em;
+		font-style: italic;
+		display: inline;
+		margin-right: 0.25em;
+	}
+	.article-snippet .tags {
+		display: inline;
+	}
+	.tag {
+		display: inline;
+		font-size: calc(var(--size) * 0.8);
+		margin-right: 0.25em;
+	}
+	.article-snippet .description {
+		margin: 0;
+		margin-top: calc(var(--size) * 0.5);
+		color: var(--color-subtle);
 	}
 
 	.search-container {
@@ -259,49 +255,44 @@
 		--input-horizontal-padding: calc(
 			var(--horizontal-padding) * 2 + var(--search-icon-width)
 		);
-		// margin-block-start: 0.5em;
-		// display: flex;
-		position: relative;
-		// align-items: center;
-		// justify-content: space-between;
 		border: 0.1em solid var(--search-color-blur);
 		border-radius: var(--border-radius);
+	}
+	.search-container.focused {
+		border-color: var(--color-background);
+		outline: 0.1em solid var(--search-color-focus);
+	}
+	.search-icon {
+		position: absolute;
+		top: var(--vertical-padding);
+		left: var(--horizontal-padding);
+		width: var(--search-icon-width);
+		color: var(--search-color-blur);
 		&.focused {
-			border-color: var(--color-background);
-			outline: 0.1em solid var(--search-color-focus);
+			color: var(--search-color-focus);
 		}
-		.search-icon {
-			position: absolute;
-			top: var(--vertical-padding);
-			left: var(--horizontal-padding);
-			width: var(--search-icon-width);
-			color: var(--search-color-blur);
-			&.focused {
-				color: var(--search-color-focus);
-			}
+	}
+	.clear-button {
+		position: absolute;
+		top: var(--vertical-padding);
+		right: var(--horizontal-padding);
+		width: var(--search-icon-width);
+		color: var(--search-color-blur);
+		&.focused {
+			color: var(--search-color-focus);
 		}
-		.clear-button {
-			position: absolute;
-			top: var(--vertical-padding);
-			right: var(--horizontal-padding);
-			width: var(--search-icon-width);
-			color: var(--search-color-blur);
-			&.focused {
-				color: var(--search-color-focus);
-			}
-		}
-		input {
-			font-size: 100%;
-			padding-left: var(--input-horizontal-padding);
-			padding-right: var(--input-horizontal-padding);
-			border-color: var(--search-color-blur);
-			color: var(--search-color-blur);
-			width: 100%;
-			&:focus {
-				outline: none;
-				border-color: var(--search-color-focus);
-				color: var(--search-color-focus);
-			}
+	}
+	input {
+		font-size: 100%;
+		padding-left: var(--input-horizontal-padding);
+		padding-right: var(--input-horizontal-padding);
+		border-color: var(--search-color-blur);
+		color: var(--search-color-blur);
+		width: 100%;
+		&:focus {
+			outline: none;
+			border-color: var(--search-color-focus);
+			color: var(--search-color-focus);
 		}
 	}
 </style>

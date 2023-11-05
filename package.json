@@ -1,42 +1,39 @@
 {
 	"dependencies": {
-		"@bscotch/pathy": "2.7.3",
-		"@bscotch/trebuchet": "2.8.4",
-		"@types/mocha": "10.0.1",
-		"@typescript-eslint/eslint-plugin": "5.60.1",
-		"@typescript-eslint/parser": "5.60.1",
-		"depcheck": "1.4.3",
-		"eslint-config-prettier": "8.8.0",
+		"@bscotch/pathy": "2.9.0",
+		"@bscotch/trebuchet": "2.9.0",
+		"@types/mocha": "10.0.3",
+		"@typescript-eslint/eslint-plugin": "6.9.1",
+		"@typescript-eslint/parser": "6.9.1",
+		"depcheck": "1.4.7",
+		"eslint-config-prettier": "9.0.0",
 		"eslint-plugin-html": "7.1.0",
-		"eslint-plugin-prettier": "4.2.1",
+		"eslint-plugin-prettier": "5.0.1",
 		"eslint-plugin-svelte3": "4.0.0",
-		"prettier": "2.8.8",
-		"prettier-plugin-svelte": "2.10.1",
-		"svelte": "4.0.1",
-		"syncpack": "10.6.1",
-		"turbo": "1.10.7",
-		"typescript": "5.1.6",
-		"zx": "7.2.2"
+		"prettier": "3.0.3",
+		"prettier-plugin-svelte": "3.0.3",
+		"svelte": "4.2.2",
+		"syncpack": "11.2.1",
+		"turbo": "1.10.16",
+		"typescript": "5.2.2",
+		"zx": "7.2.3"
 	},
 	"devDependencies": {
-		"@types/node": "20.3.3",
-		"eslint": "8.44.0",
-		"eslint-scope": "7.2.0"
+		"@types/node": "20.8.10",
+		"eslint": "8.53.0",
+		"eslint-scope": "7.2.2"
 	},
 	"engines": {
 		"node": ">=18"
 	},
 	"name": "@adam-coster/root",
 	"optionalDependencies": {
-		"nodemon": "^2.0.22"
+		"nodemon": "^3.0.1"
 	},
 	"packageManager": "pnpm@8.3.1",
 	"pnpm": {
 		"overrides": {
 			"typescript": "5.0.4"
-		},
-		"patchedDependencies": {
-			"@fortawesome/fontawesome-common-types@6.4.0": "patches/@fortawesome__fontawesome-common-types@6.4.0.patch"
 		}
 	},
 	"private": true,
