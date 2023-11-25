@@ -130,6 +130,9 @@
 	.identity-group {
 		text-align: center;
 	}
+	.identity-group > ul {
+		margin-top: 0.5rem;
+	}
 	.whoami {
 		display: flex;
 	}

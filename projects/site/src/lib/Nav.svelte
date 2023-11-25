@@ -40,8 +40,8 @@
 	nav {
 		--small-screen-scaler: 1;
 		--relative-size: calc(1 * var(--small-screen-scaler));
-		--link-width: calc(calc(var(--size) * 4) * var(--relative-size));
-		font-size: calc(var(--size) * var(--relative-size));
+		--link-width: calc(4rem * var(--relative-size));
+		font-size: calc(1rem * var(--relative-size));
 		margin: 0;
 	}
 	@media screen and (max-width: 500px) {
