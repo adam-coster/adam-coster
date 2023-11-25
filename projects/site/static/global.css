@@ -24,7 +24,7 @@
 		--color-link-underline: var(--color-link);
 
 		/* BASE */
-		--size: 20px;
+		--size: 1.2rem;
 		--width-scrollbar: 0.75rem;
 		--code-size: calc(var(--size) * 0.85);
 		--content-max-width: 900px;
@@ -361,12 +361,13 @@
 		box-decoration-break: clone;
 		-webkit-box-decoration-break: clone;
 		border-radius: 0.4em;
-		outline: 0.1em solid rgb(60, 60, 60);
+		/* outline: 0.1em solid rgb(60, 60, 60); */
+		outline: 0.1em solid var(--color-subtle);
 	}
 
 	pre > code {
 		display: block;
-		border: 1px solid var(--color-text);
+		border: 1px solid var(--color-subtle);
 		margin: calc(var(--size) * 1.25) 0;
 		font-size: var(--code-size);
 		padding: 0.75em 0.75em;
@@ -517,10 +518,11 @@ hue-6-2: #e6c07b
 	}
 
 	figure {
-		border: 1px solid var(--color-text);
+		border: 1px solid var(--color-subtle);
 		border-radius: var(--border-radius);
 		padding: calc(var(--size) * 0.5) calc(var(--size) * 1);
 		text-align: center;
+		box-shadow: 0.25em 0.25em 0.25em black;
 	}
 
 	figcaption {
