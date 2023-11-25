@@ -40,10 +40,10 @@
 		"package.json": "workspace.json, lerna.*, readme.md, executors.json, generators.json, nx.json, package-lock.json,.gitignore, .*, tsconfig.*, turbo.json, *.config.ts, *.config.js,LICENSE, pnpm-workspace.yaml, pnpm-lock.yaml"
 	},
 	"editor.codeActionsOnSave": {
-		"source.fixAll.eslint": true,
-		"source.organizeImports": false,
-		"source.fixAll": true,
-		"source.addMissingImports": true
+		"source.fixAll.eslint": "explicit",
+		"source.organizeImports": "never",
+		"source.fixAll": "explicit",
+		"source.addMissingImports": "explicit"
 	},
 	"javascript.preferences.importModuleSpecifierEnding": "js",
 	"typescript.preferences.importModuleSpecifierEnding": "js",
