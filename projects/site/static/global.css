@@ -1,8 +1,53 @@
 /* ensure layer order */
-@layer reset, vars, global, lists, code, post;
+@layer vars, reset, global, lists, code, post;
 
 /* fonts */
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+@layer vars {
+	:root {
+		/* Colors */
+		--color-background: rgb(24, 24, 24);
+		--color-text: rgb(225, 232, 208);
+		--color-scrollbar: rgba(225, 232, 208, 0.5);
+		--color-subtle: rgb(155, 155, 155);
+		--color-header: rgb(140, 149, 241);
+		--color-bad: rgb(255, 34, 104);
+
+		--color-list-marker: var(--color-subtle);
+
+		--color-inline-code: rgb(138, 220, 187);
+		--color-background-inline-code: black;
+
+		--color-link: rgb(57, 156, 199);
+		--color-link-hover: rgb(83, 207, 207);
+		--color-link-underline: var(--color-link);
+
+		/* BASE */
+		--size: 20px;
+		--width-scrollbar: 0.75rem;
+		--code-size: calc(var(--size) * 0.85);
+		--content-max-width: 900px;
+		--view-padding: calc(var(--size) * 1.5) calc(var(--size) * 2);
+		--content-padding: calc(var(--size) * 0.5) calc(var(--size) * 1);
+		--border-radius: calc(var(--size) * 0.5);
+
+		/* TEXT */
+
+		--font-family: 'Ubuntu', sans-serif;
+		--font-family-code: 'Ubuntu Mono', monospace;
+
+		--font-weight-light: 300;
+		--font-weight-medium: 500;
+		--font-weight-boldest: 700;
+
+		/* INPUTS */
+		--button-padding-vertical: 5px;
+		--button-padding-horizontal: calc(var(--button-padding-vertical) * 2);
+		--button-padding: var(--button-padding-vertical)
+			var(--button-padding-horizontal);
+	}
+}
 
 @layer reset {
 	/* https://github.com/elad2412/the-new-css-reset */
@@ -73,59 +118,6 @@
 
 	:where([draggable='true']) {
 		-webkit-user-drag: element;
-	}
-}
-
-#svelte {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-	padding: 1.5em;
-}
-
-/* globals */
-@layer vars {
-	:root {
-		/* Colors */
-		--color-background: rgb(24, 24, 24);
-		--color-text: rgb(225, 232, 208);
-		--color-scrollbar: rgba(225, 232, 208, 0.5);
-		--color-subtle: rgb(155, 155, 155);
-		--color-header: rgb(140, 149, 241);
-		--color-bad: rgb(255, 34, 104);
-
-		--color-list-marker: var(--color-subtle);
-
-		--color-inline-code: rgb(138, 220, 187);
-		--color-background-inline-code: black;
-
-		--color-link: rgb(57, 156, 199);
-		--color-link-hover: rgb(83, 207, 207);
-		--color-link-underline: var(--color-link);
-
-		/* BASE */
-		--size: 20px;
-		--width-scrollbar: 0.6rem;
-		--code-size: calc(var(--size) * 0.85);
-		--content-max-width: 900px;
-		--view-padding: calc(var(--size) * 1.5) calc(var(--size) * 2);
-		--content-padding: calc(var(--size) * 0.5) calc(var(--size) * 1);
-		--border-radius: calc(var(--size) * 0.5);
-
-		/* TEXT */
-
-		--font-family: 'Ubuntu', sans-serif;
-		--font-family-code: 'Ubuntu Mono', monospace;
-
-		--font-weight-light: 300;
-		--font-weight-medium: 500;
-		--font-weight-boldest: 700;
-
-		/* INPUTS */
-		--button-padding-vertical: 5px;
-		--button-padding-horizontal: calc(var(--button-padding-vertical) * 2);
-		--button-padding: var(--button-padding-vertical)
-			var(--button-padding-horizontal);
 	}
 }
 
@@ -600,4 +592,11 @@ hue-6-2: #e6c07b
 		padding-top: calc(var(--size) * 1);
 		margin-top: calc(var(--size) * 1);
 	}
+}
+
+#svelte {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	padding: 1.5em;
 }

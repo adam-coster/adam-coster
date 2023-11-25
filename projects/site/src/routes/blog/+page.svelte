@@ -77,34 +77,39 @@
 </div>
 
 <nav aria-label="Search results for blog posts written by Adam Coster">
-	<p class="search-container" class:focused={searchHasFocus}>
+	<form class="search-container" class:focused={searchHasFocus}>
 		<label for="searchbar" class="sr-only">Search posts</label>
-		<span class:focused={searchHasFocus} class="search-icon" aria-hidden="true"
-			>🔍&#xFE0E;</span
-		>
-		<input
-			bind:this={searchbar}
-			id="searchbar"
-			type="text"
-			placeholder="Search posts"
-			class:focused={searchHasFocus}
-			bind:value={searchText}
-			on:focus={() => (searchHasFocus = true)}
-			on:blur={() => (searchHasFocus = false)}
-			on:keyup={() => updateSearch()}
-		/>
-		{#if searchText}
-			<button
-				class="clear-button"
+		<span class="search-input" class:focused={searchHasFocus}>
+			<span
 				class:focused={searchHasFocus}
-				aria-label="Clear search box"
-				on:click={() => {
-					searchText = '';
-					updateSearch();
-				}}>❌&#xFE0E;</button
+				class="search-icon"
+				aria-hidden="true">🔍&#xFE0E;</span
 			>
-		{/if}
-	</p>
+			<input
+				bind:this={searchbar}
+				id="searchbar"
+				name="searchbar"
+				type="text"
+				placeholder="Search posts"
+				class:focused={searchHasFocus}
+				bind:value={searchText}
+				on:focus={() => (searchHasFocus = true)}
+				on:blur={() => (searchHasFocus = false)}
+				on:keyup={() => updateSearch()}
+			/>
+			{#if searchText}
+				<button
+					class="clear-button"
+					class:focused={searchHasFocus}
+					aria-label="Clear search box"
+					on:click={() => {
+						searchText = '';
+						updateSearch();
+					}}>❌&#xFE0E;</button
+				>
+			{/if}
+		</span>
+	</form>
 
 	{#await data.searchResults}
 		<p in:fade>
@@ -247,52 +252,46 @@
 		color: var(--color-subtle);
 	}
 
-	.search-container {
+	.search-input {
 		--search-color-blur: gray;
 		--search-color-focus: var(--color-text);
-		--search-icon-width: 1em;
+		--search-icon-width: 2em;
 		--horizontal-padding: 0.5em;
 		--input-horizontal-padding: calc(
 			var(--horizontal-padding) * 2 + var(--search-icon-width)
 		);
 		border: 0.1em solid var(--search-color-blur);
 		border-radius: var(--border-radius);
+		display: grid;
+		grid-template-columns: var(--search-icon-width) 1fr var(--search-icon-width);
+		justify-items: center;
 	}
-	.search-container.focused {
+	.search-input.focused {
 		border-color: var(--color-background);
 		outline: 0.1em solid var(--search-color-focus);
 	}
 	.search-icon {
-		position: absolute;
-		top: var(--vertical-padding);
-		left: var(--horizontal-padding);
-		width: var(--search-icon-width);
 		color: var(--search-color-blur);
-		&.focused {
-			color: var(--search-color-focus);
-		}
+	}
+	.search-icon.focused {
+		color: var(--search-color-focus);
 	}
 	.clear-button {
-		position: absolute;
-		top: var(--vertical-padding);
-		right: var(--horizontal-padding);
-		width: var(--search-icon-width);
 		color: var(--search-color-blur);
-		&.focused {
-			color: var(--search-color-focus);
-		}
+		cursor: pointer;
+	}
+	.clear-button.focused {
+		color: var(--search-color-focus);
 	}
 	input {
 		font-size: 100%;
-		padding-left: var(--input-horizontal-padding);
-		padding-right: var(--input-horizontal-padding);
 		border-color: var(--search-color-blur);
 		color: var(--search-color-blur);
 		width: 100%;
-		&:focus {
-			outline: none;
-			border-color: var(--search-color-focus);
-			color: var(--search-color-focus);
-		}
+	}
+	input:focus {
+		outline: none;
+		border-color: var(--search-color-focus);
+		color: var(--search-color-focus);
 	}
 </style>
