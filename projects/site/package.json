@@ -1,11 +1,11 @@
 {
   "name": "@adam-coster/site",
-  "version": "0.13.1",
+  "version": "0.14.0",
   "private": true,
   "type": "module",
   "scripts": {
-    "bump": "cd .. && pnpm bump",
     "build": "svelte-kit sync && vite build && node scripts/postBuild.js",
+    "bump": "cd .. && pnpm bump",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "ci:publish": "node scripts/ci.publish.js",

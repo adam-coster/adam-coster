@@ -1,25 +1,25 @@
 {
-	"name": "cognitive-unload-theme",
-	"displayName": "Cognitive Unload",
-	"description": "A color theme focused on reducing cognitive load.",
-	"version": "0.0.1",
-	"engines": {
-		"vscode": "^1.83.0"
-	},
-	"categories": [
-		"Themes"
-	],
-	"contributes": {
-		"themes": [
-			{
-				"label": "Cognitive Unload",
-				"uiTheme": "vs-dark",
-				"path": "./themes/cognitive-unload-color-theme.json"
-			}
-		]
-	},
-	"devDependencies": {
-		"@vscode/vsce": "2.22.0",
-		"json5": "2.2.3"
-	}
+  "name": "cognitive-unload-theme",
+  "displayName": "Cognitive Unload",
+  "version": "0.1.0",
+  "description": "A color theme focused on reducing cognitive load.",
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Cognitive Unload",
+        "uiTheme": "vs-dark",
+        "path": "./themes/cognitive-unload-color-theme.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@vscode/vsce": "2.22.0",
+    "json5": "2.2.3"
+  },
+  "engines": {
+    "vscode": "^1.83.0"
+  }
 }
