@@ -214,7 +214,14 @@
 
 	.article-snippet {
 		height: 100%;
+		padding-left: 0.25rem;
 	}
+	.article-snippet:hover {
+		--hover-border-width: 0.25rem;
+		border-left: var(--hover-border-width) solid var(--color-subtle);
+		margin-left: calc(var(--hover-border-width) * -1);
+	}
+
 	.article-snippet h2 {
 		--font-size: calc(var(--size) * 1.2);
 		background-color: var(--color-background);
