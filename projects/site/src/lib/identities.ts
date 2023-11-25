@@ -10,11 +10,12 @@ import {
 	faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 import {
+	faCloud,
 	faGlobe,
 	faGraduationCap,
 	faLink,
 	faPodcast,
-	faSquarePen,
+	faSquarePen
 } from '@fortawesome/free-solid-svg-icons';
 
 /**
@@ -60,6 +61,12 @@ export const digitalIdentities: DigitalIdentity[] = [
 		url: 'https://twitter.com/costerad',
 		name: 'Twitter',
 		icon: faTwitter,
+		type: 'social',
+	},
+	{
+		url: 'https://bsky.app/profile/adamcoster.com',
+		name: 'Bluesky',
+		icon: faCloud,
 		type: 'social',
 	},
 	{
