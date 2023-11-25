@@ -27,12 +27,10 @@
 	let searchText: string | null = null;
 	let lastSearchText: string | null;
 	let searchHasFocus = false;
-	let searchbar: HTMLInputElement;
 
-	async function updateSearchNow(searchOverride?: string) {
+	async function updateSearchNow(searchOverride?: string | null) {
 		searchText =
 			typeof searchOverride == 'string' ? searchOverride : searchText;
-		// searchbar.scrollIntoView({ behavior: 'smooth' });
 
 		if (lastSearchText === searchText) {
 			return;
@@ -52,7 +50,7 @@
 		data.searchResults = await data.articleSearcher.search(lastSearchText);
 	}
 
-	const updateSearch = debounce(updateSearchNow, 500);
+	const updateSearch = debounce(updateSearchNow, 250);
 
 	onMount(() => {
 		// Initial load
@@ -77,7 +75,7 @@
 </div>
 
 <nav aria-label="Search results for blog posts written by Adam Coster">
-	<form class="search-container" class:focused={searchHasFocus}>
+	<div class="search-container">
 		<label for="searchbar" class="sr-only">Search posts</label>
 		<span class="search-input" class:focused={searchHasFocus}>
 			<span
@@ -86,7 +84,6 @@
 				aria-hidden="true">🔍&#xFE0E;</span
 			>
 			<input
-				bind:this={searchbar}
 				id="searchbar"
 				name="searchbar"
 				type="text"
@@ -95,21 +92,22 @@
 				bind:value={searchText}
 				on:focus={() => (searchHasFocus = true)}
 				on:blur={() => (searchHasFocus = false)}
-				on:keyup={() => updateSearch()}
+				on:keyup={() => {
+					updateSearch();
+				}}
 			/>
-			{#if searchText}
-				<button
-					class="clear-button"
-					class:focused={searchHasFocus}
-					aria-label="Clear search box"
-					on:click={() => {
-						searchText = '';
-						updateSearch();
-					}}>❌&#xFE0E;</button
-				>
-			{/if}
+			<button
+				tabindex="0"
+				class="clear-button"
+				type="button"
+				class:focused={searchHasFocus}
+				aria-label="Clear search box"
+				on:click={() => {
+					updateSearch('');
+				}}>❌&#xFE0E;</button
+			>
 		</span>
-	</form>
+	</div>
 
 	{#await data.searchResults}
 		<p in:fade>

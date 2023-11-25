@@ -25,12 +25,5 @@
 			"dependsOn": ["build"],
 			"outputs": []
 		}
-	},
-	"globalDependencies": [
-		".env",
-		"tsconfig.json",
-		"$GITHUB_TOKEN",
-		"package.json",
-		"package-lock.json"
-	]
+	}
 }

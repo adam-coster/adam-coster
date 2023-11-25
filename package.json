@@ -1,26 +1,26 @@
 {
 	"dependencies": {
-		"@bscotch/pathy": "2.9.0",
-		"@bscotch/trebuchet": "2.9.0",
-		"@types/mocha": "10.0.3",
-		"@typescript-eslint/eslint-plugin": "6.9.1",
-		"@typescript-eslint/parser": "6.9.1",
+		"@bscotch/pathy": "2.11.0",
+		"@bscotch/trebuchet": "2.9.3",
+		"@types/mocha": "10.0.6",
+		"@typescript-eslint/eslint-plugin": "6.12.0",
+		"@typescript-eslint/parser": "6.12.0",
 		"depcheck": "1.4.7",
 		"eslint-config-prettier": "9.0.0",
 		"eslint-plugin-html": "7.1.0",
 		"eslint-plugin-prettier": "5.0.1",
 		"eslint-plugin-svelte3": "4.0.0",
-		"prettier": "3.0.3",
-		"prettier-plugin-svelte": "3.0.3",
-		"svelte": "4.2.2",
+		"prettier": "3.1.0",
+		"prettier-plugin-svelte": "3.1.2",
+		"svelte": "4.2.7",
 		"syncpack": "11.2.1",
 		"turbo": "1.10.16",
-		"typescript": "5.2.2",
+		"typescript": "5.3.2",
 		"zx": "7.2.3"
 	},
 	"devDependencies": {
-		"@types/node": "20.8.10",
-		"eslint": "8.53.0",
+		"@types/node": "20.10.0",
+		"eslint": "8.54.0",
 		"eslint-scope": "7.2.2"
 	},
 	"engines": {
@@ -31,11 +31,6 @@
 		"nodemon": "^3.0.1"
 	},
 	"packageManager": "pnpm@8.3.1",
-	"pnpm": {
-		"overrides": {
-			"typescript": "5.0.4"
-		}
-	},
 	"private": true,
 	"scripts": {
 		"bump": "treb version && treb publish",
@@ -51,7 +46,7 @@
 		"local:sync": "nodemon --ext toml,json,yaml,yml,mjs,js,cjs,nu --watch dotfiles --watch scripts scripts/sync-configs.mjs",
 		"setup:pnpm": "corepack prepare $npm_package_packageManager --activate",
 		"test": "turbo run test",
-		"test:site": "turbo run --filter=site build test",
+		"test:site": "turbo run build test --filter=site",
 		"watch": "turbo run watch --parallel"
 	},
 	"syncpack": {

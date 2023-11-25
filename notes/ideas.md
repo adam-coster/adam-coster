@@ -2,6 +2,19 @@
 
 ## Topics
 
+- Versioning in games
+  - Player-facing version
+  - Content-version
+  - Build-version
+- Separation of action computation from action implementation for pipelines
+  - E.g. compute a set of file operations that need to be run, instead of directly running them
+  - Allows for more visibility into what's going on, simplifying debugging and development
+  - Enables a "dry-run" mode
+  - Simplifies rollback
+  - Allows actions to be run in parallel
+  - Allows actions to be assigned to other mediators (simplifying parallelization, serialization, etc)
+- JavaScript function binding deep dive
+- Custom `Error` classes in JavaScript, with snippets
 - Switching from npm to pnpm in monorepos
 - User-driven accessiblity in games via the "[second screen](https://www.gamesindustry.biz/articles/2022-07-01-in-praise-of-the-second-screen-opinion)"
 - Obtuseness-driven social success in games (Elden Ring, Minecraft)
