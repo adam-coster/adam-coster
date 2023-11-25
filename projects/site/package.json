@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "bump": "cd .. && pnpm bump",
     "build": "svelte-kit sync && vite build && node scripts/postBuild.js",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",

@@ -38,6 +38,7 @@
 	},
 	"private": true,
 	"scripts": {
+		"bump": "treb version && treb publish",
 		"post": "node scripts/post-from-note.mjs",
 		"build:all": "turbo run build",
 		"build:force": "turbo run build --force",
