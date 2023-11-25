@@ -194,7 +194,7 @@ Note that you could make your web server a lot more code-efficiently with a fram
 
 Finally, run this server using nodemon:
 
-```bash
+```shell
 npx nodemon ./site/dev-server.js --ext js,html,css,md
 ```
 

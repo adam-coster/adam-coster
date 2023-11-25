@@ -1,6 +1,15 @@
 import grayMatter from 'gray-matter';
 import type { Element } from 'hast';
+import hljsBash from 'highlight.js/lib/languages/bash';
+import hljsJs from 'highlight.js/lib/languages/javascript';
 import hljsJson from 'highlight.js/lib/languages/json';
+import hlsjsPython from 'highlight.js/lib/languages/python';
+import hlsjsR from 'highlight.js/lib/languages/r';
+import hljsShell from 'highlight.js/lib/languages/shell';
+import hljsTs from 'highlight.js/lib/languages/typescript';
+import hlsjsXml from 'highlight.js/lib/languages/xml';
+import hljsYaml from 'highlight.js/lib/languages/yaml';
+
 import { parse as parseHtml } from 'node-html-parser';
 import { rehypeAccessibleEmojis } from 'rehype-accessible-emojis';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
@@ -43,7 +52,30 @@ const markdownNormalizer = unified();
 markdownNormalizer.use(remarkParse);
 markdownNormalizer.use(remarkGfm);
 markdownNormalizer.use(remarkRehype, { allowDangerousHtml: true });
-markdownNormalizer.use(rehypeHighlight, { languages: { json5: hljsJson } });
+markdownNormalizer.use(rehypeHighlight, {
+	languages: {
+		bash: hljsBash,
+		html: hlsjsXml,
+		js: hljsJs,
+		json: hljsJson,
+		python: hlsjsPython,
+		r: hlsjsR,
+		ts: hljsTs,
+		xml: hlsjsXml,
+		yaml: hljsYaml,
+		shell: hljsShell,
+	},
+	aliases: {
+		python: ['py'],
+		r: ['rlang'],
+		js: ['javascript'],
+		ts: ['typescript'],
+		yaml: ['yml'],
+		json: ['json5', 'jsonc'],
+		bash: ['sh'],
+		shell: ['console', 'terminal'],
+	},
+});
 markdownNormalizer.use(rehypeSlug);
 markdownNormalizer.use(rehypeAccessibleEmojis);
 markdownNormalizer.use(rehypeAutolinkHeadings, {

@@ -75,7 +75,7 @@ setInterval(() => {
 
 You can use GitHub Releases as your static update host, just by uploading those output files to a release. Here's a sample [GitHub CLI](https://cli.github.com/) command that would do that:
 
-```sh
+```bash
 # Assuming environment variable RELEASE_VERSION (the semver release version)
 gh release create \
   --title "My Application v$RELEASE_VERSION" \

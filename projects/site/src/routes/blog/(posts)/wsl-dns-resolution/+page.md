@@ -14,7 +14,7 @@ You can set your DNS resolver manually, but it'll get deleted every time you reb
 
 Run the following commands in your WSL terminal, changing the nameservers if you feel so inclined:
 
-```sh
+```shell
 # /etc/resolv.conf is a symbol link, delete it to create a regular file
 sudo rm /etc/resolv.conf
 sudo tee /etc/resolv.conf << EOF

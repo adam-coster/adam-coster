@@ -8,7 +8,7 @@ There are two easy solutions to this:
 
 The easiest thing to do is to _also_ log into your npm account with `root`, so that when you use `sudo` the command will have access to your npm credentials.
 
-```bash
+```shell
 sudo npm login
 ```
 
@@ -20,14 +20,14 @@ To address that, you need npm to use a directory that your regular user has perm
 
 First create a new directory with your regular user and tell npm to use it:
 
-```bash
+```shell
 mkdir "${HOME}/.npm-packages"
 npm config set prefix "${HOME}/.npm-packages"
 ```
 
 Then give npm a little more help finding binaries and such by updating your `.bashrc` file:
 
-```bash
+```shell
 # @file ~/.bashrc
 NPM_PACKAGES="${HOME}/.npm-packages"
 
