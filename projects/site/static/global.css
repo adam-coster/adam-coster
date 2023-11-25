@@ -187,10 +187,31 @@
 		cursor: pointer;
 	}
 
+	details {
+		padding-bottom: 1em;
+		color: var(--color-subtle);
+	}
+
+	details summary {
+		margin-left: 1em;
+		padding: 0.5em;
+	}
+
+	details summary::marker {
+		color: var(--color-subtle);
+		content: '▶';
+	}
+
 	details[open] {
 		border: 1px solid var(--color-subtle);
 		border-radius: var(--border-radius);
 		padding: var(--content-padding);
+		color: var(--color-text);
+	}
+
+	details[open] summary::marker {
+		color: var(--color-subtle);
+		content: '▼';
 	}
 
 	kbd {
@@ -224,11 +245,11 @@
 	}
 
 	:where(h1, h2, h3, h4, h5, h6, p, ul, ol, menu, figure, blockquote)
-		+ :where(p, ul, ol, menu, figure, blockquote) {
+		+ :where(p, ul, ol, menu, figure, blockquote, details) {
 		margin-top: 1em;
 	}
 
-	:where(p, ul, ol, menu, figure) + :where(h1, h2, h3, h4, h5, h6) {
+	:where(p, ul, ol, menu, figure, details) + :where(h1, h2, h3, h4, h5, h6) {
 		margin-top: 1.25em;
 	}
 
@@ -382,7 +403,7 @@ hue-6-2: #e6c07b
 
 	.hljs-comment,
 	.hljs-quote {
-		color: #5c6370;
+		color: #6b7382;
 		font-style: italic;
 	}
 
@@ -491,6 +512,7 @@ hue-6-2: #e6c07b
 
 	:where(article.article > .body, article.body) :where(img, iframe) {
 		max-width: 100%;
+		display: block;
 		margin: auto;
 	}
 
