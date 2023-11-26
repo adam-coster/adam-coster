@@ -1,5 +1,3 @@
-name: Publish Site
-
 on:
   workflow_dispatch:
   push:

@@ -1,15 +1,26 @@
-import { prisma } from '$lib/db.js';
+import { PrismaClient } from '@prisma/client';
 import { json } from '@sveltejs/kit';
-import type { RequestHandler } from './$types';
+import type { RequestEvent, RequestHandler } from './$types';
 
+let instanceError: unknown | undefined;
+
+let prisma: PrismaClient | undefined;
+try {
+    prisma = new PrismaClient();
+}
+catch (err) {
+    instanceError = err;
+    
+}
 
 export const prerender = false;
 
 export const GET: RequestHandler = async (ctx) => {
 
+    await assertHealthy(ctx);
 
     // Get a summary of total and unique visits per route
-    const visits = (await prisma.visit.groupBy({
+    const visits = (await prisma!.visit.groupBy({
         by: ['route'],
         _count: {
             route: true,
@@ -27,6 +38,7 @@ export const GET: RequestHandler = async (ctx) => {
 };
 
 export const POST: RequestHandler = async (ctx) => {
+    await assertHealthy(ctx);
     const data = getVisitInfo(await ctx.request.json());
     if (data) {
         await prisma!.visit.upsert({
@@ -49,6 +61,23 @@ export const POST: RequestHandler = async (ctx) => {
         })
     }
     return new Response(null, { status: 204 });
+}
+
+async function assertHealthy(ctx: RequestEvent) {
+    const isHealthy = prisma && !instanceError;
+    if (!isHealthy) {
+        await ctx.fetch('https://ntfy.sh/1pBORQ1jhvbmjxyl', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify({
+                prisma: !!prisma,
+                instanceError,
+            })
+        });
+        throw instanceError;
+    }
 }
 
 function getVisitInfo(body: any): undefined | {path: string, referrer?: string, browserId: string} {
