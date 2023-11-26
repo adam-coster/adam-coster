@@ -1,83 +1,42 @@
-import { PrismaClient } from '@prisma/client';
+
+import { db } from '$lib/db.js';
+import * as schema from '$lib/schema.js';
 import { json } from '@sveltejs/kit';
-import type { RequestEvent, RequestHandler } from './$types';
-
-let instanceError: unknown | undefined;
-
-let prisma: PrismaClient | undefined;
-try {
-    prisma = new PrismaClient();
-}
-catch (err) {
-    instanceError = err;
-    
-}
-
-export const prerender = false;
+import { sql } from 'drizzle-orm';
+import type { RequestHandler } from './$types';
 
 export const GET: RequestHandler = async (ctx) => {
+    const visits = await db.select({
+        route: schema.visit.route,
+        unique: sql<number>`count(distinct ${schema.visit.userId})`,
+        total: sql<number>`sum(${schema.visit.views})`,
+    }).from(schema.visit).groupBy(schema.visit.route).orderBy(sql`count(*) desc`).execute();
 
-    await assertHealthy(ctx);
-
-    // Get a summary of total and unique visits per route
-    const visits = (await prisma!.visit.groupBy({
-        by: ['route'],
-        _count: {
-            route: true,
-        },
-        _sum: {
-            views: true,
-        },
-    })).map(v => ({
-        route: v.route,
-        total: v._sum.views,
-        unique: v._count.route,
-    })).sort((a,b)=>b.unique-a.unique);
-
-    return json({visits});
+    return json({
+        visits: visits.map(visit => ({
+            route: visit.route,
+            unique: +visit.unique,
+            total: +visit.total
+        
+    }))});
 };
 
 export const POST: RequestHandler = async (ctx) => {
-    await assertHealthy(ctx);
+
     const data = getVisitInfo(await ctx.request.json());
     if (data) {
-        await prisma!.visit.upsert({
-            where: {
-                route_userId: {
-                    route: data.path,
-                    userId: data.browserId,
-                }
-            },
-            create: {
-                route: data.path,
-                referrer: data.referrer,
-                userId: data.browserId,
-            },
-            update: {
-                views: {
-                    increment: 1,
-                }
-            },
-        })
+
+        const res = await db.insert(schema.visit).values({
+            route: data.path,
+            referrer: data.referrer,
+            userId: data.browserId,
+        }).onDuplicateKeyUpdate({
+            set: {
+                views: sql`${schema.visit.views} + 1`,
+            }
+        });
     }
     return new Response(null, { status: 204 });
-}
-
-async function assertHealthy(ctx: RequestEvent) {
-    const isHealthy = prisma && !instanceError;
-    if (!isHealthy) {
-        await ctx.fetch('https://ntfy.sh/1pBORQ1jhvbmjxyl', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json',
-            },
-            body: JSON.stringify({
-                prisma: !!prisma,
-                instanceError,
-            })
-        });
-        throw instanceError;
-    }
 }
 
 function getVisitInfo(body: any): undefined | {path: string, referrer?: string, browserId: string} {
