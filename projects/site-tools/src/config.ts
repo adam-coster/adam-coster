@@ -15,7 +15,11 @@ export function createConfig(): Config {
 			markdownToSvelte,
 		],
 		kit: {
-			adapter: adapter(),
+			adapter: adapter({
+				routes: {
+					exclude: ['/_app/*', '<files>', '/', '/blog', '/blog/*'],
+				},
+			}),
 			prerender: {
 				crawl: true,
 			},
