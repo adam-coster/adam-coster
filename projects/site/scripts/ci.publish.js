@@ -26,6 +26,11 @@ ok(
 	`This script is only meant to run on the "develop" or "preview" branches, but is running on "${branch}"`,
 );
 
+if (branch === 'develop') {
+	// Update the database schema
+	await $`pnpm db:prod:update`;
+}
+
 await $`pnpm wrangler pages deploy ./.svelte-kit/cloudflare --project-name=adam-coster --branch=${branch} --commit-dirty=${dirtyFlag} --commit-message=${message} --commit-hash=${hash}`;
 
 /** @param {import('zx').ProcessPromise} call */

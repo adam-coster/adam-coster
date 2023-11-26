@@ -76,3 +76,31 @@ export function assert(claim: any, message?: string): asserts claim {
 		throw new Error(message || 'Assertion failed');
 	}
 }
+
+export function setLocal(key: string, value: any) {
+	try {
+		localStorage.setItem(key, JSON.stringify(value));
+	}
+	catch{}
+}
+
+export function getLocal(key: string, defaultValue?: any) {
+	try {
+		const stored = localStorage.getItem(key);
+		if (typeof stored === 'string') {
+			return JSON.parse(stored);
+		}
+	}
+	catch { }
+	return defaultValue;
+}
+
+/** Generate a random ascii string of the given length */
+export function randomString(length: number) {
+	const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
+	let result = '';
+	for (let i = 0; i < length; i++) {
+		result += chars.charAt(Math.floor(Math.random() * chars.length));
+	}
+	return result;
+}

@@ -26,4 +26,5 @@ jobs:
       - run: pnpm ci:publish
         env:
           CLOUDFLARE_API_TOKEN: ${{secrets.CLOUDFLARE_API_TOKEN}}
+          DATABASE_URL: ${{secrets.DATABASE_URL}}
         working-directory: "./projects/site"

@@ -1,0 +1,26 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model Visit {
+  /// The route that was visited
+  route    String   @db.VarChar(64)
+  referrer String?  @db.VarChar(64)
+  /// A random string/hash representing a user. Just to
+  /// provide uniqueness for hit counting. Can be created
+  /// browser-side and sent in the request.
+  userId   String   @db.Char(6)
+  when     DateTime @default(now())
+  views    Int      @default(1)
+
+  @@unique([route, userId])
+}
