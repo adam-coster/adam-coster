@@ -3,6 +3,7 @@
 	import { page } from '$app/stores';
 	import Nav from '$lib/Nav.svelte';
 	import { getLocal, randomString, setLocal } from '$lib/utility.js';
+	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import type { LayoutData } from './$types';
 
@@ -26,7 +27,11 @@
 			);
 		}
 	}
-	logVisit();
+
+	onMount(() => {
+		// Log the initial visit
+		logVisit();
+	});
 
 	$: page.subscribe(() => {
 		logVisit();
