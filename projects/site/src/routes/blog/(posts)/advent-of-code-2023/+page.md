@@ -81,7 +81,7 @@ zoneight234 # 14
 
 Note that the spelled-out numbers can share a letter, so it's a bit more complicated than just directly using a regex like `/\d|one|two|three)/`, since one match can block an overlapping one. But we can do *basically* that, just grabbing one match at a time and keeping track of the index position.
 
-To do that I used a ["sticky" regex](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/lastIndex) which, when used with `.execute` checks for a match starting *exactly* at `pattern.lastIndex`.
+To do that I used a ["sticky" regex](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/lastIndex) which, when used with `.execute`, checks for a match starting *exactly* at `pattern.lastIndex`.
 
 
 ```js
@@ -122,13 +122,13 @@ function solveDay1Part2(input) {
 ## Day 2: Cube Conundrum
 
 
-The data for this puzzle is described comes from a game. That game works like this:
+The data for this puzzle is comes from the results of a "Game" that works like this:
 
 - A bag has an unknown number of red, green, and blue cubes in it.
-- Each game is done with a different number of cubes.
-- For each game, we'll get several random samples of cubes (the selected cubes are put back before the next sample)
+- Each Game is done with a different number of cubes in said bag
+- For each Game, we'll get several random samples of cubes (the selected cubes are put back before the next sample)
 
-Games are documented as in these examples:
+Games are documented like this:
 
 ```
 Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
@@ -165,7 +165,7 @@ function parseDay2Input(input) {
 }
 ```
 
-This results in data that looks like this:
+That parser results in data that looks like this:
 
 ```jsonc
 [
@@ -222,8 +222,6 @@ Part 2 uses the same dataset but asks a different question, which boils down to:
 1. Get the maximum `rgb` values for each Game
 2. Multiply those values together to get the "Power" for that game
 3. Add up the Powers for all games to get the puzzle solution
-
-This is very similar to Part 1:
 
 ```js
 /** @param {string} input */
