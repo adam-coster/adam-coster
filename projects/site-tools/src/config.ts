@@ -17,7 +17,18 @@ export function createConfig(): Config {
 		kit: {
 			adapter: adapter({
 				routes: {
-					exclude: ['/_app/*', '<files>', '/', '/blog', '/blog/*'],
+					exclude: [
+						'/_app/*',
+						'/',
+						'/blog',
+						'/blog/*',
+						'/previews/*',
+						'/icons/*',
+						'/images/*',
+						'/feeds/*',
+						'/404',
+						'/microdata/*',
+					],
 				},
 			}),
 			prerender: {
