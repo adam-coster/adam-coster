@@ -1,10 +1,11 @@
-import console from 'console';
 import fsp from 'fs/promises';
 
 //#region SOLUTIONS
 
 await solve(1, 1, solveDay1Part1);
 await solve(1, 2, solveDay1Part2);
+await solve(2, 1, solveDay2Part1);
+await solve(2, 2, solveDay2Part2);
 
 //#endregion SOLUTIONS
 
@@ -15,7 +16,6 @@ function solveDay1Part1(input) {
 	return input
 		.trim() // Ensure no trailing newline
 		.split(/[\r\n]+/g)
-		.filter(Boolean)
 		.reduce((sum, row) => {
 			const allNums = row.match(/\d/g);
 			const num = +(allNums[0] + allNums.at(-1));
@@ -41,7 +41,6 @@ function solveDay1Part2(input) {
 	return input
 		.trim() // Ensure no trailing newline
 		.split(/[\r\n]+/g)
-		.filter(Boolean)
 		.reduce((sum, row) => {
 			/** @type {string[]} */
 			const allNums = [];
@@ -58,6 +57,68 @@ function solveDay1Part2(input) {
 }
 
 //#endregion Day 1
+
+//#region Day 2
+
+/**
+ * @param {string} input
+ * @returns {{id:number, samples: {red:number, green: number, blue: number}[]}[]}
+ */
+function parseDay2Input(input) {
+	const rowPattern = /Game (?<id>\d+): (?<allSamples>.*)/;
+	const sampleColorPattern = /(?<count>\d+) (?<color>red|green|blue)/;
+	return input
+		.trim()
+		.split(/[\r\n]+/g)
+		.map((row) => {
+			const { id, allSamples } = row.match(rowPattern).groups;
+			const samples = allSamples.split(/\s*;\s*/g).map((sample) =>
+				sample.split(/\s*,\s*/g).reduce((cleaned, valueString) => {
+					const { count, color } = valueString.match(sampleColorPattern).groups;
+					cleaned[color] = Number(count);
+					return cleaned;
+				}, {}),
+			);
+			return { id: Number(id), samples };
+		});
+}
+
+/** @param {string} input */
+function solveDay2Part1(input) {
+	const maxCounts = {
+		red: 12,
+		green: 13,
+		blue: 14,
+	};
+	return parseDay2Input(input).reduce((sum, game) => {
+		const isPossible = game.samples.every((sample) =>
+			['red', 'green', 'blue'].every(
+				(color) => !sample[color] || sample[color] <= maxCounts[color],
+			),
+		);
+		return isPossible ? sum + game.id : sum;
+	}, 0);
+}
+
+/** @param {string} input */
+function solveDay2Part2(input) {
+	return parseDay2Input(input).reduce((sum, game) => {
+		const maxes = {
+			red: 0,
+			green: 0,
+			blue: 0,
+		};
+		game.samples.forEach((sample) =>
+			['red', 'green', 'blue'].forEach(
+				(color) => (maxes[color] = Math.max(sample[color] || 0, maxes[color])),
+			),
+		);
+		const power = maxes.red * maxes.green * maxes.blue;
+		return sum + power;
+	}, 0);
+}
+
+//#endregion Day 2
 
 //#region UTILITIES
 

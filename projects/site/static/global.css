@@ -591,6 +591,11 @@ hue-6-2: #e6c07b
 		font-style: italic;
 	}
 
+	:where(article.article > .body, article.body) blockquote p ~ p {
+		margin: 1em var(--blockquote-margin);
+		font-style: italic;
+	}
+
 	:where(article.article > .body, article.body)
 		blockquote
 		p:first-child::before {
