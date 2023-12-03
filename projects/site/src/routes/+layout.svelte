@@ -33,9 +33,9 @@
 		logVisit();
 	});
 
-	$: page.subscribe(() => {
-		logVisit();
-	});
+	// $: page.subscribe(() => {
+	// 	logVisit();
+	// });
 </script>
 
 <!-- Header -->

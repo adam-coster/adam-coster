@@ -41,8 +41,6 @@ export const POST: RequestHandler = async (ctx) => {
 						views: sql`${schema.visit.views} + 1`,
 					},
 				});
-
-			console.log(res);
 		} catch (e) {
 			console.error(e);
 			return new Response(null, { status: 500 });
