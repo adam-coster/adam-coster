@@ -12,6 +12,7 @@
 		--color-scrollbar: rgba(225, 232, 208, 0.5);
 		--color-subtle: rgb(155, 155, 155);
 		--color-subtler: rgb(57, 57, 57);
+		--color-quote: rgb(178, 152, 183);
 		--color-header: rgb(140, 149, 241);
 		--color-bad: rgb(255, 34, 104);
 
@@ -132,7 +133,14 @@
 		color: var(--color-text);
 		font-family: var(--font-family);
 		overflow-wrap: break-word;
-		line-height: 1.5em;
+		line-height: 1.6em;
+	}
+
+	p,
+	blockquote,
+	figcaption,
+	li {
+		text-wrap: pretty;
 	}
 
 	h1 {
@@ -171,6 +179,7 @@
 		margin-bottom: calc(var(--size) * 0.5);
 		color: var(--color-header);
 		line-height: 1.2em;
+		text-wrap: balance;
 	}
 
 	h3,
@@ -580,7 +589,7 @@ hue-6-2: #e6c07b
 	/* Quotes */
 
 	:where(article.article > .body, article.body) blockquote {
-		color: var(--color-subtle);
+		color: var(--color-quote);
 	}
 
 	:where(article.article > .body, article.body) blockquote p {
