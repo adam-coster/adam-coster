@@ -11,6 +11,7 @@
 		--color-text: rgb(225, 232, 208);
 		--color-scrollbar: rgba(225, 232, 208, 0.5);
 		--color-subtle: rgb(155, 155, 155);
+		--color-subtler: rgb(57, 57, 57);
 		--color-header: rgb(140, 149, 241);
 		--color-bad: rgb(255, 34, 104);
 
@@ -36,10 +37,6 @@
 
 		--font-family: 'Ubuntu', sans-serif;
 		--font-family-code: 'Ubuntu Mono', monospace;
-
-		--font-weight-light: 300;
-		--font-weight-medium: 500;
-		--font-weight-boldest: 700;
 
 		/* INPUTS */
 		--button-padding-vertical: 5px;
@@ -506,8 +503,7 @@ hue-6-2: #e6c07b
 
 	article.article > .body,
 	article.body {
-		--blockquote-margin: calc(var(--size) * 3.5);
-
+		--blockquote-margin: 1.5rem;
 		counter-reset: figure;
 	}
 
@@ -526,6 +522,7 @@ hue-6-2: #e6c07b
 	}
 
 	figcaption {
+		margin-top: 1rem;
 		font-size: calc(var(--size) * 0.9);
 		text-align: center;
 		font-style: italic;
@@ -587,16 +584,17 @@ hue-6-2: #e6c07b
 	}
 
 	:where(article.article > .body, article.body) blockquote p {
-		margin: 0 var(--blockquote-margin);
+		padding-inline: var(--blockquote-margin);
 		font-style: italic;
+		border-left: 0.2rem solid var(--color-subtler);
 	}
 
 	:where(article.article > .body, article.body) blockquote p ~ p {
-		margin: 1em var(--blockquote-margin);
+		margin-block: 1em;
 		font-style: italic;
 	}
 
-	:where(article.article > .body, article.body)
+	/* :where(article.article > .body, article.body)
 		blockquote
 		p:first-child::before {
 		content: '“';
@@ -606,7 +604,7 @@ hue-6-2: #e6c07b
 		margin-top: 0.25em;
 		position: absolute;
 		opacity: 0.5;
-	}
+	} */
 
 	/* Footnotes */
 
