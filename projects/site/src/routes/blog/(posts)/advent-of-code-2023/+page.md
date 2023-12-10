@@ -243,3 +243,27 @@ function solveDay2Part2(input) {
 	}, 0);
 }
 ```
+<!--
+
+## Day 3: Gear Ratios
+
+For this puzzle, we need to add up a bunch of numbers in a grid, but only those numbers that are "adjacent" (as in a matrix) to a "symbol" (non-numeric, non-`.` character).
+
+The provided example is this:
+
+```
+467..114..
+...*......
+..35..633.
+......#...
+617*......
+.....+.58.
+..592.....
+......755.
+...$.*....
+.664.598..
+```
+
+Where 113 and 58 are must *not* be part of the sum based on the rules.
+
+-->

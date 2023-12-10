@@ -6,6 +6,8 @@ await solve(1, 1, solveDay1Part1);
 await solve(1, 2, solveDay1Part2);
 await solve(2, 1, solveDay2Part1);
 await solve(2, 2, solveDay2Part2);
+await solve(3, 1, solveDay3Part1);
+// await solve(3, 2, solveDay3Part2);
 
 //#endregion SOLUTIONS
 
@@ -120,44 +122,103 @@ function solveDay2Part2(input) {
 
 //#endregion Day 2
 
-//#region UTILITIES
+//#region Day 3
 
 /**
- * @template T
- * @param {string} input The sample input from Advent of Code
- * @param {(str:string)=>T} solver The function that converts a sample row into its solution
- * @returns {T[]} The output from all rows, as a single newline-separated string
+ * @typedef Day3Num
+ * @prop {number} startCol
+ * @prop {number} endCol
+ * @prop {number} value
+ * @typedef Day3Cell
+ * @prop {number} col
+ * @prop {string} value
+ * @prop {boolean} isSymbol
+ * @prop {Day3Num} [num]
  */
-function solveRowBasedSample(solver, input) {
-	const rows = rowsFromInput(input);
-	return rows.map(solver);
-}
 
 /**
- * Given an input string with line breaks, get an array of
- * the values (excluding line breaks and any empty rows).
  * @param {string} input
- * @returns {string[]}
+ * @returns {Day3Cell[][]}
  */
-function rowsFromInput(input) {
-	return input.split(/[\r\n]+/g).filter(Boolean);
+function parseDay3Input(input) {
+	return input
+		.trim()
+		.split(/[\r\n]+/g)
+		.map((row) => {
+			const chars = row.split('');
+
+			/** @type {Day3Cell[]} */
+			const cells = [];
+			for (let col = 0; col < chars.length; col++) {
+				const value = chars[col];
+				const isSymbol = /[^\d.]/.test(value);
+				const isNum = !isSymbol && /\d/.test(value);
+				/** @type {Day3Num|undefined} */
+				let num;
+				if (isNum && cells[col - 1]?.num) {
+					// This this is part of the last number and thus
+					// already dealt with!
+					num = cells[col - 1].num;
+				} else if (isNum) {
+					// This is the start of a new number
+					let numStr = value;
+					num = {
+						startCol: col,
+						endCol: col,
+						value: 0,
+					};
+					for (let j = col + 1; j < chars.length; j++) {
+						if (/\d/.test(chars[j])) {
+							numStr += chars[j];
+							num.endCol++;
+						} else break;
+					}
+					num.value = Number(numStr);
+				}
+				cells.push({
+					col,
+					value,
+					isSymbol,
+					num,
+				});
+			}
+			return cells;
+		});
 }
 
-/**
- * Given a value, throw if it is undefined. Mostly useful for cases where we KNOW the value is defined but Typescript does not.
- * @template T
- * @param {T} x
- * @returns {Exclude<T,undefined|null>}
- */
-function defined(x) {
-	if (x === undefined || x === null) {
-		throw new Error('Expected a defined value');
-	}
-	// @ts-expect-error We know this is fine, but Typescript doesn't!
-	return x;
+/** @param {string} input */
+function solveDay3Part1(input) {
+	return parseDay3Input(input).reduce((totalSum, row, rowIdx, rows) => {
+		/** @type {Set<Day3Cell>} */
+		const talliedCells = new Set();
+		const rowSum = row.reduce((sum, cell, col) => {
+			if (talliedCells.has(cell) || !cell.num) return sum;
+			// If we got here, we've got a new number to check.
+			rowLoop: for (let r = rowIdx - 1; r <= rowIdx + 1; r++) {
+				const rowToCheck = rows[rowIdx];
+				if (!rowToCheck) continue;
+				for (let c = col - 1; c <= col + 1; c++) {
+					// Don't check against itself!
+					if (c === col && r === col) continue;
+					const cellToCheck = row[c];
+					if (!cellToCheck) continue;
+					if (cellToCheck.isSymbol) {
+						sum += cell.num.value;
+						talliedCells.add(cell);
+						break rowLoop;
+					}
+				}
+			}
+			return sum;
+		}, 0);
+		return totalSum + rowSum;
+	}, 0);
 }
 
-//#endregion UTILITIES
+/** @param {string} input */
+function solveDay3Part2(input) {}
+
+//#endregion Day 3
 
 //#region LOCAL UTILITIES
 
