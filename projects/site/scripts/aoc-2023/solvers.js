@@ -7,7 +7,7 @@ await solve(1, 2, solveDay1Part2);
 await solve(2, 1, solveDay2Part1);
 await solve(2, 2, solveDay2Part2);
 await solve(3, 1, solveDay3Part1);
-// await solve(3, 2, solveDay3Part2);
+await solve(3, 2, solveDay3Part2);
 
 //#endregion SOLUTIONS
 
@@ -133,6 +133,7 @@ function solveDay2Part2(input) {
  * @prop {number} col
  * @prop {string} value
  * @prop {boolean} isSymbol
+ * @prop {boolean} isGear
  * @prop {Day3Num} [num]
  */
 
@@ -151,8 +152,7 @@ function parseDay3Input(input) {
 			const cells = [];
 			for (let col = 0; col < chars.length; col++) {
 				const value = chars[col];
-				const isSymbol = /[^\d.]/.test(value);
-				const isNum = !isSymbol && /\d/.test(value);
+				const isNum = /\d/.test(value);
 				/** @type {Day3Num|undefined} */
 				let num;
 				if (isNum && cells[col - 1]?.num) {
@@ -178,7 +178,8 @@ function parseDay3Input(input) {
 				cells.push({
 					col,
 					value,
-					isSymbol,
+					isSymbol: /[^\d.]/.test(value),
+					isGear: value === '*',
 					num,
 				});
 			}
@@ -189,36 +190,68 @@ function parseDay3Input(input) {
 /** @param {string} input */
 function solveDay3Part1(input) {
 	const rows = parseDay3Input(input);
+	console.log(JSON.stringify(rows[2].slice(39, 42), null, 2));
 	/** @type {number[]} */
 	const nums = [];
-	/** @type {Set<Day3Cell>} */
+	/** @type {Set<Day3Num>} */
 	const alreadyAdded = new Set();
 	for (let r = 0; r < rows.length; r++) {
 		const row = rows[r];
 		for (let col = 0; col < row.length; col++) {
 			const cell = row[col];
-			if (!cell.num || alreadyAdded.has(cell)) continue;
+			if (!cell.num || alreadyAdded.has(cell.num)) continue;
 			// Look at all 9 spots around this cell and,
 			// if one of them has a symbol add its num!
 			outer: for (let i = -1; i <= 1; i++) {
 				for (let j = -1; j <= 1; j++) {
-					if (i === 0 && i === j) continue; // skip self
+					if (i === 0 && j === 0) continue; // skip self
 					const otherCellRow = r + i;
-					const otherCellCol = col + i;
+					const otherCellCol = col + j;
 					const otherCell = rows[otherCellRow]?.[otherCellCol];
 					if (!otherCell || !otherCell.isSymbol) continue;
-					alreadyAdded.add(cell);
+					alreadyAdded.add(cell.num);
 					nums.push(cell.num.value);
 					break outer;
 				}
 			}
 		}
 	}
-	console.log(nums.slice(0, 10));
+	return nums.reduce((sum, num) => sum + num, 0);
 }
 
 /** @param {string} input */
-function solveDay3Part2(input) {}
+function solveDay3Part2(input) {
+	const rows = parseDay3Input(input);
+	/** @type {number[][]} */
+	const gearNums = [];
+	for (let r = 0; r < rows.length; r++) {
+		const row = rows[r];
+		for (let col = 0; col < row.length; col++) {
+			const cell = row[col];
+			if (!cell.isGear) continue;
+			// Look at all 9 spots around this cell and collect
+			// the unique numbers we find.
+			/** @type {Set<Day3Num>} */
+			const foundNums = new Set();
+			for (let i = -1; i <= 1; i++) {
+				for (let j = -1; j <= 1; j++) {
+					if (i === 0 && j === 0) continue; // skip self
+					const otherCellRow = r + i;
+					const otherCellCol = col + j;
+					const otherCell = rows[otherCellRow]?.[otherCellCol];
+					if (!otherCell || !otherCell.num) continue;
+					foundNums.add(otherCell.num);
+				}
+			}
+			if (foundNums.size !== 2) continue;
+			gearNums.push([...foundNums].map((num) => num.value));
+		}
+	}
+	return gearNums.reduce((sum, [a, b]) => {
+		const ratio = a * b;
+		return sum + ratio;
+	}, 0);
+}
 
 //#endregion Day 3
 

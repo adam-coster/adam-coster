@@ -243,11 +243,10 @@ function solveDay2Part2(input) {
 	}, 0);
 }
 ```
-<!--
 
 ## Day 3: Gear Ratios
 
-For this puzzle, we need to add up a bunch of numbers in a grid, but only those numbers that are "adjacent" (as in a matrix) to a "symbol" (non-numeric, non-`.` character).
+For this puzzle, we have a matrix of cells, where each cell is a numeric or symbol character. We need to be able to identify numbers, which can span multiple columns. For each cell, the puzzle parts require that we be able to ask a question about the 9 *adjacent* cells.
 
 The provided example is this:
 
@@ -264,6 +263,188 @@ The provided example is this:
 .664.598..
 ```
 
-Where 113 and 58 are must *not* be part of the sum based on the rules.
+Here's the parser function I used for both parts of this puzzle:
 
--->
+```js
+/**
+ * @typedef Day3Num
+ * @prop {number} startCol
+ * @prop {number} endCol
+ * @prop {number} value
+ *
+ * @typedef Day3Cell
+ * @prop {number} col
+ * @prop {string} value
+ * @prop {boolean} isSymbol
+ * @prop {boolean} isGear
+ * @prop {Day3Num} [num]
+ */
+
+/**
+ * @param {string} input
+ * @returns {Day3Cell[][]}
+ */
+function parseDay3Input(input) {
+	return input
+		.trim()
+		.split(/[\r\n]+/g)
+		.map((row) => {
+			const chars = row.split('');
+
+			/** @type {Day3Cell[]} */
+			const cells = [];
+			for (let col = 0; col < chars.length; col++) {
+				const value = chars[col];
+				const isNum = /\d/.test(value);
+				/** @type {Day3Num|undefined} */
+				let num;
+				if (isNum && cells[col - 1]?.num) {
+					// This this is part of the last number and thus
+					// already dealt with!
+					num = cells[col - 1].num;
+				} else if (isNum) {
+					// This is the start of a new number
+					let numStr = value;
+					num = {
+						startCol: col,
+						endCol: col,
+						value: 0,
+					};
+					for (let j = col + 1; j < chars.length; j++) {
+						if (/\d/.test(chars[j])) {
+							numStr += chars[j];
+							num.endCol++;
+						} else break;
+					}
+					num.value = Number(numStr);
+				}
+				cells.push({
+					col,
+					value,
+					isSymbol: /[^\d.]/.test(value),
+					isGear: value === '*',
+					num,
+				});
+			}
+			return cells;
+		});
+}
+```
+
+This parser returns an array of rows. Each row is an array of cells. For each cell, if that cell is part of a number from the grid, it refers to a *single object instance* representing that number. That way we can check to make sure we aren't doing something with a number more than once!
+
+The parsed data for a row looks like this:
+
+```jsonc
+[
+	// ... (first 38 columns)
+  {
+    "col": 39,
+    "value": "3", // second digit of num.value
+    "isSymbol": false,
+    "isGear": false,
+    "num": {
+      "startCol": 38,
+      "endCol": 40,
+      "value": 835
+    }
+  },
+  {
+    "col": 40,
+    "value": "5", // third digit of num.value
+    "isSymbol": false,
+    "isGear": false,
+    "num": { // This object is the SAME ONE in the prior cell!
+      "startCol": 38,
+      "endCol": 40,
+      "value": 835
+    }
+  },
+  {
+    "col": 41,
+    "value": "*",
+    "isSymbol": true,
+    "isGear": true
+  }
+]
+```
+
+### Day 3 Part 1
+
+For this puzzle, we need to add up the numbers in the grid, but only those numbers that are adjacent to a "symbol" (non-numeric, non-`.` character).
+
+To do that, I looped through every cell in the parsed data. For each cell, I looped through all of its neighbors. If the central cell was part of a number, and the cell I was checking was a symbol, I added it to the set of numbers to add up. This is where I took advantage of representing each parsed number with a common reference for each cell it spanned, since I could skip numbers I'd already added to the set!
+
+```js
+/** @param {string} input */
+function solveDay3Part1(input) {
+	const rows = parseDay3Input(input);
+	console.log(JSON.stringify(rows[2].slice(39, 42), null, 2));
+	/** @type {number[]} */
+	const nums = [];
+	/** @type {Set<Day3Num>} */
+	const alreadyAdded = new Set();
+	for (let r = 0; r < rows.length; r++) {
+		const row = rows[r];
+		for (let col = 0; col < row.length; col++) {
+			const cell = row[col];
+			if (!cell.num || alreadyAdded.has(cell.num)) continue;
+			// Look at all 9 spots around this cell and,
+			// if one of them has a symbol add its num!
+			outer: for (let i = -1; i <= 1; i++) {
+				for (let j = -1; j <= 1; j++) {
+					if (i === 0 && j === 0) continue; // skip self
+					const otherCellRow = r + i;
+					const otherCellCol = col + j;
+					const otherCell = rows[otherCellRow]?.[otherCellCol];
+					if (!otherCell || !otherCell.isSymbol) continue;
+					alreadyAdded.add(cell.num);
+					nums.push(cell.num.value);
+					break outer;
+				}
+			}
+		}
+	}
+	return nums.reduce((sum, num) => sum + num, 0);
+}
+```
+
+### Day 3 Part 2
+
+For this variation of the puzzle, instead of looking at cells adjacent to *numbers* we're tasked to look at cells around `*` symbols. If that symbol is adjacent to *exactly two* numbers, we multiply those two numbers together to get the *gear ratio*. The solution is the sum of all gear ratios.
+
+```js
+/** @param {string} input */
+function solveDay3Part2(input) {
+	const rows = parseDay3Input(input);
+	/** @type {number[][]} */
+	const gearNums = [];
+	for (let r = 0; r < rows.length; r++) {
+		const row = rows[r];
+		for (let col = 0; col < row.length; col++) {
+			const cell = row[col];
+			if (!cell.isGear) continue;
+			// Look at all 9 spots around this cell and collect
+			// the unique numbers we find.
+			/** @type {Set<Day3Num>} */
+			const foundNums = new Set();
+			for (let i = -1; i <= 1; i++) {
+				for (let j = -1; j <= 1; j++) {
+					if (i === 0 && j === 0) continue; // skip self
+					const otherCellRow = r + i;
+					const otherCellCol = col + j;
+					const otherCell = rows[otherCellRow]?.[otherCellCol];
+					if (!otherCell || !otherCell.num) continue;
+					foundNums.add(otherCell.num);
+				}
+			}
+			if (foundNums.size !== 2) continue;
+			gearNums.push([...foundNums].map((num) => num.value));
+		}
+	}
+	return gearNums.reduce((sum, [a, b]) => {
+		const ratio = a * b;
+		return sum + ratio;
+	}, 0);
+}
+```
