@@ -512,7 +512,6 @@ hue-6-2: #e6c07b
 
 	article.article > .body,
 	article.body {
-		--blockquote-margin: 1.5rem;
 		counter-reset: figure;
 	}
 
@@ -593,7 +592,7 @@ hue-6-2: #e6c07b
 	}
 
 	:where(article.article > .body, article.body) blockquote p {
-		padding-inline: var(--blockquote-margin);
+		padding-inline: 1rem;
 		font-style: italic;
 		border-left: 0.2rem solid var(--color-subtler);
 	}
@@ -619,8 +618,7 @@ hue-6-2: #e6c07b
 
 	:where(article.article > .body, article.body) sup {
 		--padding: calc(var(--size) * 0.2);
-		padding-left: var(--padding);
-		padding-right: var(--padding);
+		padding-inline: var(--padding);
 	}
 
 	:where(article.article > .body, article.body) .footnotes {
@@ -634,5 +632,6 @@ hue-6-2: #e6c07b
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
-	padding: 1.5em;
+	padding-block: 1.5em;
+	padding-inline: 0.75em;
 }
