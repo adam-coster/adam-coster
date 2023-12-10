@@ -188,31 +188,33 @@ function parseDay3Input(input) {
 
 /** @param {string} input */
 function solveDay3Part1(input) {
-	return parseDay3Input(input).reduce((totalSum, row, rowIdx, rows) => {
-		/** @type {Set<Day3Cell>} */
-		const talliedCells = new Set();
-		const rowSum = row.reduce((sum, cell, col) => {
-			if (talliedCells.has(cell) || !cell.num) return sum;
-			// If we got here, we've got a new number to check.
-			rowLoop: for (let r = rowIdx - 1; r <= rowIdx + 1; r++) {
-				const rowToCheck = rows[rowIdx];
-				if (!rowToCheck) continue;
-				for (let c = col - 1; c <= col + 1; c++) {
-					// Don't check against itself!
-					if (c === col && r === col) continue;
-					const cellToCheck = row[c];
-					if (!cellToCheck) continue;
-					if (cellToCheck.isSymbol) {
-						sum += cell.num.value;
-						talliedCells.add(cell);
-						break rowLoop;
-					}
+	const rows = parseDay3Input(input);
+	/** @type {number[]} */
+	const nums = [];
+	/** @type {Set<Day3Cell>} */
+	const alreadyAdded = new Set();
+	for (let r = 0; r < rows.length; r++) {
+		const row = rows[r];
+		for (let col = 0; col < row.length; col++) {
+			const cell = row[col];
+			if (!cell.num || alreadyAdded.has(cell)) continue;
+			// Look at all 9 spots around this cell and,
+			// if one of them has a symbol add its num!
+			outer: for (let i = -1; i <= 1; i++) {
+				for (let j = -1; j <= 1; j++) {
+					if (i === 0 && i === j) continue; // skip self
+					const otherCellRow = r + i;
+					const otherCellCol = col + i;
+					const otherCell = rows[otherCellRow]?.[otherCellCol];
+					if (!otherCell || !otherCell.isSymbol) continue;
+					alreadyAdded.add(cell);
+					nums.push(cell.num.value);
+					break outer;
 				}
 			}
-			return sum;
-		}, 0);
-		return totalSum + rowSum;
-	}, 0);
+		}
+	}
+	console.log(nums.slice(0, 10));
 }
 
 /** @param {string} input */
