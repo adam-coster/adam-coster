@@ -19,7 +19,7 @@ export const load: LayoutServerLoad = async (input) => {
 			),
 	]);
 	if (!frontmatter) {
-		throw error(404);
+		error(404);
 	}
 	const meta: MetadataFull = {
 		title: frontmatter.title,

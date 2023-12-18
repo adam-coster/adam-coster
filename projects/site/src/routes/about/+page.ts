@@ -5,5 +5,5 @@ import type { PageLoad } from './$types';
  * Redirect to the root
  */
 export const load: PageLoad = () => {
-	throw redirect(301, '/');
+	redirect(301, '/');
 };

@@ -29,8 +29,8 @@ export const load: PageLoad = async (input) => {
 		(a) => a.legacySlug === legacySlug,
 	);
 	if (!matchingArticle) {
-		throw error(404);
+		error(404);
 	} else {
-		throw redirect(301, matchingArticle.url);
+		redirect(301, matchingArticle.url);
 	}
 };
