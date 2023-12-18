@@ -5,7 +5,7 @@ import { gfmHeadingId } from 'marked-gfm-heading-id';
 marked.use(gfmHeadingId());
 
 function markdownToHtml(md: string): string {
-	return marked(md, { gfm: true });
+	return marked(md, { gfm: true }) as string;
 }
 
 interface MicrodataFaqQuestion {
