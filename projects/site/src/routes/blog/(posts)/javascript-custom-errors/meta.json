@@ -1,9 +1,9 @@
 {
 	"$schema": "../../post.schema.json",
 	"crossPosts": [],
-	"description": "Custom JavaScript classes are super useful for simplifying your error-handling logic. This post describes how they work, and provides templates and VSCode snippets to make them easy to add to your project.",
+	"description": "Custom JavaScript classes are super useful for simplifying your error-handling logic. Learn how they work, why to use them, and get templates and VSCode snippets to make them easy to add to your project.",
 	"publishedAt": "2023-12-18T19:33:26.563Z",
 	"slug": "javascript-custom-errors",
 	"tags": ["node", "javascript", "typescript"],
-	"title": "Custom JavaScript/Typescript Errors: Templates and Visual Studio Code snippets"
+	"title": "Custom JavaScript/Typescript Errors: Why and how to use them"
 }
