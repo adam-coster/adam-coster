@@ -66,7 +66,7 @@ To that end, custom error classes let you control *exactly* what information is 
 
 ### Case study: `ENOENT` in Node's `fs` module
 
-In Node, if you try to `fs.readFileSync()` a non-existent file, an error is thrown. If you catch that error and inspect it, you'll see that it's a regular old `Error` instance (i.e. *not* from child class) but has had several new fields added to it: `errno`, `syscall`, `code`, and `path`.
+In Node, if you try to `fs.readFileSync()` a non-existent file, an error is thrown. If you catch that error and inspect it, you'll see that it's a regular old `Error` instance (i.e. *not* from a child class) but has had several new fields added to it: `errno`, `syscall`, `code`, and `path`.
 
 When `try`/`catch`ing code that might throw such an error, you have to handle it like this:
 
