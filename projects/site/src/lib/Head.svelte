@@ -13,7 +13,7 @@
 		canonical: string;
 		title: string;
 	}) {
-		return `Preview image capturing a portion of the page at ${meta.canonical} showing the page's title: "${meta.title}"`;
+		return `Preview image for the page at ${meta.canonical} showing the page's title: "${meta.title}"`;
 	}
 
 	/**

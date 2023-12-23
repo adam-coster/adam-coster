@@ -188,6 +188,10 @@
 </nav>
 
 <style>
+	.social-preview, nav {
+		max-width: var(--content-max-width);
+		margin: auto;
+	}
 	h1 {
 		text-align: center;
 	}

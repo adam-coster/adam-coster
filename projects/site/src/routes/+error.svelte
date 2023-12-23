@@ -39,18 +39,24 @@
 
 <Head />
 
-<h1>
-	<span class="error-status">{info.status}</span>
-	<span class="error-title">{info.title}</span>
-</h1>
-<p class="error-message">{info.message}</p>
-{#if dev && $page.error}
-	<h2>🪲 {$page.error.message}</h2>
-{/if}
+<section>
+	<h1>
+		<span class="error-status">{info.status}</span>
+		<span class="error-title">{info.title}</span>
+	</h1>
+	<p class="error-message">{info.message}</p>
+	{#if dev && $page.error}
+		<h2>🪲 {$page.error.message}</h2>
+	{/if}
+</section>
 
 <style>
 	.error-status {
 		color: var(--color-bad);
 		font-weight: 400;
+	}
+	section{
+		max-width: var(--content-max-width);
+		margin: auto;
 	}
 </style>

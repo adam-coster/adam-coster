@@ -114,6 +114,10 @@
 </article>
 
 <style>
+	article {
+		max-width: var(--content-max-width);
+		margin: auto;
+	}
 	article header :is(h1, h2) {
 		text-align: center;
 	}

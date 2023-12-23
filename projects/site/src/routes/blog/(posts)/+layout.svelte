@@ -108,6 +108,10 @@
 </article>
 
 <style>
+	article {
+		max-width: var(--content-max-width);
+		margin: auto;
+	}
 	header {
 		margin: var(--size) 0;
 	}
