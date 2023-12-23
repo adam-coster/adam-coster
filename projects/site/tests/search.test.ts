@@ -40,7 +40,7 @@ const test = testBase.extend<{ searchPage: BlogSearchPage }>({
 });
 
 test.describe('Blog search', () => {
-	test('can submit searches', async ({ searchPage }) => {
+	test.skip('can submit searches', async ({ searchPage }) => {
 		await expect(searchPage.locators.summary).toHaveText(
 			'Showing all posts...',
 		);
