@@ -33,14 +33,14 @@ if (!running) {
 		new Promise((resolve) => {
 			runnerHandle?.stdout?.on('data', (data) => {
 				console.log(data);
-				if (data.includes(baseUrl)) {
+				if (data.includes('localhost')) {
 					resolve(undefined);
 					running = true;
 				}
 			});
 		}),
 		// Give up if it takes too long
-		new Promise((resolve) => setTimeout(resolve, 30_000)),
+		new Promise((resolve) => setTimeout(resolve, 10_000)),
 	]);
 }
 
