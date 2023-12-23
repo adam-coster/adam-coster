@@ -30,16 +30,17 @@ try {
 if (!running) {
 	runnerHandle = exec('pnpm preview');
 	await Promise.race([
-		new Promise((resolve, reject) => {
+		new Promise((resolve) => {
 			runnerHandle?.stdout?.on('data', (data) => {
+				console.log(data);
 				if (data.includes(baseUrl)) {
 					resolve(undefined);
 					running = true;
 				}
 			});
 		}),
-		// Give up after 10 seconds
-		new Promise((resolve) => setTimeout(resolve, 10_000)),
+		// Give up if it takes too long
+		new Promise((resolve) => setTimeout(resolve, 30_000)),
 	]);
 }
 
