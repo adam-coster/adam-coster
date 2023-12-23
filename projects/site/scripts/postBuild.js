@@ -10,7 +10,7 @@ import puppeteer from 'puppeteer';
  * @prop {string} title
  */
 
-const baseUrl = 'http://localhost:3000';
+const baseUrl = 'http://localhost:3037';
 const previewUrl = `${baseUrl}/tools/preview`;
 const previewOutputDir = pathy('.svelte-kit/cloudflare/previews');
 await previewOutputDir.ensureDir();
@@ -28,7 +28,7 @@ try {
 } catch {}
 
 if (!running) {
-	runnerHandle = exec('pnpm watch');
+	runnerHandle = exec('pnpm preview');
 	await Promise.race([
 		new Promise((resolve, reject) => {
 			runnerHandle?.stdout?.on('data', (data) => {
