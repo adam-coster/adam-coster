@@ -18,7 +18,7 @@ Just how big of a difference is it? Looking at the [Bureau of Labor and Statisti
 
 As a consequence, if you had the same absolute compensation in January 2020 as you did in December 2023, you *experienced* a 16% pay cut.
 
-Once we realized just how big of an impact this was making on our employees (and ourselves, since we we're employees, too!), we decided to change our compensation mechanism to ensure that it *always* accounted for inflation. That way we could be sure that we were, at the very least, always providing our employees with the buying power we'd originally offered when they joined our team.
+Once we realized just how big of an impact this was making on our employees (and ourselves, since we're employees, too!), we decided to change our compensation mechanism to ensure that it *always* accounted for inflation. That way we could be sure that we were, at the very least, always providing our employees with the buying power we'd originally offered when they joined our team.
 
 A quick aside: Yes, it's not *our* fault, as the employer, that inflation shot up so aggressively. (Though it [*is* the fault of some other companies](https://www.axios.com/2023/05/18/once-a-fringe-theory-greedflation-gets-its-due).) Just as it's not our fault that our idiotic U.S. health care system ties health care to employment, putting us on the hook for that, too. Certainly, it sucks that the cost of running a business constantly goes up, and up, and up. But being a good employer means that we have to account for the dumb reality that others have built for us.
 
@@ -26,19 +26,19 @@ Anyway, seeing those dramatic numbers we changed our approach to compensation. A
 
 Here's what we do, and I encourage other employers to do the same:
 
-- Set compensation in "Dollars per CPI" (`$/CPI`), which makes the number an inflation-proof quantity of *buying power*, rather than an inflation-ignorant, plain dollar figure. In other words, if I wanted to pay someone $100k *today* (with the CPI at ~300), I'd set their salary to `$100k/300CPI`, or `$333/CPI`.
+- Set compensation in "Dollars per CPI" (`$/CPI`), which makes the number an inflation-proof quantity of *buying power*, rather than an inflation-ignorant, plain dollar figure. In other words, if I wanted to pay someone $100k in *today's dollars* (with the CPI at ~300), I'd set their salary to `$100k/300CPI`, or `$333/CPI`.
 - At each payroll, look up the current CPI and then multiply the employee `$/CPI` by that to get their current absolute compensation. For example, if the CPI increased to 312 that same employee's absolute salary would now be `($333/CPI) * 312CPI`, or ~$104k.
 - To give someone a raise (i.e. an *increase in buying power*), bump their `$/CPI`. So if you want to give the above employee a 3% raise, you'd do that by changing their rate to `$333/CPI * 1.03 = $343/CPI`.
 
-This does add a layer of extra work during payroll, but you could automate all of it. In cases where automation isn't an option, you can still choose exactly *how* and *when* you adjust for inflation. It doesn't *have to* create unbearable overhead.
+This does add a layer of extra work during payroll, but you could automate all of it. In cases where automation isn't an option, you can still choose exactly *how* and *when* you adjust for inflation. It doesn't have to create unbearable overhead.
 
 ## Considerations
 
 ### Which CPI numbers do I use?
 
-CPI is pretty complicated, and it absolutely does not represent the *truth* of how we actually experience inflation. The CPI is an averaged-out, best-guess at how the cost of living is changing, buffeted by the definitional whims of politicians and academics. It under-estimates inflation as real people actually experience it.
+CPI is pretty complicated, and it absolutely does not represent the truth of how we *experience* inflation. The CPI is an averaged-out, best-guess at how the cost of living is changing, biased by the definitional whims of politicians and academics. It probably under-estimates inflation as real people actually experience it.
 
-And it varies by region! Each city and state has its own little micro-economics and its own inflation rate (tech hubs have much higher local inflation than other locations, for example).
+And it varies by region! Each city and state has its own little micro-economics and its own inflation rate. Tech hubs have much higher local inflation than other locations, for example.
 
 Which is to say that there is no "true" CPI to use for this. The important thing here is making a good faith effort to account for inflation in employee compensation, balancing practicality and reality while acknowledging that this is a messy problem with no "right" answers.
 
@@ -56,7 +56,9 @@ But also note that, if *all* you did as an employer was ensure your employees' b
 
 If you can't afford to keep employee salaries up with inflation, then you may not have a viable business. That's not a value judgement; running a business is hard and the world around us is constantly throwing surprises our way to make it even harder. Businesses fail. Mine almost has a few times. Someday it probably will.
 
-But! If you're running your company as honestly and ethically as you can, and doing your best by your employees, it's very possible that your employees would rather take a pay cut than have the business go under and find new employment. The important thing here is to *understand and acknowledge* that frozen pay is experienced as a  pay cut, and that you're asking your employees to help foot the bill, by sacrificing their own buying power, to keep your company afloat.
+But! If you're running your company as honestly and ethically as you can, and doing your best by your employees, it's very possible that your employees would rather take a pay cut than have the business go under and find new employment.
+
+The important thing here is to understand and acknowledge that, if you don't keep up with inflation, you're asking your employees to sacrifice their own buying power to keep your company afloat.
 
 ### But future compensation is unpredictable!
 
@@ -74,15 +76,17 @@ Which is all to say that you can choose your own level of uncertainty via the de
 
 ### What if CPI goes *down*?
 
-It *almost never does*, and in those rare moments it's been a tiny decrease for a short period of time. If you are using rolling averages to smooth things out I'd be surprised if you ever see a decrease. Still, you should plan for what you'd do in that scenario.
+It almost never does and, in those rare moments, it's been a tiny decrease for a short period of time. If you are using rolling averages to smooth things out I'd be surprised if you ever see a decrease. Still, you should plan for what you'd do in that scenario.
 
 Some options:
 
 - Pay employees the reduced amount. It won't feel good to an employee, but since you're actually providing the *same buying power*, then you at least aren't *experientially* giving them a pay cut.
-- Always pay employees *at least as much* as you did the last time. You'll be briefly, and *barely*, bumping their buying power until the CPI starts going up again. That'll cost you very little and will make employees happier. (This is our approach.)
+- Always pay employees *at least as much* as you did the last time. You'll be briefly, and *barely*, bumping their buying power until the CPI starts going up again. That'll cost you very little and will make employees happier. (This is our plan.)
 
 ## Just do your best
 
-As the saying goes, "There's no ethical consumption under capitalism." And its corollary, "there's no ethical employment under capitalism."
+As the saying goes, "There's no ethical consumption under capitalism."
 
-Unfortunately, U.S.-style capitalism has saddled *private businesses* with the responsibility for the welfare of ourselves and our employees. I don't want to be responsible for that. I don't know *any* small business owner who wants to be responsible for that! But that's how it is, so we'll just have to keep doing the best we can under this garbage system.
+And, its corollary, "There's no ethical employment under capitalism."
+
+Unfortunately, U.S.-style capitalism has saddled *private businesses* with the entire responsibility for the welfare of our selves and our employees. I don't want to be responsible for that. I don't know *any* small business owner who wants to be responsible for that! And yet, we *are* responsible for it. So we'll just have to keep doing the best we can under this garbage system.
