@@ -1,60 +1,61 @@
 {
-  "name": "vscode-lab",
-  "displayName": "Adam's Laboratory",
-  "version": "0.2.0",
-  "private": true,
-  "description": "Experiments and demos for VSCode extensions",
-  "categories": [
-    "Other"
-  ],
-  "author": {
-    "name": "Adam Coster",
-    "url": "https://adamcoster.com"
-  },
-  "main": "./dist/extension.js",
-  "scripts": {
-    "build": "node scripts/build.mjs",
-    "bump": "cd ../.. && pnpm bump",
-    "package": "vsce package --no-dependencies --githubBranch develop",
-    "vscode:prepublish": "pnpm build",
-    "vscode:publish": "vsce publish --no-dependencies --githubBranch develop",
-    "watch": "nodemon --delay 1 -e js,cjs,mjs,ts,mts,cts,yaml --watch src --exec \"npm run build\""
-  },
-  "contributes": {
-    "commands": [],
-    "views": {
-      "adam-coster-lab": [
-        {
-          "id": "adam-coster-lab.tree",
-          "name": "Sample Tree View",
-          "type": "tree"
-        }
-      ]
-    },
-    "viewsContainers": {
-      "activitybar": [
-        {
-          "id": "adam-coster-lab",
-          "title": "Adam's Lab",
-          "icon": "./images/flask-vial-mono.svg"
-        }
-      ]
-    }
-  },
-  "activationEvents": [
-    "onView:adam-coster-lab"
-  ],
-  "devDependencies": {
-    "@types/node": "18.x",
-    "@types/vscode": "^1.86.0",
-    "esbuild": "0.20.1",
-    "eslint": "^8.57.0",
-    "nodemon": "^3.1.0",
-    "typescript": "^5.3.3"
-  },
-  "engines": {
-    "vscode": "^1.86.0"
-  },
-  "icon": "images/flask-vial-color.png",
-  "pricing": "Free"
+	"name": "vscode-lab",
+	"displayName": "Adam's Laboratory",
+	"version": "0.2.0",
+	"private": true,
+	"description": "Experiments and demos for VSCode extensions",
+	"categories": [
+		"Other"
+	],
+	"author": {
+		"name": "Adam Coster",
+		"url": "https://adamcoster.com"
+	},
+	"main": "./dist/extension.js",
+	"scripts": {
+		"build": "node scripts/build.mjs",
+		"bump": "cd ../.. && pnpm bump",
+		"package": "vsce package --no-dependencies --githubBranch develop",
+		"vscode:prepublish": "pnpm build",
+		"vscode:publish": "vsce publish --no-dependencies --githubBranch develop",
+		"watch": "nodemon --delay 1 -e js,cjs,mjs,ts,mts,cts,yaml --watch src --exec \"npm run build\""
+	},
+	"contributes": {
+		"commands": [],
+		"views": {
+			"adam-coster-lab": [
+				{
+					"id": "adam-coster-lab.tree",
+					"name": "Sample Tree View",
+					"type": "tree"
+				}
+			]
+		},
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "adam-coster-lab",
+					"title": "Adam's Lab",
+					"icon": "./images/flask-vial-mono.svg"
+				}
+			]
+		}
+	},
+	"activationEvents": [
+		"onView:adam-coster-lab"
+	],
+	"devDependencies": {
+		"@types/node": "18.x",
+		"@types/vscode": "^1.86.0",
+		"@vscode/vsce": "2.22.0",
+		"esbuild": "0.20.1",
+		"eslint": "^8.57.0",
+		"nodemon": "^3.1.0",
+		"typescript": "^5.3.3"
+	},
+	"engines": {
+		"vscode": "^1.86.0"
+	},
+	"icon": "images/flask-vial-color.png",
+	"pricing": "Free"
 }

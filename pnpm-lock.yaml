@@ -372,6 +372,9 @@ importers:
       '@types/vscode':
         specifier: ^1.86.0
         version: 1.86.0
+      '@vscode/vsce':
+        specifier: 2.22.0
+        version: 2.22.0
       esbuild:
         specifier: 0.20.1
         version: 0.20.1
