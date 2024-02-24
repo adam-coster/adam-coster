@@ -32,7 +32,7 @@ jobs:
 
       # PUBLISH
       - name: Publish
-        working-directory: projects/adam-coster-vscode-lab
+        working-directory: projects/vscode-lab
         run: pnpm vscode:publish
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
