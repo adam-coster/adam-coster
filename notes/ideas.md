@@ -2,6 +2,8 @@
 
 ## Topics
 
+- Authentication & Authorization (Theory)
+- Safe content removal for demos (masking vs removing)
 - Versioning in games
   - Player-facing version
   - Content-version
