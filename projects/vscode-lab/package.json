@@ -15,7 +15,9 @@
 	"categories": [
 		"Other"
 	],
-	"activationEvents": [],
+	"activationEvents": [
+		"onView:adam-coster-lab"
+	],
 	"main": "./dist/extension.js",
 	"contributes": {
 		"commands": [],
