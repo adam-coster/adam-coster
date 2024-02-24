@@ -1,5 +1,6 @@
 import vscode from 'vscode';
 import { SymbolKindIconProvider } from './extension.symbols.mjs';
+import { SampleTreeProvider } from './extensions.tree.mjs';
 import { info } from './log.mjs';
 
 export class ExtensionWorkspace {
@@ -18,7 +19,10 @@ export class ExtensionWorkspace {
 		this.provider = new ExtensionWorkspace();
 		this.ctx = ctx;
 
-		ctx.subscriptions.push(...[SymbolKindIconProvider.register()]);
+		ctx.subscriptions.push(
+			SymbolKindIconProvider.register(),
+			...SampleTreeProvider.register(),
+		);
 
 		return this.provider;
 	}
