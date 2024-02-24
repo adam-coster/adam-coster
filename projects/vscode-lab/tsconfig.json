@@ -1,0 +1,33 @@
+{
+	"include": ["./src/**/*"],
+	"compilerOptions": {
+		"types": ["node"],
+		"outDir": "./dist",
+		"rootDir": "./src",
+		"baseUrl": "./src",
+		"emitDeclarationOnly": true,
+		"allowJs": true,
+		"checkJs": true,
+		"resolveJsonModule": true,
+		"moduleResolution": "nodenext",
+		"module": "NodeNext",
+		"isolatedModules": true,
+		"declaration": true,
+		"declarationMap": true,
+		"emitDecoratorMetadata": true,
+		"esModuleInterop": true,
+		"experimentalDecorators": true,
+		"importHelpers": true,
+		"lib": ["ESNext"],
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitOverride": true,
+		"noImplicitReturns": true,
+		"skipDefaultLibCheck": true,
+		"skipLibCheck": true,
+		"sourceMap": true,
+		"strict": true,
+		"target": "ESNext",
+		"typeRoots": ["./node_modules/@types"],
+		"useUnknownInCatchVariables": true
+	}
+}

@@ -1,0 +1,38 @@
+name: Publish VSCode Labs
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'vscode-lab@*'
+
+permissions:
+  contents: write
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      # SETUP
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18.18.0
+      - run: corepack enable
+      - run: pnpm install --filter=vscode-lab...
+      - run: pwd
+
+      # BUILD DEPS
+      - name: Build
+        run: pnpm turbo run build --only --filter=vscode-lab...
+
+      # PUBLISH
+      - name: Publish
+        working-directory: projects/vscode-lab
+        run: pnpm vscode:publish
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
