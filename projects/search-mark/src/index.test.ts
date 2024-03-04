@@ -1,5 +1,10 @@
 import { test } from 'node:test';
-import { parseRegexLiteralString, assert, search } from './index.js';
+import {
+	parseRegexLiteralString,
+	assert,
+	search,
+	markSearchResults,
+} from './index.js';
 
 await test('can parse regex-literal-like strings', () => {
 	let parsed = parseRegexLiteralString('/hello/');
@@ -62,7 +67,6 @@ await test('can find substring locations with ignoreCase', () => {
 await test('can find regex matches', () => {
 	const source = 'hello what fun oh whatwhat fun hello world';
 	let matches = search(source, '/WHAT/i');
-	console.log(matches);
 	assert(matches.length === 3, 'Should have found 3 matches');
 	assert(matches[0][0] === 6, 'Should have found the first match');
 	assert(matches[0][1] === 10, 'Should have found the first match');
@@ -78,4 +82,30 @@ await test('can find regex matches', () => {
 	assert(matches.length === 1, 'Should have found 1 match');
 	assert(matches[0][0] === 15, 'Should have found the match');
 	assert(matches[0][1] === 16, 'Should have found the match');
+});
+
+await test('can mark substrings', () => {
+	const source = 'hello what fun oh what fun hello world';
+	let marked = markSearchResults(source, 'hello');
+	assert(
+		marked ===
+			'<mark>hello</mark> what fun oh what fun <mark>hello</mark> world',
+		'Should have marked the substrings',
+	);
+
+	marked = markSearchResults(source, 'oh what');
+	assert(
+		marked === 'hello what fun <mark>oh what</mark> fun hello world',
+		'Should have marked the substrings',
+	);
+
+	marked = markSearchResults(source, 'nope');
+	assert(marked === source, 'Should not have marked anything');
+
+	marked = markSearchResults(source, '/WHAT/i');
+	assert(
+		marked ===
+			'hello <mark>what</mark> fun oh <mark>what</mark> fun hello world',
+		'Should have marked the substrings',
+	);
 });

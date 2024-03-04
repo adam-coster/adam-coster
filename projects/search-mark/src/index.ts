@@ -2,10 +2,86 @@ const allowedFlagsString = 'dgimsuvy';
 const allowedFlags = new Set(allowedFlagsString);
 const regexLiteralPatternString = `^/(?<pattern>.+)/(?<flags>[${allowedFlagsString}]*)$`;
 
+export type Position = [start: number, end: number];
+export interface MarkOptions {
+	/** @default '<mark>' */
+	prefix?: string;
+	/** @default '</mark>' */
+	postfix?: string;
+}
+export interface SearchOptions {
+	ignoreCase?: boolean;
+}
+
 /**
  * A regex that matches regex-literal-like strings, e.g. `/pattern/flags/`,
  * with groups `{pattern:string, flags:string}` */
 export const regexLiteralPattern = new RegExp(regexLiteralPatternString, 'u');
+
+/**
+ * Wrapper function combining {@link mark} and {@link search}.
+ */
+export function markSearchResults(
+	source: string,
+	pattern: string,
+	options?: MarkOptions & SearchOptions,
+): string {
+	return mark(source, search(source, pattern, options), options);
+}
+
+/**
+ * Given a collection of positions within a source string,
+ * get a new string with prefix and postfix strings wrapped
+ * around each position.
+ *
+ * @param positions An array of non-overlapping positions within the source string.
+ *
+ * @example mark('hello', [[0,5]], '<mark>', '</mark>') // => '<mark>hello</mark>'
+ * */
+export function mark(
+	source: string,
+	positions: Position[],
+	options?: MarkOptions,
+): string {
+	if (!positions.length) return source;
+	// Make sure positions are in ascending order and non-overlapping.
+	positions = [...positions].sort((a, b) => a[0] - b[0]);
+	assert(
+		positions.every((p, i) => {
+			if (i === 0) return true;
+			const isAfterPrevious = p[0] >= positions[i - 1][1];
+			const isSameAsPrevious =
+				p[0] === positions[i - 1][0] && p[1] === positions[i - 1][1];
+			return isAfterPrevious && !isSameAsPrevious;
+		}),
+		'Positions must be non-overlapping and unique',
+	);
+
+	const prefix =
+		typeof options?.prefix === 'string' ? options.prefix : '<mark>';
+	const postfix =
+		typeof options?.postfix === 'string' ? options.postfix : '</mark>';
+
+	let string = '';
+	let positionIdx = 0;
+
+	let i = 0;
+	for (; i < source.length && positionIdx < positions.length; i++) {
+		const [start, end] = positions[positionIdx];
+		if (i < start) {
+			string += source[i];
+		} else if (i === start) {
+			string += prefix + source[i];
+		} else if (i > start && i < end) {
+			string += source[i];
+		} else if (i === end) {
+			string += postfix + source[i];
+			positionIdx++;
+		}
+	}
+	string += source.slice(i);
+	return string;
+}
 
 /**
  * Given a source string and a search pattern, return an array of
@@ -18,9 +94,9 @@ export const regexLiteralPattern = new RegExp(regexLiteralPatternString, 'u');
 export function search(
 	source: string,
 	pattern: string,
-	options?: { ignoreCase?: boolean },
-): [start: number, end: number][] {
-	const matches: [start: number, end: number][] = [];
+	options?: SearchOptions,
+): Position[] {
+	const matches: Position[] = [];
 	assertIsString(source, 'Expected source to be a string');
 	assertIsString(pattern, 'Expected pattern to be a string');
 	if (!source || !pattern) return matches;
