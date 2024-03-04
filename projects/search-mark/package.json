@@ -1,0 +1,23 @@
+{
+	"name": "@adam-coster/search-mark",
+	"version": "0.9.1",
+	"private": true,
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js"
+		}
+	},
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"scripts": {
+		"build": "tsc",
+		"watch": "tsc --watch",
+		"test": "node -r source-map-support/register --test dist"
+	},
+	"devDependencies": {
+		"source-map-support": "0.5.21",
+		"typescript": "^5.3.3"
+	}
+}
