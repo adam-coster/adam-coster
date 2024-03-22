@@ -1,41 +1,9 @@
 <script lang="ts">
-	import { browser } from '$app/environment';
-	import { page } from '$app/stores';
 	import Nav from '$lib/Nav.svelte';
-	import { getLocal, randomString, setLocal } from '$lib/utility.js';
-	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import type { LayoutData } from './$types';
 
 	export let data: LayoutData;
-
-	/**
-	 * Log a visit to the current page, respecting user privacy by not storing
-	 * anything identifying.
-	 */
-	function logVisit() {
-		if (browser && navigator?.sendBeacon) {
-			const browserId = getLocal('browserId', randomString(6));
-			setLocal('browserId', browserId);
-			navigator?.sendBeacon(
-				'/api/visits',
-				JSON.stringify({
-					path: $page.url.pathname,
-					browserId,
-					referrer: document.referrer,
-				}),
-			);
-		}
-	}
-
-	onMount(() => {
-		// Log the initial visit
-		logVisit();
-	});
-
-	// $: page.subscribe(() => {
-	// 	logVisit();
-	// });
 </script>
 
 <!-- Header -->

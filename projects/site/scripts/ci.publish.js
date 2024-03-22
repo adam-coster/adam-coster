@@ -8,8 +8,8 @@ let branch =
 branch = branch.includes('preview')
 	? 'preview'
 	: branch.startsWith('refs/tags/@adam-coster/site')
-	? 'develop'
-	: branch;
+		? 'develop'
+		: branch;
 const hash = await stdout($`git rev-parse HEAD`);
 const message = await stdout($`git log -1 --pretty=%B`);
 const dirtyFlag = branch === 'preview' ? 'true' : 'false';
@@ -25,11 +25,6 @@ ok(
 	branch.match(/^(.*\/)?(develop|preview)$/),
 	`This script is only meant to run on the "develop" or "preview" branches, but is running on "${branch}"`,
 );
-
-if (branch === 'develop') {
-	// Update the database schema
-	await $`pnpm db:prod:update`;
-}
 
 await $`pnpm wrangler pages deploy ./.svelte-kit/cloudflare --project-name=adam-coster --branch=${branch} --commit-dirty=${dirtyFlag} --commit-message=${message} --commit-hash=${hash}`;
 
