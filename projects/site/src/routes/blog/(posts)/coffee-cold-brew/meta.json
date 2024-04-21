@@ -1,0 +1,37 @@
+{
+	"$schema": "../../post.schema.json",
+	"slug": "coffee-cold-brew",
+	"title": "Super Simple Cold Brew Coffee",
+	"description": "All you need is a jar, a tea infuser, and some ground coffee.",
+	"publishedAt": "2024-04-21T19:54:02.293Z",
+	"tags": ["coffee", "recipe"],
+	"recipe": {
+		"name": "Super Simple Cold Brew Coffee",
+		"description": "All you need is a jar, a tea infuser, and some ground coffee.",
+		"image": "https://adamcoster.com/images/coffee/coffee-infusion.jpg",
+		"recipeIngredient": [
+			"5 tbsp (30g) coffee beans, coarsely ground",
+			"12 oz (350ml) cool water"
+		],
+		"prepTime": "PT5M",
+		"cookTime": "PT18H",
+		"recipeInstructions": [
+			{
+				"@type": "HowToStep",
+				"text": "Grind coffee beans coarsely and add to the tea infuser."
+			},
+			{
+				"@type": "HowToStep",
+				"text": "Place the tea infuser into a mason jar."
+			},
+			{
+				"@type": "HowToStep",
+				"text": "Pour room temperature or colder water over the coffee, refilling periodically as it passes through the grounds, until it is close to the top."
+			},
+			{
+				"@type": "HowToStep",
+				"text": "Cover, place in the refrigerator, and let sit for 18+ hours."
+			}
+		]
+	}
+}

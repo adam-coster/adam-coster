@@ -1,4 +1,4 @@
-import type { Article, Person, WebSite, WithContext } from 'schema-dts';
+import type { Article, Person, WebSite, WithContext, Recipe } from 'schema-dts';
 import { assert } from './utility.js';
 
 // ClaimReview and FAQPage are both supported by Google
@@ -23,7 +23,13 @@ export type WebSiteSchema = FullSchema<WebSite, 'WebSite'>;
 
 export type ArticleSchema = FullSchema<Article, 'Article'>;
 
-export type MicrodataSchema = PersonSchema | WebSiteSchema | ArticleSchema;
+export type RecipeSchema = FullSchema<Recipe, 'Recipe'>;
+
+export type MicrodataSchema =
+	| PersonSchema
+	| WebSiteSchema
+	| ArticleSchema
+	| RecipeSchema;
 
 export function ldJsonify<T extends MicrodataSchema>(schemas: T[]) {
 	const schemaClones: WithContext<T>[] = schemas.map((schema) => {

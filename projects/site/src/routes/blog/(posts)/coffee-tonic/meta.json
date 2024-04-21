@@ -1,0 +1,27 @@
+{
+	"$schema": "../../post.schema.json",
+	"slug": "coffee-tonic",
+	"title": "Super Simple Coffee Tonic",
+	"description": "All you need is cold coffee, a tasty syrup, and tonic water.",
+	"publishedAt": "2024-04-21T19:54:02.293Z",
+	"tags": ["coffee", "recipe"],
+	"recipe": {
+		"name": "Super Simple Coffee Tonic",
+		"description": "All you need is cold coffee, a tasty syrup, and tonic water.",
+		"image": "https://adamcoster.com/images/coffee/coffee-tonic-ingredients.jpg",
+		"recipeIngredient": [
+			"4oz (120ml) cold coffee",
+			"2oz (60ml) tonic water",
+			"1/2oz (15ml) simple syrup",
+			"ice"
+		],
+		"prepTime": "PT5M",
+		"cookTime": "PT5M",
+		"recipeInstructions": [
+			{
+				"@type": "HowToStep",
+				"text": "Combine cold coffee, tonic water, and simple syrup."
+			}
+		]
+	}
+}

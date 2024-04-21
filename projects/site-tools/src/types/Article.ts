@@ -10,6 +10,7 @@ export interface ArticleFrontMatter {
 	tags: string[];
 	crossPosts: string[];
 	images?: string[];
+	recipe?: any;
 }
 
 export interface ArticleIndexEntry

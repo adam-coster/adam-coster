@@ -133,6 +133,11 @@ export async function generateArticleSummaries(options: {
 
 				// Generate Microdata
 				const microdata = await markdownToMicrodata(content);
+				if (parsed.recipe) {
+					parsed.recipe['@context'] = 'https://schema.org/';
+					parsed.recipe['@type'] = 'Recipe';
+					microdata.push(parsed.recipe);
+				}
 				const folder = path.join(options.staticDir, 'microdata', 'blog');
 				await fs.mkdir(folder, { recursive: true });
 				await fs.writeFile(

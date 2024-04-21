@@ -34,9 +34,58 @@
 		"publishedAt": {
 			"type": "string",
 			"format": "date-time"
+		},
+		"recipe": {
+			"type": "object",
+			"required": ["name", "description", "image"],
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"description": {
+					"type": "string"
+				},
+				"image": {
+					"type": "string",
+					"format": "uri"
+				},
+				"recipeInstructions": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/howToStep"
+					}
+				},
+				"recipeIngredient": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"prepTime": {
+					"$ref": "#/definitions/duration"
+				},
+				"cookTime": {
+					"$ref": "#/definitions/duration"
+				},
+				"totalTime": {
+					"$ref": "#/definitions/duration"
+				}
+			}
 		}
 	},
 	"definitions": {
+		"duration": {
+			"type": "string",
+			"pattern": "PT[0-9]+[HMS]"
+		},
+		"howToStep": {
+			"type": "object",
+			"required": ["@type", "text"],
+			"properties": {
+				"@type": { "const": "HowToStep" },
+				"text": { "type": "string" }
+			}
+		},
 		"tag": {
 			"enum": [
 				"math",
@@ -87,6 +136,8 @@
 				"definition",
 				"evolution",
 				"media",
+				"recipe",
+				"coffee",
 				"critique",
 				"notion",
 				"ergonomics",
