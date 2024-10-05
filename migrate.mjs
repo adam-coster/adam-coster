@@ -1,8 +1,12 @@
 import fs from 'fs';
 
-const root = 'projects/site/src/routes/blog/[slug]';
+const root = 'projects/site/src/routes/blog/(posts)/';
 
-const slugs = fs.readdirSync(root).filter((slug) => slug.endsWith('.md'));
-
-for (const slug of slugs) {
+for (const slug of fs.readdirSync(root)) {
+	try {
+		const post = fs
+			.readdirSync(`${root}/${slug}`, 'utf-8')
+			.filter((file) => file.endsWith('.md'))[0];
+		console.log([slug, post]);
+	} catch {}
 }
