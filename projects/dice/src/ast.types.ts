@@ -1,3 +1,17 @@
+export type Expression = ParentheticalNode | RollNode | BinaryExpressionNode;
+
+export interface ParentheticalNode extends Node {
+	kind: 'Parenthetical';
+	expression?: Expression;
+}
+
+export interface BinaryExpressionNode extends Node {
+	kind: 'BinaryExpression';
+	left: Expression;
+	operator: '+' | '-' | '*' | '/';
+	right: Expression;
+}
+
 export interface RollNode extends Node {
 	kind: 'Roll';
 	count: DiceCountNode;
