@@ -34,6 +34,7 @@ export class MyError extends Error {
     // (Now that we're overriding the parent `Error` 
     //  constructor, we have to call `super`!)
 		super(message);
+		this.name = 'MyError';
 		Error.captureStackTrace?.(this, asserter || this.constructor);
 	}
 }
@@ -133,6 +134,8 @@ Now that we've covered the hows and whys of custom JavaScript Error classes, we 
 
 ### Custom Error Class Template (JavaScript)
 
+For the Typescript template, [skip to the next section!](#custom-error-class-template-typescript)
+
 Here's the JavaScript template, complete with full JSDocs so you can still get type support from your IDE. You can paste this into your code, find-replace "My" with whatever name you want, and you're good to go (though using the VSCode snippet would be less tedious!).
 
 ```js
@@ -143,6 +146,7 @@ export class MyError extends Error {
 	 */
 	constructor(message, asserter) {
 		super(message);
+		this.name = 'MyError';
 		Error.captureStackTrace?.(this, asserter || this.constructor);
 	}
 }
@@ -189,6 +193,7 @@ And a VSCode snippet to make it really easy:
 			"\t */",
 			"\tconstructor(message, asserter) {",
 			"\t\tsuper(message);",
+			"\t\tthis.name= '${1:Custom}Error';",
 			"\t\tError.captureStackTrace?.(this, asserter || this.constructor);",
 			"\t}",
 			"}",
@@ -234,6 +239,7 @@ export class MyError extends Error {
 	 */
 	constructor(message: string, asserter?: Function) {
 		super(message);
+		this.name = 'MyError';
 		Error.captureStackTrace?.(this, asserter || this.constructor);
 	}
 }
@@ -275,6 +281,7 @@ And again, you *could* copy-paste this into your code and find-replace "My" with
       "\t */",
       "\tconstructor(message: string, asserter?: Function) {",
       "\t\tsuper(message);",
+			"\t\tthis.name = '${1:Custom}Error'",
       "\t\tError.captureStackTrace?.(this, asserter || this.constructor);",
       "\t}",
       "}",

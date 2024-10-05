@@ -4,7 +4,7 @@ Hey there, internet rando!
 
 I'm Adam Coster, CEO and co-founder of video game studio [Butterscotch Shenanigans](https://www.bscotch.net/about#adam-coster) ([@bscotch](https://github.com/bscotch)).
 
-I'm a fullstack web developer and DevOps enthusiast, but also spend a lot of my time thinking about data, productivity, and business. I talk about all of that a lot on my weekly podcast, [Coffee with Butterscotch](https://podcast.bscotch.net), co-hosted by my co-founders (and literal brothers).
+I'm a fullstack web developer and DevOps enthusiast, but also spend a lot of my time thinking about data, productivity, and business (see my [personal blog](https://adamcoster.com/blog)). I talk about all of that a lot on my weekly podcast, [Coffee with Butterscotch](https://podcast.bscotch.net), co-hosted by my co-founders (and literal brothers).
 
 ## What's _this_ repo?
 
@@ -16,7 +16,7 @@ I'm embracing the monorepo lifestyle, and so this repo will accumulate stuff I c
 
 Most of the stuff I've worked on is closed source. Here's a quick summary of my biggest projects:
 
-- **[Video Game Webtech](https://www.bscotch.net/games):** I develop and maintain all of the webtech for our games, starting in 2015 with our "BscotchID" service which in 2018 I replaced with a shinier service, "Rumpus". Migrating users between those systems without downtime [was quite the endeavor](https://adamcoster.com/blog/tech-debt-the-bill-comes-due)! BscotchID/Rumpus features include:
+- **[Video Game Webtech](https://www.bscotch.net/games):** I develop and maintain all of the webtech for our games, starting in 2015 with our "BscotchID" service, which in 2018 I replaced with a shinier service, "Rumpus". Migrating users between those systems without downtime [was quite the endeavor](https://adamcoster.com/blog/tech-debt-the-bill-comes-due)! BscotchID/Rumpus features include:
   - Cross-platform save syncing (e.g. allowing players to switch between a mobile device and a console without losing progress)
   - [Cross-platform user-generated content sharing](https://aws.amazon.com/blogs/gametech/a-platformer-maker-made-for-every-platform/) (in [Levelhead](https://www.bscotch.net/games/levelhead), players can create and share custom levels and compete on per-level leaderboards)
   - Centralized account management, allowing players to connect their accounts to any platform account
@@ -26,13 +26,20 @@ Most of the stuff I've worked on is closed source. Here's a quick summary of my 
   - The "[Feedbag](https://www.bscotch.net/feedbag)" -- a system for collecting and managing player feedback at scale
   - Automated game changelogs, generated from Git messages and made available via the site (see [Levelhead's Patchnotes](https://www.bscotch.net/games/levelhead/patchnotes) as an example)
   - Tons of internal features for our staff to manage aspects of game development, testing, and customer support
+- **Bscotch String Server.** Our last two games were localized into 12 languages, and one of those (Crashlands 2) has well over 100,000 words. Dealing with all of those strings in a way that can best support our team and our external localization partners was quite the endeavor. I created our own "String Server" to mediate that, complete with:
+  - Auditing/editing strings (with downloadable changes)
+  - The ability to add context (text, images, video)
+  - Display of current translations
+  - Detection and display of various translation error cases
+  - Import/export via the localization-standard file format: XLIFF
+  - Automatic scraping of thumbnails and metadata from our game-asset-management system.
+  - A custom glossary and spellcheck, with an API allowing use in other contexts (like our game asset editors).
 
 ### Open Source Stuff
 
 I've open-sourced a handful of our studio projects. See the studio's GitHub ([@bscotch](https://github.com/bscotch)) for the full list, but here are the highlights:
 
-- **[Stitch](https://github.com/bscotch/stitch#readme):** We use GameMaker for game development, and I've made many tools and pipelines over the years to improve the development process in GameMaker. The latest, and the one we open-sourced, is "Stitch". Stitch is a "Pipeline Development Kit" for GameMaker; we use it to automate asset management and parts of the build process. It includes a bunch of CLI tools, programmatic tools, a desktop application for managing game projects, and a VSCode extension.
-- **[Spritely](https://github.com/bscotch/spritely#readme):** Due to our use of GameMaker, as well as our tendency to use art-generation tools in ways they weren't intended, we've always needed to have our own art pipeline management tooling. The latest is the one we open-sourced: Spritely. We use Spritely for the upstream part of our art pipeline, where it automatically crops, bleeds, and organizes source images. Stitch makes up the other end of the pipeline.
+- **[Stitch](https://github.com/bscotch/stitch#readme):** We use GameMaker for game development, and I've made many tools and pipelines over the years to improve the development process in GameMaker. The latest, and the one we open-sourced, is "Stitch". Stitch is a "Pipeline Development Kit" for GameMaker; we use it to automate asset management and parts of the build process. It includes a bunch of CLI tools, programmatic tools, a desktop application for managing game projects, and [a VSCode extension allowing use of VSCode as an alternative to the GameMaker IDE](https://marketplace.visualstudio.com/items?itemName=bscotch.bscotch-stitch-vscode).
 - **[Rumpus Community Edition SDK](https://github.com/bscotch/rumpus-ce#readme):** In the few weeks leading up to the launch of [Levelhead](https://www.bscotch.net/games/levelhead), I built a [public API](https://beta.bscotch.net/api/docs/community-edition/) ("Rumpus Community Edition" a.k.a. "Rumpus CE") to allow players to build their own tools and sites using player and level data from Levelhead. To give those devs a head-start on building something, I made this SDK specifically for interacting with Rumpus CE.
 
 ### Oh, and a Dissertation!
