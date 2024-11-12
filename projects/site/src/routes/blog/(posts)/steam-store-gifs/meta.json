@@ -1,0 +1,9 @@
+{
+	"$schema": "../../post.schema.json",
+	"slug": "steam-store-gifs",
+	"title": "Creating decent GIFs for game descriptions on Steam",
+	"description": "Steam allows GIFs on store pages, but they need to be small and look decent. Here's how to use ffmpeg to create them.",
+	"publishedAt": "2024-11-12T23:52:25.984Z",
+	"tags": ["gamedev", "marketing"],
+	"crossPosts": []
+}
