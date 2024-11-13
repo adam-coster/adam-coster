@@ -30,3 +30,5 @@ ffmpeg -y -i source-video_steam.mp4 -i palette.png -filter_complex "[0:v]fps=15[
 ```
 
 If you need to make a lot of these, it's pretty tedious and error-prone to repeat the process. So I put it all together into [a little CLI program](https://github.com/bscotch/steam-gifs) that just takes the input video and frame rate as inputs, and does all the rest.
+
+**UPDATE (2024/11/13):** For even more configuration options, see Alan Smith's ["ffmpeg GIF Maker Command (2023 Edition)"](https://www.alanwsmith.com/en/2x/jk/jc/yl/).
