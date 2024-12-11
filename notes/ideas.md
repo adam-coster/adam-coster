@@ -16,8 +16,6 @@
   - Allows actions to be run in parallel
   - Allows actions to be assigned to other mediators (simplifying parallelization, serialization, etc)
 - JavaScript function binding deep dive
-- Custom `Error` classes in JavaScript, with snippets
-- Switching from npm to pnpm in monorepos
 - User-driven accessiblity in games via the "[second screen](https://www.gamesindustry.biz/articles/2022-07-01-in-praise-of-the-second-screen-opinion)"
 - Obtuseness-driven social success in games (Elden Ring, Minecraft)
 - Documentation-driven development
