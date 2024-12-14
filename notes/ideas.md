@@ -2,6 +2,7 @@
 
 ## Topics
 
+- Proxies versus Values. To talk about some thing, you need to be able to define that thing such that you avoid both kinds of categorization errors (false inclusion, false exclusion). Words are lossy proxies for the concepts they represent, in particular because definitions are not universal. So to target the thing you want to talk about in a way that others will understand it, you have to understand the range of definitions that people apply to the words you could use, and assemble a collection of descriptors that minimize categorization errors. This can result in clunky language that is easy to make fun of, especially among descriptivists, but that is the best approach available to ensure accurate categorization.
 - Authentication & Authorization (Theory)
 - Safe content removal for demos (masking vs removing)
 - Versioning in games
@@ -37,7 +38,6 @@
 - Boundaries, ultimatums, accommodations, and coercion
 - Consent as a spectrum (and why you can never know for sure that you have it)
 - Needing a "reason" to be different
-- Variation exists, and need not be adaptive, maladaptive, or explainable
 - "Test this spoon" (someone on Twitter told the story of getting that prompt in a QA/Tech job interview -- how would I reply?)
 - Mental models, theory of mind, and secret rules
 - Holding others accountable for your sacrifices they did not ask for
