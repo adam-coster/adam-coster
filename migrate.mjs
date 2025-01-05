@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import { stringify } from 'yaml';
 
 const root = 'projects/site/src/routes/blog/(posts)';
-const outFolder = 'projects/site-next/static/posts/';
+const outFolder = 'projects/site-next/src/posts/';
 
 for (const slug of fs.readdirSync(root)) {
 	const postPath = `${root}/${slug}/+page.md`;
