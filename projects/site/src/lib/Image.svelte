@@ -15,15 +15,14 @@
 </script>
 
 <script lang="ts">
-	
 	interface Props {
-		width: string;
+		width: number;
 		height?: string | 'auto';
 		/**
-	 * The baseline src image, which should have
-	 * aspect ratio specified by `width` & `height`,
-	 * and optionally higher-density images in `srcset`.
-	 */
+		 * The baseline src image, which should have
+		 * aspect ratio specified by `width` & `height`,
+		 * and optionally higher-density images in `srcset`.
+		 */
 		src: string;
 		alt: string;
 		srcset?: ImageSource[] | undefined;
@@ -36,7 +35,7 @@
 		src,
 		alt,
 		srcset = undefined,
-		style = undefined
+		style = undefined,
 	}: Props = $props();
 
 	function srcsetToString(
