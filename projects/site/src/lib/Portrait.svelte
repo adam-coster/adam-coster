@@ -1,15 +1,21 @@
 <script lang="ts">
+  import { run } from 'svelte/legacy';
+
   import Image, { type ImageSource } from './Image.svelte';
 
   function urlFromSize(size: 343 | 686 | 1372) {
     return `/images/adam-coster_portrait_${size}.jpg`;
   }
 
-  export let size: 'small' | 'large';
+  interface Props {
+    size: 'small' | 'large';
+  }
 
-  let srcset: ImageSource[] = [];
-  let width = '320px';
-  $: {
+  let { size }: Props = $props();
+
+  let srcset: ImageSource[] = $state([]);
+  let width = $state('320px');
+  run(() => {
     srcset =
       size === 'small'
         ? [
@@ -22,7 +28,7 @@
             { url: urlFromSize(1372), pixelDensity: 2 },
           ];
     width = size === 'small' ? `320px` : '640px';
-  }
+  });
 </script>
 
 <Image

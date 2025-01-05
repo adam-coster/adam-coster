@@ -3,7 +3,12 @@
 	import { fade } from 'svelte/transition';
 	import type { LayoutData } from './$types';
 
-	export let data: LayoutData;
+	interface Props {
+		data: LayoutData;
+		children?: import('svelte').Snippet;
+	}
+
+	let { data, children }: Props = $props();
 </script>
 
 <!-- Header -->
@@ -20,7 +25,7 @@
 <!-- Main Slot (changes by URL) -->
 {#key data.key}
 	<main id="main" in:fade={{ duration: 250 }}>
-		<slot />
+		{@render children?.()}
 	</main>
 {/key}
 

@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { dev } from '$app/environment';
 	import { page } from '$app/stores';
-	import Head, { metadata } from '$lib/Head.svelte';
+	import Head from '$lib/Head.svelte';
+	import { metadata } from '../lib/metadata.svelte.js';
 	interface ErrorInfo {
 		status: string;
 		title: string;
@@ -30,11 +31,11 @@
 	);
 	console.error($page.error?.message);
 
-	$metadata = {
+	metadata.update({
 		title: info.title,
 		description: info.message,
 		noRobots: true,
-	};
+	});
 </script>
 
 <Head />
@@ -55,7 +56,7 @@
 		color: var(--color-bad);
 		font-weight: 400;
 	}
-	section{
+	section {
 		max-width: var(--content-max-width);
 		margin: auto;
 	}

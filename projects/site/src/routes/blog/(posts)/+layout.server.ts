@@ -1,5 +1,8 @@
 import { ArticleSearcher } from '$lib/articleSearcher';
-import { createArticleMicrodata, type MetadataFull } from '$lib/metadata';
+import {
+	createArticleMicrodata,
+	type MetadataFull,
+} from '$lib/metadata.util.js';
 import { error } from '@sveltejs/kit';
 import path from 'path';
 import type { LayoutServerLoad } from './$types';

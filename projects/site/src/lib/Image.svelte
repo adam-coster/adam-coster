@@ -1,4 +1,4 @@
-<script lang="ts" context="module">
+<script lang="ts" module>
 	export interface ImageSource {
 		/** URI for the image */
 		url: string;
@@ -15,17 +15,29 @@
 </script>
 
 <script lang="ts">
-	export let width: string;
-	export let height: string | 'auto' = 'auto';
-	/**
+	
+	interface Props {
+		width: string;
+		height?: string | 'auto';
+		/**
 	 * The baseline src image, which should have
 	 * aspect ratio specified by `width` & `height`,
 	 * and optionally higher-density images in `srcset`.
 	 */
-	export let src: string;
-	export let alt: string;
-	export let srcset: ImageSource[] | undefined = undefined;
-	export let style: string | undefined = undefined;
+		src: string;
+		alt: string;
+		srcset?: ImageSource[] | undefined;
+		style?: string | undefined;
+	}
+
+	let {
+		width,
+		height = 'auto',
+		src,
+		alt,
+		srcset = undefined,
+		style = undefined
+	}: Props = $props();
 
 	function srcsetToString(
 		srcset: ImageSource[] | undefined,

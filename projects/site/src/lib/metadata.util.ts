@@ -1,5 +1,4 @@
 import type { ArrayOrItem } from '@adam-coster/site-tools';
-import { writable } from 'svelte/store';
 import { digitalIdentities } from './identities';
 import type {
 	ArticleSchema,
@@ -136,39 +135,36 @@ function normalizeTitle(title: string) {
 	return `${title} | Adam Coster`;
 }
 
-export function createMetadata() {
-	const { subscribe, set } = writable({
-		title: normalizeTitle(''),
-		description: '',
-		canonical: asCanonicalUrl(''),
-		type: 'website',
-		noRobots: false,
-		microdata: [], // On set, should force to a string, but the types don't work as expected otherwise,
-	} as Metadata);
+export class MetadataStore {
+	title: string = '';
+	description: string = '';
+	canonical: string = '';
+	type: 'website' | 'article' = 'website';
+	noRobots: boolean | undefined = false;
+	microdata: ArrayOrItem<MicrodataSchema> = [];
 
-	return {
-		subscribe,
-		set(metadata: Metadata) {
-			assert(metadata.title, 'Title is required');
-			assert(metadata.description, 'Description is required');
-			if (metadata.noRobots) {
-				set({
-					title: normalizeTitle(metadata.title),
-					description: metadata.description,
-					noRobots: true,
-				});
-			} else {
-				assert(typeof metadata.canonical === 'string', 'Canonical is required');
-				assert(metadata.type, 'Type is required');
-				set({
-					title: normalizeTitle(metadata.title),
-					description: metadata.description,
-					canonical: asCanonicalUrl(metadata.canonical),
-					type: metadata.type || 'website',
-					noRobots: metadata.noRobots,
-					microdata: metadata.microdata,
-				});
-			}
-		},
-	};
+	update(metadata: Metadata) {
+		assert(metadata.title, 'Title is required');
+		assert(metadata.description, 'Description is required');
+		if (metadata.noRobots) {
+			this.title = normalizeTitle(metadata.title);
+			this.description = metadata.description;
+			this.noRobots = true;
+		} else {
+			assert(typeof metadata.canonical === 'string', 'Canonical is required');
+			assert(metadata.type, 'Type is required');
+			this.title = normalizeTitle(metadata.title);
+			this.description = metadata.description;
+			this.canonical = asCanonicalUrl(metadata.canonical);
+			this.type = metadata.type || 'website';
+			this.noRobots = metadata.noRobots;
+			this.microdata = metadata.microdata || [];
+		}
+	}
+
+	previewImagePath() {
+		const urlAsObj = new URL(this.canonical);
+		const pathname = urlAsObj.pathname === '/' ? '/index' : urlAsObj.pathname;
+		return asCanonicalUrl(`/previews${pathname}.jpg`);
+	}
 }

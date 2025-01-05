@@ -1,4 +1,3 @@
-import { building } from '$app/environment';
 import { ArticleSearcher } from '$lib/articleSearcher';
 import type { PageLoad } from './$types';
 
@@ -6,12 +5,10 @@ export const csr = true;
 
 export const load: PageLoad = async (input) => {
 	const articleSearcher = new ArticleSearcher(input.fetch);
-	const searchTerm = building
-		? undefined
-		: input.url.searchParams.get('search');
-	const searchResults = await articleSearcher.search(searchTerm);
+	const allArticles = await articleSearcher.search(null);
+	await articleSearcher.search('');
 	return {
 		articleSearcher,
-		searchResults,
+		allArticles,
 	};
 };

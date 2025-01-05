@@ -1,18 +1,19 @@
 <script lang="ts">
-	import Head, { metadata } from '$lib/Head.svelte';
+	import Head from '$lib/Head.svelte';
 	import type { IdentityType } from '$lib/identities';
 	import { digitalIdentities, identityTypes } from '$lib/identities';
-	import { me, site } from '$lib/metadata';
+	import { me, site } from '$lib/metadata.util.js';
 	import Icon from 'svelte-fa';
 	import Portrait from '../lib/Portrait.svelte';
+	import { metadata } from '../lib/metadata.svelte.js';
 
-	$metadata = {
+	metadata.update({
 		title: 'About',
 		description: `Adam Coster's portfolio, writings, and web identifiers. Adam is the CEO of video game studio Butterscotch Shenanigans and co-hosts the podcast "Coffee with Butterscotch".`,
 		type: 'website',
 		canonical: '',
 		microdata: [site, me],
-	};
+	});
 
 	const typeTitles: {
 		[T in IdentityType]: { title: string; description?: string };
@@ -118,7 +119,7 @@
 		max-width: var(--content-max-width);
 		margin: auto;
 	}
-	article header :is(h1, h2) {
+	article header :is(:global(h1, h2)) {
 		text-align: center;
 	}
 	article + article {

@@ -14,7 +14,11 @@
 		icon: faInfoCircle,
 	});
 
-	export let placement: 'header' | 'footer' = 'header';
+	interface Props {
+		placement?: 'header' | 'footer';
+	}
+
+	let { placement = 'header' }: Props = $props();
 </script>
 
 <nav
@@ -77,7 +81,7 @@
 	}
 
 	.nav-link a,
-	.nav-link svg {
+	.nav-link :global(svg) {
 		color: var(--color-text);
 
 		&:hover {

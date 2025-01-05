@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Head, { metadata } from '$lib/Head.svelte';
+	import Head from '$lib/Head.svelte';
 	import { ArticleMetadata } from '$lib/articleSearcher';
 	import {
 		dateIsLater,
@@ -13,11 +13,17 @@
 	} from '@fortawesome/free-solid-svg-icons';
 	import Icon from 'svelte-fa';
 	import type { LayoutData } from './$types';
+	import { metadata } from '../../../lib/metadata.svelte.js';
 
-	export let data: LayoutData;
+	interface Props {
+		data: LayoutData;
+		children?: import('svelte').Snippet;
+	}
+
+	let { data, children }: Props = $props();
 	const frontmatter = new ArticleMetadata(data.frontmatter);
 
-	$metadata = data.meta;
+	metadata.update(data.meta);
 
 	function updatedAt(frontmatter: ArticleMetadata) {
 		if (dateIsLater(frontmatter.editedAt, frontmatter.publishedAt)) {
@@ -103,7 +109,7 @@
 		</div>
 	</header>
 	<div class="body">
-		<slot />
+		{@render children?.()}
 	</div>
 </article>
 
