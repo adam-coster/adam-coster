@@ -32,7 +32,7 @@
 					href={navlink.url}
 					title={navlink.title || `Adam Coster's ${navlink.name}`}
 				>
-					<Icon icon={navlink.icon} size="2x" />
+					<Icon icon={navlink.icon} />
 					<span class="nav-link-name">{navlink.name}</span>
 				</a>
 			</li>
@@ -78,6 +78,9 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+	}
+	li.nav-link a :global(svg) {
+		font-size: 2em;
 	}
 
 	.nav-link a,
