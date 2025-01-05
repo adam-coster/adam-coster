@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: How to run Linux on Windows 10 using WSL2
 description: >
   Use Linux and Windows 10 at the same time, while making Windows do all the

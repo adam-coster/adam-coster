@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: Simple Syrup
 description: Add flavor and sweetness to cocktails, mocktails, and anything else.
 publishedAt: 2024-04-21T19:54:02.293Z

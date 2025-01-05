@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: The "Can We Not" Principle
 description: The highest-leverage thing you can do is sometimes nothing at all.
 publishedAt: 2023-07-03T17:51:31.215Z

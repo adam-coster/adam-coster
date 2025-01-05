@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: Variation Need Not Be Qualified
 description: Variation exists, and need not be adaptive, maladaptive, or explainable.
 publishedAt: 2024-12-11T02:57:50.531Z

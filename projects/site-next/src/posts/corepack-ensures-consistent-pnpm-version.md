@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: Use corepack to ensure consistent pnpm/yarn versions
 description: >
   Avoid works-on-my-machine errors across environments by using corepack to

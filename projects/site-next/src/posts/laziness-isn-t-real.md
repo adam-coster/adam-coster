@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: 😴 Laziness isn't real
 description: >
   If you beat yourself up for being "lazy", you're probably wrong. If you think

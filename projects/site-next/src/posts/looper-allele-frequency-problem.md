@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: Allele frequency problem in "Looper"
 description: >
   Time travel is always a nonsense generator, but "Looper" kicks it up a notch

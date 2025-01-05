@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: The "Birthday Problem" simulated with Python
 description: >
   There's better than a 50% chance that 2 of any 25 random people will share the

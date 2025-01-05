@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: How to stringify class instances in Javascript and Express.js
 description: >
   Bend JSON stringification to your will with custom .toJSON() class methods and

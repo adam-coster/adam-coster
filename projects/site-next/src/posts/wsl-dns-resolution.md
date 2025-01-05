@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: "WSL: Resolving temporary failures in DNS name resolution"
 description: WSL sometimes forgets how to talk to the Internet. If you're seeing
   the error "Temporary failure in name resolution", here's how to fix it.

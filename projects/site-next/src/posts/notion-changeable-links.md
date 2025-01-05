@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: How Notion's URLs change without breaking your links
 description: >
   When you change a Notion page's title, its URL changes. But all of your old

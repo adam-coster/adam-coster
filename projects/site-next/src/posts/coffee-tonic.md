@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: Super Simple Coffee Tonic
 description: All you need is cold coffee, a tasty syrup, and tonic water.
 publishedAt: 2024-04-21T19:54:02.293Z

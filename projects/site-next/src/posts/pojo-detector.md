@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 crossPosts: []
 description: Tons of things in JavaScript are objects of one sort or another.
   How can you differentiate between plain vanilla objects and others?

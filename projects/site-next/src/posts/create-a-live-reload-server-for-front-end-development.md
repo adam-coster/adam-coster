@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: Create a live-reload server for front-end development
 description: >
   Manually reloading a webpage when you make changes is a pain. You can solve

@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: '"Sign in with Apple" implementation hurdles'
 description: >
   Apple released its own OAuth implementation, and really wants you to use it.

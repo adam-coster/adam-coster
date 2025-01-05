@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: "CommonJS (cjs) and Modules (esm): Import compatibility"
 description: You can import CommonJS (cjs) into ESM modules, and vice versa (esm
   into cjs). But one way is easier than the other.

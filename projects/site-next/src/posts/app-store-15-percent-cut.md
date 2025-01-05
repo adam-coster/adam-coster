@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: "Apple's 15% cut for non-millionaires: PR move or sound investment?"
 description: >
   The announcement created a lot of buzz, and a lot of questions. Is it "just a

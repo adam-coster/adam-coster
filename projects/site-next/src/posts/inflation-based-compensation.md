@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: Increase employee compensation, continuously
 description: If you aren't accounting for inflation, you're giving your
   employees a continuous pay cut.

@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: ✂ Save time and make fewer mistakes with Snippets
 description: >
   If you aren't using snippets in VSCode, you're going to be bummed when you

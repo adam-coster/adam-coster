@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 publishedAt: 2023-04-30T16:20:18.380Z
 tags:
   - copilot

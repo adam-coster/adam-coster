@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: HTTP Guide
 description: HTTP makes the Internet go round. This guide provides a high-level,
   practical overview of how it works.

@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: Prettify your JavaScript strings
 description: >
   Use JavaScript's template literals to make it a breeze to stick strings

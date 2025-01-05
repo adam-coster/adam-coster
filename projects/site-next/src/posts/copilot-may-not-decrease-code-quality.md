@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: GitHub Copilot may (or may not) decrease code quality
 description: Probably not, though.
 publishedAt: 2024-02-10T23:04:59.264Z

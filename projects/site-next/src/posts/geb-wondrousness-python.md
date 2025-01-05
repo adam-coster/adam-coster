@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: '"Gödel, Escher, Bach": Wondrousness in Python'
 description: >
   In GEB the Tortoise and Achilles describe a number property they call

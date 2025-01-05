@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: "VSCode's Workspace Symbol Provider: Why and how to use it"
 description: VSCode's Workspace Symbol Provider provides a great way to make
   symbols searchable in your code base. But it's not just limited to code

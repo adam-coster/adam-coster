@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 crossPosts: []
 description: Custom JavaScript classes are super useful for simplifying your
   error-handling logic. Learn how they work, why to use them, and get templates

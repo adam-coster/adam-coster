@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: "Statically host your Electron app updates: No server required!"
 description: The Electron docs describe autoupdate servers you can use for your
   app. But you can also get by with a static host.

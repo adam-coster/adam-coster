@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: Mouse Back/Forward Buttons and Element Focus
 description: When navigating back/forward via the mouse buttons, hovered
   elements capture focus. Here's why, and how to prevent it.

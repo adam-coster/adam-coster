@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: Image Correction Microscopy
 description: >
   Fluorescence microscopy images are plagued with background noise. The standard

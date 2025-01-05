@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: 🚀 Super-charge your email with your own domain, routing, aliases, and
   catch-alls via Google Workspace
 description: >

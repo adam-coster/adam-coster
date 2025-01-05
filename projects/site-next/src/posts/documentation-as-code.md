@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: 💻 Documentation as code
 description: >
   Documenting code in a scalable and maintainable way seems to be impossible.

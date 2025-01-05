@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: JSON Guide
 description: JSON is one of the most common ways to represent data on the
   Internet. How does it work?

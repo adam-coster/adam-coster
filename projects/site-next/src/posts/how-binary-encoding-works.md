@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: Learn how binary encoding works
 description: >
   "Binary encoding" sounds complicated. It's more approachable than you think,

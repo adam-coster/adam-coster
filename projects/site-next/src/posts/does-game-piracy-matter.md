@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: Does game piracy matter?
 description: >
   People will pirate your game in enormous numbers. The most effective way to

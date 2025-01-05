@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: Creating decent GIFs for game descriptions on Steam
 description: Steam allows GIFs on store pages, but they need to be small and
   look decent. Here's how to use ffmpeg to create them.

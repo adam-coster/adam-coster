@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: "Multi-display workstations: boost productivity without breaking your neck"
 description: |
   Use multiple displays without creating an ergonomic nightmare.

@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: Setting up Windows 10 for web development, including Docker, Linux, and Node.js
 description: >
   If you run your websites on Linux servers, you probably want to use Linux for

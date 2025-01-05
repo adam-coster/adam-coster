@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: Make coding a joy with these core VSCode extensions and settings
 description: >
   You can only be as good as your tools. Here are the core VSCode extensions and

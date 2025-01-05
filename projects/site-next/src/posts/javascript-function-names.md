@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 crossPosts:
   - https://dev.to/adamcoster/javascript-wants-your-functions-to-have-names-1om9
 description: There's no such thing as an anonymous function in JavaScript.

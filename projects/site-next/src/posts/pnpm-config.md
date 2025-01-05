@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 crossPosts:
   - https://dev.to/adamcoster/configure-pnpm-for-the-best-possible-developer-experience-a17
 description: pnpm is a delightful package manager for Node.js, and is great

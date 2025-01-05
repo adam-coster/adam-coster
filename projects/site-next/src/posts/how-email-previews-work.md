@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: How email previews work
 description: >
   Email clients show the first line of an email before you open it. Here's how

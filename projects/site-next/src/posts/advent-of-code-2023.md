@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: Advent of Code 2023 in JavaScript
 description: Discussion and solutions for some of the 2023 Advent of Code
   puzzles, written in Node.js/JavaScript.

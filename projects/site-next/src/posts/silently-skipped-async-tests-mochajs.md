@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: Beware silently skipped tests in Mocha
 description: >
   Any Mocha.js tests defined within an async describe function will be silently

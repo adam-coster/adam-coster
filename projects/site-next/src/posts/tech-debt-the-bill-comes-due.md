@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: "Tech Debt: The Bill Comes Due"
 description: >
   What is technical debt, and how do you decide when to pay it down? Here are

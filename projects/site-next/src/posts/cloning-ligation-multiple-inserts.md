@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: "Cloning trick: ligation of multiple inserts"
 description: >
   Stitching multiple DNA inserts together through standard cloning yields

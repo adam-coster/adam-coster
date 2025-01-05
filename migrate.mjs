@@ -15,9 +15,7 @@ for (const slug of fs.readdirSync(root)) {
 		// Remove the slug since it's in the file name
 		delete metadata.slug;
 		delete metadata.$schema;
-		const combined = `---\n"$schema": schemas/post.schema.json\n${stringify(
-			metadata,
-		)}---\n\n${post}`;
+		const combined = `---\n${stringify(metadata)}---\n\n${post}`;
 		fs.writeFileSync(`${outFolder}/${slug}.md`, combined);
 	} catch (err) {
 		console.error(`Error reading ${slug}`, err);

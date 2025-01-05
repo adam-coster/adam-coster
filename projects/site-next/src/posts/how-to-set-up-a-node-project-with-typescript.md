@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: "Live Dev: How to set up a Node project with Typescript"
 description: >
   Modern web development requires a lot of setup. I'll walk you through it,

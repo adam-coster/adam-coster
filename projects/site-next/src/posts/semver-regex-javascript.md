@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: JavaScript regex for semver strings
 description: A comprehensive JavaScript regular expression for matching semver
   strings, plus a simple semver parser.

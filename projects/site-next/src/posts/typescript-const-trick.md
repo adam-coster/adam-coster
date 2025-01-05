@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: The Typescript "as const" trick
 description: >
   Cast your Typescript values using "as const" to add extra tricks and safety.

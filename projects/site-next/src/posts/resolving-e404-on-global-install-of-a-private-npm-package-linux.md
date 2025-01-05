@@ -1,5 +1,4 @@
 ---
-"$schema": schemas/post.schema.json
 title: Resolving E404 on global install of a private npm package (Linux)
 description: >
   If you're getting E404 "Not Found" when trying to install a private npm
