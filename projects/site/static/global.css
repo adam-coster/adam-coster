@@ -360,14 +360,14 @@
 
 	:not(pre) > code {
 		color: var(--color-inline-code);
-		padding: 0.25em 0.25em;
+		/* padding: 0.25em 0.25em;
 		margin-inline: 0.1em;
 		background-color: var(--color-background-inline-code);
 		box-decoration-break: clone;
 		-webkit-box-decoration-break: clone;
-		border-radius: 0.4em;
+		border-radius: 0.4em; */
 		/* outline: 0.1em solid rgb(60, 60, 60); */
-		outline: 0.1em solid var(--color-subtle);
+		/* outline: 0.1em solid rgb(53, 53, 53); */
 	}
 
 	pre > code {

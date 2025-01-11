@@ -1,0 +1,9 @@
+{
+	"$schema": "../../post.schema.json",
+	"slug": "links-urls-uris-oh-my",
+	"title": "Links, Deep Links, URLs, URIs, ... OH MY",
+	"description": "Links make the web what is is, but links aren't just for browsers. Here's how they work, and the differences between links, hyperlinks, deep links, URLs, and URIs.",
+	"publishedAt": "2025-01-11T23:07:31.970Z",
+	"tags": ["computer-science", "webdev", "definition", "learn"],
+	"crossPosts": []
+}
