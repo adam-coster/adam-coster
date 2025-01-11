@@ -1,4 +1,11 @@
-import type { Article, Person, WebSite, WithContext, Recipe } from 'schema-dts';
+import type {
+	Article,
+	Person,
+	WebSite,
+	WithContext,
+	Recipe,
+	ProfilePage,
+} from 'schema-dts';
 import { assert } from './utility.js';
 
 // ClaimReview and FAQPage are both supported by Google
@@ -25,13 +32,19 @@ export type ArticleSchema = FullSchema<Article, 'Article'>;
 
 export type RecipeSchema = FullSchema<Recipe, 'Recipe'>;
 
+export type ProfilePageSchema = FullSchema<ProfilePage, 'ProfilePage'>;
+
 export type MicrodataSchema =
 	| PersonSchema
 	| WebSiteSchema
 	| ArticleSchema
-	| RecipeSchema;
+	| RecipeSchema
+	| ProfilePageSchema;
 
 export function ldJsonify<T extends MicrodataSchema>(schemas: T[]) {
+	if (!schemas.length) {
+		return '';
+	}
 	const schemaClones: WithContext<T>[] = schemas.map((schema) => {
 		assert(schema['@type'], '@type is required');
 		return {
@@ -40,7 +53,7 @@ export function ldJsonify<T extends MicrodataSchema>(schemas: T[]) {
 		};
 	});
 	const asString = `<script type="application/ld+json">${
-		JSON.stringify(schemaClones) + '<'
+		JSON.stringify(schemaClones, null, '\t') + '<'
 	}/script>`;
 	return asString;
 }

@@ -2,7 +2,7 @@
 	import Head from '$lib/Head.svelte';
 	import type { IdentityType } from '$lib/identities';
 	import { digitalIdentities, identityTypes } from '$lib/identities';
-	import { me, site } from '$lib/metadata.util.js';
+	import { profile, site } from '$lib/metadata.util.js';
 	import Icon from 'svelte-fa';
 	import Portrait from '../lib/Portrait.svelte';
 	import { metadata } from '../lib/metadata.svelte.js';
@@ -12,7 +12,7 @@
 		description: `Adam Coster's portfolio, writings, and web identifiers. Adam is the CEO of video game studio Butterscotch Shenanigans and co-hosts the podcast "Coffee with Butterscotch".`,
 		type: 'website',
 		canonical: '',
-		microdata: [site, me],
+		microdata: [site, profile],
 	});
 
 	const typeTitles: {

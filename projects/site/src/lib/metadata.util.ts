@@ -4,6 +4,7 @@ import type {
 	ArticleSchema,
 	MicrodataSchema,
 	PersonSchema,
+	ProfilePageSchema,
 	WebSiteSchema,
 } from './microdata.js';
 import { assert, dateToIso } from './utility';
@@ -32,6 +33,8 @@ export const me: PersonSchema = {
 	givenName: 'Adam',
 	familyName: 'Coster',
 	honorificSuffix: 'PhD',
+	description:
+		'Web developer and founder at video game studio Butterscotch Shenanigans. PhD in Cell & Molecular Biology. Co-host of podcast "Coffee with Butterscotch".',
 	sameAs: digitalIdentities
 		.filter((p) => p.type != 'content')
 		.map((p) => p.url),
@@ -52,6 +55,11 @@ export const me: PersonSchema = {
 	worksFor: 'Butterscotch Shenanigans',
 	jobTitle: 'CEO',
 	url: asCanonicalUrl('/'),
+};
+
+export const profile: ProfilePageSchema = {
+	'@type': 'ProfilePage',
+	mainEntity: me,
 };
 
 /**
@@ -95,6 +103,8 @@ export function createArticleMicrodata(info: {
  */
 export const site: WebSiteSchema = {
 	'@type': 'WebSite',
+	name: 'Adam Coster',
+	alternateName: ['adamcoster.com', 'adam-coster'],
 	url: asCanonicalUrl('/'),
 	author: me,
 	potentialAction: {
