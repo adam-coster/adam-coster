@@ -11,6 +11,7 @@
 	import type { PageData } from './$types';
 	import type { ArticleMetadata } from '../../lib/articleSearcher.js';
 	import { metadata } from '../../lib/metadata.svelte.js';
+	import { goto } from '$app/navigation';
 
 	interface Props {
 		data: PageData;
@@ -26,8 +27,8 @@
 	});
 
 	// export let articleSearcher: ArticleSearcher;
-	let articles: ArticleMetadata[] = $state(data.allArticles);
-	let searchText: string | null = $state(null);
+	let articles: ArticleMetadata[] = $state(data.searchResults);
+	let searchText: string | null = $state(data.searchQuery || null);
 	let lastSearchText: string | null = $state(null);
 	let searchHasFocus = $state(false);
 
@@ -39,6 +40,10 @@
 			return;
 		}
 		lastSearchText = searchText;
+		void goto(
+			searchText ? `/blog?search=${encodeURIComponent(searchText)}` : '/blog',
+			{ noScroll: true, keepFocus: true },
+		);
 		articles = await data.articleSearcher.search(lastSearchText);
 	}
 
