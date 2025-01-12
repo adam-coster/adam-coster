@@ -11,9 +11,9 @@ That's all a little abstract.
 
 ### What's a Resource?
 
-A resource could be, well, anything. A page on the internet. An button inside of a piece of software. A file on your hard drive. GPS coordinates. A person. The concept of love.
+A resource could be, well, anything. A page on the internet. A button inside of a piece of software. A file on your hard drive. GPS coordinates. A person. The concept of love.
 
-Hence the generic word "resource". Any other term would be too constraining.
+Hence the generic word "resource". Any other term would be too constraining. Perhaps "thing" would have been better but, alas, "UTI" was already taken.
 
 ### What's an Identifier?
 
