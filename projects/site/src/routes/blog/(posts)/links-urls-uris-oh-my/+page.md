@@ -43,7 +43,7 @@ The "authority" part is an identifier for the thing that is responsible for the 
 
 The "path" part is what identifies the resource within its authority (or globally, when there isn't an authority). So `/hello/world` could be the path for an `https` or `file` URI, while `me@example.com` could be the path for a `mailto` URI, and `13.4125,103.8667` could be the path for a `geo` URI. It's tempting to think of the path part as the same thing as a file path on a computer, and a file path _is_ a type of URI path (for the `file` scheme), but a URI path more generally can be pretty much anything.
 
-The "query" part is some kind of extra data, and may or may not be well-defined for a particular URI scheme. You'll see it all the time in website URIs, where it usually consists of `key=value&another-key=another-value` pairs that change what shows up on the page. For example, when you submit a search to a search engine you'll typically end up at a page with a URI like `https://adamcoster.com?search=my+search`. But even with `https` URIs that query component can be pretty much anything -- whether or not it does something is up to the server hosting the page.
+The "query" part is some kind of extra data, and may or may not be well-defined for a particular URI scheme. You'll see it all the time in website URIs, where it usually consists of `key=value&another-key=another-value` pairs that change what shows up on the page. For example, when you submit a search on a website you'll typically end up at a page with a URI like `https://adamcoster.com/blog?search=my+search`. But even with `https` URIs that query component can be pretty much anything -- whether or not it does something is up to the server hosting the page.
 
 Finally<span id="example-paragraph"></span>, the "fragment" part is an identifier for something _within_ the resource identified by the prior parts of the URI. This URI feature is used a lot on the web to link to specific headings or other elements within a webpage. For example, [this link](#example-paragraph) adds a fragment to the URI for this very page that links right to this very paragraph!
 
@@ -58,7 +58,7 @@ Let's take a look at some examples:
 
 So we know that a URI is an identifier that follows a very specific syntax. And I gave some examples that you'd probably have called UR<b>L</b>s, like the address of this website. So what's the difference?
 
-The difference is in the name: a URI is all about the _identifier_, while a URL (Uniform Resource <em>Locator</em>) is all about using the _location_ of a resource over a network. So URLs are a subset of URIs, specifically those that point to a resource on a network (like the world wide web). Thus URLs are the subset of URIs that people care about and use the most.
+The difference is in the name: a URI is all about the _identifier_, while a URL (Uniform Resource <em>Locator</em>) is all about the _location_ of a resource over a network. URLs are URIs, specifically those that point to a resource on a network (like the world wide web). Thus URLs are the subset of URIs that people care about and use the most.
 
 Honestly, the difference is pretty academic and, in my opinion, not that important. The terms are used synonymously by most people, and whenever you find an explanation you'll see things get ambiguous really fast. For example, you can have perfectly formatted URIs that _look exactly like_ a valid website URL, but that particular URI might just be meant to _represent_ a resource rather than actually take you to it.
 
