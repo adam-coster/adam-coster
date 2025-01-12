@@ -7,7 +7,8 @@ let branch =
 	(await stdout($`git rev-parse --abbrev-ref HEAD`));
 branch = branch.includes('preview')
 	? 'preview'
-	: branch.startsWith('refs/tags/@adam-coster/site')
+	: branch.startsWith('refs/tags/@adam-coster/site') ||
+		  branch === 'refs/heads/develop'
 		? 'develop'
 		: branch;
 const hash = await stdout($`git rev-parse HEAD`);
