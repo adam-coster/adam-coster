@@ -5,7 +5,7 @@ import puppeteer, { Page, ScreenshotClip } from 'puppeteer';
 import { fileURLToPath, pathToFileURL } from 'url';
 
 export class PreviewGenerator {
-	protected browser = puppeteer.launch({});
+	protected browser = puppeteer.launch({ args: ['--no-sandbox'] });
 	protected viewPort = { width: 1200, height: 620 };
 	readonly srcRoot: Pathy;
 	readonly outRoot: Pathy;
