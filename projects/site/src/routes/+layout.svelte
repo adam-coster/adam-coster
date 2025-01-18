@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { version } from '$lib/constants.js';
 	import Nav from '$lib/Nav.svelte';
 	import { fade } from 'svelte/transition';
 	import type { LayoutData } from './$types';
@@ -37,6 +38,7 @@
 			>&copy; {new Date().getFullYear()} Adam Coster.</span
 		>
 		<span class="inline-block">All rights reserved.</span>
+		<span class="inline-block version">v{version}</span>
 	</p>
 </footer>
 

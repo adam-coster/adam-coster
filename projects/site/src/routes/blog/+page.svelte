@@ -1,17 +1,18 @@
 <script lang="ts">
 	import Head from '$lib/Head.svelte';
 	import { humanDate, robotDate } from '$lib/utility';
-	import { faPenSquare } from '@fortawesome/free-solid-svg-icons';
+	import { faEdit, faPenSquare } from '@fortawesome/free-solid-svg-icons';
 	import debounce from 'just-debounce';
-	import Icon from 'svelte-fa';
+	import Icon, { Fa } from 'svelte-fa';
 	import { flip } from 'svelte/animate';
 	import { expoInOut } from 'svelte/easing';
 	import { fade, slide } from 'svelte/transition';
 
-	import type { PageData } from './$types';
-	import type { ArticleMetadata } from '../../lib/articleSearcher.js';
-	import { metadata } from '../../lib/metadata.svelte.js';
 	import { goto } from '$app/navigation';
+	import type { ArticleMetadata } from '../../lib/articleSearcher.js';
+	import { cwd, dev } from '../../lib/constants.js';
+	import { metadata } from '../../lib/metadata.svelte.js';
+	import type { PageData } from './$types';
 
 	interface Props {
 		data: PageData;
@@ -57,7 +58,6 @@
 		<Icon icon={faPenSquare} />
 		Stuff I've Written
 	</h1>
-
 	<p>
 		I've collected various articles and blog posts here, with links back to
 		where they were originally posted if applicable. The topics are all over the
@@ -121,6 +121,15 @@
 					<article class="article-snippet" data-slug={article.slug}>
 						<header>
 							<h2>
+								{#if dev}
+									<!-- Link to local file via vscode -->
+									<a
+										href={`vscode-insiders://file${cwd?.pathname}/src/routes/blog/(posts)/${article.slug}/+page.md`}
+										title="Edit this post in VS Code"
+									>
+										<Fa icon={faEdit} size="xs" />
+									</a>
+								{/if}
 								<a href={`/blog/${article.slug}`} data-sveltekit-preload-data>
 									{article.title}
 								</a>
