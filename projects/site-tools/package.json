@@ -18,15 +18,15 @@
   "dependencies": {
     "@bscotch/pathy": "2.12.1",
     "@bscotch/utility": "7.2.0",
-    "@sveltejs/adapter-cloudflare": "5.0.0",
+    "@sveltejs/adapter-cloudflare": "5.0.1",
     "feed": "4.2.2",
     "gray-matter": "4.0.3",
     "highlight.js": "11.11.1",
     "lunr": "2.3.9",
-    "marked": "15.0.5",
+    "marked": "15.0.6",
     "marked-gfm-heading-id": "4.1.1",
     "node-html-parser": "7.0.1",
-    "puppeteer": "^23.11.1",
+    "puppeteer": "^24.1.0",
     "rehype-accessible-emojis": "0.3.2",
     "rehype-autolink-headings": "7.1.0",
     "rehype-highlight": "7.0.1",
@@ -42,13 +42,13 @@
     "vite": "6.0.7"
   },
   "devDependencies": {
-    "@sveltejs/kit": "2.15.1",
+    "@sveltejs/kit": "2.16.0",
     "@types/hast": "^3.0.4",
     "@types/lunr": "2.3.7",
-    "@types/marked": "5.0.2",
-    "@types/puppeteer": "^5.4.7",
+    "@types/marked": "6.0.0",
+    "@types/puppeteer": "^7.0.4",
     "@types/remove-markdown": "0.3.4",
     "hast": "1.0.0",
-    "typescript": "5.7.2"
+    "typescript": "5.7.3"
   }
 }
