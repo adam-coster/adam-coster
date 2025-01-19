@@ -2,6 +2,8 @@
 	let inputs: string[] = $state([]);
 
 	function addModifiers(e: KeyboardEvent | MouseEvent) {
+		e.preventDefault();
+		e.stopPropagation();
 		if (e.metaKey) inputs.push('Meta');
 		if (e.ctrlKey) inputs.push('Control');
 		if (e.altKey) inputs.push('Alt');
@@ -26,7 +28,15 @@
 	}
 </script>
 
-<svelte:window {onkeydown} {onmousedown} />
+<svelte:window onkeydowncapture={onkeydown} onmousedowncapture={onmousedown} />
+
+<svelte:head>
+	<title>Input Detector</title>
+	<meta
+		name="description"
+		content="Press keys, click mouse buttons, see what the browser registers."
+	/>
+</svelte:head>
 
 <section id="input-detector">
 	<header>
