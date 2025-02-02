@@ -1,0 +1,9 @@
+{
+	"$schema": "../../post.schema.json",
+	"slug": "asserting-existence-typescript",
+	"title": "Asserting existence in Typescript (and JavaScript)",
+	"description": "Often you'll know that a variable is defined, despite Typescript insisting otherwise. Use assertions to fix it, not optional chaining or non-null assertion operators!",
+	"publishedAt": "2025-02-02T21:41:19.100Z",
+	"tags": ["typescript", "javascript", "node", "programming", "webdev"],
+	"crossPosts": []
+}
