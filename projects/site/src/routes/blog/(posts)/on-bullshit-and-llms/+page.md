@@ -1,5 +1,3 @@
-# On Bullshit and Generative AI
-
 Decades ago, Harry G. Frankfurt wrote an essay entitled "On Bullshit" (expanded to [a book by the same title](https://press.princeton.edu/books/hardcover/9780691122946/on-bullshit) in 2005), where he explores the philosophy of what makes something "bullshit" rather than a *lie*. I'd summarize the takeaway like this:
 
 > A statement is "bullshit" if it is made independently of whether or not it is true.

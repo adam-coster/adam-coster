@@ -30,7 +30,7 @@
 		margin: auto;
 		width: 1200px;
 		height: 630px;
-		border: 2px solid #ccc;
+		/* border: 2px solid #ccc; */
 		padding: 40px 60px 40px 60px;
 		display: flex;
 		flex-direction: column;
