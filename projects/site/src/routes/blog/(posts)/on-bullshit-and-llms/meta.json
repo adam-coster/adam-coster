@@ -1,0 +1,9 @@
+{
+	"$schema": "../../post.schema.json",
+	"slug": "on-bullshit-and-llms",
+	"title": "On Bullshit and Generative AI",
+	"description": "Bullshit is an indifference to the truth, a fundamental property of generative AI via Large Language Models (LLMs). Can bullshit ever be converted into truth?",
+	"publishedAt": "2025-02-03T02:13:19.653Z",
+	"tags": ["philosophy", "llm", "ai"],
+	"crossPosts": []
+}
