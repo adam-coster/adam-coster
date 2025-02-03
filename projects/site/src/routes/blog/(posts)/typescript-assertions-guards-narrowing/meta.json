@@ -1,0 +1,9 @@
+{
+	"$schema": "../../post.schema.json",
+	"slug": "typescript-assertions-guards-narrowing",
+	"title": "Narrowing, Guarding, and Asserting Typescript Types",
+	"description": "When programmers find themselves fighting with Typescript, it's almost always because of type narrowing, guarding, or asserting. What are they, and how can you stop fighting with them?",
+	"publishedAt": "2025-02-02T23:48:07.810Z",
+	"tags": ["typescript", "javascript", "node", "programming", "webdev"],
+	"crossPosts": []
+}
