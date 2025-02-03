@@ -6,6 +6,10 @@ Custom error classes are great:
 
 This post includes a short discussion about how and why to create custom JavaScript errors, plus JavaScript (and Typescript) templates and Visual Studio Code snippets to make it easy to create your own.
 
+## Changelog
+
+- **2025-02-02**: Updated the [ExpressJS example](#case-study-uncaught-errors-in-expressjs) to be more general.
+
 ## How to write a custom JavaScript Error class
 
 Creating a custom error class in JavaScript is pretty straight-forward: you just need to extend the base `Error` class:
@@ -110,20 +114,27 @@ The super-popular Node.js server library, [Express](https://expressjs.com/), has
 Used in combination with custom error classes, you can simplify a lot of otherwise-cumbersome error handling. For example, instead of having every route have its own logic for handling 404s, via its own try/catch blocks, you can use a custom error to put all of that logic in one place:
 
 ```ts
-class NotFoundError extends Error {}
+abstract class RequestError extends Error {abstract readonly code:number}
+class NotFoundError extends RequestError {readonly code = 404;}
+// Can add error classes for each kind of general error case!
+
 function assertFound(thing:any): asserts thing {
-	if(!thing){ throw NotFoundError(); }
+	if(!thing){ throw new NotFoundError(); }
 }
+// Can add assertions for each kind of error case, throwing the associated error type!
 
 app.get('/some-route', (req,res)=>{
 	const something = getThingIfItExists();
 	assertFound(something); // throws if not found!
+  // Can now do things to `something` with confidence (and Typescript support) that it exists
 	res.send(something);
 });
 
+// Error-catching route, allowing errors to be thrown in all other
+// routes without route-specific handling.
 app.use((err, req, res, next)=>{
-	if(err instanceof NotFoundError){
-		return res.sendStatus(404);
+	if(err instanceof RequestError){
+		return res.sendStatus(error.code);
 	}
 });
 ```
