@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { faCopy } from '@fortawesome/free-solid-svg-icons';
+	import { faCopy, faDownload } from '@fortawesome/free-solid-svg-icons';
 	import hljs from 'highlight.js/lib/core';
 	import json from 'highlight.js/lib/languages/json';
 	import html from 'highlight.js/lib/languages/xml';
@@ -11,12 +11,13 @@
 
 	let nothing = $state(false);
 	let entries: { type: string; data: string; html: string }[] = $state([]);
-	let files: { name: string; type: string }[] = $state([]);
+	let files: { name: string; type: string; objectUrl: string }[] = $state([]);
 
 	function onpaste(e: ClipboardEvent) {
 		// Reset
 		nothing = false;
 		entries = [];
+		files = [];
 
 		console.log(e);
 		e.preventDefault();
@@ -26,9 +27,14 @@
 			return;
 		}
 		for (const file of clipboardData.files) {
+			// Want to be able to display images and videos, but otherwise
+			// just show the name and type. Want to be able to provide a download
+			// link in all cases.
+			const objectUrl = URL.createObjectURL(file);
 			files.push({
 				name: file.name,
 				type: file.type,
+				objectUrl,
 			});
 		}
 		for (const type of clipboardData.types) {
@@ -98,8 +104,19 @@
 				{#each files as file}
 					<li>
 						<article>
-							<h3>{file.name}</h3>
-							<p>{file.type}</p>
+							<h3>
+								<a href={file.objectUrl} download={file.name}>
+									<Icon icon={faDownload} size="sm" />
+								</a>
+								{file.type}
+							</h3>
+							<p>{file.name}</p>
+							{#if file.type.startsWith('image/')}
+								<img src={file.objectUrl} alt={file.name} />
+							{:else if file.type.startsWith('video/')}
+								<!-- svelte-ignore a11y_media_has_caption -->
+								<video controls src={file.objectUrl}></video>
+							{/if}
 						</article>
 					</li>
 				{/each}
@@ -124,6 +141,10 @@
 	}
 	article {
 		width: 960px;
+		max-width: 100%;
+	}
+	video,
+	img {
 		max-width: 100%;
 	}
 	article .pasted-text {
