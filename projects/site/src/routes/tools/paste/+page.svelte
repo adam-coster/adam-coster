@@ -1,14 +1,16 @@
 <script lang="ts">
+	import { faCopy } from '@fortawesome/free-solid-svg-icons';
 	import hljs from 'highlight.js/lib/core';
 	import json from 'highlight.js/lib/languages/json';
 	import html from 'highlight.js/lib/languages/xml';
+	import Icon from 'svelte-fa';
 
 	// Then register the languages you need
 	hljs.registerLanguage('json', json);
 	hljs.registerLanguage('html', html);
 
 	let nothing = $state(false);
-	let entries: { type: string; html: string }[] = $state([]);
+	let entries: { type: string; data: string; html: string }[] = $state([]);
 	let files: { name: string; type: string }[] = $state([]);
 
 	function onpaste(e: ClipboardEvent) {
@@ -37,8 +39,9 @@
 			let html: string;
 			if (type === 'text/html') {
 				html = hljs.highlight(data, { language: 'html' }).value;
-			} else {
+			} else if (!type.startsWith('text/')) {
 				// Try to interpet as JSON
+				console.log(data);
 				try {
 					const json = JSON.parse(data);
 					html = hljs.highlight(JSON.stringify(json, null, 2), {
@@ -48,8 +51,10 @@
 					// Just as-is
 					html = `<pre><code>${data}</code></pre>`;
 				}
+			} else {
+				html = `<pre><code>${data}</code></pre>`;
 			}
-			entries.push({ type, html });
+			entries.push({ type, data, html });
 		}
 	}
 </script>
@@ -71,7 +76,16 @@
 				{#each entries as entry}
 					<li>
 						<article>
-							<h3>{entry.type}</h3>
+							<h3>
+								<button
+									title="Copy to clipboard as plaintext"
+									type="button"
+									onclick={() => navigator.clipboard.writeText(entry.data)}
+								>
+									<Icon icon={faCopy} size="sm" />
+								</button>
+								{entry.type}
+							</h3>
 							<div class="pasted-text">{@html entry.html}</div>
 						</article>
 					</li>
