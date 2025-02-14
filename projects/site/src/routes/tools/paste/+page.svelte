@@ -65,11 +65,22 @@
 	}
 </script>
 
+<svelte:head>
+	<title>What's in your clipboard?</title>
+	<meta
+		name="description"
+		content="See what's been copied into your clipboard!"
+	/>
+</svelte:head>
+
 <section>
 	<header>
 		<h1>Clipboard Content Display</h1>
-		<p>See what's been copied into your clipboard!</p>
-		<p class="warning">This page is in progress!</p>
+		<p>
+			See what's been copied into your clipboard!<br /><i>
+				Your data isn't sent anywhere, it stays right here in your browser.
+			</i>
+		</p>
 	</header>
 	<input autofocus {onpaste} placeholder="Paste here!" />
 	<output>
