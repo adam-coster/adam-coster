@@ -8,8 +8,9 @@
 		<h1>Tools and Web apps</h1>
 	</header>
 	<nav>
-		<ul>
+		<ul class="reset">
 			<li><a href="/tools/inputs">Input Detector</a></li>
+			<li><a href="/tools/paste">Clipboard Content Display</a></li>
 			<li><a href="/tools/preview">Page Preview Generator</a></li>
 		</ul>
 	</nav>
