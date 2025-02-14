@@ -22,6 +22,7 @@
 		"@bscotch/pathy": "2.12.1",
 		"@fortawesome/free-brands-svg-icons": "6.7.2",
 		"@fortawesome/free-solid-svg-icons": "6.7.2",
+		"highlight.js": "11.11.1",
 		"just-debounce": "1.1.0",
 		"svelte": "^5.20.0",
 		"svelte-fa": "4.0.3"

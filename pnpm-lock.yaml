@@ -93,6 +93,9 @@ importers:
       '@fortawesome/free-solid-svg-icons':
         specifier: 6.7.2
         version: 6.7.2
+      highlight.js:
+        specifier: 11.11.1
+        version: 11.11.1
       just-debounce:
         specifier: 1.1.0
         version: 1.1.0
