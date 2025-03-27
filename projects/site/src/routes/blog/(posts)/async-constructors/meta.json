@@ -1,0 +1,9 @@
+{
+	"$schema": "../../post.schema.json",
+	"slug": "async-constructors",
+	"title": "Protect your class constructors to create async instances in Typescript",
+	"description": "Async functions simplify so many things in JavaScript, but there's one core kind of function that doesn't get any of those benefits: class constructors.",
+	"publishedAt": "2025-03-27T23:12:47.396Z",
+	"tags": ["javascript", "typescript"],
+	"crossPosts": []
+}
