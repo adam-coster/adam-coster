@@ -143,6 +143,7 @@
 		align-items: center;
 		gap: 1em;
 		text-align: center;
+		max-width: 100dvw;
 	}
 	input {
 		max-width: 200px;
@@ -158,7 +159,15 @@
 	img {
 		max-width: 100%;
 	}
+	output {
+		max-width: 100%;
+	}
 	article .pasted-text {
 		text-align: left;
+		max-width: 100%;
+		/* can have code or other long strings that will want to force the container to be too large. Ensure it stays inside the viewport */
+		overflow-x: auto;
+		white-space: pre-wrap;
+		word-break: break-all;
 	}
 </style>

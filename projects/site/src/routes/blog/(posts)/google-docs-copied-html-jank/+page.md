@@ -10,15 +10,15 @@ When you "copy" something, you end up with an object added to your clipboard tha
 
 Applications have defaults for what they copy (probably whatever you've selected, converted to HTML and plaintext). Those defaults are useful, but not always what you want.
 
-_(See [this "What's in my clipboard?" tool](/tools/paste) to experiment! Copy this very text and paste it in there to see what the browser actually copies.)_
+_(See [my "What's in my clipboard?" tool](/tools/paste) to experiment! Copy this very text and paste it in there to see what the browser actually copies.)_
 
-On the web, you can control what gets copied using JavaScript's `navigator.clipboard.write()`. In combination with the `oncopy` event, you can fully control what goes into the clipboard when someone copies something.
+On the web, you can decide what gets copied using JavaScript's `navigator.clipboard.write()`. In combination with the `oncopy` event, you can fully control what goes into the clipboard when someone copies something.
 
 Why would you want this?
 
 As an example use case, I have a webapp where I want copied content to always be in Markdown for the plaintext version. But when the browser converts a selection into plaintext, it just strips out all of the HTML and thus loses all formatting information. Lists become paragraphs, bolds evaporate, intention is lost.
 
-So I hijack `oncopy`, grab the HTML that the browser shoved into the clipboard, clean it up to remove styling, convert the selected HTML to Markdown, and then stick both of those into the clipboard for a much better pasting outcome in other apps.
+So I hijack `oncopy`, ignore its contents, grab the current selection from the browser as HTML, clean it up to remove styling, convert it to Markdown, and then stick both the cleaned up HTML and the Markdown into the clipboard for a much better pasting outcome in other apps.
 
 ## Pasting to Clipboard
 
@@ -46,7 +46,7 @@ let hello = 'world';
 
 If you look at what actually gets copied from VSCode, you'll see there are additional mimetype entries that include the language! So I use that info when I hijack `onpaste` to normalize indentation of the code snippet and wrap it in Markdown with the language tag.
 
-I do something similar for each source that I frequently paste from: I'll look at examples of gets copied and figure out what weird things they're doing, then write up some where'd-this-come-from detection plus normalization code to get the most useful pasted outputs.
+I do something similar for each source that I frequently paste from: I'll look at examples of what gets copied and figure out what weird things they're doing, then write up some where'd-this-come-from detection plus normalization code to get the most useful pasted outputs.
 
 ## Okay, back to Google Docs
 
@@ -90,8 +90,9 @@ function onpaste(clipboardEvent) {
 		html = html.replace(/^<meta [^>]+><b [^>]+>(.*)<\/b>$/, '$1');
 	}
 
-	// At this point you'll have the actual HTML that got
-	// copied, so you can return it as-is if you support HTML,
-	// convert it to Markdown, or do something else entirely.
+	// At this point you'll have the actual HTML that you
+	// intended to copy (more or less, since, you know, jank),
+	// so you can return it as-is if you support HTML.
+	// Or convert it to Markdown, or do something else entirely.
 }
 ```
