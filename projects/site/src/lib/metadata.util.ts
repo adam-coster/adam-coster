@@ -142,7 +142,7 @@ export function asCanonicalUrl(url = '/') {
 }
 
 function normalizeTitle(title: string) {
-	return `${title} | Adam Coster`;
+	return `${title} - Adam Coster`;
 }
 
 export class MetadataStore {

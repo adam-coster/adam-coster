@@ -12,8 +12,8 @@
 		faExternalLinkSquareAlt,
 	} from '@fortawesome/free-solid-svg-icons';
 	import Icon from 'svelte-fa';
-	import type { LayoutData } from './$types';
 	import { metadata } from '../../../lib/metadata.svelte.js';
+	import type { LayoutData } from './$types';
 
 	interface Props {
 		data: LayoutData;
@@ -123,11 +123,11 @@
 	}
 	.title {
 		margin-bottom: calc(var(--size) * 0.5);
-		text-align: center;
+		/* text-align: center; */
 	}
 	.metadata {
 		font-size: calc(var(--size) * 0.8);
-		text-align: center;
+		/* text-align: center; */
 		word-spacing: 0.2em;
 		margin-top: 0.75em;
 		line-height: 1.5em;
@@ -137,7 +137,7 @@
 		display: flex;
 		column-gap: 0.5em;
 		flex-wrap: wrap;
-		justify-content: center;
+		/* justify-content: center; */
 	}
 	.date-info {
 		color: var(--color-subtle);
@@ -150,7 +150,7 @@
 	.tags {
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: center;
+		/* justify-content: center; */
 		column-gap: var(--button-padding-horizontal);
 		line-height: 1em;
 	}

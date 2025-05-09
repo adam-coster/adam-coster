@@ -42,7 +42,7 @@
 
 <style>
 	nav {
-		--small-screen-scaler: 1;
+		--small-screen-scaler: 0.8;
 		--relative-size: calc(1 * var(--small-screen-scaler));
 		--link-width: calc(4rem * var(--relative-size));
 		font-size: calc(1rem * var(--relative-size));
@@ -64,7 +64,7 @@
 		margin: 0;
 		display: flex;
 		flex-shrink: 0;
-		justify-content: center;
+		justify-content: end;
 		align-items: center;
 	}
 
@@ -85,7 +85,7 @@
 
 	.nav-link a,
 	.nav-link :global(svg) {
-		color: var(--color-text);
+		color: var(--color-subtler);
 
 		&:hover {
 			color: var(--color-link);

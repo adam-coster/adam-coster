@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { run } from 'svelte/legacy';
-
 	import Image, { type ImageSource } from './Image.svelte';
 
 	function urlFromSize(size: 343 | 686 | 1372) {
@@ -33,5 +31,5 @@
 	{width}
 	alt="Portrait of Adam Coster"
 	{srcset}
-	style="display: inline-block; border-radius:5% 15% 5% 15%;"
+	style="display: inline-block; border-radius:5% 15% 5% 15%; border: 3px solid var(--color-subtle);"
 />

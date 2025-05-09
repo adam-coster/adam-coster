@@ -45,7 +45,6 @@
 		<h1>Who am I?</h1>
 	</header>
 	<div class="body whoami">
-		<Portrait size="small" />
 		<div class="text">
 			<p>
 				I'm Adam Coster (he/him), co-founder & CEO of the video game studio
@@ -70,6 +69,8 @@
 				</li>
 			</ul>
 		</div>
+
+		<Portrait size="small" />
 	</div>
 </article>
 
@@ -119,9 +120,6 @@
 		max-width: var(--content-max-width);
 		margin: auto;
 	}
-	article header :is(:global(h1, h2)) {
-		text-align: center;
-	}
 	article + article {
 		margin-top: 2em;
 	}
@@ -132,9 +130,6 @@
 			grid-template-columns: 1fr 1fr 1fr;
 		}
 	}
-	.identity-group {
-		text-align: center;
-	}
 	.identity-group > ul {
 		margin-top: 0.5rem;
 	}
@@ -142,12 +137,15 @@
 		display: flex;
 	}
 	.whoami .text {
-		padding: calc(var(--size));
+		padding-right: calc(var(--size));
 	}
 	@media screen and (max-width: 720px) {
 		.whoami {
 			flex-direction: column;
 			align-items: center;
+			& .text {
+				padding-right: 0;
+			}
 		}
 	}
 </style>

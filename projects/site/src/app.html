@@ -39,24 +39,26 @@
 			@layer vars {
 				:root {
 					/* Colors */
-					--color-background: rgb(24, 24, 24);
-					--color-text: rgb(225, 232, 208);
-					--color-scrollbar: rgba(225, 232, 208, 0.5);
-					--color-subtle: rgb(155, 155, 155);
-					--color-subtler: rgb(57, 57, 57);
-					--color-quote: rgb(178, 152, 183);
-					--color-header: rgb(140, 149, 241);
-					--color-bad: rgb(255, 34, 104);
+					--color-background: rgb(192, 184, 176);
+					--color-scrollbar: rgba(44, 44, 44, 0.5);
+					--color-text: rgb(27, 27, 27);
+					--color-subtle: rgb(37, 37, 37);
+					--color-subtler: rgb(70, 70, 70);
+					--color-quote: rgb(103, 0, 112);
+					--color-header: rgb(145, 39, 35);
+					--color-bad: rgb(180, 0, 0);
 
-					--color-list-marker: var(--color-subtle);
+					--color-list-marker: var(--color-subtler);
 
-					--color-inline-code: rgb(138, 220, 187);
+					--color-inline-code: rgb(99, 0, 112);
 					--color-background-inline-code: black;
 
-					--color-link: rgb(57, 156, 199);
-					--color-link-hover: rgb(83, 207, 207);
+					--color-link: rgb(0, 83, 160);
+					--color-link-hover: var(--color-link);
 					--color-link-underline: var(--color-link);
+				}
 
+				:root {
 					/* BASE */
 					--size: 1.2rem;
 					--width-scrollbar: 0.75rem;
@@ -301,6 +303,7 @@
 
 				a:hover {
 					color: var(--color-link-hover);
+					text-decoration: underline;
 				}
 
 				a:where(:focus, :focus-visible) {
@@ -557,6 +560,10 @@
 					max-width: 100%;
 					display: block;
 					margin: auto;
+				}
+
+				article.article img {
+					box-shadow: 0.25em 0.25em 0.25em black;
 				}
 
 				figure {

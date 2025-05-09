@@ -15,17 +15,18 @@
 <!-- Header -->
 <header>
 	<a href="#main" id="skip-nav">skip to main content</a>
-	<a href="/" class="logo" aria-label="Text 'Adam Coster' as a site logo.">
-		<span class="firstname">adam</span><span class="lastname">coster</span><span
-			class="domain">.com</span
-		>
-	</a>
-	<Nav placement="header" />
+	<div id="main-nav">
+		<a href="/" class="logo" aria-label="Text 'Adam Coster' as a site logo.">
+			<span class="firstname">adam</span><span class="lastname">coster</span>
+		</a>
+		<Nav placement="header" />
+	</div>
 </header>
 
 <!-- Main Slot (changes by URL) -->
 {#key data.key}
-	<main id="main" in:fade={{ duration: 250 }}>
+	<main in:fade={{ duration: 250 }}>
+		<a id="main" href="#main" aria-hidden="true"></a>
 		{@render children?.()}
 	</main>
 {/key}
@@ -33,19 +34,23 @@
 <!-- Footer -->
 <footer>
 	<Nav placement="footer" />
-	<p class="copyright center" aria-label="Copyright notice">
+	<p class="copyright" aria-label="Copyright notice">
 		<span class="inline-block"
 			>&copy; {new Date().getFullYear()} Adam Coster.</span
 		>
-		<span class="inline-block">All rights reserved.</span>
+		<i class="inline-block">All rights reserved.</i>
 		<span class="inline-block version">v{version}</span>
 	</p>
 </footer>
 
 <style>
 	/* [skip link](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#skip_links) */
+	header {
+		position: relative;
+	}
 	#skip-nav {
 		position: absolute;
+		left: 0;
 		padding-inline: 0.5em;
 		transform: translateY(-300%);
 		transition: transform 0.2s;
@@ -56,12 +61,20 @@
 	#skip-nav:focus {
 		transform: translateY(-75%);
 	}
+	header,
+	footer {
+		width: 100%;
+		max-width: var(--content-max-width);
+		margin: 0 auto;
+		text-align: right;
+	}
 	a.logo {
 		display: block;
 		margin: auto;
-		text-align: center;
+		text-align: right;
 		font-size: 2.5em;
 		line-height: 1.5em;
+		padding-right: 0.75rem;
 	}
 	@media screen and (max-width: 500px) {
 		a.logo {
@@ -75,27 +88,28 @@
 		}
 	}
 	.firstname {
-		color: var(--color-link);
+		color: var(--color-subtler);
 		font-weight: bold;
 	}
 	.lastname {
-		color: var(--color-link-hover);
+		color: var(--color-header);
 		font-weight: bold;
-	}
-	.domain {
-		color: var(--color-subtle);
 	}
 	main {
 		flex-grow: 1;
 	}
 	footer {
-		justify-content: center;
 		padding-top: 50px;
 		font-size: calc(0.8 * var(--size));
 		color: var(--color-subtle);
 	}
 	.copyright {
-		text-align: center;
 		margin-top: calc(0.3 * var(--size));
+		display: flex;
+		flex-direction: column;
+	}
+	.version {
+		color: var(--color-header);
+		font-family: var(--font-family-code);
 	}
 </style>

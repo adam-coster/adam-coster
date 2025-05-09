@@ -185,9 +185,6 @@
 		max-width: var(--content-max-width);
 		margin: auto;
 	}
-	h1 {
-		text-align: center;
-	}
 	.search-summary {
 		color: var(--color-subtle);
 		font-style: italic;
@@ -208,13 +205,13 @@
 	}
 
 	.article-snippet {
+		--hover-border-width: 0.25rem;
 		height: 100%;
-		padding-left: 0.25rem;
+		padding-left: 0.5rem;
+		border-left: var(--hover-border-width) solid var(--color-background);
 	}
 	.article-snippet:hover {
-		--hover-border-width: 0.25rem;
-		border-left: var(--hover-border-width) solid var(--color-subtle);
-		margin-left: calc(var(--hover-border-width) * -1);
+		border-color: var(--color-subtle);
 	}
 
 	.article-snippet h2 {
@@ -234,9 +231,9 @@
 		margin-top: 0.5em;
 	}
 	.article-snippet .date {
-		color: var(--color-subtle);
+		color: var(--color-subtler);
+		font-family: var(--font-family-code);
 		font-size: 0.9em;
-		font-style: italic;
 		display: inline;
 		margin-right: 0.25em;
 	}
