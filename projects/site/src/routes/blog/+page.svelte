@@ -101,10 +101,10 @@
 	</div>
 
 	<p class="search-summary">
-		{#if !lastSearchText}
+		{#if !searchText}
 			Showing all posts...
 		{:else}
-			Showing {articles.length} results for "{lastSearchText}"
+			Showing {articles.length} results for "{searchText}"
 		{/if}
 	</p>
 	{#if articles.length}
