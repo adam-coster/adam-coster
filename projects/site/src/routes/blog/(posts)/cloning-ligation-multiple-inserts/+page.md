@@ -4,7 +4,7 @@ I've spent the last couple of months building a plasmid library, and in the proc
 
 <figure>
 
-![3-dimensional structure of the Ligase enzyme, rendered as a slightly-rotating animated GIF.](https://adamcoster.files.wordpress.com/2011/07/ligase.gif?w=300)
+![3-dimensional structure of the Ligase enzyme, rendered as a slightly-rotating animated GIF.](/images/cloning-ligation-multiple-inserts/ligase.gif)
 
 <figcaption>
 
@@ -20,7 +20,7 @@ Though most of what was in my test tube was _not_ the desired product, I figured
 
 <figure>
 
-![Schematic of a circular DNA showing a 3-fragment insert and location and direction of primers for amplifying the correct segment.](https://lh4.googleusercontent.com/-uQmvfz2DOIk/ThuwYacrjoI/AAAAAAAAAJ4/BMac-vSS_n0/text4985.png 'PCR after ligation')
+![Schematic of a circular DNA showing a 3-fragment insert and location and direction of primers for amplifying the correct segment.](/images/cloning-ligation-multiple-inserts/pcr-3-fragments.png 'PCR after ligation')
 
 <figcaption>
 

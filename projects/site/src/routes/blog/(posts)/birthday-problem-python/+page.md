@@ -119,9 +119,7 @@ Plotting the results in R gives:
 
 <figure>
 
-<span style="background-color: white; display:inline-block; padding: 10px;">
 <img alt="Plot of fraction of parties with matches against number of people attending the parties, from 2 to 60 people." src="https://lh4.googleusercontent.com/-Ywy76A3glPE/Th5wTWd0XSI/AAAAAAAAAds/aKd6gmTfXSU/g527.png"/>
-</span>
 
 <figcaption> Plot of fraction of parties with matches against number of people attending the parties, from 2 to 60 people.</figcaption>
 
@@ -131,9 +129,7 @@ And overlaying it onto the Wikipedia plot:
 
 <figure>
 
-<span style="background-color: white; display:inline-block; padding: 10px;">
 <img alt="The prior plot overlaying the one on Wikipedia's page about the Birthday Problem, showing that it's exactly the same." src="https://lh5.googleusercontent.com/-wZTS4CgBrWI/Th5vYRjJnHI/AAAAAAAAAbY/-M0mK_YC2VA/g7391.png"/>
-</span>
 
 <figcaption> The prior plot overlaying the one on Wikipedia's page about the Birthday Problem, showing that it's exactly the same.</figcaption>
 
