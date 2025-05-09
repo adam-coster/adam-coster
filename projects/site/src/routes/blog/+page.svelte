@@ -209,6 +209,7 @@
 		height: 100%;
 		padding-left: 0.5rem;
 		border-left: var(--hover-border-width) solid var(--color-background);
+		margin-left: calc(-1 * 0.75rem);
 	}
 	.article-snippet:hover {
 		border-color: var(--color-subtle);
