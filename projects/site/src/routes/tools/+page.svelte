@@ -9,6 +9,7 @@
 	</header>
 	<nav>
 		<ul class="reset">
+			<li><a href="/tools/compare-lists">Compare Lists</a></li>
 			<li><a href="/tools/inputs">Input Detector</a></li>
 			<li><a href="/tools/paste">Clipboard Content Display</a></li>
 			<li><a href="/tools/preview">Page Preview Generator</a></li>
@@ -18,7 +19,9 @@
 
 <style>
 	section {
-		text-align: center;
+		text-align: left;
+		max-width: var(--content-max-width);
+		margin: auto;
 	}
 	nav {
 		margin-top: 1em;
