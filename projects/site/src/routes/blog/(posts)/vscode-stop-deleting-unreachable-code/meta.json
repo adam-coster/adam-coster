@@ -1,0 +1,9 @@
+{
+	"$schema": "../../post.schema.json",
+	"slug": "vscode-stop-deleting-unreachable-code",
+	"title": "How to prevent deletion of unreachable code with VSCode's `fixAll` settings",
+	"description": "Use source.fixAll.eslint instead of source.fixAll to get auto-fixes without deleting unreachable code.",
+	"publishedAt": "2025-06-03T23:50:56.236Z",
+	"tags": ["vscode", "javascript", "node", "typescript", "programming"],
+	"crossPosts": []
+}

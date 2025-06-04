@@ -47,6 +47,7 @@
 	h1 {
 		font-size: 64px;
 		text-wrap: balance;
+		text-wrap: pretty;
 		margin: 0;
 	}
 	p {
