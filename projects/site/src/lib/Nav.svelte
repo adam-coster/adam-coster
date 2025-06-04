@@ -16,16 +16,17 @@
 
 	interface Props {
 		placement?: 'header' | 'footer';
+		justify?: 'start' | 'end' | 'center';
 	}
 
-	let { placement = 'header' }: Props = $props();
+	let { placement = 'header', justify = 'end' }: Props = $props();
 </script>
 
 <nav
 	aria-label="Site navigation and external links."
 	class={`nav-main ${placement}`}
 >
-	<menu class="nav-links">
+	<menu class="nav-links" style={`justify-content: ${justify}`}>
 		{#each navlinks as navlink}
 			<li class="nav-link">
 				<a
@@ -64,7 +65,6 @@
 		margin: 0;
 		display: flex;
 		flex-shrink: 0;
-		justify-content: end;
 		align-items: center;
 	}
 

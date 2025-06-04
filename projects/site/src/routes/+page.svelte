@@ -133,6 +133,15 @@
 	.identity-group > ul {
 		margin-top: 0.5rem;
 	}
+	.identity-group li > a {
+		display: grid;
+		grid-template-columns: 1.1lh max-content;
+		align-items: center;
+
+		& :global(svg) {
+			justify-self: center;
+		}
+	}
 	.whoami {
 		display: flex;
 	}

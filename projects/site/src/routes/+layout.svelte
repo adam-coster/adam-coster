@@ -2,6 +2,7 @@
 	import { version } from '$lib/constants.js';
 	import Nav from '$lib/Nav.svelte';
 	import { fade } from 'svelte/transition';
+	import BreadCrumbs from '../lib/BreadCrumbs.svelte';
 	import type { LayoutData } from './$types';
 
 	interface Props {
@@ -21,6 +22,7 @@
 		</a>
 		<Nav placement="header" />
 	</div>
+	<BreadCrumbs />
 </header>
 
 <!-- Main Slot (changes by URL) -->
@@ -33,7 +35,7 @@
 
 <!-- Footer -->
 <footer>
-	<Nav placement="footer" />
+	<Nav placement="footer" justify="center" />
 	<p class="copyright" aria-label="Copyright notice">
 		<span class="inline-block"
 			>&copy; {new Date().getFullYear()} Adam Coster.</span
@@ -66,7 +68,7 @@
 		width: 100%;
 		max-width: var(--content-max-width);
 		margin: 0 auto;
-		text-align: right;
+		text-align: center;
 	}
 	a.logo {
 		display: block;
