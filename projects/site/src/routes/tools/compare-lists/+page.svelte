@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { faCopy } from '@fortawesome/free-solid-svg-icons';
+	import Icon from 'svelte-fa';
+
 	let aRaw = $state<string>('');
 	let bRaw = $state<string>('');
 
@@ -10,6 +13,11 @@
 	);
 	let aOnly = $derived(new Set([...aSet].filter((item) => !bSet.has(item))));
 	let bOnly = $derived(new Set([...bSet].filter((item) => !aSet.has(item))));
+
+	function copyWithSep(set: Set<string>, sep: string) {
+		const sepped = [...set].join(sep);
+		navigator.clipboard.writeText(sepped);
+	}
 
 	function parseList(raw: string): Set<string> {
 		return new Set(
@@ -73,21 +81,49 @@
 	</form>
 
 	<output>
+		{#snippet copybutton(name: string, set: Set<string>, sep: string)}
+			<button
+				class="copy-button"
+				onclick={() => copyWithSep(set, sep)}
+				title={`Copy items with separator ${JSON.stringify(sep)}`}
+			>
+				{name}
+			</button>
+		{/snippet}
 		{#snippet items(set: Set<string>)}
-			<p>Copy as:</p>
-			<ul class="reset result-list">
-				{#each Array.from(set) as item}
-					<li>{item}</li>
-				{/each}
-			</ul>
+			{#if set.size > 0}
+				<p>
+					<Icon icon={faCopy} />
+					{@render copybutton('Newline', set, '\n')}
+					{@render copybutton('Tab', set, '\t')}
+					{@render copybutton('Space', set, ' ')}
+					{@render copybutton('Comma', set, ',')}
+				</p>
+				<ul class="reset result-list">
+					{#each Array.from(set) as item}
+						<li>{item}</li>
+					{/each}
+				</ul>
+			{:else}
+				<p class="empty"><i>No items.</i></p>
+			{/if}
 		{/snippet}
 
 		{#if aSet.size && bSet.size}
 			<h2>Union</h2>
-			<p>These are all the unique items from both lists combined:</p>
-			<ul></ul>
+			<p>These are the items from both lists combined:</p>
+			{@render items(union)}
+			<h2>Intersection</h2>
+			<p>These are the items that appear in both lists:</p>
+			{@render items(intersection)}
+			<h2>List A Only</h2>
+			<p>These items only appear in List A:</p>
+			{@render items(aOnly)}
+			<h2>List B Only</h2>
+			<p>These items only appear in List B:</p>
+			{@render items(bOnly)}
 		{:else}
-			<p>Please enter items in both lists to see results.</p>
+			<p>Put stuff in both lists to see results.</p>
 		{/if}
 	</output>
 	<output> </output>
@@ -102,6 +138,7 @@
 		width: 100%;
 		max-width: min(100dvw, var(--content-max-width));
 		margin: auto;
+		--max-list-height: 10lh;
 	}
 	form {
 		width: 100%;
@@ -129,9 +166,28 @@
 	}
 
 	textarea {
-		max-height: 10lh;
+		field-sizing: content;
+		max-height: var(--max-list-height);
 		overflow-y: auto;
 		border: 1px solid var(--color-text);
 		padding: 0.25rem 0.5rem;
+	}
+
+	output {
+		width: 100%;
+
+		& ul {
+			display: inline-flex;
+			flex-direction: column;
+			max-height: var(--max-list-height);
+			overflow-y: auto;
+			border: 1px solid var(--color-text);
+			padding: 0.25rem 0.5rem;
+		}
+	}
+
+	button.copy-button {
+		color: var(--color-link);
+		text-decoration: underline;
 	}
 </style>

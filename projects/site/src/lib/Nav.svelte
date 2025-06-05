@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { digitalIdentities } from '$lib/identities';
-	import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+	import { faInfoCircle, faToolbox } from '@fortawesome/free-solid-svg-icons';
 	import Icon from 'svelte-fa';
 
 	const navlinks = digitalIdentities.filter(
@@ -12,6 +12,13 @@
 		type: 'content',
 		url: '/',
 		icon: faInfoCircle,
+	});
+	navlinks.splice(2, 0, {
+		name: 'Tools',
+		title: 'Tools and Web Apps',
+		type: 'content',
+		url: '/tools',
+		icon: faToolbox,
 	});
 
 	interface Props {

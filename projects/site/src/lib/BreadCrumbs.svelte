@@ -6,8 +6,6 @@
 		const parts = page.url.pathname.split('/').filter(Boolean);
 		return ['', ...parts];
 	});
-
-	$inspect(segments, 'Breadcrumbs segments');
 </script>
 
 <nav class="breadcrumbs">
