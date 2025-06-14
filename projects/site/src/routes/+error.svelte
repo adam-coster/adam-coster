@@ -36,6 +36,8 @@
 		description: info.message,
 		noRobots: true,
 	});
+
+	// Are we offline?
 </script>
 
 <Head />
@@ -46,6 +48,13 @@
 		<span class="error-title">{info.title}</span>
 	</h1>
 	<p class="error-message">{info.message}</p>
+	{#if navigator.onLine === false}
+		<p>
+			It looks like you're offline. You're probably seeing this error because
+			you didn't visit this page when you were online, so it isn't cached on
+			your device! Maybe try reconnecting?
+		</p>
+	{/if}
 	{#if dev && $page.error}
 		<h2>🪲 {$page.error.message}</h2>
 	{/if}
