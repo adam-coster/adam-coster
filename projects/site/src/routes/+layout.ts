@@ -1,7 +1,7 @@
 import type { LayoutLoad } from './$types.js';
 
 export const prerender = true;
-export const csr = false;
+export const csr = true;
 export const ssr = true;
 export const trailingSlash = 'never';
 

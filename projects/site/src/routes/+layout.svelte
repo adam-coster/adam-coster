@@ -4,6 +4,9 @@
 	import { fade } from 'svelte/transition';
 	import BreadCrumbs from '../lib/BreadCrumbs.svelte';
 	import type { LayoutData } from './$types';
+	import { dev } from '$app/environment';
+	import { onMount } from 'svelte';
+	import { onNavigate } from '$app/navigation';
 
 	interface Props {
 		data: LayoutData;
@@ -11,6 +14,22 @@
 	}
 
 	let { data, children }: Props = $props();
+
+	onMount(() => {
+		navigator.serviceWorker.register('/service-worker.js', {
+			type: dev ? 'module' : 'classic',
+		});
+	});
+
+	onNavigate((nav) => {
+		// Tell the service worker to update the cache
+		if (nav.to && navigator.serviceWorker.controller) {
+			navigator.serviceWorker.controller.postMessage({
+				type: 'addUrlToCache',
+				url: nav.to.url.href,
+			});
+		}
+	});
 </script>
 
 <!-- Header -->

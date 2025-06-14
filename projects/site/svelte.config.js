@@ -9,10 +9,14 @@ import adapter from '@sveltejs/adapter-cloudflare';
 // Run during import to ensure that article summary files exist, to prevent downstream errors.
 generateArticleSummaries(options);
 
-export default {
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
 	extensions: ['.svelte', '.md'],
 	preprocess: [vitePreprocess(), markdownToSvelte],
 	kit: {
+		serviceWorker: {
+			register: false,
+		},
 		adapter: adapter({
 			routes: {
 				exclude: [
@@ -34,3 +38,5 @@ export default {
 		},
 	},
 };
+
+export default config;

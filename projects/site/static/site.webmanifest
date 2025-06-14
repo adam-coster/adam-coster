@@ -1,7 +1,9 @@
 {
 	"$schema": "https://json.schemastore.org/web-manifest-combined.json",
 	"name": "Adam Coster's Site",
-	"short_name": "Coster Blog",
+	"short_name": "adamcoster.com",
+	"lang": "en-US",
+	"start_url": "/",
 	"icons": [
 		{
 			"src": "/icons/android-chrome-192x192.png",
