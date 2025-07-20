@@ -15,6 +15,11 @@
 	<nav>
 		<ul class="reset">
 			<li>
+				<a href="/tools/screen-size">Screen Size</a>. Given a screen's diagonal
+				(how the manufacturers always provide that information), get its width
+				and height based on the aspect ratio.
+			</li>
+			<li>
 				<a href="/tools/compare-lists">Compare Lists</a>. Sometimes I need to
 				quickly get a union, intersection, or diff between some lists, and be
 				able to easily copy them in a ready-to-use format. This little tool

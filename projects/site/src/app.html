@@ -307,7 +307,7 @@
 					text-decoration: underline;
 				}
 
-				a:where(:focus, :focus-visible) {
+				:where(:focus, :focus-visible) {
 					outline: 2px solid var(--color-link);
 					outline-offset: 2px;
 				}
@@ -393,6 +393,14 @@
 				.error,
 				.bad {
 					color: var(--color-bad);
+				}
+
+				.subtle {
+					color: var(--color-text-subtle);
+				}
+
+				.monospace {
+					font-family: var(--font-family-code);
 				}
 
 				button {
