@@ -124,7 +124,7 @@
 								{#if dev}
 									<!-- Link to local file via vscode -->
 									<a
-										href={`vscode-insiders://file${cwd?.pathname}/src/routes/blog/(posts)/${article.slug}/+page.md`}
+										href={`vscode://file${cwd?.pathname}/src/routes/blog/(posts)/${article.slug}/+page.md`}
 										title="Edit this post in VS Code"
 									>
 										<Fa icon={faEdit} size="xs" />
@@ -229,7 +229,7 @@
 	}
 	.article-snippet .summary {
 		line-height: 1.25em;
-		margin-top: 0.5em;
+		margin-top: 0.25em;
 	}
 	.article-snippet .date {
 		color: var(--color-subtler);
@@ -246,9 +246,12 @@
 		font-size: calc(var(--size) * 0.8);
 		margin-right: 0.25em;
 	}
+	a {
+		text-decoration: none;
+	}
 	.article-snippet .description {
 		margin: 0;
-		margin-top: calc(var(--size) * 0.5);
+		margin-top: calc(var(--size) * 0.25);
 		color: var(--color-subtle);
 	}
 

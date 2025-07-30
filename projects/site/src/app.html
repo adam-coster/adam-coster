@@ -39,21 +39,21 @@
 			@layer vars {
 				:root {
 					/* Colors */
-					--color-background: rgb(238, 236, 227);
-					--color-scrollbar: rgba(44, 44, 44, 0.5);
-					--color-text: rgb(20, 19, 19);
-					--color-subtle: rgb(37, 37, 37);
-					--color-subtler: rgb(70, 70, 70);
+					--color-background: rgb(11, 6, 24);
+					--color-scrollbar: rgba(74, 38, 158, 0.5);
+					--color-text: rgb(220, 221, 211);
+					--color-subtle: rgb(209, 196, 159);
+					--color-subtler: rgb(153, 136, 127);
 					--color-quote: rgb(103, 0, 112);
-					--color-header: rgb(145, 39, 35);
+					--color-header: rgb(197, 94, 35);
 					--color-bad: rgb(180, 0, 0);
 
 					--color-list-marker: var(--color-subtler);
 
-					--color-inline-code: rgb(194, 0, 197);
+					--color-inline-code: rgb(233, 121, 235);
 					--color-background-inline-code: black;
 
-					--color-link: rgb(21, 0, 212);
+					--color-link: rgb(155, 122, 247);
 					--color-link-hover: var(--color-link);
 					--color-link-underline: var(--color-link);
 				}
@@ -299,12 +299,15 @@
 
 				a {
 					color: var(--color-link);
-					text-decoration: none;
+					text-underline-offset: 0.3em;
+					text-decoration: underline dotted;
 				}
 
 				a:hover {
 					color: var(--color-link-hover);
+					/* text-underline-offset: 0.2em; */
 					text-decoration: underline;
+					text-decoration-thickness: 3px;
 				}
 
 				:where(:focus, :focus-visible) {
@@ -455,7 +458,7 @@
 
 				.hljs {
 					color: #abb2bf;
-					background: #1b1d23;
+					background: #1b1820;
 				}
 
 				.hljs-comment,

@@ -1,12 +1,12 @@
 <script lang="ts">
+	import { dev } from '$app/environment';
+	import { onNavigate } from '$app/navigation';
 	import { version } from '$lib/constants.js';
 	import Nav from '$lib/Nav.svelte';
+	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import BreadCrumbs from '../lib/BreadCrumbs.svelte';
 	import type { LayoutData } from './$types';
-	import { dev } from '$app/environment';
-	import { onMount } from 'svelte';
-	import { onNavigate } from '$app/navigation';
 
 	interface Props {
 		data: LayoutData;
@@ -96,6 +96,7 @@
 		font-size: 2.5em;
 		line-height: 1.5em;
 		padding-right: 0.75rem;
+		text-decoration: none;
 	}
 	@media screen and (max-width: 500px) {
 		a.logo {

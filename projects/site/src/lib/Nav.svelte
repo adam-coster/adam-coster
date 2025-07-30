@@ -85,6 +85,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		text-decoration: none;
 	}
 	li.nav-link a :global(svg) {
 		font-size: 2em;

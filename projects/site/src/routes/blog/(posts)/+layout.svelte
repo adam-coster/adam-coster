@@ -142,6 +142,7 @@
 	.date-info {
 		color: var(--color-subtle);
 		display: inline-block;
+		font-family: var(--font-family-code);
 	}
 	.date {
 		letter-spacing: 0.05em;
@@ -156,6 +157,9 @@
 	}
 	.tag {
 		font-size: calc(var(--size) * 0.8);
+	}
+	.tag a {
+		text-decoration: none;
 	}
 	.canonical a:not(:hover) {
 		text-decoration: none;
