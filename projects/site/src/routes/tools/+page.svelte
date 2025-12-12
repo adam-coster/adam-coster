@@ -15,6 +15,11 @@
 	<nav>
 		<ul class="reset">
 			<li>
+				<a href="/tools/single-pixel-image">Single-Pixel Images</a>. Get a
+				copy-paste-able, single-color, single-pixel, HTML
+				<code>&lt;img&gt;</code> element or image, for use as a placeholder.
+			</li>
+			<li>
 				<a href="/tools/screen-size">Screen Size</a>. Given a screen's diagonal
 				(how the manufacturers always provide that information), get its width
 				and height based on the aspect ratio.
