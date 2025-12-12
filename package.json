@@ -37,7 +37,7 @@
 		"post": "node scripts/post-from-note.mjs",
 		"build:all": "turbo run build",
 		"build:force": "turbo run build --force",
-		"ci:site": "pnpm install:site",
+		"ci:site": "pnpm install:site && turbo run build --filter=@adam-coster/site",
 		"clean:artifacts": "rm -rf packages/*/dist && rm -rf packages/*/.svelte-kit",
 		"clean:deps": "find . -name 'node_modules' -type d -prune -exec rm -rf {} +",
 		"fix:deps": "syncpack fix-mismatches",
@@ -45,7 +45,6 @@
 		"local:sync": "nodemon --ext toml,json,yaml,yml,mjs,js,cjs,nu --watch dotfiles --watch scripts scripts/sync-configs.mjs",
 		"setup:pnpm": "corepack prepare $npm_package_packageManager --activate",
 		"test": "turbo run test",
-		"test:site": "turbo run build test --filter=@adam-coster/site",
 		"watch": "turbo run watch --parallel"
 	},
 	"syncpack": {
