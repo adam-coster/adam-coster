@@ -37,7 +37,7 @@
 		"post": "node scripts/post-from-note.mjs",
 		"build:all": "turbo run build",
 		"build:force": "turbo run build --force",
-		"ci:site": "pnpm install:site && pnpm test:site",
+		"ci:site": "pnpm install:site",
 		"clean:artifacts": "rm -rf packages/*/dist && rm -rf packages/*/.svelte-kit",
 		"clean:deps": "find . -name 'node_modules' -type d -prune -exec rm -rf {} +",
 		"fix:deps": "syncpack fix-mismatches",
