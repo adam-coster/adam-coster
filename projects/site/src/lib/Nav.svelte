@@ -1,10 +1,14 @@
 <script lang="ts">
 	import { digitalIdentities } from '$lib/identities';
-	import { faInfoCircle, faToolbox } from '@fortawesome/free-solid-svg-icons';
+	import {
+		faInfoCircle,
+		faRss,
+		faToolbox,
+	} from '@fortawesome/free-solid-svg-icons';
 	import Icon from 'svelte-fa';
 
 	const navlinks = digitalIdentities.filter(
-		(d) => d.type == 'content' || ['GitHub'].includes(d.name),
+		(d) => d.type == 'content' || ['GitHub', 'Bluesky'].includes(d.name),
 	);
 	navlinks.unshift({
 		name: 'About',
@@ -19,6 +23,13 @@
 		type: 'content',
 		url: '/tools',
 		icon: faToolbox,
+	});
+	navlinks.push({
+		name: 'RSS',
+		title: 'Site RSS Feed',
+		type: 'content',
+		url: '/feeds/blog.rss',
+		icon: faRss,
 	});
 
 	interface Props {
@@ -65,6 +76,11 @@
 	.footer {
 		--relative-size: calc(0.8 * var(--small-screen-scaler));
 	}
+	@media screen and (max-width: 500px) {
+		nav {
+			--relative-size: calc(0.8 * var(--small-screen-scaler));
+		}
+	}
 
 	menu {
 		list-style: none;
@@ -72,6 +88,8 @@
 		margin: 0;
 		display: flex;
 		flex-shrink: 0;
+		flex-wrap: wrap;
+		text-wrap: balance;
 		align-items: center;
 	}
 
