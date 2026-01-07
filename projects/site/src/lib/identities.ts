@@ -1,5 +1,6 @@
 import type { IconDefinition } from '@fortawesome/free-brands-svg-icons';
 import {
+	faBluesky,
 	faDev,
 	faFacebook,
 	faGithub,
@@ -14,8 +15,8 @@ import {
 	faGlobe,
 	faGraduationCap,
 	faLink,
-	faPodcast,
-	faSquarePen
+	faMicrophone,
+	faSquarePen,
 } from '@fortawesome/free-solid-svg-icons';
 
 /**
@@ -48,7 +49,7 @@ export const digitalIdentities: DigitalIdentity[] = [
 		url: 'https://podcast.bscotch.net',
 		name: 'Podcast',
 		title: 'Coffee with Butterscotch Podcast, co-hosted by Adam Coster',
-		icon: faPodcast,
+		icon: faMicrophone,
 		type: 'content',
 	},
 	{
@@ -66,7 +67,7 @@ export const digitalIdentities: DigitalIdentity[] = [
 	{
 		url: 'https://bsky.app/profile/adamcoster.com',
 		name: 'Bluesky',
-		icon: faCloud,
+		icon: faBluesky,
 		type: 'social',
 	},
 	{
