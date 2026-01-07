@@ -1,0 +1,9 @@
+/static/feeds/blog.rss
+  Content-Type: application/rss+xml
+
+/static/feeds/blog.json
+  Content-Type: application/feed+json
+
+/static/feeds/blog.atom
+  Content-Type: application/atom+xml
+
