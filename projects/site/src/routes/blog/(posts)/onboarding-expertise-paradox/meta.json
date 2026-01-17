@@ -1,0 +1,10 @@
+{
+	"$schema": "../../post.schema.json",
+	"slug": "onboarding-expertise-paradox",
+	"title": "The Onboarding vs. Expertise Paradox",
+	"description": "You can only know which long-term decision to make long after you've already made it.",
+	"publishedAt": "2021-03-21T22:28:44.741Z",
+	"editedAt": "2026-01-17T22:31:06Z",
+	"tags": ["programming", "philosophy"],
+	"crossPosts": []
+}
