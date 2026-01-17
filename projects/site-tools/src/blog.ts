@@ -6,14 +6,14 @@
  * - Creation of RSS feed(s)
  */
 
+import { Pathy, pathy } from '@bscotch/pathy';
+import { Feed } from 'feed';
 import fs from 'fs/promises';
 import lunr from 'lunr';
-import type { ArticleFrontMatter, ArticleIndexEntry } from './types/Article.js';
 import path from 'path';
 import { writeJson } from './files.js';
-import { Feed } from 'feed';
 import { markdownToMicrodata } from './markdownToMicrodata.js';
-import { Pathy, pathy } from '@bscotch/pathy';
+import type { ArticleFrontMatter, ArticleIndexEntry } from './types/Article.js';
 
 export function pick<T extends Record<PropertyKey, any>, O extends keyof T>(
 	obj: T,
@@ -125,7 +125,7 @@ export async function generateArticleSummaries(options: {
 					description: parsed.description,
 					content: parsed.description,
 					date: publishedAt,
-					image: `${options.productionBaseUrl}/previews/blog/${parsed.slug}/preview.jpg`,
+					image: `${options.productionBaseUrl}/previews/blog/${parsed.slug}.jpg`,
 					copyright: `Copyright © ${publishedAt.getFullYear()} Adam Coster. All rights reserved.`,
 					author: [author],
 					// TODO: Add categories
