@@ -2,7 +2,7 @@
 
 Hey there, internet rando!
 
-I'm Adam Coster, CEO and co-founder of video game studio [Butterscotch Shenanigans](https://www.bscotch.net/about#adam-coster) ([@bscotch](https://github.com/bscotch)).
+I'm Adam Coster, CTO and co-founder of video game studio [Butterscotch Shenanigans](https://www.bscotch.net/about#adam-coster) ([@bscotch](https://github.com/bscotch)).
 
 I'm a fullstack web developer and DevOps enthusiast, but also spend a lot of my time thinking about data, productivity, and business (see my [personal blog](https://adamcoster.com/blog)). I talk about all of that a lot on my weekly podcast, [Coffee with Butterscotch](https://podcast.bscotch.net), co-hosted by my co-founders (and literal brothers).
 
@@ -44,7 +44,7 @@ I've open-sourced a handful of our studio projects. See the studio's GitHub ([@b
 
 ### Oh, and a Dissertation!
 
-I got a PhD in Cell & Molecular Biology back in 2014, and then immediately joined my brothers in co-founding Butterscotch Shenanigans where I ended up mostly doing webtech and, as of July 2021, now occupy the CEO role. Yes, that's a weird path. It's a long story.
+I got a PhD in Cell & Molecular Biology back in 2014, and then immediately joined my brothers in co-founding Butterscotch Shenanigans where I ended up mostly doing webtech, internal software development, analysis, and business development. Yes, that's a weird path. It's a long story.
 
 Anyway, I'd be remiss if I didn't take a moment to force my dissertation upon you, dear reader:
 

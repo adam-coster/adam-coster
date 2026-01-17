@@ -9,7 +9,7 @@
 
 	metadata.update({
 		title: 'About',
-		description: `Adam Coster's portfolio, writings, and web identifiers. Adam is the CEO of video game studio Butterscotch Shenanigans and co-hosts the podcast "Coffee with Butterscotch".`,
+		description: `Adam Coster's portfolio, writings, and web identifiers. Adam is the CTO of video game studio Butterscotch Shenanigans and co-hosts the podcast "Coffee with Butterscotch".`,
 		type: 'website',
 		canonical: '',
 		microdata: [site, profile],
@@ -47,7 +47,7 @@
 	<div class="body whoami">
 		<div class="text">
 			<p>
-				I'm Adam Coster (he/him), co-founder & CEO of the video game studio
+				I'm Adam Coster (he/him), co-founder & CTO of the video game studio
 				<a href="https://bscotch.net">Butterscotch Shenanigans</a>
 				(a.k.a. "<abbr title="Butterscotch Shenanigans">Bscotch</abbr>"),
 				fullstack web developer,

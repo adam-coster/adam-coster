@@ -9,9 +9,9 @@ import {
 	faMedium,
 	faStackOverflow,
 	faTwitter,
+	faImdb,
 } from '@fortawesome/free-brands-svg-icons';
 import {
-	faCloud,
 	faGlobe,
 	faGraduationCap,
 	faLink,
@@ -113,10 +113,22 @@ export const digitalIdentities: DigitalIdentity[] = [
 		type: 'social',
 	},
 	{
+		url: 'https://www.imdb.com/name/nm8710320/',
+		name: 'IMDB',
+		icon: faImdb,
+		type: 'reference',
+	},
+	{
 		url: 'https://adamcoster.medium.com/',
 		name: 'Medium',
 		icon: faMedium,
 		type: 'social',
+	},
+	{
+		url: 'https://www.mobygames.com/person/1042863/adam-coster/',
+		name: 'MobyGames',
+		icon: faLink,
+		type: 'reference',
 	},
 	{
 		url: 'https://stackoverflow.com/users/5346534/bscotchadam',
@@ -133,12 +145,6 @@ export const digitalIdentities: DigitalIdentity[] = [
 	{
 		url: 'https://www.gamedeveloper.com/author/adam-coster',
 		name: 'GameDeveloper.com',
-		icon: faLink,
-		type: 'social',
-	},
-	{
-		url: 'https://www.gamasutra.com/blogs/author/AdamCoster/1019512/',
-		name: 'Gamasutra',
 		icon: faLink,
 		type: 'social',
 	},

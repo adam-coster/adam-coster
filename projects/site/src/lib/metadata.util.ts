@@ -53,7 +53,7 @@ export const me: PersonSchema = {
 	image: asCanonicalUrl('/images/adam-coster-large.jpg'),
 	memberOf: 'Butterscotch Shenanigans',
 	worksFor: 'Butterscotch Shenanigans',
-	jobTitle: 'CEO',
+	jobTitle: 'CTO',
 	url: asCanonicalUrl('/'),
 };
 

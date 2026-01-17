@@ -71,12 +71,12 @@ const otherMetas = [
 	{
 		slug: 'about',
 		title: `Adam Coster`,
-		description: `Co-founder & CEO of Butterscotch Shenanigans, fullstack web developer, podcaster, and certified science nerd.`,
+		description: `Co-founder & CTO of Butterscotch Shenanigans, fullstack web developer, podcaster, and certified science nerd.`,
 	},
 	{
 		slug: 'index',
 		title: `Adam Coster`,
-		description: `Co-founder & CEO of Butterscotch Shenanigans, fullstack web developer, podcaster, and certified science nerd.`,
+		description: `Co-founder & CTO of Butterscotch Shenanigans, fullstack web developer, podcaster, and certified science nerd.`,
 	},
 	{
 		slug: 'blog',
