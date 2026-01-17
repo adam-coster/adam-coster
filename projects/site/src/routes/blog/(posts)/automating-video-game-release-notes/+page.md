@@ -1,6 +1,6 @@
 Documentation is easiest when its writers and readers are _the same people_ (internal documentation). It gets a bit harder when you add readers who have similar knowledge to the writers but aren't the same people (e.g. users of open source projects). It gets truly difficult when your audience is completely different from the authors, especially if you have multiple, non-overlapping audiences.
 
-_(This post is excerpted from [a longer DevChat Newsletter post](https://www.bscotch.net/post/devchat-11?topics=devchat) and updated a bit.)_
+_(This post is excerpted from [an old DevChat Newsletter post I wrote](https://www.bscotch.net/post/devchat-11?topics=devchat) and updated a bit.)_
 
 This latter problem is exactly the case for games, and any other software wherein there is huge information asymmetry between developers and downstream customers.
 
