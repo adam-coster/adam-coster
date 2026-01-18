@@ -1,0 +1,9 @@
+{
+	"$schema": "../../post.schema.json",
+	"slug": "google-deindexed-robots-unreachable",
+	"title": "robots.txt unreachable: Google search removed my site!",
+	"description": "I always thought that the absence of a robots.txt file implied a web crawler could do what it liked. Apparently not!",
+	"publishedAt": "2026-01-17T23:43:24.796Z",
+	"tags": [],
+	"crossPosts": []
+}

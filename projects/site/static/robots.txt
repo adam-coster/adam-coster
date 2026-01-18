@@ -18,3 +18,5 @@ Disallow: /
 
 User-Agent: *
 Allow: /
+
+Sitemap: https://adamcoster.com/sitemap.txt
