@@ -15,6 +15,11 @@
 	<nav>
 		<ul class="reset">
 			<li>
+				<a href="/tools/image-to-data-url">Image to Data URL Converter</a>. Get
+				an image as a data URL! This makes it easy to embed images into HTML and
+				Markdown rather than having to link out to some kind of host.
+			</li>
+			<li>
 				<a href="/tools/single-pixel-image">Single-Pixel Images</a>. Get a
 				copy-paste-able, single-color, single-pixel, HTML
 				<code>&lt;img&gt;</code> element or image, for use as a placeholder.
