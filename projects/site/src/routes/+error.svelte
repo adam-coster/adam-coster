@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { dev } from '$app/environment';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import Head from '$lib/Head.svelte';
 	import { metadata } from '../lib/metadata.svelte.js';
 	interface ErrorInfo {
@@ -23,13 +23,13 @@
 
 	const info = Object.assign(
 		{
-			status: `😕 ${$page.status}`,
+			status: `😕 ${page.status}`,
 			title: `That didn't work right`,
 			message: `There's something I didn't account for here at all. Whoops!`,
 		},
-		generalErrors[`${$page.status}`] || {},
+		generalErrors[`${page.status}`] || {},
 	);
-	console.error($page.error?.message);
+	console.error(page.error?.message);
 
 	metadata.update({
 		title: info.title,
@@ -55,8 +55,8 @@
 			your device! Maybe try reconnecting?
 		</p>
 	{/if}
-	{#if dev && $page.error}
-		<h2>🪲 {$page.error.message}</h2>
+	{#if dev && page.error}
+		<h2>🪲 {page.error.message}</h2>
 	{/if}
 </section>
 
