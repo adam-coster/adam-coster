@@ -2,9 +2,9 @@ import {
 	generateArticleSummaries,
 	markdownToSvelte,
 } from '@adam-coster/site-tools';
-import { options } from './project.config.js';
-import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import adapter from '@sveltejs/adapter-cloudflare';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+import { options } from './project.config.js';
 
 // Run during import to ensure that article summary files exist, to prevent downstream errors.
 generateArticleSummaries(options);
@@ -32,6 +32,7 @@ const config = {
 					'/microdata/*',
 				],
 			},
+			fallback: 'spa',
 		}),
 		prerender: {
 			crawl: true,
