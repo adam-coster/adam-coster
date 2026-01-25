@@ -1,0 +1,1518 @@
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" href="http://localhost:3000/favicon.ico" sizes="any" />
+		<link
+			rel="icon"
+			href="http://localhost:3000/icons/favicon.svg"
+			type="image/svg+xml"
+		/>
+		<link
+			rel="apple-touch-icon"
+			href="http://localhost:3000/icons/apple-touch-icon.png"
+		/>
+		<link rel="manifest" href="./site.webmanifest" />
+		<meta name="msapplication-TileColor" content="#da532c" />
+		<meta name="theme-color" content="#ffb835" />
+		<link rel="alternate" type="application/rss+xml" href="/feeds/blog.rss" />
+		<link
+			rel="alternate"
+			type="application/atom+xml"
+			href="./feeds/blog.atom"
+		/>
+		<link
+			rel="alternate"
+			type="application/feed+json"
+			href="./feeds/blog.json"
+		/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+		<!--[-->
+		<meta
+			name="description"
+			content="The URL you followed has let you astray: there's nothing here! Either someone created an invalid link, or I did something dumb."
+		/>
+		<meta name="robots" content="noindex, nofollow" />
+		<!--[!-->
+		<!--]-->
+		<!--]-->
+		<title>Page not found! - Adam Coster</title>
+		<style>
+			/* ensure layer order */
+			@layer vars, reset, global, code, post;
+
+			/* fonts */
+			@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+			@layer vars {
+				:root {
+					/* Colors */
+					--color-background: rgb(11, 6, 24);
+					--color-scrollbar: rgba(74, 38, 158, 0.5);
+					--color-text: rgb(220, 221, 211);
+					--color-subtle: rgb(209, 196, 159);
+					--color-subtler: rgb(153, 136, 127);
+					--color-quote: rgb(192, 206, 130);
+					--color-header: rgb(197, 94, 35);
+					--color-bad: rgb(180, 0, 0);
+
+					--color-list-marker: var(--color-subtler);
+
+					--color-inline-code: rgb(233, 121, 235);
+					--color-background-inline-code: black;
+
+					--color-link: rgb(155, 122, 247);
+					--color-link-hover: var(--color-link);
+					--color-link-underline: var(--color-link);
+				}
+
+				:root {
+					/* BASE */
+					--size: 1.2rem;
+					--width-scrollbar: 0.75rem;
+					--code-size: calc(var(--size) * 0.85);
+					--content-max-width: 900px;
+					--view-padding: calc(var(--size) * 1.5) calc(var(--size) * 2);
+					--content-padding: calc(var(--size) * 0.5) calc(var(--size) * 1);
+					--border-radius: calc(var(--size) * 0.5);
+
+					/* TEXT */
+
+					--font-family: 'Ubuntu', sans-serif;
+					--font-family-code: 'Ubuntu Mono', monospace;
+
+					/* INPUTS */
+					--button-padding-vertical: 5px;
+					--button-padding-horizontal: calc(var(--button-padding-vertical) * 2);
+					--button-padding: var(--button-padding-vertical)
+						var(--button-padding-horizontal);
+				}
+			}
+
+			@layer reset {
+				/* https://github.com/elad2412/the-new-css-reset */
+				*:where(
+						:not(html, iframe, canvas, img, svg, video, audio):not(
+								svg *,
+								symbol *
+							)
+					) {
+					all: unset;
+					display: revert;
+				}
+
+				*,
+				*::before,
+				*::after {
+					box-sizing: border-box;
+				}
+
+				a,
+				button {
+					cursor: revert;
+				}
+
+				ol,
+				ul,
+				menu {
+					list-style: none;
+				}
+
+				img {
+					max-width: 100%;
+				}
+
+				table {
+					border-collapse: collapse;
+				}
+
+				input,
+				textarea {
+					-webkit-user-select: auto;
+					user-select: auto;
+				}
+
+				textarea {
+					white-space: revert;
+				}
+
+				meter {
+					-webkit-appearance: revert;
+					appearance: revert;
+				}
+
+				::placeholder {
+					color: unset;
+				}
+
+				:where([hidden]) {
+					display: none;
+				}
+
+				:where([contenteditable]:not([contenteditable='false'])) {
+					-moz-user-modify: read-write;
+					-webkit-user-modify: read-write;
+					overflow-wrap: break-word;
+					-webkit-line-break: after-white-space;
+					line-break: after-white-space;
+					-webkit-user-select: auto;
+					user-select: auto;
+				}
+
+				:where([draggable='true']) {
+					-webkit-user-drag: element;
+				}
+			}
+
+			@layer global {
+				html {
+					font-size: 120%;
+					overflow-x: hidden;
+					font-weight: 400;
+				}
+
+				body {
+					margin: auto;
+					background-color: var(--color-background);
+					color: var(--color-text);
+					font-family: var(--font-family);
+					overflow-wrap: break-word;
+					line-height: 1.6em;
+				}
+
+				p,
+				blockquote,
+				figcaption,
+				li {
+					text-wrap: pretty;
+				}
+
+				h1 {
+					font-size: 2em;
+				}
+
+				h2 {
+					font-size: 1.5em;
+				}
+
+				h3 {
+					font-size: 1.4em;
+				}
+
+				h4 {
+					font-size: 1.2em;
+				}
+
+				h5 {
+					font-size: 1.1em;
+				}
+
+				h6 {
+					font-size: 1em;
+				}
+
+				h1,
+				h2,
+				h3,
+				h4,
+				h5,
+				h6 {
+					font-family: var(--font-family);
+					font-weight: 700;
+					margin-top: calc(var(--size));
+					margin-bottom: calc(var(--size) * 0.5);
+					color: var(--color-header);
+					line-height: 1.2em;
+					text-wrap: balance;
+					text-wrap: pretty;
+				}
+
+				h3,
+				h4,
+				h5,
+				h6 {
+					font-weight: 500;
+				}
+
+				summary {
+					cursor: pointer;
+				}
+
+				details {
+					padding-bottom: 1em;
+					color: var(--color-subtle);
+				}
+
+				details summary {
+					margin-left: 1em;
+					padding: 0.5em;
+				}
+
+				details summary::marker {
+					color: var(--color-subtle);
+					content: '▶';
+				}
+
+				details[open] {
+					border: 1px solid var(--color-subtle);
+					border-radius: var(--border-radius);
+					padding: var(--content-padding);
+					color: var(--color-text);
+				}
+
+				details[open] summary::marker {
+					color: var(--color-subtle);
+					content: '▼';
+				}
+
+				kbd {
+					font-family: var(--font-family-code);
+					font-size: var(--code-size);
+					background-color: rgba(0, 0, 0, 0.6);
+					color: #f5ab35;
+					border: 1px solid #f5ab35;
+					border-radius: 0.4em;
+					padding-inline: 0.4em;
+					display: inline-block;
+					padding-block: 0em;
+					line-height: 1;
+				}
+
+				kbd:has(kbd) {
+					border: none;
+					padding-inline: 0;
+					box-shadow: 0 0 0 1px black;
+				}
+
+				/* https://css-tricks.com/inclusively-hidden/ */
+				.sr-only:not(:focus):not(:active) {
+					clip: rect(0 0 0 0);
+					clip-path: inset(50%);
+					height: 1px;
+					overflow: hidden;
+					position: absolute;
+					white-space: nowrap;
+					width: 1px;
+				}
+
+				:where(h1, h2, h3, h4, h5, h6, p, ul, ol, menu, figure, blockquote)
+					+ :where(p, ul, ol, menu, figure, blockquote, details) {
+					margin-top: 1em;
+				}
+
+				:where(p, ul, ol, menu, figure, details)
+					+ :where(h1, h2, h3, h4, h5, h6) {
+					margin-top: 1.25em;
+				}
+
+				a {
+					color: var(--color-link);
+					text-underline-offset: 0.3em;
+					text-decoration: underline dotted;
+				}
+
+				a:hover {
+					color: var(--color-link-hover);
+					/* text-underline-offset: 0.2em; */
+					text-decoration: underline;
+					text-decoration-thickness: 3px;
+				}
+
+				:where(:focus, :focus-visible) {
+					outline: 2px solid var(--color-link);
+					outline-offset: 2px;
+				}
+
+				ol,
+				menu,
+				ul {
+					list-style: none;
+					/* margin-block-start: 0; */
+					padding: 0;
+				}
+
+				ol,
+				ul,
+				menu {
+					margin-left: 1em;
+				}
+
+				ol {
+					list-style: outside decimal-leading-zero;
+					margin-left: 1.75em;
+				}
+
+				ul,
+				menu {
+					list-style: outside '◈';
+				}
+
+				ul > li,
+				ol > li {
+					padding-left: 0.5em;
+					margin-bottom: 0.25em;
+				}
+
+				.reset:where(ul, ol, menu) {
+					list-style: none;
+					padding: 0;
+					margin: 0;
+				}
+
+				.reset > li {
+					padding: 0;
+					margin: 0;
+				}
+
+				::marker {
+					color: var(--color-list-marker);
+				}
+
+				::-webkit-scrollbar {
+					width: var(--width-scrollbar);
+					height: var(--width-scrollbar);
+					background-color: var(--color-background);
+				}
+
+				::-webkit-scrollbar-track {
+					/* border: 0.1em solid var(--color-subtle); */
+					box-shadow: inset 0 0 0.2rem rgba(200, 200, 200, 0.3);
+
+					/* background-color: black; */
+				}
+
+				::-webkit-scrollbar-thumb {
+					background-color: var(--color-scrollbar);
+					border: 0.15rem solid black;
+					border-radius: var(--width-scrollbar);
+					/* box-shadow: inset 0 0 0.1em rgba(0, 0, 0, 0.5); */
+					z-index: 1;
+				}
+
+				em,
+				i {
+					font-style: italic;
+				}
+
+				b,
+				strong {
+					font-weight: 700;
+				}
+
+				.warn,
+				.warning,
+				.error,
+				.bad {
+					color: var(--color-bad);
+				}
+
+				.subtle {
+					color: var(--color-text-subtle);
+				}
+
+				.monospace {
+					font-family: var(--font-family-code);
+				}
+
+				button {
+					cursor: pointer;
+				}
+			}
+
+			@layer code {
+				pre {
+					tab-size: 2;
+				}
+
+				code {
+					font-family: var(--font-family-code);
+				}
+
+				:not(pre) > code {
+					color: var(--color-inline-code);
+				}
+
+				pre > code {
+					display: block;
+					border: 1px solid var(--color-subtle);
+					margin: calc(var(--size) * 1.25) 0;
+					font-size: var(--code-size);
+					padding: 0.75em 0.75em;
+					overflow-x: auto;
+					white-space: pre;
+					line-height: 1.3em;
+					box-shadow: 0.25em 0.25em 0.25em black;
+				}
+
+				/*
+
+					Atom One Dark by Daniel Gamage
+					Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
+
+					base:    #282c34
+					mono-1:  #abb2bf
+					mono-2:  #818896
+					mono-3:  #5c6370
+					hue-1:   #56b6c2
+					hue-2:   #61aeee
+					hue-3:   #c678dd
+					hue-4:   #98c379
+					hue-5:   #e06c75
+					hue-5-2: #be5046
+					hue-6:   #d19a66
+					hue-6-2: #e6c07b
+
+					*/
+
+				.hljs {
+					color: #abb2bf;
+					background: #1b1820;
+				}
+
+				.hljs-comment,
+				.hljs-quote {
+					color: #6b7382;
+					font-style: italic;
+				}
+
+				.hljs-doctag,
+				.hljs-keyword,
+				.hljs-formula {
+					color: #c678dd;
+				}
+
+				.hljs-section,
+				.hljs-name,
+				.hljs-selector-tag,
+				.hljs-deletion,
+				.hljs-subst {
+					color: #e06c75;
+				}
+
+				.hljs-literal {
+					color: #56b6c2;
+				}
+
+				.hljs-string,
+				.hljs-regexp,
+				.hljs-addition,
+				.hljs-attribute,
+				.hljs-meta .hljs-string {
+					color: #98c379;
+				}
+
+				.hljs-attr,
+				.hljs-variable,
+				.hljs-template-variable,
+				.hljs-type,
+				.hljs-selector-class,
+				.hljs-selector-attr,
+				.hljs-selector-pseudo,
+				.hljs-number {
+					color: #d19a66;
+				}
+
+				.hljs-symbol,
+				.hljs-bullet,
+				.hljs-link,
+				.hljs-meta,
+				.hljs-selector-id,
+				.hljs-title {
+					color: #61aeee;
+				}
+
+				.hljs-built_in,
+				.hljs-title.class_,
+				.hljs-class .hljs-title {
+					color: #e6c07b;
+				}
+
+				.hljs-emphasis {
+					font-style: italic;
+				}
+
+				.hljs-strong {
+					font-weight: bold;
+				}
+
+				.hljs-link {
+					text-decoration: underline;
+				}
+			}
+
+			@layer post {
+				article.article > .body :where(h1, h2, h3, h4, h5, h6) {
+					position: relative;
+				}
+				article.article > .body :where(h1, h2, h3, h4, h5, h6) a {
+					position: absolute;
+					--width: 0.75em;
+					--left: var(--width);
+					top: 0;
+					left: calc(var(--left) * -1.2);
+					width: var(--left);
+					height: var(--width);
+					display: inline-block;
+				}
+
+				article.article > .body :where(h1, h2, h3, h4, h5, h6) svg {
+					visibility: hidden;
+				}
+
+				article.article > .body :where(h1, h2, h3, h4, h5, h6):hover svg {
+					color: var(--color-subtle);
+					fill: currentColor;
+					width: var(--width);
+					height: var(--width);
+					visibility: visible;
+				}
+
+				article.article > .body :where(h2, h3, h4, h5, h6) {
+					margin-top: calc(var(--size) * 2);
+				}
+
+				article.article > .body,
+				article.body {
+					counter-reset: figure;
+				}
+
+				:where(article.article > .body, article.body) :where(img, iframe) {
+					max-width: 100%;
+					display: block;
+					margin: auto;
+				}
+
+				article.article img {
+					box-shadow: 0.25em 0.25em 0.25em black;
+				}
+
+				figure {
+					border: 1px solid var(--color-subtle);
+					border-radius: var(--border-radius);
+					padding: calc(var(--size) * 0.5) calc(var(--size) * 1);
+					text-align: center;
+					box-shadow: 0.25em 0.25em 0.25em black;
+				}
+
+				figcaption {
+					margin-top: 1rem;
+					font-size: calc(var(--size) * 0.9);
+					text-align: center;
+					font-style: italic;
+				}
+
+				figcaption:before {
+					counter-increment: figure;
+					content: 'Fig. ' counter(figure);
+					font-weight: bold;
+					margin-right: calc(var(--size) * 0.5);
+				}
+
+				figcaption p:first-child {
+					display: inline;
+				}
+
+				/* Tables */
+
+				table {
+					margin-top: calc(var(--size) * 0.5);
+					display: inline-table;
+					border-spacing: 0;
+					max-width: 100%;
+				}
+				td,
+				th {
+					padding: calc(var(--size) * 0.1) calc(var(--size) * 0.4);
+					outline: 2px solid var(--color-background);
+					border-width: 0 2px 0 0;
+					border-color: currentColor;
+				}
+
+				td {
+					outline: none;
+					border-bottom: 3px solid var(--color-background);
+					padding-top: 0;
+					padding-bottom: 0;
+				}
+
+				tr:nth-child(even) {
+					color: var(--color-subtle);
+				}
+
+				td:last-child,
+				th:last-child {
+					border-right: none;
+				}
+
+				th {
+					color: var(--color-background);
+					background-color: var(--color-text);
+					margin: calc(var(--size) * 0.25);
+				}
+
+				/* Quotes */
+
+				:where(article.article > .body, article.body) blockquote {
+					color: var(--color-quote);
+				}
+
+				:where(article.article > .body, article.body) blockquote p {
+					padding-inline: 1rem;
+					font-style: italic;
+					border-left: 0.2rem solid var(--color-subtler);
+				}
+
+				:where(article.article > .body, article.body) blockquote p ~ p {
+					margin-block: 1em;
+					font-style: italic;
+				}
+
+				/* Footnotes */
+
+				:where(article.article > .body, article.body) sup {
+					--padding: calc(var(--size) * 0.2);
+					padding-inline: var(--padding);
+				}
+
+				:where(article.article > .body, article.body) .footnotes {
+					border-top: 1px solid var(--color-subtle);
+					padding-top: calc(var(--size) * 1);
+					margin-top: calc(var(--size) * 1);
+				}
+			}
+
+			#svelte {
+				display: flex;
+				flex-direction: column;
+				min-height: 100vh;
+				padding-block: 1.5em;
+				padding-inline: 0.75em;
+			}
+		</style>
+		<style
+			type="text/css"
+			data-vite-dev-id="/home/adam/code/adam-coster/projects/site/src/routes/+error.svelte?svelte&amp;type=style&amp;lang.css"
+		>
+			.error-status.s-QcQDAQA3vV4F {
+				color: var(--color-bad);
+				font-weight: 400;
+			}
+			section.s-QcQDAQA3vV4F {
+				max-width: var(--content-max-width);
+				margin: auto;
+			}
+			.s-QcQDAQA3vV4F {
+			}
+		</style>
+		<style
+			type="text/css"
+			data-vite-dev-id="/home/adam/code/adam-coster/projects/site/src/lib/Nav.svelte?svelte&amp;type=style&amp;lang.css"
+		>
+			nav.s-2MUShql8uvJp {
+				--small-screen-scaler: 0.8;
+				--relative-size: calc(1 * var(--small-screen-scaler));
+				--link-width: calc(4rem * var(--relative-size));
+				font-size: calc(1rem * var(--relative-size));
+				margin: 0;
+			}
+			@media screen and (max-width: 500px) {
+				nav.s-2MUShql8uvJp {
+					--small-screen-scaler: 0.7;
+				}
+			}
+
+			.footer.s-2MUShql8uvJp {
+				--relative-size: calc(0.8 * var(--small-screen-scaler));
+			}
+			@media screen and (max-width: 500px) {
+				nav.s-2MUShql8uvJp {
+					--relative-size: calc(0.8 * var(--small-screen-scaler));
+				}
+			}
+
+			menu.s-2MUShql8uvJp {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+				display: flex;
+				flex-shrink: 0;
+				flex-wrap: wrap;
+				text-wrap: balance;
+				align-items: center;
+			}
+
+			li.nav-link.s-2MUShql8uvJp {
+				display: flex;
+				width: var(--link-width);
+				justify-content: center;
+				align-items: center;
+			}
+			li.nav-link.s-2MUShql8uvJp a:where(.s-2MUShql8uvJp) {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				text-decoration: none;
+			}
+			li.nav-link.s-2MUShql8uvJp a:where(.s-2MUShql8uvJp) svg {
+				font-size: 2em;
+			}
+
+			.nav-link.s-2MUShql8uvJp a:where(.s-2MUShql8uvJp),
+			.nav-link.s-2MUShql8uvJp svg {
+				color: var(--color-subtler);
+
+				&:hover {
+					color: var(--color-link);
+				}
+			}
+			.s-2MUShql8uvJp {
+			}
+		</style>
+		<style
+			type="text/css"
+			data-vite-dev-id="/home/adam/code/adam-coster/projects/site/src/lib/BreadCrumbs.svelte?svelte&amp;type=style&amp;lang.css"
+		>
+			.breadcrumbs.s-kCB_IC2Oe8pX ul:where(.s-kCB_IC2Oe8pX) {
+				display: flex;
+				flex-wrap: wrap;
+				list-style: none;
+				padding: 0;
+				margin: 0;
+				gap: 0.5em;
+			}
+			li.s-kCB_IC2Oe8pX {
+				margin: 0;
+				padding: 0;
+				font-family: var(--font-family-code);
+			}
+			.separator.s-kCB_IC2Oe8pX {
+				color: var(--color-subtle);
+			}
+			a.s-kCB_IC2Oe8pX {
+				color: var(--color-subtle);
+				text-decoration: none;
+			}
+			a.s-kCB_IC2Oe8pX:hover {
+				color: var(--color-link);
+				text-decoration: underline;
+			}
+			.s-kCB_IC2Oe8pX {
+			}
+		</style>
+		<style
+			type="text/css"
+			data-vite-dev-id="/home/adam/code/adam-coster/projects/site/src/routes/+layout.svelte?svelte&amp;type=style&amp;lang.css"
+		>
+			/* [skip link](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#skip_links) */
+			header.s-7IPF32Wcq3s8 {
+				position: relative;
+			}
+			#skip-nav.s-7IPF32Wcq3s8 {
+				position: absolute;
+				left: 0;
+				padding-inline: 0.5em;
+				transform: translateY(-300%);
+				transition: transform 0.2s;
+				background-color: var(--color-background);
+				z-index: 1;
+				border: none;
+			}
+			#skip-nav.s-7IPF32Wcq3s8:focus {
+				transform: translateY(-75%);
+			}
+			header.s-7IPF32Wcq3s8,
+			footer.s-7IPF32Wcq3s8 {
+				width: 100%;
+				max-width: var(--content-max-width);
+				margin: 0 auto;
+				text-align: center;
+			}
+			a.logo.s-7IPF32Wcq3s8 {
+				display: block;
+				margin: auto;
+				text-align: right;
+				font-size: 2.5em;
+				line-height: 1.5em;
+				padding-right: 0.75rem;
+				text-decoration: none;
+			}
+			@media screen and (max-width: 500px) {
+				a.logo.s-7IPF32Wcq3s8 {
+					display: flex;
+					flex-direction: column;
+					margin-block-end: 0.75em;
+				}
+				a.logo.s-7IPF32Wcq3s8 span:where(.s-7IPF32Wcq3s8) {
+					margin-top: calc(var(--size) * -0.5);
+					margin-bottom: calc(var(--size) * -1);
+				}
+			}
+			.firstname.s-7IPF32Wcq3s8 {
+				color: var(--color-subtler);
+				font-weight: bold;
+			}
+			.lastname.s-7IPF32Wcq3s8 {
+				color: var(--color-header);
+				font-weight: bold;
+			}
+			main.s-7IPF32Wcq3s8 {
+				flex-grow: 1;
+			}
+			footer.s-7IPF32Wcq3s8 {
+				padding-top: 50px;
+				font-size: calc(0.8 * var(--size));
+				color: var(--color-subtle);
+			}
+			.copyright.s-7IPF32Wcq3s8 {
+				margin-top: calc(0.3 * var(--size));
+				display: flex;
+				flex-direction: column;
+			}
+			.version.s-7IPF32Wcq3s8 {
+				color: var(--color-header);
+				font-family: var(--font-family-code);
+			}
+			.s-7IPF32Wcq3s8 {
+			}
+		</style>
+		<style id="s-fwfoMXBow9HF">
+			.svelte-fa-base {
+				height: 1em;
+				overflow: visible;
+				transform-origin: center;
+				vertical-align: -0.125em;
+			}
+
+			.svelte-fa-fw {
+				text-align: center;
+				width: 1.25em;
+			}
+
+			.svelte-fa-pull-left.s-fwfoMXBow9HF {
+				float: left;
+			}
+
+			.svelte-fa-pull-right.s-fwfoMXBow9HF {
+				float: right;
+			}
+
+			.svelte-fa-size-lg.s-fwfoMXBow9HF {
+				font-size: 1.33333em;
+				line-height: 0.75em;
+				vertical-align: -0.225em;
+			}
+
+			.svelte-fa-size-sm.s-fwfoMXBow9HF {
+				font-size: 0.875em;
+			}
+
+			.svelte-fa-size-xs.s-fwfoMXBow9HF {
+				font-size: 0.75em;
+			}
+
+			.spin.s-fwfoMXBow9HF {
+				animation: s-fwfoMXBow9HF-spin 2s 0s infinite linear;
+			}
+
+			.pulse.s-fwfoMXBow9HF {
+				animation: s-fwfoMXBow9HF-spin 1s infinite steps(8);
+			}
+
+			@keyframes s-fwfoMXBow9HF-spin {
+				0% {
+					transform: rotate(0deg);
+				}
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+
+			/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZmEuc3ZlbHRlIiwibWFwcGluZ3MiOiI7QUFxRkEsRUFBVSxlQUFnQixDQUFDO0FBQzNCLElBQUksV0FBVztBQUNmLElBQUksaUJBQWlCO0FBQ3JCLElBQUksd0JBQXdCO0FBQzVCLElBQUksd0JBQXdCO0FBQzVCOztBQUVBLEVBQVUsYUFBYyxDQUFDO0FBQ3pCLElBQUksa0JBQWtCO0FBQ3RCLElBQUksYUFBYTtBQUNqQjs7QUFFQSxFQUFFLG1DQUFvQixDQUFDO0FBQ3ZCLElBQUksV0FBVztBQUNmOztBQUVBLEVBQUUsb0NBQXFCLENBQUM7QUFDeEIsSUFBSSxZQUFZO0FBQ2hCOztBQUVBLEVBQUUsaUNBQWtCLENBQUM7QUFDckIsSUFBSSxvQkFBb0I7QUFDeEIsSUFBSSxtQkFBbUI7QUFDdkIsSUFBSSx3QkFBd0I7QUFDNUI7O0FBRUEsRUFBRSxpQ0FBa0IsQ0FBQztBQUNyQixJQUFJLGtCQUFrQjtBQUN0Qjs7QUFFQSxFQUFFLGlDQUFrQixDQUFDO0FBQ3JCLElBQUksaUJBQWlCO0FBQ3JCOztBQUVBLEVBQUUsb0JBQUssQ0FBQztBQUNSLElBQUksMEJBQVcsMEJBQTBCO0FBQ3pDOztBQUVBLEVBQUUscUJBQU0sQ0FBQztBQUNULElBQUksMEJBQVcseUJBQXlCO0FBQ3hDOztBQUVBLEVBQUUsMEJBQVc7QUFDYjtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSIsIm5hbWVzIjpbXSwiaWdub3JlTGlzdCI6W10sInNvdXJjZXMiOlsiZmEuc3ZlbHRlIl19 */
+		</style>
+	</head>
+
+	<body>
+		<div id="svelte">
+			<!--[--><!--[--><!---->
+			<header class="s-7IPF32Wcq3s8">
+				<a href="#main" id="skip-nav" class="s-7IPF32Wcq3s8"
+					>skip to main content</a
+				>
+				<div id="main-nav" class="s-7IPF32Wcq3s8">
+					<a
+						href="/"
+						class="logo s-7IPF32Wcq3s8"
+						aria-label="Text 'Adam Coster' as a site logo."
+						><span class="firstname s-7IPF32Wcq3s8">adam</span
+						><span class="lastname s-7IPF32Wcq3s8">coster</span></a
+					>
+					<nav
+						aria-label="Site navigation and external links."
+						class="nav-main header s-2MUShql8uvJp"
+					>
+						<menu class="nav-links s-2MUShql8uvJp" style="justify-content: end">
+							<!--[-->
+							<li class="nav-link s-2MUShql8uvJp">
+								<a href="/" title="About" class="s-2MUShql8uvJp"
+									><!--[--><svg
+										class="svelte-fa svelte-fa-base s-fwfoMXBow9HF"
+										viewBox="0 0 512 512"
+										aria-hidden="true"
+										role="img"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<!--[!--><!--]-->
+										<g
+											transform="translate(256 256)"
+											transform-origin="128 0"
+											class="s-fwfoMXBow9HF"
+										>
+											<g
+												transform="translate(0,0) scale(1,1)"
+												class="s-fwfoMXBow9HF"
+											>
+												<!--[-->
+												<path
+													d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+													fill="currentColor"
+													transform="translate(-256 -256)"
+													class="s-fwfoMXBow9HF"
+												></path>
+												<!--]-->
+											</g>
+										</g></svg
+									><!--]--><!---->
+									<span class="nav-link-name s-2MUShql8uvJp">About</span></a
+								>
+							</li>
+							<li class="nav-link s-2MUShql8uvJp">
+								<a
+									href="/blog"
+									title="Blog posts, articles, and other writings by Adam Coster"
+									class="s-2MUShql8uvJp"
+									><!--[--><svg
+										class="svelte-fa svelte-fa-base s-fwfoMXBow9HF"
+										viewBox="0 0 448 512"
+										aria-hidden="true"
+										role="img"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<!--[!--><!--]-->
+										<g
+											transform="translate(224 256)"
+											transform-origin="112 0"
+											class="s-fwfoMXBow9HF"
+										>
+											<g
+												transform="translate(0,0) scale(1,1)"
+												class="s-fwfoMXBow9HF"
+											>
+												<!--[-->
+												<path
+													d="M64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32zM325.8 139.7l14.4 14.4c15.6 15.6 15.6 40.9 0 56.6l-21.4 21.4-71-71 21.4-21.4c15.6-15.6 40.9-15.6 56.6 0zM119.9 289L225.1 183.8l71 71L190.9 359.9c-4.1 4.1-9.2 7-14.9 8.4l-60.1 15c-5.5 1.4-11.2-.2-15.2-4.2s-5.6-9.7-4.2-15.2l15-60.1c1.4-5.6 4.3-10.8 8.4-14.9z"
+													fill="currentColor"
+													transform="translate(-224 -256)"
+													class="s-fwfoMXBow9HF"
+												></path>
+												<!--]-->
+											</g>
+										</g></svg
+									><!--]--><!---->
+									<span class="nav-link-name s-2MUShql8uvJp">Blog</span></a
+								>
+							</li>
+							<li class="nav-link s-2MUShql8uvJp">
+								<a
+									href="/tools"
+									title="Tools and Web Apps"
+									class="s-2MUShql8uvJp"
+									><!--[--><svg
+										class="svelte-fa svelte-fa-base s-fwfoMXBow9HF"
+										viewBox="0 0 512 512"
+										aria-hidden="true"
+										role="img"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<!--[!--><!--]-->
+										<g
+											transform="translate(256 256)"
+											transform-origin="128 0"
+											class="s-fwfoMXBow9HF"
+										>
+											<g
+												transform="translate(0,0) scale(1,1)"
+												class="s-fwfoMXBow9HF"
+											>
+												<!--[-->
+												<path
+													d="M176 88l0 40 160 0 0-40c0-4.4-3.6-8-8-8L184 80c-4.4 0-8 3.6-8 8zm-48 40l0-40c0-30.9 25.1-56 56-56l144 0c30.9 0 56 25.1 56 56l0 40 28.1 0c12.7 0 24.9 5.1 33.9 14.1l51.9 51.9c9 9 14.1 21.2 14.1 33.9l0 92.1-128 0 0-32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 32-128 0 0-32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 32L0 320l0-92.1c0-12.7 5.1-24.9 14.1-33.9l51.9-51.9c9-9 21.2-14.1 33.9-14.1l28.1 0zM0 416l0-64 128 0c0 17.7 14.3 32 32 32s32-14.3 32-32l128 0c0 17.7 14.3 32 32 32s32-14.3 32-32l128 0 0 64c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64z"
+													fill="currentColor"
+													transform="translate(-256 -256)"
+													class="s-fwfoMXBow9HF"
+												></path>
+												<!--]-->
+											</g>
+										</g></svg
+									><!--]--><!---->
+									<span class="nav-link-name s-2MUShql8uvJp">Tools</span></a
+								>
+							</li>
+							<li class="nav-link s-2MUShql8uvJp">
+								<a
+									href="https://podcast.bscotch.net"
+									title="Coffee with Butterscotch Podcast, co-hosted by Adam Coster"
+									class="s-2MUShql8uvJp"
+									><!--[--><svg
+										class="svelte-fa svelte-fa-base s-fwfoMXBow9HF"
+										viewBox="0 0 384 512"
+										aria-hidden="true"
+										role="img"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<!--[!--><!--]-->
+										<g
+											transform="translate(192 256)"
+											transform-origin="96 0"
+											class="s-fwfoMXBow9HF"
+										>
+											<g
+												transform="translate(0,0) scale(1,1)"
+												class="s-fwfoMXBow9HF"
+											>
+												<!--[-->
+												<path
+													d="M192 0C139 0 96 43 96 96l0 160c0 53 43 96 96 96s96-43 96-96l0-160c0-53-43-96-96-96zM64 216c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 40c0 89.1 66.2 162.7 152 174.4l0 33.6-48 0c-13.3 0-24 10.7-24 24s10.7 24 24 24l72 0 72 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-48 0 0-33.6c85.8-11.7 152-85.3 152-174.4l0-40c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 40c0 70.7-57.3 128-128 128s-128-57.3-128-128l0-40z"
+													fill="currentColor"
+													transform="translate(-192 -256)"
+													class="s-fwfoMXBow9HF"
+												></path>
+												<!--]-->
+											</g>
+										</g></svg
+									><!--]--><!---->
+									<span class="nav-link-name s-2MUShql8uvJp">Podcast</span></a
+								>
+							</li>
+							<li class="nav-link s-2MUShql8uvJp">
+								<a
+									href="https://bsky.app/profile/adamcoster.com"
+									title="Adam Coster's Bluesky"
+									class="s-2MUShql8uvJp"
+									><!--[--><svg
+										class="svelte-fa svelte-fa-base s-fwfoMXBow9HF"
+										viewBox="0 0 512 512"
+										aria-hidden="true"
+										role="img"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<!--[!--><!--]-->
+										<g
+											transform="translate(256 256)"
+											transform-origin="128 0"
+											class="s-fwfoMXBow9HF"
+										>
+											<g
+												transform="translate(0,0) scale(1,1)"
+												class="s-fwfoMXBow9HF"
+											>
+												<!--[-->
+												<path
+													d="M111.8 62.2C170.2 105.9 233 194.7 256 242.4c23-47.6 85.8-136.4 144.2-180.2c42.1-31.6 110.3-56 110.3 21.8c0 15.5-8.9 130.5-14.1 149.2C478.2 298 412 314.6 353.1 304.5c102.9 17.5 129.1 75.5 72.5 133.5c-107.4 110.2-154.3-27.6-166.3-62.9l0 0c-1.7-4.9-2.6-7.8-3.3-7.8s-1.6 3-3.3 7.8l0 0c-12 35.3-59 173.1-166.3 62.9c-56.5-58-30.4-116 72.5-133.5C100 314.6 33.8 298 15.7 233.1C10.4 214.4 1.5 99.4 1.5 83.9c0-77.8 68.2-53.4 110.3-21.8z"
+													fill="currentColor"
+													transform="translate(-256 -256)"
+													class="s-fwfoMXBow9HF"
+												></path>
+												<!--]-->
+											</g>
+										</g></svg
+									><!--]--><!---->
+									<span class="nav-link-name s-2MUShql8uvJp">Bluesky</span></a
+								>
+							</li>
+							<li class="nav-link s-2MUShql8uvJp">
+								<a
+									href="https://github.com/adam-coster"
+									title="Adam Coster's GitHub"
+									class="s-2MUShql8uvJp"
+									><!--[--><svg
+										class="svelte-fa svelte-fa-base s-fwfoMXBow9HF"
+										viewBox="0 0 496 512"
+										aria-hidden="true"
+										role="img"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<!--[!--><!--]-->
+										<g
+											transform="translate(248 256)"
+											transform-origin="124 0"
+											class="s-fwfoMXBow9HF"
+										>
+											<g
+												transform="translate(0,0) scale(1,1)"
+												class="s-fwfoMXBow9HF"
+											>
+												<!--[-->
+												<path
+													d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
+													fill="currentColor"
+													transform="translate(-248 -256)"
+													class="s-fwfoMXBow9HF"
+												></path>
+												<!--]-->
+											</g>
+										</g></svg
+									><!--]--><!---->
+									<span class="nav-link-name s-2MUShql8uvJp">GitHub</span></a
+								>
+							</li>
+							<li class="nav-link s-2MUShql8uvJp">
+								<a
+									href="/feeds/blog.rss"
+									title="Site RSS Feed"
+									class="s-2MUShql8uvJp"
+									><!--[--><svg
+										class="svelte-fa svelte-fa-base s-fwfoMXBow9HF"
+										viewBox="0 0 448 512"
+										aria-hidden="true"
+										role="img"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<!--[!--><!--]-->
+										<g
+											transform="translate(224 256)"
+											transform-origin="112 0"
+											class="s-fwfoMXBow9HF"
+										>
+											<g
+												transform="translate(0,0) scale(1,1)"
+												class="s-fwfoMXBow9HF"
+											>
+												<!--[-->
+												<path
+													d="M0 64C0 46.3 14.3 32 32 32c229.8 0 416 186.2 416 416c0 17.7-14.3 32-32 32s-32-14.3-32-32C384 253.6 226.4 96 32 96C14.3 96 0 81.7 0 64zM0 416a64 64 0 1 1 128 0A64 64 0 1 1 0 416zM32 160c159.1 0 288 128.9 288 288c0 17.7-14.3 32-32 32s-32-14.3-32-32c0-123.7-100.3-224-224-224c-17.7 0-32-14.3-32-32s14.3-32 32-32z"
+													fill="currentColor"
+													transform="translate(-224 -256)"
+													class="s-fwfoMXBow9HF"
+												></path>
+												<!--]-->
+											</g>
+										</g></svg
+									><!--]--><!---->
+									<span class="nav-link-name s-2MUShql8uvJp">RSS</span></a
+								>
+							</li>
+							<!--]-->
+						</menu>
+					</nav>
+					<!---->
+				</div>
+				<!---->
+			</header>
+			<!---->
+			<main class="s-7IPF32Wcq3s8">
+				<a id="main" href="#main" aria-hidden="true" class="s-7IPF32Wcq3s8"></a>
+				<!--[!--><!----><!---->
+				<section class="s-QcQDAQA3vV4F">
+					<h1 class="s-QcQDAQA3vV4F">
+						<span class="error-status s-QcQDAQA3vV4F">👀 404</span>
+						<span class="error-title s-QcQDAQA3vV4F">Page not found!</span>
+					</h1>
+					<p class="error-message s-QcQDAQA3vV4F">
+						The URL you followed has let you astray: there's nothing here!
+						Either someone created an invalid link, or I did something dumb.
+					</p>
+				</section>
+				<!----><!--]--><!---->
+			</main>
+			<!---->
+			<footer class="s-7IPF32Wcq3s8">
+				<nav
+					aria-label="Site navigation and external links."
+					class="nav-main footer s-2MUShql8uvJp"
+				>
+					<menu
+						class="nav-links s-2MUShql8uvJp"
+						style="justify-content: center"
+					>
+						<!--[-->
+						<li class="nav-link s-2MUShql8uvJp">
+							<a href="/" title="About" class="s-2MUShql8uvJp"
+								><!--[--><svg
+									class="svelte-fa svelte-fa-base s-fwfoMXBow9HF"
+									viewBox="0 0 512 512"
+									aria-hidden="true"
+									role="img"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<!--[!--><!--]-->
+									<g
+										transform="translate(256 256)"
+										transform-origin="128 0"
+										class="s-fwfoMXBow9HF"
+									>
+										<g
+											transform="translate(0,0) scale(1,1)"
+											class="s-fwfoMXBow9HF"
+										>
+											<!--[-->
+											<path
+												d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+												fill="currentColor"
+												transform="translate(-256 -256)"
+												class="s-fwfoMXBow9HF"
+											></path>
+											<!--]-->
+										</g>
+									</g></svg
+								><!--]--><!---->
+								<span class="nav-link-name s-2MUShql8uvJp">About</span></a
+							>
+						</li>
+						<li class="nav-link s-2MUShql8uvJp">
+							<a
+								href="/blog"
+								title="Blog posts, articles, and other writings by Adam Coster"
+								class="s-2MUShql8uvJp"
+								><!--[--><svg
+									class="svelte-fa svelte-fa-base s-fwfoMXBow9HF"
+									viewBox="0 0 448 512"
+									aria-hidden="true"
+									role="img"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<!--[!--><!--]-->
+									<g
+										transform="translate(224 256)"
+										transform-origin="112 0"
+										class="s-fwfoMXBow9HF"
+									>
+										<g
+											transform="translate(0,0) scale(1,1)"
+											class="s-fwfoMXBow9HF"
+										>
+											<!--[-->
+											<path
+												d="M64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32zM325.8 139.7l14.4 14.4c15.6 15.6 15.6 40.9 0 56.6l-21.4 21.4-71-71 21.4-21.4c15.6-15.6 40.9-15.6 56.6 0zM119.9 289L225.1 183.8l71 71L190.9 359.9c-4.1 4.1-9.2 7-14.9 8.4l-60.1 15c-5.5 1.4-11.2-.2-15.2-4.2s-5.6-9.7-4.2-15.2l15-60.1c1.4-5.6 4.3-10.8 8.4-14.9z"
+												fill="currentColor"
+												transform="translate(-224 -256)"
+												class="s-fwfoMXBow9HF"
+											></path>
+											<!--]-->
+										</g>
+									</g></svg
+								><!--]--><!---->
+								<span class="nav-link-name s-2MUShql8uvJp">Blog</span></a
+							>
+						</li>
+						<li class="nav-link s-2MUShql8uvJp">
+							<a href="/tools" title="Tools and Web Apps" class="s-2MUShql8uvJp"
+								><!--[--><svg
+									class="svelte-fa svelte-fa-base s-fwfoMXBow9HF"
+									viewBox="0 0 512 512"
+									aria-hidden="true"
+									role="img"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<!--[!--><!--]-->
+									<g
+										transform="translate(256 256)"
+										transform-origin="128 0"
+										class="s-fwfoMXBow9HF"
+									>
+										<g
+											transform="translate(0,0) scale(1,1)"
+											class="s-fwfoMXBow9HF"
+										>
+											<!--[-->
+											<path
+												d="M176 88l0 40 160 0 0-40c0-4.4-3.6-8-8-8L184 80c-4.4 0-8 3.6-8 8zm-48 40l0-40c0-30.9 25.1-56 56-56l144 0c30.9 0 56 25.1 56 56l0 40 28.1 0c12.7 0 24.9 5.1 33.9 14.1l51.9 51.9c9 9 14.1 21.2 14.1 33.9l0 92.1-128 0 0-32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 32-128 0 0-32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 32L0 320l0-92.1c0-12.7 5.1-24.9 14.1-33.9l51.9-51.9c9-9 21.2-14.1 33.9-14.1l28.1 0zM0 416l0-64 128 0c0 17.7 14.3 32 32 32s32-14.3 32-32l128 0c0 17.7 14.3 32 32 32s32-14.3 32-32l128 0 0 64c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64z"
+												fill="currentColor"
+												transform="translate(-256 -256)"
+												class="s-fwfoMXBow9HF"
+											></path>
+											<!--]-->
+										</g>
+									</g></svg
+								><!--]--><!---->
+								<span class="nav-link-name s-2MUShql8uvJp">Tools</span></a
+							>
+						</li>
+						<li class="nav-link s-2MUShql8uvJp">
+							<a
+								href="https://podcast.bscotch.net"
+								title="Coffee with Butterscotch Podcast, co-hosted by Adam Coster"
+								class="s-2MUShql8uvJp"
+								><!--[--><svg
+									class="svelte-fa svelte-fa-base s-fwfoMXBow9HF"
+									viewBox="0 0 384 512"
+									aria-hidden="true"
+									role="img"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<!--[!--><!--]-->
+									<g
+										transform="translate(192 256)"
+										transform-origin="96 0"
+										class="s-fwfoMXBow9HF"
+									>
+										<g
+											transform="translate(0,0) scale(1,1)"
+											class="s-fwfoMXBow9HF"
+										>
+											<!--[-->
+											<path
+												d="M192 0C139 0 96 43 96 96l0 160c0 53 43 96 96 96s96-43 96-96l0-160c0-53-43-96-96-96zM64 216c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 40c0 89.1 66.2 162.7 152 174.4l0 33.6-48 0c-13.3 0-24 10.7-24 24s10.7 24 24 24l72 0 72 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-48 0 0-33.6c85.8-11.7 152-85.3 152-174.4l0-40c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 40c0 70.7-57.3 128-128 128s-128-57.3-128-128l0-40z"
+												fill="currentColor"
+												transform="translate(-192 -256)"
+												class="s-fwfoMXBow9HF"
+											></path>
+											<!--]-->
+										</g>
+									</g></svg
+								><!--]--><!---->
+								<span class="nav-link-name s-2MUShql8uvJp">Podcast</span></a
+							>
+						</li>
+						<li class="nav-link s-2MUShql8uvJp">
+							<a
+								href="https://bsky.app/profile/adamcoster.com"
+								title="Adam Coster's Bluesky"
+								class="s-2MUShql8uvJp"
+								><!--[--><svg
+									class="svelte-fa svelte-fa-base s-fwfoMXBow9HF"
+									viewBox="0 0 512 512"
+									aria-hidden="true"
+									role="img"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<!--[!--><!--]-->
+									<g
+										transform="translate(256 256)"
+										transform-origin="128 0"
+										class="s-fwfoMXBow9HF"
+									>
+										<g
+											transform="translate(0,0) scale(1,1)"
+											class="s-fwfoMXBow9HF"
+										>
+											<!--[-->
+											<path
+												d="M111.8 62.2C170.2 105.9 233 194.7 256 242.4c23-47.6 85.8-136.4 144.2-180.2c42.1-31.6 110.3-56 110.3 21.8c0 15.5-8.9 130.5-14.1 149.2C478.2 298 412 314.6 353.1 304.5c102.9 17.5 129.1 75.5 72.5 133.5c-107.4 110.2-154.3-27.6-166.3-62.9l0 0c-1.7-4.9-2.6-7.8-3.3-7.8s-1.6 3-3.3 7.8l0 0c-12 35.3-59 173.1-166.3 62.9c-56.5-58-30.4-116 72.5-133.5C100 314.6 33.8 298 15.7 233.1C10.4 214.4 1.5 99.4 1.5 83.9c0-77.8 68.2-53.4 110.3-21.8z"
+												fill="currentColor"
+												transform="translate(-256 -256)"
+												class="s-fwfoMXBow9HF"
+											></path>
+											<!--]-->
+										</g>
+									</g></svg
+								><!--]--><!---->
+								<span class="nav-link-name s-2MUShql8uvJp">Bluesky</span></a
+							>
+						</li>
+						<li class="nav-link s-2MUShql8uvJp">
+							<a
+								href="https://github.com/adam-coster"
+								title="Adam Coster's GitHub"
+								class="s-2MUShql8uvJp"
+								><!--[--><svg
+									class="svelte-fa svelte-fa-base s-fwfoMXBow9HF"
+									viewBox="0 0 496 512"
+									aria-hidden="true"
+									role="img"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<!--[!--><!--]-->
+									<g
+										transform="translate(248 256)"
+										transform-origin="124 0"
+										class="s-fwfoMXBow9HF"
+									>
+										<g
+											transform="translate(0,0) scale(1,1)"
+											class="s-fwfoMXBow9HF"
+										>
+											<!--[-->
+											<path
+												d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
+												fill="currentColor"
+												transform="translate(-248 -256)"
+												class="s-fwfoMXBow9HF"
+											></path>
+											<!--]-->
+										</g>
+									</g></svg
+								><!--]--><!---->
+								<span class="nav-link-name s-2MUShql8uvJp">GitHub</span></a
+							>
+						</li>
+						<li class="nav-link s-2MUShql8uvJp">
+							<a
+								href="/feeds/blog.rss"
+								title="Site RSS Feed"
+								class="s-2MUShql8uvJp"
+								><!--[--><svg
+									class="svelte-fa svelte-fa-base s-fwfoMXBow9HF"
+									viewBox="0 0 448 512"
+									aria-hidden="true"
+									role="img"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<!--[!--><!--]-->
+									<g
+										transform="translate(224 256)"
+										transform-origin="112 0"
+										class="s-fwfoMXBow9HF"
+									>
+										<g
+											transform="translate(0,0) scale(1,1)"
+											class="s-fwfoMXBow9HF"
+										>
+											<!--[-->
+											<path
+												d="M0 64C0 46.3 14.3 32 32 32c229.8 0 416 186.2 416 416c0 17.7-14.3 32-32 32s-32-14.3-32-32C384 253.6 226.4 96 32 96C14.3 96 0 81.7 0 64zM0 416a64 64 0 1 1 128 0A64 64 0 1 1 0 416zM32 160c159.1 0 288 128.9 288 288c0 17.7-14.3 32-32 32s-32-14.3-32-32c0-123.7-100.3-224-224-224c-17.7 0-32-14.3-32-32s14.3-32 32-32z"
+												fill="currentColor"
+												transform="translate(-224 -256)"
+												class="s-fwfoMXBow9HF"
+											></path>
+											<!--]-->
+										</g>
+									</g></svg
+								><!--]--><!---->
+								<span class="nav-link-name s-2MUShql8uvJp">RSS</span></a
+							>
+						</li>
+						<!--]-->
+					</menu>
+				</nav>
+				<!---->
+				<p class="copyright s-7IPF32Wcq3s8" aria-label="Copyright notice">
+					<span class="inline-block s-7IPF32Wcq3s8">© 2026 Adam Coster.</span>
+					<i class="inline-block s-7IPF32Wcq3s8">All rights reserved.</i>
+					<span class="inline-block version s-7IPF32Wcq3s8">v0.49.0</span>
+				</p>
+			</footer>
+			<!----><!--]-->
+			<!--[!-->
+			<div
+				id="svelte-announcer"
+				aria-live="assertive"
+				aria-atomic="true"
+				style="
+					position: absolute;
+					left: 0;
+					top: 0;
+					clip: rect(0 0 0 0);
+					clip-path: inset(50%);
+					overflow: hidden;
+					white-space: nowrap;
+					width: 1px;
+					height: 1px;
+				"
+			>
+				<!---->
+			</div>
+			<!--]--><!--]-->
+		</div>
+	</body>
+</html>
