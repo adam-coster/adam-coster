@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { dev } from '$app/environment';
-	import { onNavigate } from '$app/navigation';
 	import { version } from '$lib/constants.js';
 	import Nav from '$lib/Nav.svelte';
 	import { onMount } from 'svelte';
@@ -19,16 +18,6 @@
 		navigator.serviceWorker.register('/service-worker.js', {
 			type: dev ? 'module' : 'classic',
 		});
-	});
-
-	onNavigate((nav) => {
-		// Tell the service worker to update the cache
-		if (nav.to && navigator.serviceWorker.controller) {
-			navigator.serviceWorker.controller.postMessage({
-				type: 'addUrlToCache',
-				url: nav.to.url.href,
-			});
-		}
 	});
 </script>
 
